@@ -35,6 +35,7 @@ header,main,footer,.barre{position:relative;z-index:1}
   background:radial-gradient(ellipse at 80% 10%,rgba(255,45,168,.2),transparent 55%),linear-gradient(180deg,rgba(11,11,11,.35),rgba(11,11,11,0) 35%,rgba(11,11,11,.9))}
 .heroContenu{transform:perspective(900px) rotateX(calc(var(--p,0)*28deg)) translateY(calc(var(--p,0)*-80px)) translateZ(calc(var(--p,0)*-120px));opacity:calc(1 - var(--p,0)*1.2);transform-origin:50% 100%}
 .surtitre{font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;color:#4cc3ee;font-weight:800;margin-bottom:14px}
+h1 .l1{display:block}
 h1{font-family:"Playfair Display",serif;font-weight:900;font-size:clamp(3rem,12vw,8rem);line-height:.92;text-shadow:0 1px 0 #c21a7f,0 2px 0 #a3166b,0 3px 0 #85125a,0 4px 0 #670e46,0 14px 30px rgba(0,0,0,.6)}
 h1 em{display:block;font-style:normal;color:var(--rose);text-shadow:0 1px 0 #c21a7f,0 2px 0 #a3166b,0 3px 0 #85125a,0 4px 0 #670e46,0 0 40px rgba(255,45,168,.55)}
 .hero p{max-width:520px;color:#c4c4d0;margin:20px 0 26px;font-size:1.02rem}
@@ -97,17 +98,45 @@ select.tri{flex:none;max-width:38%;background:var(--verre);color:var(--texte);bo
 .conflit{font-size:.74rem;color:#ffb84d}
 .vide{color:var(--gris);padding:40px;text-align:center;border:1px dashed var(--ligne);border-radius:16px;grid-column:1/-1;background:var(--verre)}
 
-/* transitions 3D entre rubriques (effet cube) */
+/* transitions : chaque rubrique a la sienne */
 #scene{perspective:1600px}
 #rubrique{transform-style:preserve-3d}
-#scene.sortie #rubrique{animation:cubeSortie .32s cubic-bezier(.5,0,.75,0) forwards}
-#scene.entree #rubrique{animation:cubeEntree .6s cubic-bezier(.2,.8,.2,1) backwards}
-#scene.retour.sortie #rubrique{animation-name:cubeSortieR}
-#scene.retour.entree #rubrique{animation-name:cubeEntreeR}
-@keyframes cubeSortie{to{transform:translateZ(-300px) rotateY(-75deg);transform-origin:0 50%;opacity:0}}
-@keyframes cubeEntree{from{transform:translateZ(-300px) rotateY(75deg);transform-origin:100% 50%;opacity:0}}
-@keyframes cubeSortieR{to{transform:translateZ(-300px) rotateY(75deg);transform-origin:100% 50%;opacity:0}}
-@keyframes cubeEntreeR{from{transform:translateZ(-300px) rotateY(-75deg);transform-origin:0 50%;opacity:0}}
+#scene.sortie #rubrique{animation-duration:.32s;animation-fill-mode:forwards;animation-timing-function:cubic-bezier(.5,0,.75,0)}
+#scene.entree #rubrique{animation-duration:.7s;animation-fill-mode:backwards;animation-timing-function:cubic-bezier(.2,.8,.2,1)}
+/* 📰 Actus : page de journal qui se tourne */
+#scene.sortie[data-de=actus] #rubrique{animation-name:journalSortie;transform-origin:50% 0}
+#scene.entree[data-vers=actus] #rubrique{animation-name:journalEntree;transform-origin:50% 0}
+@keyframes journalSortie{to{transform:rotateX(85deg) translateZ(-80px);opacity:0}}
+@keyframes journalEntree{from{transform:rotateX(-85deg);opacity:0}}
+#scene[data-vers=actus] .fiche{animation-name:feuille}
+@keyframes feuille{from{transform:translateY(-70px) rotate(-7deg) rotateX(40deg);opacity:0}60%{transform:translateY(6px) rotate(1deg)}}
+/* 🎬 Vidéos : vieille télé qui s'allume / s'éteint */
+#scene.sortie[data-de=videos] #rubrique{animation-name:teleOff}
+#scene.entree[data-vers=videos] #rubrique{animation-name:teleOn;animation-duration:.75s}
+@keyframes teleOff{60%{transform:scaleY(.008);filter:brightness(4)}to{transform:scale(0,.008);filter:brightness(6);opacity:0}}
+@keyframes teleOn{0%{transform:scale(0,.008);filter:brightness(6);opacity:0}35%{transform:scale(1,.008);filter:brightness(5);opacity:1}70%{transform:scale(1,1.03);filter:brightness(1.4) contrast(1.3)}}
+#scene[data-vers=videos] .fiche{animation-name:ecran}
+@keyframes ecran{from{transform:scale(.85);filter:brightness(2.5) saturate(0) blur(3px);opacity:0}50%{filter:brightness(1.6) saturate(.4)}}
+/* 🔫 Armes : départ comme une balle, fiches en rafale avec recul */
+#scene.sortie[data-de=armes] #rubrique{animation-name:balleSortie;animation-duration:.25s}
+#scene.entree[data-vers=armes] #rubrique{animation-name:balleEntree;animation-duration:.5s}
+@keyframes balleSortie{to{transform:translateX(-110vw) scaleX(1.6);filter:blur(10px);opacity:0}}
+@keyframes balleEntree{0%{transform:translateX(110vw) scaleX(1.6);filter:blur(10px)}70%{transform:translateX(-14px) scaleX(1);filter:none}85%{transform:translateX(6px)}}
+#scene[data-vers=armes] .fiche{animation-name:rafale;animation-duration:.42s;animation-delay:calc(var(--i,0)*35ms)}
+@keyframes rafale{0%{transform:translateX(140px) scaleX(1.4);filter:blur(6px);opacity:0}65%{transform:translateX(-10px) scaleX(1);filter:none;opacity:1}80%{transform:translateX(4px) rotate(-.6deg)}}
+/* 🚗 Véhicules : drift avec flou de vitesse */
+#scene.sortie[data-de=vehicules] #rubrique{animation-name:driftSortie}
+#scene.entree[data-vers=vehicules] #rubrique{animation-name:driftEntree;animation-duration:.65s}
+@keyframes driftSortie{to{transform:translateX(110vw) skewX(-25deg);filter:blur(12px);opacity:0}}
+@keyframes driftEntree{0%{transform:translateX(-110vw) skewX(28deg);filter:blur(14px)}65%{transform:translateX(18px) skewX(-6deg);filter:blur(0)}82%{transform:translateX(-6px) skewX(2deg)}}
+#scene[data-vers=vehicules] .fiche{animation-name:derapage;animation-duration:.6s}
+@keyframes derapage{0%{transform:translateX(-220px) skewX(22deg) rotate(-3deg);filter:blur(8px);opacity:0}70%{transform:translateX(10px) skewX(-4deg) rotate(.8deg);filter:none;opacity:1}}
+/* 🗺️ Carte : cercle de scanner rayon X */
+#scene.sortie[data-de=carte] #rubrique{animation-name:scanSortie}
+#scene.entree[data-vers=carte] #rubrique{animation-name:scanEntree;animation-duration:.9s}
+@keyframes scanSortie{from{clip-path:circle(150% at 50% 35%)}to{clip-path:circle(0% at 50% 35%);filter:hue-rotate(60deg) brightness(2)}}
+@keyframes scanEntree{from{clip-path:circle(0% at 50% 35%);filter:brightness(2.5) hue-rotate(-30deg)}60%{filter:brightness(1.4)}to{clip-path:circle(150% at 50% 35%)}}
+#scene[data-vers=carte] .fiche{animation-name:apparition}
 
 /* carte rayon X */
 .vueCarte{display:grid;grid-template-columns:minmax(280px,520px) 1fr;gap:24px;align-items:start}
@@ -167,7 +196,9 @@ select.tri{flex:none;max-width:38%;background:var(--verre);color:var(--texte);bo
 #intro .passer{position:absolute;bottom:28px;font-size:.72rem;color:#55556a;letter-spacing:.15em;transition:opacity .3s}
 #intro.ouvert .passer{opacity:0}
 #intro::before{content:"";position:absolute;left:0;right:0;height:120px;top:-120px;background:linear-gradient(transparent,rgba(76,195,238,.12),transparent);animation:balayage 2.2s linear infinite;pointer-events:none}
-.construction .bloc{opacity:0}
+.construction .bloc,.construction .piece{opacity:0}
+.piece.apparu{animation:materialiser .55s cubic-bezier(.2,.8,.2,1) both}
+.bloc.visible{opacity:1!important;transition:opacity .4s}
 .bloc.apparu{animation:materialiser .55s cubic-bezier(.2,.8,.2,1) both}
 main.bloc.apparu{animation:none;opacity:1}
 @keyframes materialiser{0%{opacity:0;transform:perspective(800px) rotateX(45deg) scale(.92);filter:blur(8px) brightness(2)}60%{opacity:1;filter:blur(0) brightness(1.6)}100%{opacity:1;transform:none;filter:none}}
@@ -214,22 +245,22 @@ footer p+p{margin-top:8px}
 
 <header>
   <div class="haut bloc">
-    <div class="logo" data-go="haut">GTA VI <span>à la loupe</span></div>
+    <div class="logo piece" data-go="haut">GTA VI <span>à la loupe</span></div>
     <nav class="menuPc" aria-label="Rubriques"></nav>
   </div>
   <section class="hero" id="accueil">
     <div class="heroContenu">
-      <div class="surtitre bloc">Leonida · infos vérifiées chaque jour</div>
-      <h1 class="bloc">GTA VI<em>À LA LOUPE</em></h1>
-      <p class="bloc">Les actus, secrets, armes, véhicules et lieux de GTA 6. Seules les infos confirmées par au moins deux sites sont affichées.</p>
+      <div class="surtitre piece">Leonida · infos vérifiées chaque jour</div>
+      <h1><span class="l1 piece">GTA VI</span><em class="piece">À LA LOUPE</em></h1>
+      <p class="piece">Les actus, secrets, armes, véhicules et lieux de GTA 6. Seules les infos confirmées par au moins deux sites sont affichées.</p>
       <div class="raccourcis" id="raccourcis"></div>
-      <div class="maj bloc" id="maj"></div>
+      <div class="maj piece" id="maj"></div>
     </div>
   </section>
 </header>
 
 <main id="contenu" class="bloc">
-  <div id="scene"><div id="rubrique"></div></div>
+  <div id="scene" data-vers="actus"><div id="rubrique"></div></div>
 </main>
 
 <footer>
@@ -408,15 +439,19 @@ let enCours = false;
 function aller(rub, defiler = true){
   if (defiler) $("contenu").scrollIntoView({ behavior: "smooth" });
   if (rub === etat.rub || enCours) return;
-  const ordre = RUBRIQUES.map(r => r.id), sc = $("scene");
-  sc.classList.toggle("retour", ordre.indexOf(rub) < ordre.indexOf(etat.rub));
-  enCours = true; sc.classList.remove("entree"); sc.classList.add("sortie");
-  setTimeout(() => { etat.rub = rub; etat.q = ""; afficher(); sc.classList.remove("sortie"); void sc.offsetWidth; sc.classList.add("entree"); enCours = false; }, 320);
+  const sc = $("scene");
+  enCours = true;
+  sc.dataset.de = etat.rub; sc.classList.remove("entree"); sc.classList.add("sortie");
+  const dureeSortie = { armes: 250 }[etat.rub] || 320;
+  setTimeout(() => {
+    etat.rub = rub; etat.q = ""; sc.dataset.vers = rub; afficher();
+    sc.classList.remove("sortie"); void sc.offsetWidth; sc.classList.add("entree"); enCours = false;
+  }, dureeSortie);
 }
 
 // ---------- menus ----------
-const btn = r => `<button data-rub="${r.id}"><b>${r.icone}</b>${r.nom}</button>`;
-document.querySelector(".menuPc").innerHTML = RUBRIQUES.map(r => `<button data-rub="${r.id}">${r.nom}</button>`).join("");
+const btn = r => `<button class="piece" data-rub="${r.id}"><b>${r.icone}</b>${r.nom}</button>`;
+document.querySelector(".menuPc").innerHTML = RUBRIQUES.map(r => `<button class="piece" data-rub="${r.id}">${r.nom}</button>`).join("");
 document.querySelector(".barre").innerHTML = RUBRIQUES.map(btn).join("");
 
 // ---------- événements (un seul écouteur pour tout) ----------
@@ -481,7 +516,7 @@ function avancer(p, texte){ progression = Math.max(progression, p); const b = $(
 const chargementVisuel = (async () => { for (let p = 0; p <= 85 && !introFinie; p += 3) { avancer(p, p < 40 ? "Scan de Leonida…" : "Chargement des fiches…"); await attendre(28); } })();
 function flecheVers(r, i){
   const W = innerWidth, H = innerHeight, cx = r.left + r.width / 2, cy = r.top + r.height / 2;
-  const cote = i % 4, depart = [[-60, Math.random()*H],[W+60, Math.random()*H],[Math.random()*W, -60],[Math.random()*W, H+60]][cote];
+  const cote = (i + Math.floor(Math.random() * 4)) % 4, depart = [[-60, Math.random()*H],[W+60, Math.random()*H],[Math.random()*W, -60],[Math.random()*W, H+60]][cote];
   const f = document.createElement("div"); f.className = "fleche" + (i % 2 ? " bleue" : "");
   const ang = Math.atan2(cy - depart[1], cx - depart[0]) * 180 / Math.PI;
   document.body.appendChild(f);
@@ -489,7 +524,7 @@ function flecheVers(r, i){
     { transform: `translate(${depart[0]}px,${depart[1]}px) rotate(${ang}deg) scaleX(.4)`, opacity: 0 },
     { opacity: 1, offset: .2 },
     { transform: `translate(${cx-17}px,${cy-7}px) rotate(${ang}deg) scaleX(1.3)`, opacity: 1 }
-  ], { duration: 520, easing: "cubic-bezier(.5,0,.2,1)" });
+  ], { duration: 460 + Math.random() * 160, easing: "cubic-bezier(.5,0,.2,1)" });
   return anim.finished.then(() => f.remove());
 }
 function cadreAutour(r, i){
@@ -505,27 +540,29 @@ async function construireSite(){
   await attendre(250);
   $("intro").classList.add("ouvert");
   document.documentElement.classList.add("fond");
-  const blocs = [...document.querySelectorAll(".bloc")].filter(b => { const r = b.getBoundingClientRect(); return r.width > 0 && r.height > 0 && r.top < innerHeight && r.bottom > 0; });
-  const boutons = [...document.querySelectorAll("#raccourcis button")];
-  const cibles = [...blocs.filter(b => b.id !== "contenu"), ...boutons];
-  boutons.forEach(b => b.style.opacity = 0);
-  await Promise.all(cibles.map(async (b, i) => {
-    await attendre(i * 110);
+  const visible = el => { const r = el.getBoundingClientRect(); return r.width > 0 && r.height > 0 && r.top < innerHeight && r.bottom > 0 && getComputedStyle(el).display !== "none"; };
+  // les conteneurs (bandeau du haut, barre du bas) apparaissent d'abord, avec un cadre
+  document.querySelectorAll(".bloc").forEach((b, i) => { b.classList.add("visible"); if (b.id !== "contenu" && visible(b)) cadreAutour(b.getBoundingClientRect(), i); });
+  // puis chaque détail reçoit sa flèche (2 flèches pour les gros éléments)
+  const pieces = [...document.querySelectorAll(".piece")].filter(visible);
+  await Promise.all(pieces.map(async (p, i) => {
+    await attendre(i * 75);
     if (introFinie) return;
-    const r = b.getBoundingClientRect();
-    await flecheVers(r, i);
+    const r = p.getBoundingClientRect();
+    const nb = r.width * r.height > 25000 ? 3 : 2;   // 2 flèches par détail, 3 pour les gros
+    await Promise.all(Array.from({ length: nb }, (_, k) => attendre(k * 60).then(() => flecheVers(r, i + k))));
     if (introFinie) return;
     cadreAutour(r, i);
-    b.classList.add("apparu"); b.style.opacity = "";
+    p.classList.add("apparu");
   }));
-  await attendre(300);
+  await attendre(350);
   finirIntro();
 }
 function finirIntro(){
   if (introFinie) return; introFinie = true;
   document.querySelectorAll(".fleche,.cadreC").forEach(x => x.remove());
-  document.querySelectorAll("#raccourcis button").forEach(b => b.style.opacity = "");
-  document.querySelectorAll(".bloc").forEach(b => b.classList.add("apparu"));
+  document.querySelectorAll(".bloc").forEach(b => b.classList.add("visible"));
+  document.querySelectorAll(".piece").forEach(b => b.classList.add("apparu"));
   document.documentElement.classList.remove("construction", "fond");
   $("intro").style.display = "none";
 }
@@ -541,7 +578,7 @@ Promise.all([frais("data/contenu.json"), frais("data/armes.json").catch(() => ({
     ARMES = (a.armes||[]).filter(x => x.statut === "confirme");
     VEHS = (v.vehicules||[]).filter(x => x.statut === "confirme");
     VIDEOS = (vid.videos||[]).filter(idOk).sort((x,y) => y.date.localeCompare(x.date));
-    $("raccourcis").innerHTML = RUBRIQUES.map(r => `<button data-rub="${r.id}"><b>${r.icone}</b>${r.nom}<small>${{actus:ACTUS.length+" infos",videos:VIDEOS.length+" vidéos",armes:ARMES.length+" armes",vehicules:VEHS.length+" véhicules",carte:"5 comtés"}[r.id]}</small></button>`).join("");
+    $("raccourcis").innerHTML = RUBRIQUES.map(r => `<button class="piece" data-rub="${r.id}"><b>${r.icone}</b>${r.nom}<small>${{actus:ACTUS.length+" infos",videos:VIDEOS.length+" vidéos",armes:ARMES.length+" armes",vehicules:VEHS.length+" véhicules",carte:"5 comtés"}[r.id]}</small></button>`).join("");
     $("maj").innerHTML = `Dernière vérification : <b>${esc(dateCourte(c.derniereMaj))}</b>`;
     afficher();
     Promise.all([chargementVisuel, attendre(900)]).then(construireSite);
