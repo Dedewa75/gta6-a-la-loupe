@@ -126,11 +126,19 @@ select.tri{flex:none;max-width:38%;background:var(--verre);color:var(--texte);bo
 .miniature img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
 .fiche:hover .miniature img{transform:scale(1.06)}
 .miniature::after{content:"▶";position:absolute;inset:0;margin:auto;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;padding-left:4px;font-size:1.3rem;color:#fff;background:rgba(255,45,168,.85);box-shadow:0 0 30px rgba(255,45,168,.6)}
+.couverture{position:relative;aspect-ratio:16/9;cursor:pointer;display:flex;align-items:flex-end;padding:14px;overflow:hidden}
+.couverture.tiktok{background:radial-gradient(circle at 20% 20%,#25F4EE55,transparent 50%),radial-gradient(circle at 80% 80%,#FE2C5577,transparent 55%),#0d0d12}
+.couverture.instagram{background:linear-gradient(135deg,#feda75,#fa7e1e 25%,#d62976 50%,#962fbf 75%,#4f5bd5)}
+.couverture b{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;background:rgba(0,0,0,.55);padding:4px 9px;border-radius:8px}
+.couverture::after{content:"▶";position:absolute;inset:0;margin:auto;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;padding-left:4px;font-size:1.3rem;color:#fff;background:rgba(255,45,168,.85);box-shadow:0 0 30px rgba(255,45,168,.6)}
+.plateforme{font-weight:800}
 .regarder{background:none;border:1px solid var(--rose);color:var(--texte);border-radius:999px;padding:8px 16px;font-weight:700;font-size:.82rem;cursor:pointer;align-self:flex-start}
 #lecteur{position:fixed;inset:0;z-index:60;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(5,5,10,.86);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);perspective:1400px}
 #lecteur.ouvert{display:flex}
 #lecteur .cadre{width:min(960px,100%);animation:ouvrir .55s cubic-bezier(.2,.8,.2,1)}
 @keyframes ouvrir{from{transform:rotateX(35deg) translateZ(-300px) scale(.8);opacity:0}}
+#lecteur .cadre.vertical{width:min(400px,100%)}
+#lecteur .cadre.vertical iframe{aspect-ratio:9/16;max-height:78vh}
 #lecteur iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:14px;box-shadow:0 0 0 1px var(--ligne),0 30px 80px rgba(0,0,0,.7);background:#000}
 #lecteur .info{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px;font-size:.9rem}
 #lecteur .fermer{background:var(--rose);color:var(--noir);border:0;border-radius:999px;padding:9px 16px;font-weight:800;cursor:pointer;flex:none}
@@ -221,7 +229,8 @@ const ZONES = {
 };
 
 let ACTUS = [], ARMES = [], VEHS = [], VIDEOS = [];
-const etat = { rub:"actus", type:"tout", catV:"tout", classeA:"toutes", classeV:"toutes", triA:"nom", triV:"vitesse", zone:null, q:"" };
+const PLATEFORMES = { toutes:"Toutes plateformes", youtube:"▶ YouTube", tiktok:"♪ TikTok", instagram:"◎ Instagram" };
+const etat = { rub:"actus", type:"tout", catV:"tout", plat:"toutes", classeA:"toutes", classeV:"toutes", triA:"nom", triV:"vitesse", zone:null, q:"" };
 
 // ---------- briques d'affichage ----------
 function photo(chemin, nom, dossier){
@@ -271,14 +280,21 @@ function ficheVeh(v){
     ${v.ouTrouver?`<div class="infos">📍 ${esc(v.ouTrouver)}</div>`:""}${v.infos?`<div class="infos">${esc(v.infos)}</div>`:""}
     ${conflits(v.conflits)}${sources(v.sources)}</div></article>`;
 }
-const idOk = id => /^[A-Za-z0-9_-]{6,20}$/.test(id);
+const ID_OK = { youtube:/^[A-Za-z0-9_-]{11}$/, tiktok:/^\d{15,25}$/, instagram:/^[A-Za-z0-9_-]{5,20}$/ };
+const plat = v => v.plateforme || "youtube";
+const idOk = v => !!(ID_OK[plat(v)] && ID_OK[plat(v)].test(v.id));
+const cleV = v => plat(v) + ":" + v.id;
 function ficheVideo(v){
-  if (!idOk(v.id)) return "";
-  return `<article class="fiche"><div class="miniature" data-video="${v.id}"><img src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" alt="" loading="lazy"></div><div class="corps">
-    <div class="etiquettes"><span class="cat">${esc(CATS_VIDEO[v.categorie]||v.categorie)}</span><span class="date">${esc(dateCourte(v.date))}</span></div>
+  if (!idOk(v)) return "";
+  const p = plat(v), k = esc(cleV(v));
+  const visuel = p === "youtube"
+    ? `<div class="miniature" data-video="${k}"><img src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" alt="" loading="lazy"></div>`
+    : `<div class="couverture ${p}" data-video="${k}"><b>${p === "tiktok" ? "♪ TikTok" : "◎ Instagram"}</b></div>`;
+  return `<article class="fiche">${visuel}<div class="corps">
+    <div class="etiquettes"><span class="cat">${esc(CATS_VIDEO[v.categorie]||v.categorie)}</span><span class="plateforme">${esc(PLATEFORMES[p])}</span><span class="date">${esc(dateCourte(v.date))}</span></div>
     <h3>${esc(v.titre)}</h3>
     ${v.chaine?`<div class="infos">par ${esc(v.chaine)}${v.vues?` · ${Number(v.vues).toLocaleString("fr-BE")} vues`:""}</div>`:""}
-    <button class="regarder" data-video="${v.id}">▶ Regarder</button></div></article>`;
+    <button class="regarder" data-video="${k}">▶ Regarder</button></div></article>`;
 }
 function trier(liste, cle, nomCle){
   return [...liste].sort((a,b) => {
@@ -298,10 +314,11 @@ const RENDU = {
       + `<div class="grille">${l.length ? l.map(e => ficheActu(e, ACTUS[0]?.date)).join("") : vide("Rien de confirmé ici pour l'instant. Le robot vérifie les nouveautés chaque matin.")}</div>`;
   },
   videos(){
-    const l = VIDEOS.filter(v => (etat.catV==="tout" || v.categorie===etat.catV) && cherche(v.titre+" "+(v.chaine||"")));
+    const l = VIDEOS.filter(v => (etat.catV==="tout" || v.categorie===etat.catV) && (etat.plat==="toutes" || plat(v)===etat.plat) && cherche(v.titre+" "+(v.chaine||"")));
     return titre("Vidéos", `${VIDEOS.length} vidéos`) + outils("Rechercher une vidéo…")
       + pastilles(CATS_VIDEO, etat.catV, "data-cat-v", id => id==="tout" ? VIDEOS.length : VIDEOS.filter(v=>v.categorie===id).length)
-      + `<div class="regle">Vidéos de créateurs YouTube publiées depuis la sortie du jeu, triées par le robot chaque matin.</div>`
+      + pastilles(PLATEFORMES, etat.plat, "data-plat", id => id==="toutes" ? VIDEOS.length : VIDEOS.filter(v=>plat(v)===id).length)
+      + `<div class="regle">Vidéos YouTube, TikTok et Instagram publiées depuis la sortie du jeu, triées par le robot chaque matin.</div>`
       + `<div class="grille">${l.length ? l.map(ficheVideo).join("") : vide("Aucune vidéo dans cette catégorie pour l'instant.")}</div>`;
   },
   armes(){
@@ -360,11 +377,12 @@ document.querySelector(".barre").innerHTML = RUBRIQUES.map(btn).join("");
 // ---------- événements (un seul écouteur pour tout) ----------
 document.addEventListener("click", e => {
   if (e.target.closest("[data-fermer]") || e.target.id === "lecteur") return fermerVideo();
-  const t = e.target.closest("[data-video],[data-cat-v],[data-rub],[data-type],[data-classe-a],[data-classe-v],[data-zone],[data-go],.spoil .resume");
+  const t = e.target.closest("[data-video],[data-cat-v],[data-plat],[data-rub],[data-type],[data-classe-a],[data-classe-v],[data-zone],[data-go],.spoil .resume");
   if (!t) return;
   if (t.matches(".resume")) return t.closest(".fiche").classList.remove("spoil");
   if (t.dataset.video) return ouvrirVideo(t.dataset.video);
   if (t.dataset.catV) { etat.catV = t.dataset.catV; return afficher(); }
+  if (t.dataset.plat) { etat.plat = t.dataset.plat; return afficher(); }
   if (t.dataset.go) return scrollTo({ top: 0, behavior: "smooth" });
   if (t.dataset.rub) return aller(t.dataset.rub);
   if (t.dataset.type) { etat.type = t.dataset.type; return afficher(); }
@@ -378,12 +396,20 @@ document.addEventListener("input", e => {
   if (e.target.id === "triV") { etat.triV = e.target.value; afficher(); }
 });
 // lecteur vidéo intégré (YouTube sans cookies)
-function ouvrirVideo(id){
-  if (!idOk(id)) return;
-  const v = VIDEOS.find(x => x.id === id);
-  $("ifr").src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&playsinline=1`;
-  $("titreVideo").textContent = v ? v.titre : "";
-  $("lienYt").href = `https://www.youtube.com/watch?v=${id}`;
+const EMBED = {
+  youtube: id => `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&playsinline=1`,
+  tiktok: id => `https://www.tiktok.com/embed/v2/${id}`,
+  instagram: id => `https://www.instagram.com/reel/${id}/embed/`,
+};
+function ouvrirVideo(cle){
+  const v = VIDEOS.find(x => cleV(x) === cle);
+  if (!v || !idOk(v)) return;
+  const p = plat(v);
+  $("ifr").src = EMBED[p](v.id);
+  document.querySelector("#lecteur .cadre").classList.toggle("vertical", p !== "youtube");
+  $("titreVideo").textContent = v.titre;
+  $("lienYt").href = urlOk(v.url).replace(/&amp;/g,"&");
+  $("lienYt").textContent = `Ouvrir sur ${p === "youtube" ? "YouTube" : p === "tiktok" ? "TikTok" : "Instagram"} ↗`;
   $("lecteur").classList.add("ouvert");
 }
 function fermerVideo(){ $("lecteur").classList.remove("ouvert"); $("ifr").src = "about:blank"; }
@@ -411,7 +437,7 @@ Promise.all([frais("data/contenu.json"), frais("data/armes.json").catch(() => ({
     ACTUS = (c.entrees||[]).filter(e => e.statut === "confirme").sort((x,y) => y.date.localeCompare(x.date));
     ARMES = (a.armes||[]).filter(x => x.statut === "confirme");
     VEHS = (v.vehicules||[]).filter(x => x.statut === "confirme");
-    VIDEOS = (vid.videos||[]).filter(x => idOk(x.id)).sort((x,y) => y.date.localeCompare(x.date));
+    VIDEOS = (vid.videos||[]).filter(idOk).sort((x,y) => y.date.localeCompare(x.date));
     $("raccourcis").innerHTML = RUBRIQUES.map(r => `<button data-rub="${r.id}"><b>${r.icone}</b>${r.nom}<small>${{actus:ACTUS.length+" infos",videos:VIDEOS.length+" vidéos",armes:ARMES.length+" armes",vehicules:VEHS.length+" véhicules",carte:"5 comtés"}[r.id]}</small></button>`).join("");
     $("maj").innerHTML = `Dernière vérification : <b>${esc(dateCourte(c.derniereMaj))}</b>`;
     afficher();

@@ -2,13 +2,74 @@
  "derniereMaj": "2026-11-20T09:00:00.000Z",
  "videos": [
   {
+   "id": "7709707757007523102",
+   "plateforme": "tiktok",
+   "categorie": "secrets",
+   "titre": "Un crabe géant mutant attaque Jason",
+   "date": "2026-11-20",
+   "url": "https://www.tiktok.com/@nerpah/video/7709707757007523102",
+   "chaine": "@nerpah",
+   "vues": null
+  },
+  {
+   "id": "7709546367076617486",
+   "plateforme": "tiktok",
+   "categorie": "secrets",
+   "titre": "Où trouver l'easter egg de Bigfoot",
+   "date": "2026-11-20",
+   "url": "https://www.tiktok.com/@spectrexgaming/video/7709546367076617486",
+   "chaine": "@spectrexgaming",
+   "vues": null
+  },
+  {
+   "id": "7709593693392522518",
+   "plateforme": "tiktok",
+   "categorie": "secrets",
+   "titre": "Un vrai œuf de Pâques en haut d'une immense tour",
+   "date": "2026-11-20",
+   "url": "https://www.tiktok.com/@zonexbez/video/7709593693392522518",
+   "chaine": "@zonexbez",
+   "vues": null
+  },
+  {
+   "id": "7709590400104713503",
+   "plateforme": "tiktok",
+   "categorie": "secrets",
+   "titre": "Un clin d'œil à GTA 5 caché dans GTA 6",
+   "date": "2026-11-20",
+   "url": "https://www.tiktok.com/@hiddengamingdetails/video/7709590400104713503",
+   "chaine": "@hiddengamingdetails",
+   "vues": null
+  },
+  {
+   "id": "7709684305974398228",
+   "plateforme": "tiktok",
+   "categorie": "argent",
+   "titre": "Une astuce d'argent facile à faire avant qu'elle soit corrigée",
+   "date": "2026-11-20",
+   "url": "https://www.tiktok.com/@joeyrahmz/video/7709684305974398228",
+   "chaine": "@joeyrahmz",
+   "vues": null
+  },
+  {
+   "id": "7709620723135859982",
+   "plateforme": "tiktok",
+   "categorie": "argent",
+   "titre": "Plein d'argent vite : la planque du perroquet de Three Sheets Liquor",
+   "date": "2026-11-20",
+   "url": "https://www.tiktok.com/@mislead/video/7709620723135859982",
+   "chaine": "@mislead",
+   "vues": null
+  },
+  {
    "id": "UjmyH87Wvlk",
    "categorie": "argent",
    "titre": "Un perroquet en cage révèle une cachette d'argent",
    "date": "2026-11-20",
    "url": "https://www.youtube.com/watch?v=UjmyH87Wvlk",
    "chaine": null,
-   "vues": null
+   "vues": null,
+   "plateforme": "youtube"
   },
   {
    "id": "U1F8PpsmIQc",
@@ -17,7 +78,8 @@
    "date": "2026-11-20",
    "url": "https://www.youtube.com/watch?v=U1F8PpsmIQc",
    "chaine": null,
-   "vues": null
+   "vues": null,
+   "plateforme": "youtube"
   },
   {
    "id": "e1M1b9f6zcY",
@@ -26,7 +88,8 @@
    "date": "2026-11-19",
    "url": "https://www.youtube.com/watch?v=e1M1b9f6zcY",
    "chaine": null,
-   "vues": null
+   "vues": null,
+   "plateforme": "youtube"
   },
   {
    "id": "GDOev2tWm78",
@@ -35,7 +98,8 @@
    "date": "2026-11-20",
    "url": "https://www.youtube.com/watch?v=GDOev2tWm78",
    "chaine": null,
-   "vues": null
+   "vues": null,
+   "plateforme": "youtube"
   },
   {
    "id": "pVbVsinf_Ws",
@@ -44,7 +108,8 @@
    "date": "2026-11-19",
    "url": "https://www.youtube.com/watch?v=pVbVsinf_Ws",
    "chaine": null,
-   "vues": null
+   "vues": null,
+   "plateforme": "youtube"
   },
   {
    "id": "qOokbfrXah4",
@@ -53,7 +118,8 @@
    "date": "2026-11-19",
    "url": "https://www.youtube.com/watch?v=qOokbfrXah4",
    "chaine": null,
-   "vues": null
+   "vues": null,
+   "plateforme": "youtube"
   },
   {
    "id": "agyCOh4wCPk",
@@ -62,7 +128,8 @@
    "date": "2026-11-19",
    "url": "https://www.youtube.com/watch?v=agyCOh4wCPk",
    "chaine": null,
-   "vues": null
+   "vues": null,
+   "plateforme": "youtube"
   },
   {
    "id": "nOAb73vyEPw",
@@ -71,7 +138,8 @@
    "date": "2026-11-20",
    "url": "https://www.youtube.com/watch?v=nOAb73vyEPw",
    "chaine": null,
-   "vues": null
+   "vues": null,
+   "plateforme": "youtube"
   },
   {
    "id": "fcoIAqKoDZ8",
@@ -80,7 +148,8 @@
    "date": "2026-11-20",
    "url": "https://www.youtube.com/watch?v=fcoIAqKoDZ8",
    "chaine": null,
-   "vues": null
+   "vues": null,
+   "plateforme": "youtube"
   },
   {
    "id": "LiY1RXa9gGw",
@@ -89,7 +158,8 @@
    "date": "2026-11-20",
    "url": "https://www.youtube.com/watch?v=LiY1RXa9gGw",
    "chaine": null,
-   "vues": null
+   "vues": null,
+   "plateforme": "youtube"
   },
   {
    "id": "dRY6hMN63ic",
@@ -98,7 +168,8 @@
    "date": "2026-11-19",
    "url": "https://www.youtube.com/watch?v=dRY6hMN63ic",
    "chaine": null,
-   "vues": null
+   "vues": null,
+   "plateforme": "youtube"
   },
   {
    "id": "7V7zR22ZCW8",
@@ -107,7 +178,8 @@
    "date": "2026-11-19",
    "url": "https://www.youtube.com/watch?v=7V7zR22ZCW8",
    "chaine": null,
-   "vues": null
+   "vues": null,
+   "plateforme": "youtube"
   },
   {
    "id": "ZxhyI4QQgp8",
@@ -116,7 +188,8 @@
    "date": "2026-11-19",
    "url": "https://www.youtube.com/watch?v=ZxhyI4QQgp8",
    "chaine": null,
-   "vues": null
+   "vues": null,
+   "plateforme": "youtube"
   },
   {
    "id": "Mj_beVHUJE4",
@@ -125,7 +198,8 @@
    "date": "2026-11-19",
    "url": "https://www.youtube.com/watch?v=Mj_beVHUJE4",
    "chaine": null,
-   "vues": null
+   "vues": null,
+   "plateforme": "youtube"
   },
   {
    "id": "0t7bUWsUr-A",
@@ -134,7 +208,8 @@
    "date": "2026-11-20",
    "url": "https://www.youtube.com/watch?v=0t7bUWsUr-A",
    "chaine": null,
-   "vues": null
+   "vues": null,
+   "plateforme": "youtube"
   },
   {
    "id": "pPQWH2ELkgc",
@@ -143,7 +218,8 @@
    "date": "2026-11-20",
    "url": "https://www.youtube.com/watch?v=pPQWH2ELkgc",
    "chaine": null,
-   "vues": null
+   "vues": null,
+   "plateforme": "youtube"
   },
   {
    "id": "g6pNfpij-JE",
@@ -152,7 +228,8 @@
    "date": "2026-11-20",
    "url": "https://www.youtube.com/watch?v=g6pNfpij-JE",
    "chaine": null,
-   "vues": null
+   "vues": null,
+   "plateforme": "youtube"
   },
   {
    "id": "UOOoHDzfhWk",
@@ -161,7 +238,8 @@
    "date": "2026-11-20",
    "url": "https://www.youtube.com/watch?v=UOOoHDzfhWk",
    "chaine": null,
-   "vues": null
+   "vues": null,
+   "plateforme": "youtube"
   },
   {
    "id": "Ubp-TANAQ7c",
@@ -170,7 +248,8 @@
    "date": "2026-11-20",
    "url": "https://www.youtube.com/watch?v=Ubp-TANAQ7c",
    "chaine": null,
-   "vues": null
+   "vues": null,
+   "plateforme": "youtube"
   },
   {
    "id": "od4yuK67yhk",
@@ -179,7 +258,8 @@
    "date": "2026-11-20",
    "url": "https://www.youtube.com/watch?v=od4yuK67yhk",
    "chaine": null,
-   "vues": null
+   "vues": null,
+   "plateforme": "youtube"
   },
   {
    "id": "JeCMAeHbpKg",
@@ -188,7 +268,8 @@
    "date": "2026-11-20",
    "url": "https://www.youtube.com/watch?v=JeCMAeHbpKg",
    "chaine": null,
-   "vues": null
+   "vues": null,
+   "plateforme": "youtube"
   },
   {
    "id": "wBVbxswlJ4A",
@@ -197,7 +278,8 @@
    "date": "2026-11-19",
    "url": "https://www.youtube.com/watch?v=wBVbxswlJ4A",
    "chaine": null,
-   "vues": null
+   "vues": null,
+   "plateforme": "youtube"
   },
   {
    "id": "zzJrBYsV39Y",
@@ -206,7 +288,8 @@
    "date": "2026-11-19",
    "url": "https://www.youtube.com/watch?v=zzJrBYsV39Y",
    "chaine": null,
-   "vues": null
+   "vues": null,
+   "plateforme": "youtube"
   },
   {
    "id": "ypVh1fRq1AQ",
@@ -215,7 +298,8 @@
    "date": "2026-11-20",
    "url": "https://www.youtube.com/watch?v=ypVh1fRq1AQ",
    "chaine": null,
-   "vues": null
+   "vues": null,
+   "plateforme": "youtube"
   },
   {
    "id": "dJDf76QVv70",
@@ -224,7 +308,8 @@
    "date": "2026-11-19",
    "url": "https://www.youtube.com/watch?v=dJDf76QVv70",
    "chaine": null,
-   "vues": null
+   "vues": null,
+   "plateforme": "youtube"
   }
  ]
 }

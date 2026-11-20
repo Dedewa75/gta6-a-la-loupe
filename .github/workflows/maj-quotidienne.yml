@@ -24,21 +24,31 @@ jobs:
       url: ${{ steps.deploiement.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Un lien video a-t-il ete ajoute a la main ?
+        id: ajout
+        run: |
+          if [ "${{ github.event_name }}" = "push" ] && git diff --name-only HEAD~1 HEAD | grep -q "data/a-ajouter.txt"; then
+            echo "oui=true" >> "$GITHUB_OUTPUT"
+          fi
 
       - uses: actions/setup-node@v4
         with:
           node-version: 20
 
       - name: Scanner les actus et mettre a jour
-        if: github.event_name != 'push'
+        if: github.event_name != 'push' || steps.ajout.outputs.oui == 'true'
         continue-on-error: true   # si l'IA plante, le site reste quand meme en ligne
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-        run: node scripts/update.mjs
+        run: |
+          if [ "${{ steps.ajout.outputs.oui }}" = "true" ]; then node scripts/update.mjs videos; else node scripts/update.mjs; fi
 
       - name: Enregistrer les changements
-        if: github.event_name != 'push'
+        if: github.event_name != 'push' || steps.ajout.outputs.oui == 'true'
         run: |
           git config user.name "gta6-bot"
           git config user.email "gta6-bot@users.noreply.github.com"

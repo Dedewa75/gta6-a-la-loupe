@@ -459,11 +459,100 @@ Réponds UNIQUEMENT en JSON : {"videos":[{"i":0,"categorie":"armes","titre":"...
   console.log(`🎬 ${garde.length} vidéos ajoutées (total : ${data.videos.length})`);
 }
 
+// ---------- vidéos TikTok / Instagram / YouTube via Reddit + ajout manuel ----------
+const FICHIER_AJOUT = new URL("../data/a-ajouter.txt", import.meta.url);
+const ENTETE_AJOUT = `# Colle ici un lien de vidéo par ligne (YouTube, TikTok ou Instagram).
+# Tu peux ajouter la catégorie après une barre : argent, armes, secrets, vehicules, astuces
+# Exemple :
+# https://www.tiktok.com/@pseudo/video/1234567890123456789 | argent
+# Le robot les ajoute au site chaque matin, puis vide ce fichier.
+`;
+export function lireLien(url) {
+  const u = String(url).replace(/&amp;/g, "&");
+  let m;
+  if ((m = u.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/))) return { plateforme: "youtube", id: m[1], url: `https://www.youtube.com/watch?v=${m[1]}` };
+  if ((m = u.match(/tiktok\.com\/@([\w.]+)\/video\/(\d{15,25})/))) return { plateforme: "tiktok", id: m[2], url: `https://www.tiktok.com/@${m[1]}/video/${m[2]}`, chaine: "@" + m[1] };
+  if ((m = u.match(/instagram\.com\/(?:reels?|p)\/([A-Za-z0-9_-]{5,20})/))) return { plateforme: "instagram", id: m[1], url: `https://www.instagram.com/reel/${m[1]}/` };
+  return null;
+}
+async function resoudre(url) { // liens courts vm.tiktok.com → lien complet
+  if (!/\/\/(vm|vt)\.tiktok\.com\//.test(url)) return url;
+  try { const r = await fetch(url, { redirect: "follow", headers: { "User-Agent": "Mozilla/5.0" }, signal: AbortSignal.timeout(15000) }); return r.url; } catch { return url; }
+}
+async function infosOembed(v) {
+  const ep = v.plateforme === "youtube" ? `https://www.youtube.com/oembed?format=json&url=${encodeURIComponent(v.url)}`
+    : v.plateforme === "tiktok" ? `https://www.tiktok.com/oembed?url=${encodeURIComponent(v.url)}` : null;
+  if (!ep) return {};
+  try { const r = await fetch(ep, { signal: AbortSignal.timeout(15000) }); if (!r.ok) return {}; const j = await r.json(); return { titre: j.title, chaine: j.author_name }; } catch { return {}; }
+}
+
+export async function majVideosSociales() {
+  const data = JSON.parse(await readFile(FICHIER_VID, "utf8"));
+  const connues = new Set(data.videos.map((v) => (v.plateforme || "youtube") + ":" + v.id));
+  const aujourdhui = new Date().toISOString().slice(0, 10);
+  const candidats = [];
+
+  // 1) liens ajoutés à la main par Nathan (toujours acceptés)
+  let lignes = [];
+  try { lignes = (await readFile(FICHIER_AJOUT, "utf8")).split("\n").map((l) => l.trim()).filter((l) => l && !l.startsWith("#")); } catch {}
+  for (const l of lignes) {
+    const [lien, cat] = l.split("|").map((x) => x.trim());
+    const v = lireLien(await resoudre(lien));
+    if (!v) { console.log("⚠️ lien non reconnu :", lien); continue; }
+    candidats.push({ ...v, manuel: true, cat: CATS_VIDEO.includes(cat) ? cat : null });
+  }
+  // 2) liens partagés dans les posts populaires de Reddit
+  if (!MOCK) for (const flux of ["https://www.reddit.com/r/GTA6/top/.rss?t=day", "https://www.reddit.com/r/GTAVI/top/.rss?t=day"]) {
+    try {
+      const r = await fetch(flux, { headers: { "User-Agent": "Mozilla/5.0 (gta6-a-la-loupe bot)" }, signal: AbortSignal.timeout(20000) });
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      const xml = await r.text();
+      for (const m of xml.matchAll(/<entry[\s>][\s\S]*?<\/entry>/gi)) {
+        const titre = tag(m[0], "title");
+        const contenu = m[0].replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"');
+        for (const h of contenu.matchAll(/href="([^"]+)"/g)) { const v = lireLien(h[1]); if (v) candidats.push({ ...v, titreReddit: titre }); }
+      }
+    } catch (e) { console.log("⚠️ Reddit ignoré :", e.message); }
+  }
+  const vus = new Set();
+  const liste = candidats.filter((c) => { const k = c.plateforme + ":" + c.id; if (connues.has(k) || vus.has(k)) return false; vus.add(k); return true; });
+  if (!liste.length) return console.log("📱 aucune nouvelle vidéo TikTok/Instagram/Reddit");
+  for (const c of liste) Object.assign(c, Object.fromEntries(Object.entries(await infosOembed(c)).filter(([, x]) => x)));
+
+  // l'IA classe et traduit ; sans IA, on ne garde que les liens ajoutés à la main
+  let verdicts = null;
+  if (CLE || MOCK) {
+    try {
+      verdicts = await demanderIA(`Tu tries des vidéos pour un site de fans francophone de GTA 6 (sorti le 19 novembre 2026).
+Catégories : ${CATS_VIDEO.join(", ")} (argent = argent caché / gagner de l'argent ; armes = armes cachées ou gratuites ; secrets = easter eggs ; vehicules = véhicules rares ; astuces = conseils).
+Pour chaque vidéo : la catégorie qui correspond, ou null si ce n'est pas du contenu utile de GTA 6 (réaction, rumeur, mème, GTA 5…). Pour les vidéos marquées MANUEL, choisis toujours une catégorie.
+Donne un titre court en français avec TES mots (max 70 caractères).
+${liste.map((c, i) => `[${i}]${c.manuel ? " MANUEL" : ""} (${c.plateforme}) "${c.titre || c.titreReddit || "sans titre"}"${c.chaine ? " — " + c.chaine : ""}`).join("\n")}
+Réponds UNIQUEMENT en JSON : {"videos":[{"i":0,"categorie":"secrets","titre":"..."}]}`);
+    } catch (e) { console.log("⚠️ tri IA raté :", e.message); }
+  }
+  const ajout = [];
+  liste.forEach((c, i) => {
+    const v = verdicts?.videos?.find((x) => x.i === i);
+    const cat = c.cat || (CATS_VIDEO.includes(v?.categorie) ? v.categorie : null) || (c.manuel ? "secrets" : null);
+    if (!cat) return;
+    const t = v?.titre || c.titre || c.titreReddit || (c.plateforme === "instagram" ? "Reel Instagram GTA 6" : "Vidéo GTA 6");
+    ajout.push({ id: c.id, plateforme: c.plateforme, categorie: cat, titre: String(t).slice(0, 90), date: aujourdhui, url: c.url, chaine: c.chaine || null, vues: null });
+  });
+  data.videos = [...ajout, ...data.videos].slice(0, 400);
+  data.derniereMaj = new Date().toISOString();
+  await writeFile(FICHIER_VID, JSON.stringify(data, null, 1) + "\n");
+  if (lignes.length) await writeFile(FICHIER_AJOUT, ENTETE_AJOUT);
+  console.log(`📱 ${ajout.length} vidéos ajoutées (dont ${ajout.filter((x) => liste.find((c) => c.id === x.id)?.manuel).length} ajoutées à la main)`);
+}
+
 async function tout() {
   await principal();
   try { await majArmes(); } catch (e) { console.log("⚠️ mise à jour des armes ratée :", e.message); }
   try { await majVehicules(); } catch (e) { console.log("⚠️ mise à jour des véhicules ratée :", e.message); }
   try { await majVideos(); } catch (e) { console.log("⚠️ mise à jour des vidéos ratée :", e.message); }
+  try { await majVideosSociales(); } catch (e) { console.log("⚠️ vidéos TikTok/Instagram ratées :", e.message); }
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) tout().catch((e) => { console.error("❌", e); process.exit(1); });
+const SEUL_VIDEOS = process.argv[2] === "videos"; // lien ajouté à la main : on ne traite que les vidéos
+if (import.meta.url === `file://${process.argv[1]}`) (SEUL_VIDEOS ? majVideosSociales() : tout()).catch((e) => { console.error("❌", e); process.exit(1); });

@@ -1,0 +1,5 @@
+# Colle ici un lien de vidéo par ligne (YouTube, TikTok ou Instagram).
+# Tu peux ajouter la catégorie après une barre : argent, armes, secrets, vehicules, astuces
+# Exemple :
+# https://www.tiktok.com/@pseudo/video/1234567890123456789 | argent
+# Le robot les ajoute au site chaque matin, puis vide ce fichier.
