@@ -71,7 +71,9 @@ async function telecharger(url) {
 }
 
 // ---------- IA Gemini ----------
-const MODELES = (process.env.GEMINI_MODEL || "gemini-flash-latest,gemini-2.5-flash,gemini-2.0-flash").split(",");
+const MODELES = (process.env.GEMINI_MODEL || "gemini-3.8-flash,gemini-flash-latest,gemini-flash-lite-latest").split(",");
+const pause = (ms) => new Promise((r) => setTimeout(r, ms));
+const SURCHARGE = /high demand|overloaded|unavailable|try again|503|429|rate|quota/i;
 
 function consigne(liste, enAttente = []) {
   return `Tu es le rédacteur d'un site de fans francophone NON OFFICIEL sur GTA 6 (Grand Theft Auto VI, sorti le 19 novembre 2026 sur PS5 et Xbox Series X|S, État de Leonida).
@@ -104,24 +106,29 @@ async function demanderIA(texte) {
   if (MOCK) return JSON.parse(await readFile(new URL("../test/reponse-ia.json", import.meta.url), "utf8"));
   let derniere;
   for (const modele of MODELES) {
-    try {
-      const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${modele.trim()}:generateContent`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "x-goog-api-key": CLE },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: texte }] }],
-          generationConfig: { responseMimeType: "application/json", temperature: 0.2 },
-        }),
-        signal: AbortSignal.timeout(120000),
-      });
-      const j = await r.json();
-      if (!r.ok) throw new Error(j.error?.message || "HTTP " + r.status);
-      const brut = j.candidates?.[0]?.content?.parts?.map((p) => p.text).join("") || "{}";
-      console.log("🤖 modèle utilisé :", modele);
-      return JSON.parse(brut.replace(/^```json|```$/g, "").trim());
-    } catch (e) {
-      derniere = e;
-      console.log("⚠️ modèle", modele, "indisponible :", e.message);
+    for (let essai = 1; essai <= 3; essai++) {
+      try {
+        const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${modele.trim()}:generateContent`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "x-goog-api-key": CLE },
+          body: JSON.stringify({
+            contents: [{ parts: [{ text: texte }] }],
+            generationConfig: { responseMimeType: "application/json", temperature: 0.2 },
+          }),
+          signal: AbortSignal.timeout(120000),
+        });
+        const j = await r.json();
+        if (!r.ok) throw new Error(j.error?.message || "HTTP " + r.status);
+        const brut = j.candidates?.[0]?.content?.parts?.map((p) => p.text).join("") || "{}";
+        console.log("🤖 modèle utilisé :", modele);
+        return JSON.parse(brut.replace(/^```json|```$/g, "").trim());
+      } catch (e) {
+        derniere = e;
+        const reessayer = SURCHARGE.test(e.message) && essai < 3;
+        console.log(`⚠️ modèle ${modele} (essai ${essai}) :`, e.message.slice(0, 140));
+        if (!reessayer) break;           // modèle inexistant → on passe au suivant
+        await pause(essai * 20000);      // surchargé → on attend 20 s puis 40 s
+      }
     }
   }
   throw derniere;
@@ -604,7 +611,7 @@ Réponds UNIQUEMENT en JSON : {"videos":[{"i":0,"categorie":"secrets","titre":".
 }
 
 async function tout() {
-  await principal();
+  try { await principal(); } catch (e) { console.log("⚠️ mise à jour des actus ratée :", e.message); }
   try { await majArmes(); } catch (e) { console.log("⚠️ mise à jour des armes ratée :", e.message); }
   try { await majVehicules(); } catch (e) { console.log("⚠️ mise à jour des véhicules ratée :", e.message); }
   try { await majVideos(); } catch (e) { console.log("⚠️ mise à jour des vidéos ratée :", e.message); }
