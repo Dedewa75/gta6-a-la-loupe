@@ -1,5 +1,5 @@
 {
- "derniereMaj": "2026-11-20T08:30:00.000Z",
+ "derniereMaj": "2026-11-20T20:26:22.577Z",
  "note": "Chaque chiffre affiché est confirmé par au moins 2 sites indépendants. « ? » = pas encore confirmé.",
  "armes": [
   {
@@ -10,13 +10,16 @@
    "maniabilite": 8.4,
    "portee": 4.4,
    "prix": 700,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": 15,
-   "infos": "Pistolet de Jason. L'Ultimate Edition ajoute une version gravée.",
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Chuck's Tackle & Shot selon les sites",
+    "infos : Pistolet de Jason. L'Ultimate Edition ajoute une version gravée. ou Le pistolet de base attribué à Jason, également disponible dans une version gravée de l'Ultimate Edition. selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -37,24 +40,75 @@
     {
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "4.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "5.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "8.4": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "4.4": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "700": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Chuck's Tackle & Shot\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Le pistolet de base attribué à Jason, également disponible dans une version gravée de l'Ultimate Edition.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Klose K17",
    "classe": "pistolets",
-   "degats": 4.0,
+   "degats": 4,
    "precision": 4.2,
    "maniabilite": 8.5,
    "portee": 3.8,
    "prix": 975,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": 17,
-   "infos": "Pistolet de Lucia. L'Ultimate Edition ajoute une version gravée.",
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Chuck's Tackle & Shot selon les sites",
+    "infos : Pistolet de Lucia. L'Ultimate Edition ajoute une version gravée. ou Le pistolet de service de Lucia, qui possède une variante personnalisée dans l'édition ultime. selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -79,24 +133,75 @@
     {
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "4": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "4.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "8.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "3.8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "975": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Chuck's Tackle & Shot\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Le pistolet de service de Lucia, qui possède une variante personnalisée dans l'édition ultime.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Mahi Nipper .38",
    "classe": "pistolets",
-   "degats": null,
-   "precision": null,
-   "maniabilite": null,
-   "portee": null,
+   "degats": 2.8,
+   "precision": 3,
+   "maniabilite": 9,
+   "portee": 3,
    "prix": 1160,
-   "ouAcheter": "Chuck's Tackle & Shot uniquement (payé par la banque)",
+   "ouAcheter": null,
    "chargeur": null,
-   "infos": "Variante unique verte et rouge du Nipper .38, payée depuis le compte en banque. À ne pas confondre avec le Scorpio Nipper .38.",
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Chuck's Tackle & Shot uniquement (payé par la banque) ou Chuck's Tackle & Shot selon les sites",
+    "infos : Variante unique verte et rouge du Nipper .38, payée depuis le compte en banque. À ne pas confondre avec le Scorpio Nipper .38. ou Une variante unique aux couleurs rouge et verte du pistolet Nipper. selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -109,24 +214,75 @@
     {
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "2.8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "3": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "9": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "3": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "1160": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Chuck's Tackle & Shot\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Une variante unique aux couleurs rouge et verte du pistolet Nipper.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Girardi ES18",
    "classe": "pistolets",
    "degats": 4.2,
-   "precision": null,
-   "maniabilite": null,
+   "precision": 4.6,
+   "maniabilite": 7.7,
    "portee": 4.8,
    "prix": 1550,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": null,
-   "infos": "Pistolet à rafale de 3 coups.",
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Prestige Firearms selon les sites",
+    "infos : Pistolet à rafale de 3 coups. ou Un pistolet semi-automatique capable de tirs en rafales. selon les sites"
+   ],
    "sources": [
     {
      "nom": "Heist Lounge",
@@ -144,23 +300,70 @@
      "nom": "DayOne",
      "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "4.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "4.6": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "7.7": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "4.8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "1550": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Prestige Firearms\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un pistolet semi-automatique capable de tirs en rafales.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Fairview Kalinga .50",
    "classe": "pistolets",
-   "degats": 7.0,
-   "precision": 4.0,
+   "degats": 7,
+   "precision": 4,
    "maniabilite": 7.8,
-   "portee": 5.0,
+   "portee": 5,
    "prix": 3100,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": 7,
-   "infos": "Le pistolet le plus cher, et celui qui fait le plus de dégâts.",
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Prestige Firearms selon les sites",
+    "infos : Le pistolet le plus cher, et celui qui fait le plus de dégâts. ou Une arme de poing chambrée en .50 pour des performances balistiques accrues. selon les sites"
+   ],
    "sources": [
     {
      "nom": "MetaForge",
@@ -186,23 +389,69 @@
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "7": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "4": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "7.8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "3100": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Prestige Firearms\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Une arme de poing chambrée en .50 pour des performances balistiques accrues.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Kozlov Hind",
    "classe": "fusils-assaut",
    "degats": 5.4,
    "precision": 3.5,
-   "maniabilite": null,
+   "maniabilite": 7.1,
    "portee": 4.5,
    "prix": 1700,
-   "ouAcheter": null,
+   "ouAcheter": "Magasin d'armes",
    "chargeur": 30,
-   "infos": "Version raccourcie du KZ-59.",
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "infos : Version raccourcie du KZ-59. ou Un fusil d'assaut compact proposé à un tarif intermédiaire. selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -224,23 +473,70 @@
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "5.4": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "3.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "7.1": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "4.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "1700": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Magasin d'armes\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un fusil d'assaut compact proposé à un tarif intermédiaire.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Duke 556",
    "classe": "fusils-assaut",
-   "degats": 5.0,
-   "precision": 6.0,
+   "degats": 5,
+   "precision": 6,
    "maniabilite": 5.8,
    "portee": 6.2,
    "prix": 1450,
-   "ouAcheter": "Chuck's Tackle & Shot / Big Shots",
+   "ouAcheter": null,
    "chargeur": 30,
-   "infos": "Disponible tôt, aucune stat faible.",
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Chuck's Tackle & Shot / Big Shots ou Chuck's Tackle & Shot selon les sites",
+    "infos : Disponible tôt, aucune stat faible. ou Un fusil de type carbine fréquemment utilisé par le personnage principal. selon les sites"
+   ],
    "sources": [
     {
      "nom": "MetaForge",
@@ -266,7 +562,51 @@
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "6": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "5.8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "6.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "1450": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Chuck's Tackle & Shot\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un fusil de type carbine fréquemment utilisé par le personnage principal.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Wortham W-14",
@@ -276,13 +616,15 @@
    "maniabilite": 5.2,
    "portee": 7.2,
    "prix": 1400,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": 20,
-   "infos": null,
+   "infos": "Un fusil de combat polyvalent offrant une bonne portée et une précision accrue.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Chuck's Tackle & Shot selon les sites"
+   ],
    "sources": [
     {
      "nom": "MetaForge",
@@ -308,23 +650,69 @@
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "5.8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "7.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "5.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "7.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "1400": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Chuck's Tackle & Shot\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un fusil de combat polyvalent offrant une bonne portée et une précision accrue.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Shrewsbury Drifter",
    "classe": "fusils-a-pompe",
-   "degats": 8.0,
+   "degats": 8,
    "precision": 4.1,
-   "maniabilite": 5.0,
+   "maniabilite": 5,
    "portee": 2.5,
    "prix": 1150,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": 2,
-   "infos": null,
+   "infos": "Un fusil à double canon traditionnel infligeant de lourds dégâts à courte portée.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Chuck's Tackle & Shot selon les sites"
+   ],
    "sources": [
     {
      "nom": "MetaForge",
@@ -350,7 +738,51 @@
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "4.1": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "2.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "1150": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Chuck's Tackle & Shot\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un fusil à double canon traditionnel infligeant de lourds dégâts à courte portée.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Fortune & Son Laird 350",
@@ -358,15 +790,18 @@
    "degats": 6.5,
    "precision": 8.8,
    "maniabilite": 3.6,
-   "portee": null,
+   "portee": 8.4,
    "prix": 950,
-   "ouAcheter": "Ammu-Nation (magasins agrandis)",
+   "ouAcheter": null,
    "chargeur": null,
-   "infos": "Le sniper le moins cher, et l'arme la plus précise.",
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation (magasins agrandis) ou Chuck's Tackle & Shot selon les sites",
+    "infos : Le sniper le moins cher, et l'arme la plus précise. ou Un fusil de précision sportif affichant le taux de précision le plus élevé des armes mesurées. selon les sites"
+   ],
    "sources": [
     {
      "nom": "eGamers",
@@ -391,24 +826,74 @@
     {
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "6.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "8.8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "3.6": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "8.4": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "950": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Chuck's Tackle & Shot\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un fusil de précision sportif affichant le taux de précision le plus élevé des armes mesurées.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Shrewsbury SM-69",
    "classe": "snipers",
    "degats": 6.8,
    "precision": 8.4,
-   "maniabilite": null,
+   "maniabilite": 3.1,
    "portee": 8.4,
    "prix": 1850,
-   "ouAcheter": "Ammu-Nation (magasins agrandis)",
+   "ouAcheter": null,
    "chargeur": 5,
-   "infos": null,
+   "infos": "Un fusil de sniper orienté vers la chasse et les tirs de précision.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation (magasins agrandis) ou Iron & Oak selon les sites"
+   ],
    "sources": [
     {
      "nom": "eGamers",
@@ -434,23 +919,70 @@
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "6.8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "8.4": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "3.1": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "8.4": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "1850": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un fusil de sniper orienté vers la chasse et les tirs de précision.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Shrewsbury SMS-01",
    "classe": "snipers",
-   "degats": null,
+   "degats": 6.8,
    "precision": 8.6,
-   "maniabilite": null,
+   "maniabilite": 3.3,
    "portee": 8.4,
    "prix": 2150,
-   "ouAcheter": "Débloqué après la 9e quête de chasse de Bret",
+   "ouAcheter": null,
    "chargeur": null,
-   "infos": "Se débloque aussi en terminant la 9e quête de chasse de Bret.",
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Débloqué après la 9e quête de chasse de Bret ou Iron & Oak selon les sites",
+    "infos : Se débloque aussi en terminant la 9e quête de chasse de Bret. ou Un fusil de précision avancé offrant une excellente précision globale. selon les sites"
+   ],
    "sources": [
     {
      "nom": "eGamers",
@@ -472,23 +1004,69 @@
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "6.8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "8.6": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "3.3": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "8.4": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "2150": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un fusil de précision avancé offrant une excellente précision globale.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Fairview FF-SR",
    "classe": "snipers",
-   "degats": 8.0,
-   "precision": null,
-   "maniabilite": null,
-   "portee": null,
+   "degats": 8,
+   "precision": 8.3,
+   "maniabilite": 2.9,
+   "portee": 8.4,
    "prix": 2950,
-   "ouAcheter": "Ammu-Nation (magasins agrandis)",
+   "ouAcheter": null,
    "chargeur": 10,
-   "infos": null,
+   "infos": "Un fusil de précision militaire à verrou axé sur la précision à longue distance.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation (magasins agrandis) ou Iron & Oak selon les sites"
+   ],
    "sources": [
     {
      "nom": "eGamers",
@@ -510,7 +1088,51 @@
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "8.3": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "2.9": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "8.4": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "2950": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un fusil de précision militaire à verrou axé sur la précision à longue distance.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Fairview FF-50",
@@ -520,13 +1142,16 @@
    "maniabilite": 2.5,
    "portee": 8.5,
    "prix": 3975,
-   "ouAcheter": "Ammu-Nation (magasins agrandis)",
+   "ouAcheter": null,
    "chargeur": 5,
-   "infos": "L'arme non explosive qui fait le plus de dégâts.",
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation (magasins agrandis) ou Iron & Oak selon les sites",
+    "infos : L'arme non explosive qui fait le plus de dégâts. ou Un fusil de sniper lourd de grande puissance avec une excellente portée. selon les sites"
+   ],
    "sources": [
     {
      "nom": "eGamers",
@@ -556,23 +1181,70 @@
      "nom": "MeowDB",
      "url": "https://meowdb.com/gta6/weapons"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "8.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "7.8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "2.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "8.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "3975": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un fusil de sniper lourd de grande puissance avec une excellente portée.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "ADB M350",
    "classe": "lourdes",
    "degats": 6.5,
-   "precision": 3.0,
+   "precision": 3,
    "maniabilite": 3.2,
    "portee": 6.2,
    "prix": 10000,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": 100,
-   "infos": "Mitrailleuse.",
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites",
+    "infos : Mitrailleuse. ou Une mitrailleuse de combat lourde dotée d'une portée correcte mais d'une maniabilité assez faible. selon les sites"
+   ],
    "sources": [
     {
      "nom": "GTA6DB",
@@ -598,23 +1270,70 @@
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "6.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "3": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "3.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "6.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "10000": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Une mitrailleuse de combat lourde dotée d'une portée correcte mais d'une maniabilité assez faible.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Hillinger Boomer",
    "classe": "lourdes",
    "degats": 9.2,
-   "precision": 5.0,
-   "maniabilite": 6.0,
-   "portee": 4.0,
+   "precision": 5,
+   "maniabilite": 6,
+   "portee": 4,
    "prix": 12000,
-   "ouAcheter": "Ammu-Nation (magasins agrandis)",
+   "ouAcheter": null,
    "chargeur": null,
-   "infos": "Lance-grenades.",
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation (magasins agrandis) ou Iron & Oak selon les sites",
+    "infos : Lance-grenades. ou Un lance-grenades compact infligeant les dégâts les plus élevés recensés pour une arme avec statistiques. selon les sites"
+   ],
    "sources": [
     {
      "nom": "eGamers",
@@ -644,15 +1363,59 @@
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "9.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "6": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "4": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "12000": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un lance-grenades compact infligeant les dégâts les plus élevés recensés pour une arme avec statistiques.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Deever Tech GLR40",
    "classe": "lourdes",
    "degats": 9.2,
-   "precision": 6.0,
-   "maniabilite": 5.0,
-   "portee": 4.0,
+   "precision": 6,
+   "maniabilite": 5,
+   "portee": 4,
    "prix": 15500,
    "ouAcheter": "Ammu-Nation (magasins agrandis) — ou gratuit dans la réserve du Sunrise Motel",
    "chargeur": 6,
@@ -809,16 +1572,19 @@
    "classe": "pistolets",
    "degats": 5.5,
    "precision": 4.8,
-   "maniabilite": 8.0,
+   "maniabilite": 8,
    "portee": 4.6,
    "prix": 1050,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": 8,
-   "infos": "Pistolet lourd.",
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Chuck's Tackle & Shot selon les sites",
+    "infos : Pistolet lourd. ou Un pistolet lourd classique dont l'achat peut être réglé directement via un compte bancaire. selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -840,23 +1606,70 @@
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "5.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "4.8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "4.6": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "1050": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Chuck's Tackle & Shot\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un pistolet lourd classique dont l'achat peut être réglé directement via un compte bancaire.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Klose K17 MCD",
    "classe": "pistolets",
-   "degats": 4.0,
+   "degats": 4,
    "precision": 3.2,
-   "maniabilite": null,
+   "maniabilite": 7.7,
    "portee": 4.2,
    "prix": 1700,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": 24,
-   "infos": "Version entièrement automatique du K17, moins précise.",
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Prestige Firearms selon les sites",
+    "infos : Version entièrement automatique du K17, moins précise. ou Une variante automatique du K17 tirant en rafales libres depuis un chargeur étendu. selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -874,23 +1687,76 @@
      "nom": "DayOne",
      "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "4": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "3.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "7.7": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "4.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "1700": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "chargeur": {
+     "24": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Prestige Firearms\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Une variante automatique du K17 tirant en rafales libres depuis un chargeur étendu.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Scorpio Nipper .38",
    "classe": "pistolets",
    "degats": 2.8,
-   "precision": 3.0,
-   "maniabilite": 9.0,
-   "portee": 3.0,
+   "precision": 3,
+   "maniabilite": 9,
+   "portee": 3,
    "prix": 550,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": null,
-   "infos": "Le pistolet le moins cher.",
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Chuck's Tackle & Shot selon les sites",
+    "infos : Le pistolet le moins cher. ou Un pistolet compact économique aux dégâts limités mais doté d'une prise en main maximale. selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -912,7 +1778,51 @@
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "2.8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "3": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "9": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "3": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "550": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Chuck's Tackle & Shot\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un pistolet compact économique aux dégâts limités mais doté d'une prise en main maximale.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "The Silver 1922",
@@ -945,54 +1855,103 @@
    "classe": "revolvers",
    "degats": 5.7,
    "precision": 4.5,
-   "maniabilite": 8.0,
+   "maniabilite": 8,
    "portee": 5.5,
    "prix": 1800,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
+   "chargeur": 6,
+   "infos": "Un puissant revolver de type magnum affichant le nom du modèle sur le canon.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites"
+   ],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    }
+   ],
+   "candidats": {
+    "degats": {
+     "5.7": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "4.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "5.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "1800": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un puissant revolver de type magnum affichant le nom du modèle sur le canon.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
+  },
+  {
+   "nom": "Scorpio Akulus",
+   "classe": "revolvers",
+   "degats": 7,
+   "precision": 4.2,
+   "maniabilite": 7.6,
+   "portee": 6,
+   "prix": 3000,
+   "ouAcheter": null,
    "chargeur": 6,
    "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "MeowDB",
-     "url": "https://meowdb.com/gta6/weapons"
-    },
-    {
-     "nom": "Heist Lounge",
-     "url": "https://heistlounge.com/tools/weapons"
-    },
-    {
-     "nom": "GTA6DB",
-     "url": "https://gta6db.io/weapons"
-    },
-    {
-     "nom": "AOEAH",
-     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
-    },
-    {
-     "nom": "DayOne",
-     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
-    }
-   ]
-  },
-  {
-   "nom": "Scorpio Akulus",
-   "classe": "revolvers",
-   "degats": 7.0,
-   "precision": 4.2,
-   "maniabilite": 7.6,
-   "portee": 6.0,
-   "prix": 3000,
-   "ouAcheter": "Ammu-Nation",
-   "chargeur": 6,
-   "infos": "Le revolver qui fait le plus de dégâts.",
-   "ameliorations": [],
-   "image": null,
-   "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites",
+    "infos : Le revolver qui fait le plus de dégâts. ou Un modèle de revolver lourd offrant une bonne portée et des dégâts conséquents. selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -1014,23 +1973,69 @@
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "7": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "4.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "7.6": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "6": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "3000": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un modèle de revolver lourd offrant une bonne portée et des dégâts conséquents.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Wortham WCR1",
    "classe": "revolvers",
    "degats": 2.2,
    "precision": 3.8,
-   "maniabilite": 9.0,
+   "maniabilite": 9,
    "portee": 4.5,
    "prix": 600,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": null,
-   "infos": null,
+   "infos": "Un petit revolver léger qui partage la meilleure maniabilité du jeu malgré de faibles dégâts.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Martez Empeños selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -1048,23 +2053,69 @@
      "nom": "DayOne",
      "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "2.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "3.8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "9": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "4.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "600": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Martez Empeños\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un petit revolver léger qui partage la meilleure maniabilité du jeu malgré de faibles dégâts.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Hawk & Little .38",
    "classe": "revolvers",
    "degats": 2.5,
-   "precision": 5.0,
+   "precision": 5,
    "maniabilite": 8.6,
    "portee": 4.5,
    "prix": 1075,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": null,
-   "infos": null,
+   "infos": "Un revolver à double action axé sur la maniabilité.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -1082,7 +2133,51 @@
      "nom": "DayOne",
      "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "2.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "8.6": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "4.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "1075": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un revolver à double action axé sur la maniabilité.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Wortham W-10",
@@ -1092,13 +2187,16 @@
    "maniabilite": 7.5,
    "portee": 3.5,
    "prix": 825,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": null,
-   "infos": "La mitraillette la moins chère.",
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Big Shots selon les sites",
+    "infos : La mitraillette la moins chère. ou Une mini-mitraillette compacte très maniable vendue à bas prix. selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -1120,7 +2218,51 @@
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "4.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "3.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "7.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "3.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "825": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Big Shots\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Une mini-mitraillette compacte très maniable vendue à bas prix.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Zhang Wu Type 9",
@@ -1130,13 +2272,15 @@
    "maniabilite": 7.8,
    "portee": 3.5,
    "prix": 1100,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": null,
-   "infos": null,
+   "infos": "Un pistolet mitrailleur léger et très maniable.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -1158,7 +2302,51 @@
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "4.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "3.8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "7.8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "3.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "1100": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un pistolet mitrailleur léger et très maniable.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Schlamm DW-9",
@@ -1166,15 +2354,17 @@
    "degats": 4.2,
    "precision": 4.5,
    "maniabilite": 6.8,
-   "portee": 4.0,
+   "portee": 4,
    "prix": 1750,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": 30,
-   "infos": null,
+   "infos": "Une mitraillette de combat polyvalente pour les affrontements rapprochés.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -1196,23 +2386,69 @@
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "4.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "4.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "6.8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "4": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "1750": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Une mitraillette de combat polyvalente pour les affrontements rapprochés.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Vom Feuer VF5",
    "classe": "mitraillettes",
    "degats": 4.2,
-   "precision": 5.0,
+   "precision": 5,
    "maniabilite": 6.7,
    "portee": 4.5,
    "prix": 2325,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": 30,
-   "infos": null,
+   "infos": "Une mitraillette militaire de marque Vom Feuer repérée lors de l'achat en magasin.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -1234,23 +2470,70 @@
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "4.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "6.7": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "4.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "2325": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Une mitraillette militaire de marque Vom Feuer repérée lors de l'achat en magasin.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Vom Feuer VF5C",
    "classe": "mitraillettes",
    "degats": 4.2,
-   "precision": null,
-   "maniabilite": null,
-   "portee": 4.0,
+   "precision": 4,
+   "maniabilite": 7.9,
+   "portee": 4,
    "prix": 2600,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": null,
-   "infos": "Version compacte de la VF5.",
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites",
+    "infos : Version compacte de la VF5. ou Une version compacte et militaire de la mitraillette Vom Feuer. selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -1268,7 +2551,51 @@
      "nom": "DayOne",
      "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "4.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "4": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "7.9": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "4": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "2600": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Une version compacte et militaire de la mitraillette Vom Feuer.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "ADB PD-90",
@@ -1278,127 +2605,270 @@
    "maniabilite": 6.6,
    "portee": 4.2,
    "prix": 3350,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": 30,
-   "infos": "La mitraillette la plus chère.",
-   "ameliorations": [],
-   "image": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "MeowDB",
-     "url": "https://meowdb.com/gta6/weapons"
-    },
-    {
-     "nom": "Heist Lounge",
-     "url": "https://heistlounge.com/tools/weapons"
-    },
-    {
-     "nom": "GTA6DB",
-     "url": "https://gta6db.io/weapons"
-    },
-    {
-     "nom": "DayOne",
-     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
-    },
-    {
-     "nom": "AOEAH",
-     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
-    }
-   ]
-  },
-  {
-   "nom": "Shrewsbury Hobo",
-   "classe": "fusils-a-pompe",
-   "degats": 8.0,
-   "precision": 3.6,
-   "maniabilite": 6.4,
-   "portee": 2.0,
-   "prix": 1325,
-   "ouAcheter": "Ammu-Nation",
-   "chargeur": 2,
-   "infos": "Fusil à canon scié.",
-   "ameliorations": [],
-   "image": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "MeowDB",
-     "url": "https://meowdb.com/gta6/weapons"
-    },
-    {
-     "nom": "Heist Lounge",
-     "url": "https://heistlounge.com/tools/weapons"
-    },
-    {
-     "nom": "GTA6DB",
-     "url": "https://gta6db.io/weapons"
-    },
-    {
-     "nom": "DayOne",
-     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
-    },
-    {
-     "nom": "AOEAH",
-     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
-    }
-   ]
-  },
-  {
-   "nom": "Mason & Keen Longshot",
-   "classe": "fusils-a-pompe",
-   "degats": 8.0,
-   "precision": 4.1,
-   "maniabilite": 5.0,
-   "portee": 2.5,
-   "prix": 1425,
-   "ouAcheter": "Ammu-Nation",
-   "chargeur": 2,
-   "infos": "Fusil de chasse à canons basculants.",
-   "ameliorations": [],
-   "image": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "MeowDB",
-     "url": "https://meowdb.com/gta6/weapons"
-    },
-    {
-     "nom": "Heist Lounge",
-     "url": "https://heistlounge.com/tools/weapons"
-    },
-    {
-     "nom": "GTA6DB",
-     "url": "https://gta6db.io/weapons"
-    },
-    {
-     "nom": "DayOne",
-     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
-    },
-    {
-     "nom": "AOEAH",
-     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
-    }
-   ]
-  },
-  {
-   "nom": "Mason & Keen Shortstraw",
-   "classe": "fusils-a-pompe",
-   "degats": 8.0,
-   "precision": 3.6,
-   "maniabilite": 6.4,
-   "portee": 2.0,
-   "prix": 1625,
-   "ouAcheter": "Ammu-Nation",
-   "chargeur": null,
    "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites",
+    "infos : La mitraillette la plus chère. ou Une mitraillette d'assaut moderne et performante. selon les sites"
+   ],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    }
+   ],
+   "candidats": {
+    "degats": {
+     "4.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "4.8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "6.6": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "4.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "3350": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Une mitraillette d'assaut moderne et performante.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
+  },
+  {
+   "nom": "Shrewsbury Hobo",
+   "classe": "fusils-a-pompe",
+   "degats": 8,
+   "precision": 3.6,
+   "maniabilite": 6.4,
+   "portee": 2,
+   "prix": 1325,
+   "ouAcheter": null,
+   "chargeur": 2,
+   "infos": null,
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Chuck's Tackle & Shot selon les sites",
+    "infos : Fusil à canon scié. ou Une version sciée du double canon favorisant la maniabilité au détriment de la portée. selon les sites"
+   ],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    }
+   ],
+   "candidats": {
+    "degats": {
+     "8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "3.6": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "6.4": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "1325": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Chuck's Tackle & Shot\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Une version sciée du double canon favorisant la maniabilité au détriment de la portée.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
+  },
+  {
+   "nom": "Mason & Keen Longshot",
+   "classe": "fusils-a-pompe",
+   "degats": 8,
+   "precision": 4.1,
+   "maniabilite": 5,
+   "portee": 2.5,
+   "prix": 1425,
+   "ouAcheter": null,
+   "chargeur": 2,
+   "infos": null,
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites",
+    "infos : Fusil de chasse à canons basculants. ou Un fusil de chasse à bascule destiné aux tirs sportifs. selon les sites"
+   ],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    }
+   ],
+   "candidats": {
+    "degats": {
+     "8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "4.1": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "2.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "1425": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un fusil de chasse à bascule destiné aux tirs sportifs.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
+  },
+  {
+   "nom": "Mason & Keen Shortstraw",
+   "classe": "fusils-a-pompe",
+   "degats": 8,
+   "precision": 3.6,
+   "maniabilite": 6.4,
+   "portee": 2,
+   "prix": 1625,
+   "ouAcheter": null,
+   "chargeur": null,
+   "infos": "Une version de chasse raccourcie pour une utilisation à bout portant.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -1416,7 +2886,51 @@
      "nom": "DayOne",
      "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "3.6": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "6.4": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "1625": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Une version de chasse raccourcie pour une utilisation à bout portant.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Girardi AZ1200",
@@ -1426,13 +2940,16 @@
    "maniabilite": 5.8,
    "portee": 2.5,
    "prix": 2300,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": null,
-   "infos": "Semi-automatique. La version déjà améliorée coûte 3 460 $.",
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites",
+    "infos : Semi-automatique. La version déjà améliorée coûte 3 460 $. ou Un fusil à pompe semi-automatique de conception Girardi. selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -1450,7 +2967,51 @@
      "nom": "DayOne",
      "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "7.4": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "4.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "5.8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "2.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "2300": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un fusil à pompe semi-automatique de conception Girardi.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Girardi Verro",
@@ -1458,15 +3019,18 @@
    "degats": 7.4,
    "precision": 3.9,
    "maniabilite": 6.5,
-   "portee": 2.0,
+   "portee": 2,
    "prix": 2700,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": null,
-   "infos": "Semi-automatique.",
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites",
+    "infos : Semi-automatique. ou Un fusil à pompe court semi-automatique axé sur le combat rapproché. selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -1484,7 +3048,51 @@
      "nom": "DayOne",
      "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "7.4": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "3.9": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "6.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "2700": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un fusil à pompe court semi-automatique axé sur le combat rapproché.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Kozlov KZ-59",
@@ -1494,13 +3102,16 @@
    "maniabilite": 5.2,
    "portee": 6.5,
    "prix": 1250,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": 30,
-   "infos": "Le fusil d'assaut le moins cher.",
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Big Shots selon les sites",
+    "infos : Le fusil d'assaut le moins cher. ou Un fusil d'assaut standard équilibré disponible dans les enseignes Big Shots. selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -1526,23 +3137,69 @@
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "5.4": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "5.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "5.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "6.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "1250": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Big Shots\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un fusil d'assaut standard équilibré disponible dans les enseignes Big Shots.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Hillinger Heathen",
    "classe": "fusils-assaut",
-   "degats": 5.0,
+   "degats": 5,
    "precision": 6.2,
    "maniabilite": 5.8,
    "portee": 6.2,
    "prix": 2450,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": null,
-   "infos": null,
+   "infos": "Un fusil de conception bullpup offrant un bon compromis précision-portée.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Big Shots selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -1564,23 +3221,70 @@
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "6.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "5.8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "6.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "2450": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Big Shots\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un fusil de conception bullpup offrant un bon compromis précision-portée.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "ADB FRA",
    "classe": "fusils-assaut",
    "degats": 5.8,
-   "precision": 5.0,
+   "precision": 5,
    "maniabilite": 5.3,
    "portee": 6.9,
    "prix": 2900,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": 20,
-   "infos": "Fusil de combat.",
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Big Shots selon les sites",
+    "infos : Fusil de combat. ou Un fusil de combat robuste dont l'achat nécessite de débloquer l'inventaire du magasin. selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -1602,23 +3306,70 @@
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "5.8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "5.3": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "6.9": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "2900": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Big Shots\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un fusil de combat robuste dont l'achat nécessite de débloquer l'inventaire du magasin.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Vom Feuer VF-G1",
    "classe": "fusils-assaut",
-   "degats": 5.0,
+   "degats": 5,
    "precision": 6.2,
    "maniabilite": 5.8,
    "portee": 6.5,
    "prix": 3700,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": 30,
-   "infos": "Le fusil d'assaut le plus cher.",
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites",
+    "infos : Le fusil d'assaut le plus cher. ou Une carabine spéciale haut de gamme proposée par Vom Feuer. selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -1644,7 +3395,51 @@
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "6.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "5.8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "6.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "3700": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Une carabine spéciale haut de gamme proposée par Vom Feuer.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Hawk & Little Mediator",
@@ -1652,15 +3447,28 @@
    "degats": 4.8,
    "precision": 7.8,
    "maniabilite": 5.6,
-   "portee": 7.0,
+   "portee": 7,
    "prix": 900,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": 17,
-   "infos": null,
-   "ameliorations": [],
+   "infos": "Un fusil tactique très orienté sur la précision avec un large choix de modifications possibles.",
+   "ameliorations": [
+    {
+     "nom": "Canon de 14 pouces",
+     "prix": 320,
+     "effet": null
+    },
+    {
+     "nom": "Chargeur de 33 munitions",
+     "prix": 130,
+     "effet": null
+    }
+   ],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Martez Empeños selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -1682,7 +3490,69 @@
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "4.8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "7.8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "5.6": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "7": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "900": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "chargeur": {
+     "17": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Martez Empeños\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un fusil tactique très orienté sur la précision avec un large choix de modifications possibles.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "amelioration:canon de 14 pouces": {
+     "320": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "amelioration:chargeur de 33 munitions": {
+     "130": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Hillinger M306",
@@ -1692,13 +3562,15 @@
    "maniabilite": 4.8,
    "portee": 7.5,
    "prix": 2375,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": 20,
-   "infos": null,
+   "infos": "Un fusil de type marksman verrouillé jusqu'à l'achat de suffisamment d'armes dans le magasin.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Big Shots selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -1720,7 +3592,51 @@
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "6.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "7.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "4.8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "7.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "2375": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Big Shots\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un fusil de type marksman verrouillé jusqu'à l'achat de suffisamment d'armes dans le magasin.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Hillinger M306 TMR",
@@ -1730,13 +3646,15 @@
    "maniabilite": 5.5,
    "portee": 7.5,
    "prix": 2550,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": 20,
-   "infos": null,
+   "infos": "Une variante d'élite du fusil marksman débloquée en obtenant l'or dans tous les stands de tir.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -1758,7 +3676,51 @@
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "6.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "7.8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "5.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "7.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "2550": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Une variante d'élite du fusil marksman débloquée en obtenant l'or dans tous les stands de tir.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Fortune & Son Moreland 850",
@@ -1798,13 +3760,16 @@
    "maniabilite": 5.1,
    "portee": 2.5,
    "prix": 3650,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": 8,
-   "infos": "Fusil à pompe entièrement automatique.",
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites",
+    "infos : Fusil à pompe entièrement automatique. ou Un fusil à pompe entièrement automatique équipé d'un chargeur tambour de 8 cartouches. selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -1817,8 +3782,62 @@
     {
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "7.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "4.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "5.1": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "2.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "3650": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "chargeur": {
+     "8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un fusil à pompe entièrement automatique équipé d'un chargeur tambour de 8 cartouches.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Girardi Super400",
@@ -1828,13 +3847,15 @@
    "maniabilite": 5.3,
    "portee": 2.5,
    "prix": 2825,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": 7,
-   "infos": null,
+   "infos": "Un fusil à pompe lourd offrant une puissance de feu accrue.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -1847,24 +3868,74 @@
     {
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "7.4": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "4.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "5.3": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "2.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "2825": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un fusil à pompe lourd offrant une puissance de feu accrue.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Goodwin Comshot 12",
    "classe": "fusils-a-pompe",
    "degats": 7.7,
    "precision": 4.2,
-   "maniabilite": 4.0,
+   "maniabilite": 4,
    "portee": 2.5,
-   "prix": null,
-   "ouAcheter": "Ammu-Nation",
+   "prix": 3825,
+   "ouAcheter": null,
    "chargeur": null,
-   "infos": null,
+   "infos": "Un fusil à pompe de combat lourd doté de dégâts élevés.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -1873,8 +3944,56 @@
     {
      "nom": "DayOne",
      "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "7.7": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "4.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "4": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "2.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "3825": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un fusil à pompe de combat lourd doté de dégâts élevés.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Fortune & Son Gorse 425",
@@ -1882,15 +4001,17 @@
    "degats": 7.5,
    "precision": 3.8,
    "maniabilite": 6.2,
-   "portee": 2.0,
-   "prix": null,
-   "ouAcheter": "Ammu-Nation",
+   "portee": 2,
+   "prix": 850,
+   "ouAcheter": null,
    "chargeur": null,
-   "infos": null,
+   "infos": "Un fusil à pompe court de type canon scié accessible dès le début.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Big Shots selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -1899,8 +4020,56 @@
     {
      "nom": "DayOne",
      "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "7.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "3.8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "6.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "850": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Big Shots\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un fusil à pompe court de type canon scié accessible dès le début.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "BZI Vatra",
@@ -1908,15 +4077,17 @@
    "degats": 4.2,
    "precision": 3.8,
    "maniabilite": 6.5,
-   "portee": 4.0,
+   "portee": 4,
    "prix": 1200,
-   "ouAcheter": "Ammu-Nation",
+   "ouAcheter": null,
    "chargeur": 20,
-   "infos": null,
+   "infos": "Une mitraillette lourde de fabrication BZI vendue chez Iron & Oak.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -1929,8 +4100,56 @@
     {
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "4.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "3.8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "6.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "4": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "1200": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Une mitraillette lourde de fabrication BZI vendue chez Iron & Oak.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Deever Tech DSG",
@@ -1938,15 +4157,18 @@
    "degats": 4.2,
    "precision": 4.2,
    "maniabilite": 6.9,
-   "portee": 4.0,
-   "prix": 1350,
-   "ouAcheter": "Ammu-Nation",
+   "portee": 4,
+   "prix": null,
+   "ouAcheter": null,
    "chargeur": null,
-   "infos": null,
+   "infos": "Une mitraillette tactique conçue pour tirer par salves de trois coups.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [],
+   "conflits": [
+    "prix : 1350 ou 1950 selon les sites",
+    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites"
+   ],
    "sources": [
     {
      "nom": "MeowDB",
@@ -1963,8 +4185,56 @@
     {
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
     }
-   ]
+   ],
+   "candidats": {
+    "degats": {
+     "4.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "4.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "6.9": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "4": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "1950": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Une mitraillette tactique conçue pour tirer par salves de trois coups.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   },
   {
    "nom": "Hawk & Little Morgan",
@@ -1972,7 +4242,7 @@
    "degats": 5.7,
    "precision": 5.4,
    "maniabilite": 7.8,
-   "portee": 6.0,
+   "portee": 6,
    "prix": null,
    "ouAcheter": "Bonus de l'Ultimate Edition",
    "chargeur": null,
@@ -2155,6 +4425,738 @@
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
+  },
+  {
+   "nom": "Hawk & Little Morgan revolver",
+   "classe": "revolvers",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    }
+   ],
+   "degats": 5.7,
+   "precision": 5.4,
+   "maniabilite": 7.8,
+   "portee": 6,
+   "prix": null,
+   "chargeur": null,
+   "ouAcheter": "Ultimate Edition",
+   "infos": "Un revolver spécial pour Jason et Lucia provenant du domaine Vercetti avec une lunette haute performance.",
+   "candidats": {
+    "degats": {
+     "5.7": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "5.4": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "7.8": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "6": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Ultimate Edition\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un revolver spécial pour Jason et Lucia provenant du domaine Vercetti avec une lunette haute performance.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
+  },
+  {
+   "nom": "Moreland 850",
+   "classe": "fusils-a-pompe",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    }
+   ],
+   "degats": 7.5,
+   "precision": 4.2,
+   "maniabilite": 5.6,
+   "portee": 2.5,
+   "prix": 700,
+   "chargeur": null,
+   "ouAcheter": "Chuck's Tackle & Shot",
+   "infos": "Un fusil à pompe de fabrication Fortune & Son que l'on peut notamment trouver dans les coffres de police.",
+   "candidats": {
+    "degats": {
+     "7.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "4.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "5.6": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "2.5": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "700": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Chuck's Tackle & Shot\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un fusil à pompe de fabrication Fortune & Son que l'on peut notamment trouver dans les coffres de police.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
+  },
+  {
+   "nom": "Schlamm DRX",
+   "classe": "pistolets",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    }
+   ],
+   "degats": 4,
+   "precision": 4.2,
+   "maniabilite": 8.2,
+   "portee": 4.2,
+   "prix": 2100,
+   "chargeur": null,
+   "ouAcheter": "Prestige Firearms",
+   "infos": "Un pistolet tactique disposant d'excellentes statistiques de maniabilité.",
+   "candidats": {
+    "degats": {
+     "4": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "precision": {
+     "4.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "maniabilite": {
+     "8.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "portee": {
+     "4.2": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "prix": {
+     "2100": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Prestige Firearms\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un pistolet tactique disposant d'excellentes statistiques de maniabilité.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
+  },
+  {
+   "nom": "Switchblade",
+   "classe": "melee",
+   "ameliorations": [],
+   "image": null,
+   "statut": "non-verifie",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    }
+   ],
+   "degats": null,
+   "precision": null,
+   "maniabilite": null,
+   "portee": null,
+   "prix": null,
+   "chargeur": null,
+   "ouAcheter": null,
+   "infos": null,
+   "candidats": {
+    "prix": {
+     "290": [
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un cran d'arrêt disponible à l'achat dans les armureries.\"": [
+      "meowdb.com"
+     ]
+    }
+   }
+  },
+  {
+   "nom": "Hunting Knife",
+   "classe": "melee",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    }
+   ],
+   "degats": null,
+   "precision": null,
+   "maniabilite": null,
+   "portee": null,
+   "prix": 125,
+   "chargeur": null,
+   "ouAcheter": "Chuck's Tackle & Shot",
+   "infos": "Un couteau de chasse robuste pour les éliminations au corps à corps.",
+   "candidats": {
+    "prix": {
+     "125": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Chuck's Tackle & Shot\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un couteau de chasse robuste pour les éliminations au corps à corps.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
+  },
+  {
+   "nom": "Diving Knife",
+   "classe": "melee",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    }
+   ],
+   "degats": null,
+   "precision": null,
+   "maniabilite": null,
+   "portee": null,
+   "prix": 300,
+   "chargeur": null,
+   "ouAcheter": "Chuck's Tackle & Shot",
+   "infos": "Un couteau adapté aux environnements aquatiques et au combat.",
+   "candidats": {
+    "prix": {
+     "300": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Chuck's Tackle & Shot\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un couteau adapté aux environnements aquatiques et au combat.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
+  },
+  {
+   "nom": "Bushcraft Knife",
+   "classe": "melee",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    }
+   ],
+   "degats": null,
+   "precision": null,
+   "maniabilite": null,
+   "portee": null,
+   "prix": 230,
+   "chargeur": null,
+   "ouAcheter": "Chuck's Tackle & Shot",
+   "infos": "Un couteau de survie orienté vers les activités en pleine nature.",
+   "candidats": {
+    "prix": {
+     "230": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Chuck's Tackle & Shot\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un couteau de survie orienté vers les activités en pleine nature.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
+  },
+  {
+   "nom": "Survival Knife",
+   "classe": "melee",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    }
+   ],
+   "degats": null,
+   "precision": null,
+   "maniabilite": null,
+   "portee": null,
+   "prix": 315,
+   "chargeur": null,
+   "ouAcheter": "Iron & Oak",
+   "infos": "Un couteau de survie professionnel vendu dans le réseau d'armureries.",
+   "candidats": {
+    "prix": {
+     "315": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un couteau de survie professionnel vendu dans le réseau d'armureries.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
+  },
+  {
+   "nom": "Combat Knife",
+   "classe": "melee",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    }
+   ],
+   "degats": null,
+   "precision": null,
+   "maniabilite": null,
+   "portee": null,
+   "prix": 285,
+   "chargeur": null,
+   "ouAcheter": "Iron & Oak",
+   "infos": "Un couteau de combat conçu pour les forces spéciales.",
+   "candidats": {
+    "prix": {
+     "285": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un couteau de combat conçu pour les forces spéciales.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
+  },
+  {
+   "nom": "EDC Knife",
+   "classe": "melee",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    }
+   ],
+   "degats": null,
+   "precision": null,
+   "maniabilite": null,
+   "portee": null,
+   "prix": 275,
+   "chargeur": null,
+   "ouAcheter": "Iron & Oak",
+   "infos": "Un couteau utilitaire pour le port quotidien.",
+   "candidats": {
+    "prix": {
+     "275": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un couteau utilitaire pour le port quotidien.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
+  },
+  {
+   "nom": "Baton",
+   "classe": "melee",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    }
+   ],
+   "degats": null,
+   "precision": null,
+   "maniabilite": null,
+   "portee": null,
+   "prix": 160,
+   "chargeur": null,
+   "ouAcheter": "Iron & Oak",
+   "infos": "Une matraque rigide pour maîtriser des adversaires sans les tuer.",
+   "candidats": {
+    "prix": {
+     "160": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Une matraque rigide pour maîtriser des adversaires sans les tuer.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
+  },
+  {
+   "nom": "Brass Knuckles",
+   "classe": "melee",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    }
+   ],
+   "degats": null,
+   "precision": null,
+   "maniabilite": null,
+   "portee": null,
+   "prix": 95,
+   "chargeur": null,
+   "ouAcheter": "Iron & Oak",
+   "infos": "Un poing américain augmentant les dégâts des attaques à mains nues.",
+   "candidats": {
+    "prix": {
+     "95": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Un poing américain augmentant les dégâts des attaques à mains nues.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
+  },
+  {
+   "nom": "Molotov",
+   "classe": "explosifs",
+   "ameliorations": [],
+   "image": null,
+   "statut": "non-verifie",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    }
+   ],
+   "degats": null,
+   "precision": null,
+   "maniabilite": null,
+   "portee": null,
+   "prix": null,
+   "chargeur": null,
+   "ouAcheter": null,
+   "infos": null,
+   "candidats": {
+    "infos": {
+     "\"Un cocktail Molotov inflammable accessible via la roue des armes.\"": [
+      "meowdb.com"
+     ]
+    }
+   }
+  },
+  {
+   "nom": "Frag Grenade",
+   "classe": "explosifs",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    }
+   ],
+   "degats": null,
+   "precision": null,
+   "maniabilite": null,
+   "portee": null,
+   "prix": 140,
+   "chargeur": null,
+   "ouAcheter": "Magasin d'armes",
+   "infos": "Une grenade à fragmentation explosive standard.",
+   "candidats": {
+    "prix": {
+     "140": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Magasin d'armes\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Une grenade à fragmentation explosive standard.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
+  },
+  {
+   "nom": "Sticky Bomb",
+   "classe": "explosifs",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    }
+   ],
+   "degats": null,
+   "precision": null,
+   "maniabilite": null,
+   "portee": null,
+   "prix": 185,
+   "chargeur": null,
+   "ouAcheter": "Iron & Oak",
+   "infos": "Une bombe collante déclenchée à distance.",
+   "candidats": {
+    "prix": {
+     "185": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "ouAcheter": {
+     "\"Iron & Oak\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    },
+    "infos": {
+     "\"Une bombe collante déclenchée à distance.\"": [
+      "gta6db.io",
+      "meowdb.com"
+     ]
+    }
+   }
   }
  ]
 }
