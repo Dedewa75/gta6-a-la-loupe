@@ -121,13 +121,14 @@ async function demanderIA(texte) {
         if (!r.ok) throw new Error(j.error?.message || "HTTP " + r.status);
         const brut = j.candidates?.[0]?.content?.parts?.map((p) => p.text).join("") || "{}";
         console.log("🤖 modèle utilisé :", modele);
+        const k = MODELES.indexOf(modele); if (k > 0) MODELES.unshift(...MODELES.splice(k, 1)); // il marche : on le garde en premier
         return JSON.parse(brut.replace(/^```json|```$/g, "").trim());
       } catch (e) {
         derniere = e;
-        const reessayer = SURCHARGE.test(e.message) && essai < 3;
+        const reessayer = SURCHARGE.test(e.message) && essai < 2;
         console.log(`⚠️ modèle ${modele} (essai ${essai}) :`, e.message.slice(0, 140));
         if (!reessayer) break;           // modèle inexistant → on passe au suivant
-        await pause(essai * 20000);      // surchargé → on attend 20 s puis 40 s
+        await pause(15000);              // surchargé → on attend 15 s et on réessaie une fois
       }
     }
   }

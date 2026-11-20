@@ -57,6 +57,7 @@ jobs:
             echo "Rien de nouveau"
           else
             git commit -m "Mise a jour auto du $(date -u +%Y-%m-%d)"
+            git pull --rebase -X theirs origin main || git pull --rebase origin main
             git push
           fi
 
