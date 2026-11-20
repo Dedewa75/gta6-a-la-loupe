@@ -185,4 +185,101 @@ export async function principal() {
   console.log(`✅ ${ajoutes} nouvelles entrées ajoutées (total : ${data.entrees.length})`);
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) principal().catch((e) => { console.error("❌", e); process.exit(1); });
+// ---------- arsenal : fiches détaillées des armes ----------
+const FICHIER_ARMES = new URL("../data/armes.json", import.meta.url);
+const CLASSES = ["pistolets", "revolvers", "mitraillettes", "fusils-a-pompe", "fusils-assaut", "fusils-tactiques", "snipers", "lourdes", "melee", "explosifs"];
+const STATS = ["degats", "precision", "maniabilite", "portee", "prix", "chargeur", "ouAcheter", "infos"];
+const PAGES_ARMES = [
+  { nom: "GTA6DB", url: "https://gta6db.io/weapons" },
+  { nom: "MetaForge", url: "https://metaforge.app/gta-6/best-weapons-gta-6" },
+  { nom: "eGamers", url: "https://egamers.io/gta-6-weapons-guide-every-class-launcher-and-sniper-prices-and-which-ammu-nation-stores-sell-them/" },
+  { nom: "MeowDB", url: "https://meowdb.com/gta6/weapons" },
+];
+
+const texteDePage = (html) => decode(html.replace(/<(script|style|nav|footer|svg)[\s\S]*?<\/\1>/gi, " ")).slice(0, 25000);
+
+function consigneArmes(pages, connues) {
+  return `Tu remplis la base de données des armes d'un site de fans francophone NON OFFICIEL sur GTA 6.
+Voici le texte de pages qui listent les armes du jeu (numérotées) :
+${pages.map((p, i) => `===== PAGE [${i}] ${p.nom} =====\n${p.texte}`).join("\n")}
+
+Armes déjà connues : ${connues.join(", ") || "aucune"}.
+Extrais CHAQUE arme de GTA 6 citée avec ses infos FACTUELLES uniquement (n'invente rien ; une info absente = null).
+- classe parmi : ${CLASSES.join(", ")}
+- degats, precision, maniabilite, portee : nombres sur 10 tels qu'affichés dans le jeu (ex. 4.2), sinon null
+- prix : nombre en dollars du jeu sans symbole (ex. 1450), sinon null
+- chargeur : nombre de munitions par chargeur, sinon null
+- ouAcheter : magasin ou condition de déblocage, en français court, sinon null
+- infos : 1 phrase en français avec TES mots (pas de copie), sinon null
+- ameliorations : liste des accessoires/améliorations connus [{"nom":"Silencieux","prix":250,"effet":"phrase courte ou null"}], sinon []
+- sources : numéros des pages utilisées
+Garde le nom exact de l'arme tel qu'écrit dans le jeu. Ignore les armes de GTA 5/Online.
+Réponds UNIQUEMENT en JSON : {"armes":[{"nom":"","classe":"","degats":null,"precision":null,"maniabilite":null,"portee":null,"prix":null,"chargeur":null,"ouAcheter":null,"infos":null,"ameliorations":[],"sources":[0]}]}`;
+}
+
+export function fusionnerArme(base, n, sources) {
+  for (const k of STATS) {
+    const v = n[k];
+    if (v === null || v === undefined || v === "") continue;
+    if (base[k] === null || base[k] === undefined) base[k] = v;
+    else if (typeof v === "number" && typeof base[k] === "number" && Math.abs(v - base[k]) > 0.01) {
+      const msg = `${k} : ${v} selon ${sources.map((s) => s.nom).join(", ")}`;
+      if (!base.conflits.includes(msg)) base.conflits.push(msg);
+    }
+  }
+  for (const a of n.ameliorations || []) {
+    if (!a?.nom) continue;
+    if (!base.ameliorations.some((x) => norm(x.nom) === norm(a.nom)))
+      base.ameliorations.push({ nom: String(a.nom).slice(0, 60), prix: typeof a.prix === "number" ? a.prix : null, effet: a.effet ? String(a.effet).slice(0, 160) : null });
+  }
+  for (const s of sources) if (!base.sources.some((x) => x.url === s.url)) base.sources.push(s);
+  const domaines = new Set(base.sources.map((s) => { try { return new URL(s.url).hostname; } catch { return s.url; } }));
+  base.statut = domaines.size >= 2 && !base.conflits.length ? "confirme" : "non-verifie";
+  return base;
+}
+
+export async function majArmes() {
+  const data = JSON.parse(await readFile(FICHIER_ARMES, "utf8"));
+  let pages;
+  if (MOCK) pages = [{ nom: "Test", url: "https://exemple.com/armes", texte: "page test" }];
+  else {
+    pages = [];
+    for (const p of PAGES_ARMES) {
+      try {
+        const r = await fetch(p.url, { headers: { "User-Agent": "Mozilla/5.0 (gta6-a-la-loupe bot)" }, signal: AbortSignal.timeout(25000) });
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        pages.push({ ...p, texte: texteDePage(await r.text()) });
+      } catch (e) { console.log("⚠️ page armes ignorée :", p.nom, "-", e.message); }
+    }
+  }
+  if (!pages.length) return console.log("🔫 aucune page d'armes lisible aujourd'hui");
+
+  const rep = MOCK
+    ? JSON.parse(await readFile(new URL("../test/reponse-armes.json", import.meta.url), "utf8"))
+    : await demanderIA(consigneArmes(pages, data.armes.map((a) => a.nom)));
+
+  let nouvelles = 0, majs = 0;
+  for (const n of rep.armes || []) {
+    if (!n?.nom || !CLASSES.includes(n.classe)) continue;
+    const sources = (n.sources || []).map((i) => pages[i]).filter(Boolean).map((p) => ({ nom: p.nom, url: p.url }));
+    if (!sources.length) continue;
+    let base = data.armes.find((a) => norm(a.nom) === norm(n.nom));
+    if (!base) {
+      base = { nom: String(n.nom).slice(0, 60), classe: n.classe, ameliorations: [], image: null, statut: "non-verifie", conflits: [], sources: [] };
+      for (const k of STATS) base[k] = null;
+      data.armes.push(base);
+      nouvelles++;
+    } else majs++;
+    fusionnerArme(base, n, sources);
+  }
+  data.derniereMaj = new Date().toISOString();
+  await writeFile(FICHIER_ARMES, JSON.stringify(data, null, 1) + "\n");
+  console.log(`🔫 arsenal : ${nouvelles} nouvelles armes, ${majs} fiches complétées (total : ${data.armes.length})`);
+}
+
+async function tout() {
+  await principal();
+  try { await majArmes(); } catch (e) { console.log("⚠️ mise à jour des armes ratée :", e.message); }
+}
+
+if (import.meta.url === `file://${process.argv[1]}`) tout().catch((e) => { console.error("❌", e); process.exit(1); });

@@ -79,6 +79,31 @@ main{padding:50px 5vw 80px}
 .zone .nb{fill:var(--noir);font-size:9px}
 .note{font-size:.72rem;color:var(--gris);margin-top:8px}
 #titreZone{font-family:"Playfair Display",serif;font-size:1.6rem;margin-bottom:14px}
+/* --- arsenal --- */
+#vueArmes{display:none}
+#vueArmes.visible{display:block}
+.sousOnglets{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.sousOnglets .onglet{font-size:.76rem;padding:7px 13px}
+.tri{display:flex;gap:10px;align-items:center;font-size:.82rem;color:var(--gris);margin-bottom:20px}
+.tri select{background:var(--noir2);color:var(--texte);border:1px solid var(--ligne);border-radius:999px;padding:7px 12px;font:inherit}
+.arme{background:var(--noir2);border:1px solid var(--ligne);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.arme .photo{aspect-ratio:16/9;background:linear-gradient(135deg,#15151b,#1d1d26);display:flex;align-items:center;justify-content:center;color:#3a3a46;font-size:2.4rem}
+.arme .photo img{width:100%;height:100%;object-fit:cover}
+.arme .corps{padding:18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.arme h3{font-size:1.1rem}
+.prix{font-family:"Playfair Display",serif;font-size:1.5rem;color:var(--rose)}
+.prix small{font-family:Inter,sans-serif;font-size:.75rem;color:var(--gris);margin-left:6px}
+.stat{display:grid;grid-template-columns:92px 1fr 34px;gap:8px;align-items:center;font-size:.78rem;color:var(--gris)}
+.barre{height:7px;background:#25252e;border-radius:9px;overflow:hidden}
+.barre i{display:block;height:100%;background:linear-gradient(90deg,var(--bleu),var(--rose));border-radius:9px}
+.stat b{color:var(--texte);text-align:right}
+.stat.inc b{color:#555}
+.infos{font-size:.85rem;color:#c9c9d4}
+.amelio{font-size:.8rem;border-top:1px solid var(--ligne);padding-top:10px}
+.amelio div{display:flex;justify-content:space-between;gap:8px;color:#c9c9d4;padding:3px 0}
+.amelio span{color:var(--gris)}
+.conflit{font-size:.74rem;color:#ffb84d}
+.imgActu{width:100%;border-radius:10px;aspect-ratio:16/9;object-fit:cover}
 /* --- pied --- */
 footer{border-top:1px solid var(--ligne);padding:30px 5vw;color:var(--gris);font-size:.78rem}
 footer p+p{margin-top:8px}
@@ -97,6 +122,7 @@ footer p+p{margin-top:8px}
   <div class="liens">
     <a href="#contenu" data-go="actus">Actus</a>
     <a href="#contenu" data-go="secrets">Secrets</a>
+    <a href="#contenu" data-go="armes">Armes</a>
     <a href="#contenu" data-go="vehicules">Véhicules</a>
     <a href="#contenu" data-go="carte">Carte</a>
   </div>
@@ -124,6 +150,23 @@ footer p+p{margin-top:8px}
   </div>
 
   <div class="grille" id="liste"></div>
+
+  <section id="vueArmes">
+    <div class="sousOnglets" id="classes"></div>
+    <div class="tri">Trier par
+      <select id="triArmes">
+        <option value="nom">Nom</option>
+        <option value="prix">Prix (moins cher)</option>
+        <option value="prixD">Prix (plus cher)</option>
+        <option value="degats">Dégâts</option>
+        <option value="precision">Précision</option>
+        <option value="portee">Portée</option>
+      </select>
+    </div>
+    <div class="grille" id="listeArmes"></div>
+    <h2 style="font-family:'Playfair Display',serif;margin:40px 0 16px">Actus armes</h2>
+    <div class="grille" id="actusArmes"></div>
+  </section>
 
   <section id="vueCarte">
     <div class="boiteCarte">
@@ -158,7 +201,7 @@ footer p+p{margin-top:8px}
 <script>
 const CATS = {
   tout:{nom:"Tout"}, actus:{nom:"Actus"}, secrets:{nom:"Secrets"}, astuces:{nom:"Astuces"},
-  vehicules:{nom:"Véhicules"}, armes:{nom:"Armes"}, argent:{nom:"Argent"}, lieux:{nom:"Lieux"}, carte:{nom:"🗺️ Carte"}
+  vehicules:{nom:"Véhicules"}, armes:{nom:"🔫 Armes"}, argent:{nom:"Argent"}, lieux:{nom:"Lieux"}, carte:{nom:"🗺️ Carte"}
 };
 const ZONES = {
   "port-gellhorn":{nom:"Port Gellhorn",x:78,y:78},
@@ -169,7 +212,75 @@ const ZONES = {
   "leonida-keys":{nom:"Leonida Keys",x:212,y:452},
   "inconnue":{nom:"Lieu non précisé",x:70,y:250}
 };
-let DATA = {entrees:[]}, onglet = "tout", zoneActive = null;
+const CLASSES = {
+  toutes:"Toutes", pistolets:"Pistolets", revolvers:"Revolvers", mitraillettes:"Mitraillettes",
+  "fusils-a-pompe":"Fusils à pompe", "fusils-assaut":"Fusils d'assaut", "fusils-tactiques":"Fusils tactiques",
+  snipers:"Snipers", lourdes:"Armes lourdes", melee:"Mêlée", explosifs:"Explosifs"
+};
+let DATA = {entrees:[]}, ARMES = [], onglet = "tout", zoneActive = null, classe = "toutes";
+
+// Images : dépose tes captures dans images/armes/<nom-de-l-arme>.jpg (ou .png) et elles s'affichent toutes seules
+const slug = s => String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+window.imgSuivante = img => {
+  const essais = JSON.parse(img.dataset.essais);
+  if (essais.length) { img.src = essais.shift(); img.dataset.essais = JSON.stringify(essais); }
+  else img.parentElement.innerHTML = "🔫";
+};
+function photo(chemin, nom){
+  const essais = chemin ? [chemin] : ["jpg","png","webp"].map(x => `images/armes/${slug(nom)}.${x}`);
+  const premier = essais.shift();
+  return `<img src="${esc(premier)}" alt="${esc(nom)}" loading="lazy" data-essais='${esc(JSON.stringify(essais))}' onerror="imgSuivante(this)">`;
+}
+
+function statLigne(nom, v){
+  const ok = typeof v === "number";
+  return `<div class="stat ${ok?"":"inc"}"><span>${nom}</span><div class="barre"><i style="width:${ok?Math.min(v,10)*10:0}%"></i></div><b>${ok?v.toFixed(1):"?"}</b></div>`;
+}
+const dollars = n => typeof n === "number" ? "$" + n.toLocaleString("fr-BE") : null;
+
+function armeHTML(a){
+  return `<article class="arme">
+    <div class="photo">${photo(a.image, a.nom)}</div>
+    <div class="corps">
+      <div class="haut">
+        <span class="cat">${esc(CLASSES[a.classe] || a.classe)}</span>
+        ${a.statut === "confirme" ? '<span class="badge ok">✓ Confirmé</span>' : '<span class="badge non">Non vérifié</span>'}
+      </div>
+      <h3>${esc(a.nom)}</h3>
+      <div class="prix">${dollars(a.prix) || "Prix ?"}${a.chargeur ? `<small>${a.chargeur} balles / chargeur</small>` : ""}</div>
+      ${statLigne("Dégâts", a.degats)}${statLigne("Précision", a.precision)}${statLigne("Maniabilité", a.maniabilite)}${statLigne("Portée", a.portee)}
+      ${a.ouAcheter ? `<div class="infos">🛒 ${esc(a.ouAcheter)}</div>` : ""}
+      ${a.infos ? `<div class="infos">${esc(a.infos)}</div>` : ""}
+      <div class="amelio"><b>Améliorations</b>
+        ${a.ameliorations?.length ? a.ameliorations.map(m => `<div><p>${esc(m.nom)}${m.effet?` <span>· ${esc(m.effet)}</span>`:""}</p><span>${dollars(m.prix) || ""}</span></div>`).join("")
+          : '<div><span>Pas encore répertoriées — le scan quotidien les ajoutera.</span></div>'}
+      </div>
+      ${(a.conflits||[]).length ? `<div class="conflit">⚠️ Sources en désaccord : ${a.conflits.map(esc).join(" · ")}</div>` : ""}
+      <div class="sources">Sources : ${(a.sources||[]).map(s => `<a href="${urlOk(s.url)}" target="_blank" rel="noopener nofollow">${esc(s.nom)} ↗</a>`).join("")}</div>
+    </div>
+  </article>`;
+}
+
+function renduArmes(){
+  $("classes").innerHTML = Object.entries(CLASSES).map(([id,nom]) => {
+    const n = id === "toutes" ? ARMES.length : ARMES.filter(a => a.classe === id).length;
+    return (n || id === "toutes") ? `<button class="onglet ${classe===id?"actif":""}" data-classe="${id}">${nom}<small>${n}</small></button>` : "";
+  }).join("");
+  document.querySelectorAll("[data-classe]").forEach(b => b.onclick = () => { classe = b.dataset.classe; renduArmes(); });
+  const q = $("recherche").value.trim().toLowerCase(), t = $("triArmes").value;
+  let liste = ARMES.filter(a => (classe === "toutes" || a.classe === classe) &&
+    (!$("fConfirme").checked || a.statut === "confirme") &&
+    (!q || (a.nom + " " + (a.infos||"") + " " + (CLASSES[a.classe]||"")).toLowerCase().includes(q)));
+  const val = (a,k) => typeof a[k] === "number" ? a[k] : null;
+  liste.sort((a,b) => {
+    if (t === "nom") return a.nom.localeCompare(b.nom);
+    const k = t === "prixD" ? "prix" : t, va = val(a,k), vb = val(b,k);
+    if (va === null) return 1; if (vb === null) return -1;
+    return t === "prix" ? va - vb : vb - va;
+  });
+  $("listeArmes").innerHTML = liste.length ? liste.map(armeHTML).join("") : '<div class="vide">Aucune arme ne correspond.</div>';
+  afficherListe($("actusArmes"), filtrer(DATA.entrees.filter(e => e.categorie === "armes")));
+}
 
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const urlOk = u => /^https?:\/\//i.test(u) ? esc(u) : "#";
@@ -191,6 +302,7 @@ function carteHTML(e, dernier){
       ${e.date === dernier ? '<span class="badge neuf">Nouveau</span>' : ""}
       <span class="date">${esc(new Date(e.date).toLocaleDateString("fr-BE",{day:"numeric",month:"short"}))}</span>
     </div>
+    ${e.image ? `<img class="imgActu" src="${esc(e.image)}" alt="" loading="lazy" onerror="this.remove()">` : ""}
     <h3>${esc(e.titre)}</h3>
     ${spoil ? '<div class="avert">⚠️ Spoiler — touche le texte pour le lire</div>' : ""}
     <p class="resume">${esc(e.resume)}</p>
@@ -205,11 +317,13 @@ function afficherListe(cible, liste){
 }
 
 function rendu(){
-  const enCarte = onglet === "carte";
-  $("liste").style.display = enCarte ? "none" : "grid";
+  const enCarte = onglet === "carte", enArmes = onglet === "armes";
+  $("liste").style.display = (enCarte || enArmes) ? "none" : "grid";
   $("vueCarte").classList.toggle("visible", enCarte);
-  document.querySelectorAll(".onglet").forEach(b => b.classList.toggle("actif", b.dataset.cat === onglet));
+  $("vueArmes").classList.toggle("visible", enArmes);
+  document.querySelectorAll("#onglets .onglet").forEach(b => b.classList.toggle("actif", b.dataset.cat === onglet));
   if (enCarte) return renduCarte();
+  if (enArmes) return renduArmes();
   const base = onglet === "tout" ? DATA.entrees : DATA.entrees.filter(e => e.categorie === onglet);
   afficherListe($("liste"), filtrer(base));
 }
@@ -235,7 +349,7 @@ function renduCarte(){
 }
 
 function onglets(){
-  const compte = c => c === "tout" ? DATA.entrees.length : c === "carte" ? DATA.entrees.filter(e=>e.zone).length : DATA.entrees.filter(e => e.categorie === c).length;
+  const compte = c => c === "tout" ? DATA.entrees.length : c === "armes" ? ARMES.length : c === "carte" ? DATA.entrees.filter(e=>e.zone).length : DATA.entrees.filter(e => e.categorie === c).length;
   $("onglets").innerHTML = Object.entries(CATS).map(([id,c]) =>
     `<button class="onglet" data-cat="${id}">${c.nom}<small>${compte(id)}</small></button>`).join("");
   document.querySelectorAll(".onglet").forEach(b => b.onclick = () => { onglet = b.dataset.cat; rendu(); });
@@ -247,12 +361,12 @@ document.addEventListener("click", e => {
   const go = e.target.closest("[data-go]");
   if (go) { onglet = go.dataset.go; rendu(); }
 });
-["recherche","fConfirme","fSpoil"].forEach(id => $(id).addEventListener("input", rendu));
+["recherche","fConfirme","fSpoil","triArmes"].forEach(id => $(id).addEventListener("input", rendu));
 
-fetch("data/contenu.json?v=" + Date.now())
-  .then(r => r.json())
-  .then(d => {
-    DATA = d;
+const frais = f => fetch(f + "?v=" + Date.now()).then(r => r.json());
+Promise.all([frais("data/contenu.json"), frais("data/armes.json").catch(() => ({armes:[]}))])
+  .then(([d, a]) => {
+    DATA = d; ARMES = a.armes || [];
     DATA.entrees.sort((a,b) => b.date.localeCompare(a.date));
     $("nbTotal").textContent = d.entrees.length;
     $("nbJour").textContent = d.dernierAjout ?? 0;
