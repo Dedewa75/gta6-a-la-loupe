@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#07070b">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>GTA VI à la loupe — l'appli</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icones/icone-192.png">
+<link rel="apple-touch-icon" href="icones/icone-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="barreHaut">
+  <button class="retour" id="retour" aria-label="Retour" hidden>‹</button>
+  <div class="titreApp" id="titreApp">GTA VI <b>à la loupe</b></div>
+  <button class="avatarHaut" id="avatarHaut" data-aller="profil" aria-label="Profil">?</button>
+</header>
+
+<main id="ecran"></main>
+
+<nav class="onglets" aria-label="Navigation">
+  <button data-aller="accueil" class="actif"><i>🏠</i>Accueil</button>
+  <button data-aller="infos"><i>📚</i>Infos</button>
+  <button data-aller="communaute"><i>💬</i>Communauté</button>
+  <button data-aller="profil"><i>👤</i>Profil</button>
+</nav>
+
+<div class="voile" id="voile"></div>
+<section class="feuille" id="feuille" role="dialog" aria-modal="true"><div class="poignee"></div><div id="feuilleContenu"></div></section>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

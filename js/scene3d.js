@@ -145,6 +145,7 @@ const POSES = {
   argent:    { pos: V(4.5, 2.5, 4), cible: V(2.2, 0.3, 0.6) },
   lieux:     { pos: V(-2, 9, 6),    cible: V(0, 0, 0.5) },
   carte:     { pos: V(0, 15, 0.01), cible: V(0, 0, 0) },
+  appli:     { pos: V(3, 2.2, 7),   cible: V(0, 1.2, 0), tourne: true },
 };
 let poseOnglet = POSES.tout, focus = null;
 const camPos = POSES.accueil.pos.clone(), camCible = POSES.accueil.cible.clone();

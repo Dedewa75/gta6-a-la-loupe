@@ -1,0 +1,100 @@
+rules_version = '2';
+// Règles de sécurité de la communauté GTA VI à la loupe.
+// À coller dans Firebase > Firestore Database > Règles, puis « Publier ».
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function connecte() { return request.auth != null; }
+    function verifie() { return connecte() && request.auth.token.email_verified == true; }
+    function estAdmin() { return connecte() && exists(/databases/$(database)/documents/admins/$(request.auth.uid)); }
+    function monProfil() { return get(/databases/$(database)/documents/utilisateurs/$(request.auth.uid)).data; }
+    function membre() {
+      return verifie()
+        && exists(/databases/$(database)/documents/utilisateurs/$(request.auth.uid))
+        && monProfil().get('banni', false) != true;
+    }
+    function texteOk(t, max) { return t is string && t.size() > 0 && t.size() <= max; }
+    // un message signé par moi, avec mon vrai pseudo, daté par le serveur
+    function signeParMoi(d) {
+      return d.auteur == request.auth.uid && d.pseudo == monProfil().pseudo && d.date == request.time;
+    }
+
+    // ---------- comptes ----------
+    match /utilisateurs/{uid} {
+      allow read: if connecte();
+      allow create: if verifie() && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['pseudo', 'age16', 'cree'])
+        && request.resource.data.age16 == true
+        && request.resource.data.pseudo is string
+        && request.resource.data.pseudo.matches('^[A-Za-z0-9_.-]{3,20}$')
+        && existsAfter(/databases/$(database)/documents/pseudos/$(request.resource.data.pseudo.lower()));
+      // seul l'admin peut modifier un compte (bannir / débannir)
+      allow update: if estAdmin() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['banni']);
+      allow delete: if false;
+    }
+    match /pseudos/{cle} {
+      allow read: if connecte();
+      allow create: if verifie() && request.resource.data.keys().hasOnly(['uid'])
+        && request.resource.data.uid == request.auth.uid
+        && getAfter(/databases/$(database)/documents/utilisateurs/$(request.auth.uid)).data.pseudo.lower() == cle;
+      allow update, delete: if false;
+    }
+    match /admins/{uid} {
+      allow read: if connecte() && request.auth.uid == uid;
+      allow write: if false; // se crée uniquement à la main dans la console Firebase
+    }
+
+    // ---------- salons (chat) ----------
+    match /salons/{salon}/messages/{id} {
+      allow read: if connecte();
+      allow create: if membre()
+        && salon in ['general', 'argent', 'armes', 'vehicules', 'secrets', 'aide']
+        && request.resource.data.keys().hasOnly(['auteur', 'pseudo', 'texte', 'date'])
+        && signeParMoi(request.resource.data)
+        && texteOk(request.resource.data.texte, 500);
+      allow update: if false;
+      allow delete: if connecte() && (resource.data.auteur == request.auth.uid || estAdmin());
+    }
+
+    // ---------- forum ----------
+    match /sujets/{id} {
+      allow read: if connecte();
+      allow create: if membre()
+        && request.resource.data.keys().hasOnly(['titre', 'texte', 'categorie', 'auteur', 'pseudo', 'date', 'derniere', 'nbReponses'])
+        && signeParMoi(request.resource.data)
+        && request.resource.data.derniere == request.time
+        && request.resource.data.nbReponses == 0
+        && request.resource.data.categorie in ['general', 'guides', 'questions', 'secrets', 'bugs']
+        && texteOk(request.resource.data.titre, 100)
+        && texteOk(request.resource.data.texte, 3000);
+      // quand quelqu'un répond : seul le compteur (+1) et la date bougent
+      allow update: if membre()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['nbReponses', 'derniere'])
+        && request.resource.data.nbReponses == resource.data.nbReponses + 1
+        && request.resource.data.derniere == request.time;
+      allow delete: if connecte() && (resource.data.auteur == request.auth.uid || estAdmin());
+
+      match /reponses/{rep} {
+        allow read: if connecte();
+        allow create: if membre()
+          && request.resource.data.keys().hasOnly(['texte', 'auteur', 'pseudo', 'date'])
+          && signeParMoi(request.resource.data)
+          && texteOk(request.resource.data.texte, 2000);
+        allow update: if false;
+        allow delete: if connecte() && (resource.data.auteur == request.auth.uid || estAdmin());
+      }
+    }
+
+    // ---------- signalements ----------
+    match /signalements/{id} {
+      allow create: if membre()
+        && request.resource.data.keys().hasOnly(['chemin', 'texte', 'auteurSignale', 'pseudoSignale', 'par', 'date'])
+        && request.resource.data.par == request.auth.uid
+        && request.resource.data.date == request.time
+        && request.resource.data.chemin is string && request.resource.data.chemin.size() <= 200
+        && request.resource.data.texte is string && request.resource.data.texte.size() <= 500;
+      allow read, delete: if estAdmin();
+      allow update: if false;
+    }
+  }
+}

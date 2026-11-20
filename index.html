@@ -39,7 +39,7 @@ h1 .l1{display:block}
 h1{font-family:"Playfair Display",serif;font-weight:900;font-size:clamp(3rem,12vw,8rem);line-height:.92;text-shadow:0 1px 0 #c21a7f,0 2px 0 #a3166b,0 3px 0 #85125a,0 4px 0 #670e46,0 14px 30px rgba(0,0,0,.6)}
 h1 em{display:block;font-style:normal;color:var(--rose);text-shadow:0 1px 0 #c21a7f,0 2px 0 #a3166b,0 3px 0 #85125a,0 4px 0 #670e46,0 0 40px rgba(255,45,168,.55)}
 .hero p{max-width:520px;color:#c4c4d0;margin:20px 0 26px;font-size:1.02rem}
-.raccourcis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;max-width:760px}
+.raccourcis{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;max-width:760px}
 .raccourcis button{background:var(--verre);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--ligne);border-radius:16px;padding:14px 8px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;font-weight:700;font-size:.85rem;transition:.2s}
 .raccourcis button b{font-size:1.4rem}
 .raccourcis button small{color:var(--gris);font-weight:600;font-size:.7rem}
@@ -137,6 +137,28 @@ select.tri{flex:none;max-width:38%;background:var(--verre);color:var(--texte);bo
 @keyframes scanSortie{from{clip-path:circle(150% at 50% 35%)}to{clip-path:circle(0% at 50% 35%);filter:hue-rotate(60deg) brightness(2)}}
 @keyframes scanEntree{from{clip-path:circle(0% at 50% 35%);filter:brightness(2.5) hue-rotate(-30deg)}60%{filter:brightness(1.4)}to{clip-path:circle(150% at 50% 35%)}}
 #scene[data-vers=carte] .fiche{animation-name:apparition}
+/* 📲 Appli : l'écran se range dans un téléphone / en sort, les cartes arrivent comme des notifications */
+#scene.sortie[data-de=appli] #rubrique{animation-name:telSortie;animation-duration:.38s}
+#scene.entree[data-vers=appli] #rubrique{animation-name:telEntree;animation-duration:.8s}
+@keyframes telSortie{to{transform:scale(.22,.4) translateY(60%);border-radius:60px;clip-path:inset(0 round 60px);opacity:0}}
+@keyframes telEntree{0%{transform:scale(.22,.4) translateY(60%);clip-path:inset(0 round 60px);opacity:0}55%{transform:scale(1.02,1);clip-path:inset(0 round 24px);opacity:1}100%{clip-path:inset(0 round 0)}}
+#scene[data-vers=appli] .fiche{animation-name:notif;animation-duration:.55s;animation-delay:calc(var(--i,0)*90ms)}
+@keyframes notif{0%{transform:translateY(-60px) scale(.9);opacity:0}60%{transform:translateY(6px) scale(1.01);opacity:1}}
+
+/* 📲 rubrique Appli */
+.appliHaut{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;margin-bottom:22px}
+.tel{width:150px;height:300px;border-radius:30px;border:3px solid #2c2c38;background:linear-gradient(170deg,#FF2DA8 0%,#ff8a3d 55%,#007BA7 100%);position:relative;box-shadow:0 20px 60px rgba(255,45,168,.25);transform:rotateY(-14deg) rotateX(6deg);animation:flotte 5s ease-in-out infinite}
+.tel::before{content:"";position:absolute;inset:10px;border-radius:22px;background:#07070b url(app/icones/icone-192.png) center 38%/56px no-repeat}
+.tel::after{content:"GTA VI · Loupe";position:absolute;left:0;right:0;top:62%;text-align:center;font-size:.7rem;font-weight:800;letter-spacing:.1em;color:#fff}
+@keyframes flotte{50%{transform:rotateY(-6deg) rotateX(2deg) translateY(-8px)}}
+.boutonsAppli{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.boutonsAppli a,.boutonsAppli button{display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:14px;font-weight:800;text-decoration:none;cursor:pointer;border:0;font-size:.95rem}
+.boutonsAppli .princ{background:linear-gradient(90deg,var(--rose),#ff8a3d);color:#fff}
+.boutonsAppli .sec{background:var(--verre);color:var(--texte);border:1px solid var(--ligne)}
+.etapes{counter-reset:e;list-style:none;display:grid;gap:8px;margin-top:10px}
+.etapes li{counter-increment:e;display:flex;gap:10px;align-items:flex-start;font-size:.9rem;color:#d6d6e0}
+.etapes li::before{content:counter(e);flex:none;width:24px;height:24px;border-radius:50%;background:rgba(255,45,168,.18);color:var(--rose);font-weight:800;font-size:.8rem;display:grid;place-items:center}
+@media(max-width:760px){.appliHaut{grid-template-columns:1fr;justify-items:center;text-align:center}.tel{width:120px;height:240px}.boutonsAppli{justify-content:center}}
 
 /* carte rayon X */
 .vueCarte{display:grid;grid-template-columns:minmax(280px,520px) 1fr;gap:24px;align-items:start}
@@ -228,7 +250,7 @@ footer p+p{margin-top:8px}
 
 @media(max-width:760px){
   .menuPc{display:none}
-  .barre{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:40;background:rgba(14,14,20,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--ligne);border-radius:20px;padding:6px;box-shadow:0 10px 40px rgba(0,0,0,.6)}
+  .barre{display:grid;grid-template-columns:repeat(6,1fr);position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:40;background:rgba(14,14,20,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--ligne);border-radius:20px;padding:6px;box-shadow:0 10px 40px rgba(0,0,0,.6)}
   .barre button{background:none;border:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 0;border-radius:14px;font-size:.68rem;font-weight:700;color:var(--gris)}
   .barre button b{font-size:1.25rem;line-height:1}
   .barre button.actif{color:var(--texte);background:rgba(255,45,168,.16)}
@@ -304,6 +326,7 @@ const RUBRIQUES = [
   { id:"armes",     icone:"🔫", nom:"Armes" },
   { id:"vehicules", icone:"🚗", nom:"Véhicules" },
   { id:"carte",     icone:"🗺️", nom:"Carte" },
+  { id:"appli",     icone:"📲", nom:"Appli" },
 ];
 const TYPES_ACTU = { tout:"Tout", actus:"Actus", secrets:"Secrets", astuces:"Astuces", argent:"Argent", lieux:"Lieux", vehicules:"Véhicules", armes:"Armes" };
 const CLASSES_ARMES = { toutes:"Toutes", pistolets:"Pistolets", revolvers:"Revolvers", mitraillettes:"Mitraillettes", "fusils-a-pompe":"Fusils à pompe", "fusils-assaut":"Fusils d'assaut", "fusils-tactiques":"Fusils tactiques", snipers:"Snipers", lourdes:"Armes lourdes", melee:"Mêlée", explosifs:"Explosifs" };
@@ -422,6 +445,20 @@ const RENDU = {
       + pastilles(CLASSES_VEH, etat.classeV, "data-classe-v", id => id==="toutes" ? VEHS.length : VEHS.filter(v=>v.classe===id).length)
       + `<div class="regle">Stats sur 10, comme dans le jeu. Les autres véhicules apparaîtront quand un 2e site les aura confirmés.</div>`
       + `<div class="grille">${l.length ? l.map(ficheVeh).join("") : vide("Aucun véhicule ne correspond.")}</div>`;
+  },
+  appli(){
+    const fiche = (t, c) => `<article class="fiche"><div class="corps"><h3>${t}</h3>${c}</div></article>`;
+    const etapes = l => `<ol class="etapes">${l.map(x => `<li>${x}</li>`).join("")}</ol>`;
+    return titre("L'appli", "gratuite · sans store") + `<div class="appliHaut"><div class="tel" aria-hidden="true"></div><div>
+      <h3 style="font-size:1.5rem;margin-bottom:6px">Tout le site dans ta poche, + la communauté</h3>
+      <p style="color:var(--gris);max-width:520px">Les mêmes infos vérifiées (actus, armes, véhicules, vidéos, carte) avec une interface d'appli, et surtout des <b style="color:var(--texte)">salons de discussion</b> et un <b style="color:var(--texte)">forum</b> pour parler avec les autres joueurs. Connexion avec Google ou ton e-mail.</p>
+      <div class="boutonsAppli"><a class="princ" href="app/">📲 Ouvrir l'appli</a><a class="sec" href="app/#installer">⬇️ L'installer</a></div></div></div>
+      <div class="grille">
+      ${fiche("🤖 Android (Chrome)", etapes(["Touche « Ouvrir l'appli ».", "Menu ⋮ en haut à droite → <b>Installer l'application</b> (ou « Ajouter à l'écran d'accueil »).", "L'icône GTA VI apparaît avec tes autres applis."]))}
+      ${fiche("🍎 iPhone (Safari)", etapes(["Ouvre l'appli dans <b>Safari</b>.", "Touche le bouton Partager (carré avec une flèche).", "Choisis <b>Sur l'écran d'accueil</b>, puis Ajouter."]))}
+      ${fiche("💻 PC (Chrome / Edge)", etapes(["Ouvre l'appli.", "Clique sur l'icône d'installation à droite de la barre d'adresse.", "Elle s'ouvre ensuite dans sa propre fenêtre."]))}
+      ${fiche("💬 La communauté", etapes(["Salons façon Discord : #général, #argent, #armes, #véhicules, #secrets, #entraide.", "Forum avec sujets et réponses.", "16 ans minimum, insultes filtrées, bouton Signaler, modération."]))}
+      </div>`;
   },
   carte(){
     const parZone = {}; ACTUS.forEach(e => { if (e.zone) (parZone[e.zone] ||= []).push(e); });
@@ -588,7 +625,7 @@ Promise.all([frais("data/contenu.json"), frais("data/armes.json").catch(() => ({
     ARMES = (a.armes||[]).filter(x => x.statut === "confirme");
     VEHS = (v.vehicules||[]).filter(x => x.statut === "confirme");
     VIDEOS = (vid.videos||[]).filter(idOk).sort((x,y) => y.date.localeCompare(x.date));
-    $("raccourcis").innerHTML = RUBRIQUES.map(r => `<button class="piece" data-rub="${r.id}"><b>${r.icone}</b>${r.nom}<small>${{actus:ACTUS.length+" infos",videos:VIDEOS.length+" vidéos",armes:ARMES.length+" armes",vehicules:VEHS.length+" véhicules",carte:"5 comtés"}[r.id]}</small></button>`).join("");
+    $("raccourcis").innerHTML = RUBRIQUES.map(r => `<button class="piece" data-rub="${r.id}"><b>${r.icone}</b>${r.nom}<small>${{actus:ACTUS.length+" infos",videos:VIDEOS.length+" vidéos",armes:ARMES.length+" armes",vehicules:VEHS.length+" véhicules",carte:"5 comtés",appli:"+ chat"}[r.id]}</small></button>`).join("");
     $("maj").innerHTML = `Dernière vérification : <b>${esc(dateCourte(c.derniereMaj))}</b>`;
     afficher();
     Promise.all([chargementVisuel, attendre(2700)]).then(construireSite);
