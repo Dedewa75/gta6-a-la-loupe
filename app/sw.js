@@ -1,5 +1,5 @@
 // Service worker : l'appli s'ouvre même sans réseau (dernières infos gardées en mémoire)
-const VERSION = "appli-v1";
+const VERSION = "appli-v2";
 const COQUILLE = ["./", "index.html", "style.css", "app.js", "communaute.js", "firebase-config.js", "manifest.webmanifest", "icones/icone-192.png", "icones/icone-512.png", "../images/carte-leonida-rayonx.jpg"];
 
 self.addEventListener("install", (e) => {
