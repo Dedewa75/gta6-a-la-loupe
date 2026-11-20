@@ -4,17 +4,24 @@ on:
   schedule:
     - cron: "0 6 * * *"   # tous les jours vers 7h (heure belge en hiver)
   workflow_dispatch:       # bouton "Run workflow" pour lancer a la main
+  push:
+    branches: [main]       # republie le site quand tu modifies un fichier
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: maj-quotidienne
   cancel-in-progress: false
 
 jobs:
-  maj:
+  maj-et-publication:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploiement.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -23,11 +30,14 @@ jobs:
           node-version: 20
 
       - name: Scanner les actus et mettre a jour
+        if: github.event_name != 'push'
+        continue-on-error: true   # si l'IA plante, le site reste quand meme en ligne
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: node scripts/update.mjs
 
       - name: Enregistrer les changements
+        if: github.event_name != 'push'
         run: |
           git config user.name "gta6-bot"
           git config user.email "gta6-bot@users.noreply.github.com"
@@ -38,3 +48,13 @@ jobs:
             git commit -m "Mise a jour auto du $(date -u +%Y-%m-%d)"
             git push
           fi
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Publier le site
+        id: deploiement
+        uses: actions/deploy-pages@v4
