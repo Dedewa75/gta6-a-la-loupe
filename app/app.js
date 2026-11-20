@@ -81,7 +81,7 @@ const ECRANS = {
     const pseudo = C?.profil?.pseudo;
     e.innerHTML = `
       <div class="bienvenue"><small>Leonida · infos vérifiées</small><h1>${pseudo ? `Salut ${esc(pseudo)} 👋` : "Bienvenue à Leonida"}</h1>
-        <p>${D.armes.length} armes, ${D.vehicules.length} véhicules, ${D.videos.length} vidéos. Dernière vérification : ${dateCourte(D.maj)}.</p></div>
+        <p>${D.armes.length} armes, ${D.vehicules.length} véhicules, ${D.videos.length} vidéos. Dernière vérification : ${dateCourte(D.maj)}</p></div>
       ${installee() ? "" : `<button class="btn" data-action="feuilleInstaller" style="margin-top:-4px">📲 Installer l'appli sur mon téléphone</button>`}
       <h2 class="sec">Explorer</h2>
       <div class="tuiles">
