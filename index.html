@@ -145,7 +145,7 @@ footer p+p{margin-top:8px}
   <div class="outils" id="onglets"></div>
   <div class="outils"><input id="recherche" type="search" placeholder="Rechercher (ex. voiture, argent, Vice City…)"></div>
   <div class="filtres">
-    <label><input type="checkbox" id="fConfirme"> Seulement les infos confirmées</label>
+    <span>✓ Seules les infos confirmées par au moins 2 sources sont affichées</span>
     <label><input type="checkbox" id="fSpoil" checked> Flouter les spoilers</label>
   </div>
 
@@ -195,7 +195,7 @@ footer p+p{margin-top:8px}
 
 <footer>
   <p><b>GTA VI à la loupe</b> est un site de fans indépendant et non officiel. Il n'est ni affilié, ni approuvé par Rockstar Games ou Take-Two Interactive. Grand Theft Auto est une marque de Take-Two Interactive.</p>
-  <p>Les résumés sont rédigés automatiquement par une IA à partir de sources publiques citées sur chaque fiche. L'IA peut se tromper : vérifie les infos « non vérifiées » via leurs sources.</p>
+  <p>Les résumés sont rédigés automatiquement par une IA à partir de sources publiques citées sur chaque fiche. Seules les infos confirmées par au moins deux sites indépendants (ou par Rockstar) sont publiées. Une erreur reste possible si plusieurs sites se trompent ensemble : en cas de doute, vérifie dans le jeu.</p>
 </footer>
 
 <script>
@@ -269,7 +269,6 @@ function renduArmes(){
   document.querySelectorAll("[data-classe]").forEach(b => b.onclick = () => { classe = b.dataset.classe; renduArmes(); });
   const q = $("recherche").value.trim().toLowerCase(), t = $("triArmes").value;
   let liste = ARMES.filter(a => (classe === "toutes" || a.classe === classe) &&
-    (!$("fConfirme").checked || a.statut === "confirme") &&
     (!q || (a.nom + " " + (a.infos||"") + " " + (CLASSES[a.classe]||"")).toLowerCase().includes(q)));
   const val = (a,k) => typeof a[k] === "number" ? a[k] : null;
   liste.sort((a,b) => {
@@ -289,7 +288,6 @@ const $ = id => document.getElementById(id);
 function filtrer(liste){
   const q = $("recherche").value.trim().toLowerCase();
   return liste.filter(e =>
-    (!$("fConfirme").checked || e.statut === "confirme") &&
     (!q || (e.titre + " " + e.resume + " " + (CATS[e.categorie]?.nom||"")).toLowerCase().includes(q)));
 }
 
@@ -361,12 +359,14 @@ document.addEventListener("click", e => {
   const go = e.target.closest("[data-go]");
   if (go) { onglet = go.dataset.go; rendu(); }
 });
-["recherche","fConfirme","fSpoil","triArmes"].forEach(id => $(id).addEventListener("input", rendu));
+["recherche","fSpoil","triArmes"].forEach(id => $(id).addEventListener("input", rendu));
 
 const frais = f => fetch(f + "?v=" + Date.now()).then(r => r.json());
 Promise.all([frais("data/contenu.json"), frais("data/armes.json").catch(() => ({armes:[]}))])
   .then(([d, a]) => {
-    DATA = d; ARMES = a.armes || [];
+    // Règle du site : on n'affiche QUE ce qui est confirmé par au moins 2 sources
+    d.entrees = (d.entrees || []).filter(e => e.statut === "confirme");
+    DATA = d; ARMES = (a.armes || []).filter(x => x.statut === "confirme");
     DATA.entrees.sort((a,b) => b.date.localeCompare(a.date));
     $("nbTotal").textContent = d.entrees.length;
     $("nbJour").textContent = d.dernierAjout ?? 0;

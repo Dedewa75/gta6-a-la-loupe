@@ -73,7 +73,7 @@ async function telecharger(url) {
 // ---------- IA Gemini ----------
 const MODELES = (process.env.GEMINI_MODEL || "gemini-flash-latest,gemini-2.5-flash,gemini-2.0-flash").split(",");
 
-function consigne(liste) {
+function consigne(liste, enAttente = []) {
   return `Tu es le rédacteur d'un site de fans francophone NON OFFICIEL sur GTA 6 (Grand Theft Auto VI, sorti le 19 novembre 2026 sur PS5 et Xbox Series X|S, État de Leonida).
 Voici des titres d'articles et de posts récents, numérotés :
 ${liste.map((a, i) => `[${i}] ${a.titre} (${a.site || "?"}) ${a.extrait ? "— " + a.extrait : ""}`).join("\n")}
@@ -86,13 +86,18 @@ Règles :
 - N'invente RIEN : n'écris que ce que les titres/extraits disent. Si c'est flou, ne l'ajoute pas.
 - categorie parmi : ${CATEGORIES.join(", ")}
   (actus = nouvelles du jeu/Rockstar ; secrets = easter eggs, détails cachés ; astuces = conseils, méthodes ; vehicules ; armes ; argent = façons de gagner de l'argent, systèmes économiques ; lieux = un endroit précis de la carte)
-- statut : "confirme" seulement si la source est Rockstar/Take-Two OU si au moins 2 sources différentes disent la même chose ; sinon "non-verifie".
+- Pour chaque entrée, cite TOUTES les sources [x] qui disent la même chose : une info n'est publiée que si au moins 2 sites différents la confirment (ou Rockstar/Take-Two officiellement).
+- N'ajoute une entrée que si tu es certain que les titres/extraits l'affirment clairement (pas de « rumeur », « leak », « pourrait », « selon un insider »).
 - spoiler : true si ça révèle l'histoire (missions, fin, morts, rebondissements).
 - zone : pour "lieux", "secrets" et "astuces" liés à un endroit, choisis parmi ${ZONES.join(", ")} ; sinon null.
 - titre : court (max 80 caractères). resume : 1 à 3 phrases (max 300 caractères).
 - sources : les numéros [x] utilisés.
-Réponds UNIQUEMENT en JSON : {"entrees":[{"categorie":"","titre":"","resume":"","statut":"","spoiler":false,"zone":null,"sources":[0]}]}
-Si rien d'utile : {"entrees":[]}`;
+${enAttente.length ? `
+Infos EN ATTENTE de confirmation (déjà vues sur 1 seul site) :
+${enAttente.map((e) => `(${e.id}) ${e.titre} — ${e.resume}`).join("\n")}
+Si un des articles ci-dessus dit clairement LA MÊME CHOSE qu'une info en attente, ajoute-la dans "confirmations" avec son id et les numéros [x] des articles.` : ""}
+Réponds UNIQUEMENT en JSON : {"entrees":[{"categorie":"","titre":"","resume":"","spoiler":false,"zone":null,"sources":[0]}],"confirmations":[{"id":"","sources":[0]}]}
+Si rien d'utile : {"entrees":[],"confirmations":[]}`;
 }
 
 async function demanderIA(texte) {
@@ -125,6 +130,13 @@ async function demanderIA(texte) {
 // ---------- programme principal ----------
 const norm = (s) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
 
+// Règle de fiabilité : publié seulement si 2 sites différents (ou une source officielle Rockstar/Take-Two)
+const OFFICIEL = /rockstar|take-?two/i;
+export function estConfirme(sources) {
+  if (sources.some((s) => OFFICIEL.test(s.nom) || /rockstargames\.com|take2games\.com/i.test(s.url))) return true;
+  return new Set(sources.map((s) => norm(s.nom))).size >= 2;
+}
+
 export async function principal() {
   if (!CLE && !MOCK) {
     console.error("❌ GEMINI_API_KEY manquante (Settings > Secrets and variables > Actions)");
@@ -152,7 +164,8 @@ export async function principal() {
   let ajoutes = 0;
 
   if (articles.length) {
-    const rep = await demanderIA(consigne(articles));
+    const enAttente = data.entrees.filter((e) => e.statut !== "confirme");
+    const rep = await demanderIA(consigne(articles, enAttente));
     const dejaTitres = new Set(data.entrees.map((e) => norm(e.titre)));
     const aujourdhui = new Date().toISOString().slice(0, 10);
     const nouvelles = [];
@@ -168,21 +181,36 @@ export async function principal() {
         categorie: e.categorie,
         titre: String(e.titre).slice(0, 100),
         resume: String(e.resume).slice(0, 400),
-        statut: e.statut === "confirme" ? "confirme" : "non-verifie",
+        statut: estConfirme(sources) ? "confirme" : "non-verifie",
         spoiler: !!e.spoiler,
         zone: ZONES.includes(e.zone) ? e.zone : null,
         sources: sources.slice(0, 4),
       });
     }
-    ajoutes = nouvelles.length;
+    // infos en attente confirmées aujourd'hui par un 2e site
+    let confirmees = 0;
+    for (const c of rep.confirmations || []) {
+      const e = enAttente.find((x) => x.id === c.id);
+      if (!e) continue;
+      for (const a of (c.sources || []).map((i) => articles[i]).filter(Boolean))
+        if (!e.sources.some((s) => s.url === a.lien)) e.sources.push({ nom: a.site || "Source", url: a.lien });
+      if (estConfirme(e.sources)) { e.statut = "confirme"; e.date = aujourdhui; confirmees++; }
+    }
+    ajoutes = nouvelles.filter((e) => e.statut === "confirme").length + confirmees;
     data.entrees = [...nouvelles, ...data.entrees].slice(0, 2000);
+    console.log(`⏳ ${nouvelles.length - nouvelles.filter((e) => e.statut === "confirme").length} infos mises en attente d'une 2e source, ${confirmees} confirmées aujourd'hui`);
   }
+
+  // une info jamais confirmée après 14 jours est supprimée
+  const limiteAttente = new Date(Date.now() - 14 * 24 * 3600 * 1000).toISOString().slice(0, 10);
+  data.entrees = data.entrees.filter((e) => e.statut === "confirme" || e.date >= limiteAttente);
+  data.entrees.sort((a, b) => b.date.localeCompare(a.date));
 
   data.liensVus = [...articles.map((a) => a.lien), ...data.liensVus].slice(0, 3000);
   data.derniereMaj = new Date().toISOString();
   data.dernierAjout = ajoutes;
   await writeFile(FICHIER, JSON.stringify(data, null, 1) + "\n");
-  console.log(`✅ ${ajoutes} nouvelles entrées ajoutées (total : ${data.entrees.length})`);
+  console.log(`✅ ${ajoutes} infos confirmées publiées (total publié : ${data.entrees.filter((e) => e.statut === "confirme").length})`);
 }
 
 // ---------- arsenal : fiches détaillées des armes ----------
