@@ -381,7 +381,7 @@ const RECHERCHES = [
   ["vehicules", "GTA 6 rare car location"], ["vehicules", "GTA 6 voiture rare"],
   ["astuces", "GTA 6 tips and tricks"], ["astuces", "GTA 6 astuces"],
 ];
-const SORTIE = "2026-11-19T00:00:00Z"; // on ne garde que les vidéos publiées après la sortie du jeu
+const SORTIE = "2026-11-18T11:00:00Z"; // on ne garde que les vidéos publiées après la sortie du jeu
 const BON = /gta\s*(6|vi)\b|grand theft auto (6|vi)\b/i;
 const MAUVAIS = /gta\s*(5|v)\b|gta online|roblox|minecraft|fortnite|leak|fuite|concept|fake|mod\b/i;
 const dureeSec = (d = "") => { const m = d.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/) || []; return (+m[1] || 0) * 3600 + (+m[2] || 0) * 60 + (+m[3] || 0); };
@@ -486,6 +486,51 @@ async function infosOembed(v) {
   try { const r = await fetch(ep, { signal: AbortSignal.timeout(15000) }); if (!r.ok) return {}; const j = await r.json(); return { titre: j.title, chaine: j.author_name }; } catch { return {}; }
 }
 
+// Date de publication cachée dans le numéro d'une vidéo TikTok (les 32 premiers bits = secondes Unix)
+export const dateTikTok = (id) => { try { return new Date(Number(BigInt(id) >> 32n) * 1000); } catch { return null; } };
+
+// Recherche Google faite par Gemini (outil google_search), puis chaque lien est vérifié auprès de TikTok
+const RECHERCHES_TIKTOK = [
+  "GTA 6 hidden money location TikTok", "GTA 6 secret weapon location TikTok", "GTA 6 easter egg TikTok",
+  "GTA 6 rare car location TikTok", "GTA 6 tips TikTok", "GTA 6 astuce argent TikTok",
+];
+async function chercherTikTok() {
+  if (!CLE || MOCK) return [];
+  const liens = new Set();
+  for (const q of RECHERCHES_TIKTOK) {
+    for (const modele of MODELES) {
+      try {
+        const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${modele.trim()}:generateContent`, {
+          method: "POST", headers: { "Content-Type": "application/json", "x-goog-api-key": CLE },
+          body: JSON.stringify({
+            contents: [{ parts: [{ text: `Cherche sur Google des vidéos TikTok publiées ces 3 derniers jours sur : ${q}. Liste UNIQUEMENT les liens complets tiktok.com/@.../video/... que tu as réellement trouvés, un par ligne. N'invente aucun lien.` }] }],
+            tools: [{ google_search: {} }],
+          }),
+          signal: AbortSignal.timeout(90000),
+        });
+        const j = await r.json();
+        if (!r.ok) throw new Error(j.error?.message || "HTTP " + r.status);
+        const cand = j.candidates?.[0] || {};
+        const texte = (cand.content?.parts || []).map((p) => p.text || "").join("\n");
+        for (const m of texte.matchAll(/https?:\/\/(?:www\.|vm\.|vt\.)?tiktok\.com\/[^\s)\]>"']+/g)) liens.add(m[0]);
+        for (const c of cand.groundingMetadata?.groundingChunks || []) {
+          const u = c.web?.uri; if (!u) continue;
+          if (/tiktok\.com/.test(u)) { liens.add(u); continue; }
+          if (/grounding-api-redirect/.test(u) && /tiktok/i.test(c.web?.title || "")) {
+            try { const rr = await fetch(u, { redirect: "manual", signal: AbortSignal.timeout(10000) }); const loc = rr.headers.get("location"); if (loc) liens.add(loc); } catch {}
+          }
+        }
+        break;
+      } catch (e) { console.log("⚠️ recherche TikTok", modele, ":", e.message); }
+    }
+  }
+  console.log(`🎵 ${liens.size} liens TikTok trouvés par la recherche`);
+  return [...liens];
+}
+async function existeSurTikTok(url) {
+  try { const r = await fetch(`https://www.tiktok.com/oembed?url=${encodeURIComponent(url)}`, { signal: AbortSignal.timeout(15000) }); if (!r.ok) return null; const j = await r.json(); return j.title !== undefined ? j : null; } catch { return null; }
+}
+
 export async function majVideosSociales() {
   const data = JSON.parse(await readFile(FICHIER_VID, "utf8"));
   const connues = new Set(data.videos.map((v) => (v.plateforme || "youtube") + ":" + v.id));
@@ -514,6 +559,18 @@ export async function majVideosSociales() {
       }
     } catch (e) { console.log("⚠️ Reddit ignoré :", e.message); }
   }
+  // 3) recherche TikTok quotidienne (liens vérifiés un par un auprès de TikTok)
+  const limiteTT = Math.max(Date.parse(SORTIE), Date.now() - 4 * 24 * 3600 * 1000);
+  for (const lien of await chercherTikTok()) {
+    const v = lireLien(await resoudre(lien));
+    if (!v || v.plateforme !== "tiktok" || connues.has("tiktok:" + v.id)) continue;
+    const d = dateTikTok(v.id);
+    if (!d || d.getTime() < limiteTT || d.getTime() > Date.now() + 864e5) continue; // trop vieille ou numéro incohérent
+    const o = await existeSurTikTok(v.url);
+    if (!o) { console.log("🚫 lien TikTok introuvable (inventé ?) :", v.url); continue; }
+    if (!BON.test((o.title || "") + " " + (o.author_name || "")) && !/#gta6|#gtavi/i.test(o.title || "")) continue;
+    candidats.push({ ...v, titre: o.title, chaine: o.author_name ? "@" + (o.author_unique_id || o.author_name) : v.chaine, dateVideo: d.toISOString().slice(0, 10) });
+  }
   const vus = new Set();
   const liste = candidats.filter((c) => { const k = c.plateforme + ":" + c.id; if (connues.has(k) || vus.has(k)) return false; vus.add(k); return true; });
   if (!liste.length) return console.log("📱 aucune nouvelle vidéo TikTok/Instagram/Reddit");
@@ -537,7 +594,7 @@ Réponds UNIQUEMENT en JSON : {"videos":[{"i":0,"categorie":"secrets","titre":".
     const cat = c.cat || (CATS_VIDEO.includes(v?.categorie) ? v.categorie : null) || (c.manuel ? "secrets" : null);
     if (!cat) return;
     const t = v?.titre || c.titre || c.titreReddit || (c.plateforme === "instagram" ? "Reel Instagram GTA 6" : "Vidéo GTA 6");
-    ajout.push({ id: c.id, plateforme: c.plateforme, categorie: cat, titre: String(t).slice(0, 90), date: aujourdhui, url: c.url, chaine: c.chaine || null, vues: null });
+    ajout.push({ id: c.id, plateforme: c.plateforme, categorie: cat, titre: String(t).slice(0, 90), date: c.dateVideo || aujourdhui, url: c.url, chaine: c.chaine || null, vues: null });
   });
   data.videos = [...ajout, ...data.videos].slice(0, 400);
   data.derniereMaj = new Date().toISOString();
