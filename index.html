@@ -8,6 +8,10 @@
 <meta name="description" content="Site de fans non officiel : les infos GTA 6 vérifiées par au moins deux sources — actus, secrets, armes, véhicules et carte de Leonida, mis à jour chaque jour.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<script>
+// animation d'ouverture : on cache le site tant qu'il ne s'est pas « construit »
+if (!matchMedia("(prefers-reduced-motion: reduce)").matches) document.documentElement.classList.add("construction");
+</script>
 <style>
 :root{--noir:#0B0B0B;--noir2:#141418;--bleu:#007BA7;--rose:#FF2DA8;--texte:#EDEDF2;--gris:#9A9AA8;--ligne:#26262e;--verre:rgba(18,18,24,.8)}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -144,6 +148,39 @@ select.tri{flex:none;max-width:38%;background:var(--verre);color:var(--texte);bo
 #lecteur .fermer{background:var(--rose);color:var(--noir);border:0;border-radius:999px;padding:9px 16px;font-weight:800;cursor:pointer;flex:none}
 #lecteur a{color:var(--gris);font-size:.8rem}
 
+/* ---------- animation d'ouverture ---------- */
+#intro{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;flex-direction:column;gap:18px;background:#05060a;transition:background .6s ease;cursor:pointer}
+.construction #intro{display:flex}
+#intro.ouvert{background:rgba(5,6,10,0)}
+#intro.ouvert .centre{opacity:0;transform:scale(1.15);filter:blur(6px)}
+#intro .centre{display:flex;flex-direction:column;align-items:center;gap:16px;transition:.5s ease}
+#intro svg{width:min(560px,86vw);height:auto;overflow:visible}
+#intro .trace{fill:transparent;stroke-width:1.6;stroke-dasharray:900;stroke-dashoffset:900;animation:tracer 1.4s cubic-bezier(.6,.1,.3,1) forwards,remplirTexte .5s ease 1.2s forwards}
+#intro .t1{stroke:#fff;font:900 92px "Playfair Display",serif}
+#intro .t2{stroke:var(--rose);font:900 54px "Playfair Display",serif;animation-delay:.25s,1.45s}
+@keyframes tracer{to{stroke-dashoffset:0}}
+@keyframes remplirTexte{to{fill:currentColor}}
+#intro .t1{color:#fff}#intro .t2{color:var(--rose);filter:drop-shadow(0 0 14px rgba(255,45,168,.6))}
+#intro .ligne{width:min(320px,70vw);height:3px;background:#1b1b24;border-radius:3px;overflow:hidden}
+#intro .ligne i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--bleu),var(--rose));box-shadow:0 0 12px var(--rose);transition:width .25s}
+#intro .etat{font:700 .72rem Inter,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:#4cc3ee}
+#intro .passer{position:absolute;bottom:28px;font-size:.72rem;color:#55556a;letter-spacing:.15em;transition:opacity .3s}
+#intro.ouvert .passer{opacity:0}
+#intro::before{content:"";position:absolute;left:0;right:0;height:120px;top:-120px;background:linear-gradient(transparent,rgba(76,195,238,.12),transparent);animation:balayage 2.2s linear infinite;pointer-events:none}
+.construction .bloc{opacity:0}
+.bloc.apparu{animation:materialiser .55s cubic-bezier(.2,.8,.2,1) both}
+main.bloc.apparu{animation:none;opacity:1}
+@keyframes materialiser{0%{opacity:0;transform:perspective(800px) rotateX(45deg) scale(.92);filter:blur(8px) brightness(2)}60%{opacity:1;filter:blur(0) brightness(1.6)}100%{opacity:1;transform:none;filter:none}}
+.fleche{position:fixed;z-index:101;left:0;top:0;width:34px;height:14px;pointer-events:none;color:var(--rose);filter:drop-shadow(0 0 6px currentColor)}
+.fleche::after{content:"";position:absolute;right:0;top:0;border-left:14px solid currentColor;border-top:7px solid transparent;border-bottom:7px solid transparent}
+.fleche::before{content:"";position:absolute;left:0;right:12px;top:6px;height:2px;background:linear-gradient(90deg,transparent,currentColor)}
+.fleche.bleue{color:#4cc3ee}
+.cadreC{position:fixed;z-index:101;pointer-events:none}
+.cadreC rect{fill:none;stroke-width:2;animation:tracer .45s ease-out forwards}
+#fond3d{transition:opacity 1.2s ease}
+.construction #fond3d{opacity:0}
+.construction.fond #fond3d{opacity:1}
+
 /* barre du bas (téléphone) */
 .barre{display:none}
 footer{border-top:1px solid var(--ligne);padding:26px 5vw 110px;color:var(--gris);font-size:.76rem;background:rgba(11,11,11,.92)}
@@ -166,24 +203,32 @@ footer p+p{margin-top:8px}
 </head>
 <body>
 <canvas id="fond3d" aria-hidden="true"></canvas>
+<div id="intro" aria-hidden="true">
+  <div class="centre">
+    <svg viewBox="0 0 560 190"><text class="trace t1" x="280" y="95" text-anchor="middle">GTA VI</text><text class="trace t2" x="280" y="165" text-anchor="middle">À LA LOUPE</text></svg>
+    <div class="ligne"><i id="introBarre"></i></div>
+    <div class="etat" id="introEtat">Scan de Leonida… 0 %</div>
+  </div>
+  <div class="passer">Touche l'écran pour passer</div>
+</div>
 
 <header>
-  <div class="haut">
+  <div class="haut bloc">
     <div class="logo" data-go="haut">GTA VI <span>à la loupe</span></div>
     <nav class="menuPc" aria-label="Rubriques"></nav>
   </div>
   <section class="hero" id="accueil">
     <div class="heroContenu">
-      <div class="surtitre">Leonida · infos vérifiées chaque jour</div>
-      <h1>GTA VI<em>À LA LOUPE</em></h1>
-      <p>Les actus, secrets, armes, véhicules et lieux de GTA 6. Seules les infos confirmées par au moins deux sites sont affichées.</p>
+      <div class="surtitre bloc">Leonida · infos vérifiées chaque jour</div>
+      <h1 class="bloc">GTA VI<em>À LA LOUPE</em></h1>
+      <p class="bloc">Les actus, secrets, armes, véhicules et lieux de GTA 6. Seules les infos confirmées par au moins deux sites sont affichées.</p>
       <div class="raccourcis" id="raccourcis"></div>
-      <div class="maj" id="maj"></div>
+      <div class="maj bloc" id="maj"></div>
     </div>
   </section>
 </header>
 
-<main id="contenu">
+<main id="contenu" class="bloc">
   <div id="scene"><div id="rubrique"></div></div>
 </main>
 
@@ -192,7 +237,7 @@ footer p+p{margin-top:8px}
   <p>Les résumés sont rédigés automatiquement par une IA à partir de sources publiques citées sur chaque fiche. Seules les infos confirmées par au moins deux sites indépendants (ou par Rockstar) sont publiées. Une erreur reste possible si plusieurs sites se trompent ensemble : en cas de doute, vérifie dans le jeu.</p>
 </footer>
 
-<nav class="barre" aria-label="Rubriques"></nav>
+<nav class="barre bloc" aria-label="Rubriques"></nav>
 
 <div id="lecteur" role="dialog" aria-modal="true" aria-label="Lecteur vidéo">
   <div class="cadre">
@@ -429,6 +474,64 @@ if (matchMedia("(hover: hover)").matches && !matchMedia("(prefers-reduced-motion
 // le titre bascule en 3D quand on défile
 addEventListener("scroll", () => document.documentElement.style.setProperty("--p", Math.min(1, scrollY / (innerHeight*.8)).toFixed(3)), { passive: true });
 
+// ---------- animation d'ouverture : les flèches construisent le site ----------
+const attendre = ms => new Promise(r => setTimeout(r, ms));
+let introFinie = false, progression = 0;
+function avancer(p, texte){ progression = Math.max(progression, p); const b = $("introBarre"); if (b) b.style.width = progression + "%"; const e = $("introEtat"); if (e) e.textContent = `${texte} ${Math.round(progression)} %`; }
+const chargementVisuel = (async () => { for (let p = 0; p <= 85 && !introFinie; p += 3) { avancer(p, p < 40 ? "Scan de Leonida…" : "Chargement des fiches…"); await attendre(28); } })();
+function flecheVers(r, i){
+  const W = innerWidth, H = innerHeight, cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+  const cote = i % 4, depart = [[-60, Math.random()*H],[W+60, Math.random()*H],[Math.random()*W, -60],[Math.random()*W, H+60]][cote];
+  const f = document.createElement("div"); f.className = "fleche" + (i % 2 ? " bleue" : "");
+  const ang = Math.atan2(cy - depart[1], cx - depart[0]) * 180 / Math.PI;
+  document.body.appendChild(f);
+  const anim = f.animate([
+    { transform: `translate(${depart[0]}px,${depart[1]}px) rotate(${ang}deg) scaleX(.4)`, opacity: 0 },
+    { opacity: 1, offset: .2 },
+    { transform: `translate(${cx-17}px,${cy-7}px) rotate(${ang}deg) scaleX(1.3)`, opacity: 1 }
+  ], { duration: 520, easing: "cubic-bezier(.5,0,.2,1)" });
+  return anim.finished.then(() => f.remove());
+}
+function cadreAutour(r, i){
+  const svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
+  svg.setAttribute("class","cadreC"); Object.assign(svg.style,{left:(r.left-4)+"px",top:(r.top-4)+"px",width:(r.width+8)+"px",height:(r.height+8)+"px"});
+  svg.innerHTML = `<rect x="1" y="1" width="${r.width+6}" height="${r.height+6}" rx="12" stroke="${i%2?"#4cc3ee":"#FF2DA8"}" pathLength="900" stroke-dasharray="900" stroke-dashoffset="900"></rect>`;
+  document.body.appendChild(svg);
+  setTimeout(() => { svg.animate([{opacity:1},{opacity:0}],{duration:400,fill:"forwards"}).finished.then(() => svg.remove()); }, 650);
+}
+async function construireSite(){
+  if (introFinie || !document.documentElement.classList.contains("construction")) return finirIntro();
+  avancer(100, "Construction du site…");
+  await attendre(250);
+  $("intro").classList.add("ouvert");
+  document.documentElement.classList.add("fond");
+  const blocs = [...document.querySelectorAll(".bloc")].filter(b => { const r = b.getBoundingClientRect(); return r.width > 0 && r.height > 0 && r.top < innerHeight && r.bottom > 0; });
+  const boutons = [...document.querySelectorAll("#raccourcis button")];
+  const cibles = [...blocs.filter(b => b.id !== "contenu"), ...boutons];
+  boutons.forEach(b => b.style.opacity = 0);
+  await Promise.all(cibles.map(async (b, i) => {
+    await attendre(i * 110);
+    if (introFinie) return;
+    const r = b.getBoundingClientRect();
+    await flecheVers(r, i);
+    if (introFinie) return;
+    cadreAutour(r, i);
+    b.classList.add("apparu"); b.style.opacity = "";
+  }));
+  await attendre(300);
+  finirIntro();
+}
+function finirIntro(){
+  if (introFinie) return; introFinie = true;
+  document.querySelectorAll(".fleche,.cadreC").forEach(x => x.remove());
+  document.querySelectorAll("#raccourcis button").forEach(b => b.style.opacity = "");
+  document.querySelectorAll(".bloc").forEach(b => b.classList.add("apparu"));
+  document.documentElement.classList.remove("construction", "fond");
+  $("intro").style.display = "none";
+}
+$("intro").addEventListener("click", finirIntro);
+setTimeout(finirIntro, 9000); // sécurité : le site s'affiche quoi qu'il arrive
+
 // ---------- chargement des données ----------
 const frais = f => fetch(f + "?v=" + Date.now()).then(r => r.json());
 Promise.all([frais("data/contenu.json"), frais("data/armes.json").catch(() => ({})), frais("data/vehicules.json").catch(() => ({})), frais("data/videos.json").catch(() => ({}))])
@@ -441,8 +544,9 @@ Promise.all([frais("data/contenu.json"), frais("data/armes.json").catch(() => ({
     $("raccourcis").innerHTML = RUBRIQUES.map(r => `<button data-rub="${r.id}"><b>${r.icone}</b>${r.nom}<small>${{actus:ACTUS.length+" infos",videos:VIDEOS.length+" vidéos",armes:ARMES.length+" armes",vehicules:VEHS.length+" véhicules",carte:"5 comtés"}[r.id]}</small></button>`).join("");
     $("maj").innerHTML = `Dernière vérification : <b>${esc(dateCourte(c.derniereMaj))}</b>`;
     afficher();
+    Promise.all([chargementVisuel, attendre(900)]).then(construireSite);
   })
-  .catch(() => { $("rubrique").innerHTML = vide("Impossible de charger les données. Réessaie dans un instant."); });
+  .catch(() => { finirIntro(); $("rubrique").innerHTML = vide("Impossible de charger les données. Réessaie dans un instant."); });
 </script>
 <script type="module" src="js/scene3d.js"></script>
 </body>
