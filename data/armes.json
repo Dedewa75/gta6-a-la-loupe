@@ -1,27 +1,1452 @@
 {
- "derniereMaj": "2026-11-20T07:00:00.000Z",
- "note": "Stats sur 10 relevées dans le menu des armureries du jeu par les sites cités. null = pas encore connu.",
+ "derniereMaj": "2026-11-20T08:30:00.000Z",
+ "note": "Stats sur 10 relevées dans le menu des armureries du jeu. « Confirmé » = au moins 2 sites indépendants donnent la même info, sans désaccord. null = pas encore connu.",
  "armes": [
-  {"nom":"Girardi ES9","classe":"pistolets","degats":4.2,"precision":5.2,"maniabilite":8.4,"portee":4.4,"prix":700,"ouAcheter":"Chuck's Tackle & Shot","chargeur":null,"infos":"Pistolet de Jason. L'Ultimate Edition ajoute une version gravée.","ameliorations":[],"image":null,"statut":"non-verifie","conflits":[],"sources":[{"nom":"MeowDB","url":"https://meowdb.com/gta6/weapons"}]},
-  {"nom":"Klose K17","classe":"pistolets","degats":4.0,"precision":4.2,"maniabilite":null,"portee":null,"prix":975,"ouAcheter":"Chuck's Tackle & Shot","chargeur":17,"infos":"Pistolet de Lucia. L'Ultimate Edition ajoute une version gravée.","ameliorations":[],"image":null,"statut":"confirme","conflits":[],"sources":[{"nom":"MeowDB","url":"https://meowdb.com/gta6/weapons"},{"nom":"GTA 6 Bible","url":"https://gta6bible.com/weapons/"}]},
-  {"nom":"Mahi Nipper .38","classe":"pistolets","degats":null,"precision":null,"maniabilite":null,"portee":null,"prix":1160,"ouAcheter":"Chuck's Tackle & Shot","chargeur":null,"infos":"Version verte et rouge. Certains sites l'appellent « Scorpio Nipper .38 ».","ameliorations":[],"image":null,"statut":"non-verifie","conflits":[],"sources":[{"nom":"MeowDB","url":"https://meowdb.com/gta6/weapons"}]},
-  {"nom":"Girardi ES18","classe":"pistolets","degats":null,"precision":null,"maniabilite":null,"portee":null,"prix":1550,"ouAcheter":"Ammu-Nation","chargeur":null,"infos":"Pistolet à rafale de 3 coups.","ameliorations":[],"image":null,"statut":"non-verifie","conflits":[],"sources":[{"nom":"Heist Lounge","url":"https://heistlounge.com/tools/weapons"}]},
-  {"nom":"Kalinga .50","classe":"pistolets","degats":7.0,"precision":null,"maniabilite":7.9,"portee":null,"prix":null,"ouAcheter":null,"chargeur":null,"infos":"Le pistolet qui fait le plus de dégâts. Orthographe parfois « Kolinga 50 ».","ameliorations":[],"image":null,"statut":"non-verifie","conflits":[],"sources":[{"nom":"MetaForge","url":"https://metaforge.app/gta-6/best-weapons-gta-6"}]},
-  {"nom":"Kozlov Hind","classe":"fusils-assaut","degats":null,"precision":null,"maniabilite":null,"portee":null,"prix":1700,"ouAcheter":null,"chargeur":null,"infos":"Fusil d'assaut compact.","ameliorations":[],"image":null,"statut":"non-verifie","conflits":[],"sources":[{"nom":"MeowDB","url":"https://meowdb.com/gta6/weapons"}]},
-  {"nom":"Duke 556","classe":"fusils-assaut","degats":null,"precision":null,"maniabilite":null,"portee":null,"prix":1450,"ouAcheter":"Ammu-Nation","chargeur":30,"infos":"Aucune stat faible et disponible tôt : le fusil d'assaut conseillé.","ameliorations":[],"image":null,"statut":"confirme","conflits":[],"sources":[{"nom":"MetaForge","url":"https://metaforge.app/gta-6/best-weapons-gta-6"},{"nom":"Heist Lounge","url":"https://heistlounge.com/tools/weapons"}]},
-  {"nom":"Wortham W-14","classe":"fusils-tactiques","degats":5.8,"precision":7.5,"maniabilite":null,"portee":7.2,"prix":1400,"ouAcheter":null,"chargeur":null,"infos":"Fusil longue portée.","ameliorations":[],"image":null,"statut":"non-verifie","conflits":[],"sources":[{"nom":"MetaForge","url":"https://metaforge.app/gta-6/best-weapons-gta-6"}]},
-  {"nom":"Shrewsbury Drifter","classe":"fusils-a-pompe","degats":8.0,"precision":null,"maniabilite":null,"portee":2.5,"prix":1150,"ouAcheter":null,"chargeur":null,"infos":"Fait partie des fusils à pompe qui portent le plus loin.","ameliorations":[],"image":null,"statut":"non-verifie","conflits":[],"sources":[{"nom":"MetaForge","url":"https://metaforge.app/gta-6/best-weapons-gta-6"}]},
-  {"nom":"Fortune & Son Laird 350","classe":"snipers","degats":null,"precision":8.8,"maniabilite":null,"portee":null,"prix":950,"ouAcheter":"Ammu-Nation (magasins agrandis)","chargeur":null,"infos":"Le sniper le moins cher, pratique pour la chasse.","ameliorations":[],"image":null,"statut":"confirme","conflits":[],"sources":[{"nom":"eGamers","url":"https://egamers.io/gta-6-weapons-guide-every-class-launcher-and-sniper-prices-and-which-ammu-nation-stores-sell-them/"},{"nom":"MetaForge","url":"https://metaforge.app/gta-6/best-weapons-gta-6"}]},
-  {"nom":"Shrewsbury SM-69","classe":"snipers","degats":null,"precision":null,"maniabilite":null,"portee":null,"prix":1850,"ouAcheter":"Ammu-Nation (magasins agrandis)","chargeur":null,"infos":null,"ameliorations":[],"image":null,"statut":"non-verifie","conflits":[],"sources":[{"nom":"eGamers","url":"https://egamers.io/gta-6-weapons-guide-every-class-launcher-and-sniper-prices-and-which-ammu-nation-stores-sell-them/"}]},
-  {"nom":"Shrewsbury SMS-01","classe":"snipers","degats":null,"precision":null,"maniabilite":null,"portee":null,"prix":2150,"ouAcheter":"Débloqué après la 9e quête de chasse de Bret","chargeur":null,"infos":null,"ameliorations":[],"image":null,"statut":"non-verifie","conflits":[],"sources":[{"nom":"eGamers","url":"https://egamers.io/gta-6-weapons-guide-every-class-launcher-and-sniper-prices-and-which-ammu-nation-stores-sell-them/"}]},
-  {"nom":"Fairview FF-SR","classe":"snipers","degats":null,"precision":null,"maniabilite":null,"portee":null,"prix":2950,"ouAcheter":"Ammu-Nation (magasins agrandis)","chargeur":null,"infos":null,"ameliorations":[],"image":null,"statut":"non-verifie","conflits":[],"sources":[{"nom":"eGamers","url":"https://egamers.io/gta-6-weapons-guide-every-class-launcher-and-sniper-prices-and-which-ammu-nation-stores-sell-them/"}]},
-  {"nom":"Fairview FF-50","classe":"snipers","degats":8.5,"precision":null,"maniabilite":null,"portee":8.5,"prix":3975,"ouAcheter":"Ammu-Nation (magasins agrandis)","chargeur":null,"infos":"L'arme non explosive qui fait le plus de dégâts.","ameliorations":[],"image":null,"statut":"confirme","conflits":[],"sources":[{"nom":"eGamers","url":"https://egamers.io/gta-6-weapons-guide-every-class-launcher-and-sniper-prices-and-which-ammu-nation-stores-sell-them/"},{"nom":"MetaForge","url":"https://metaforge.app/gta-6/best-weapons-gta-6"}]},
-  {"nom":"ADB M350","classe":"lourdes","degats":null,"precision":null,"maniabilite":null,"portee":null,"prix":10000,"ouAcheter":null,"chargeur":null,"infos":"Mitrailleuse.","ameliorations":[],"image":null,"statut":"non-verifie","conflits":[],"sources":[{"nom":"GTA6DB","url":"https://gta6db.io/weapons"}]},
-  {"nom":"Hillinger Boomer","classe":"lourdes","degats":null,"precision":null,"maniabilite":null,"portee":null,"prix":12000,"ouAcheter":"Ammu-Nation (magasins agrandis)","chargeur":null,"infos":"Lance-grenades.","ameliorations":[],"image":null,"statut":"confirme","conflits":[],"sources":[{"nom":"eGamers","url":"https://egamers.io/gta-6-weapons-guide-every-class-launcher-and-sniper-prices-and-which-ammu-nation-stores-sell-them/"},{"nom":"GTA6DB","url":"https://gta6db.io/weapons"}]},
-  {"nom":"Deever Tech GLR40","classe":"lourdes","degats":null,"precision":null,"maniabilite":null,"portee":null,"prix":15500,"ouAcheter":"Ammu-Nation (magasins agrandis)","chargeur":null,"infos":"Lance-grenades.","ameliorations":[],"image":null,"statut":"non-verifie","conflits":[],"sources":[{"nom":"eGamers","url":"https://egamers.io/gta-6-weapons-guide-every-class-launcher-and-sniper-prices-and-which-ammu-nation-stores-sell-them/"}]},
-  {"nom":"Hauners H-AT","classe":"lourdes","degats":null,"precision":null,"maniabilite":null,"portee":null,"prix":16000,"ouAcheter":"Ammu-Nation (magasins agrandis)","chargeur":null,"infos":"Lance-roquettes.","ameliorations":[],"image":null,"statut":"non-verifie","conflits":[],"sources":[{"nom":"eGamers","url":"https://egamers.io/gta-6-weapons-guide-every-class-launcher-and-sniper-prices-and-which-ammu-nation-stores-sell-them/"}]},
-  {"nom":"Grenade à fragmentation","classe":"explosifs","degats":null,"precision":null,"maniabilite":null,"portee":null,"prix":140,"ouAcheter":null,"chargeur":null,"infos":null,"ameliorations":[],"image":null,"statut":"non-verifie","conflits":[],"sources":[{"nom":"GTA6DB","url":"https://gta6db.io/weapons"}]},
-  {"nom":"Bombe collante","classe":"explosifs","degats":null,"precision":null,"maniabilite":null,"portee":null,"prix":185,"ouAcheter":null,"chargeur":null,"infos":null,"ameliorations":[],"image":null,"statut":"non-verifie","conflits":[],"sources":[{"nom":"GTA6DB","url":"https://gta6db.io/weapons"}]},
-  {"nom":"Couteau de chasse","classe":"melee","degats":null,"precision":null,"maniabilite":null,"portee":null,"prix":null,"ouAcheter":"Déjà possédé au départ","chargeur":null,"infos":null,"ameliorations":[],"image":null,"statut":"non-verifie","conflits":[],"sources":[{"nom":"GTA6DB","url":"https://gta6db.io/weapons"}]}
+  {
+   "nom": "Girardi ES9",
+   "classe": "pistolets",
+   "degats": 4.2,
+   "precision": 5.2,
+   "maniabilite": 8.4,
+   "portee": 4.4,
+   "prix": 700,
+   "ouAcheter": "Chuck's Tackle & Shot",
+   "chargeur": null,
+   "infos": "Pistolet de Jason. L'Ultimate Edition ajoute une version gravée.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Klose K17",
+   "classe": "pistolets",
+   "degats": 4.0,
+   "precision": 4.2,
+   "maniabilite": 8.5,
+   "portee": 3.8,
+   "prix": 975,
+   "ouAcheter": "Chuck's Tackle & Shot",
+   "chargeur": 17,
+   "infos": "Pistolet de Lucia. L'Ultimate Edition ajoute une version gravée.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "GTA 6 Bible",
+     "url": "https://gta6bible.com/weapons/"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Mahi Nipper .38",
+   "classe": "pistolets",
+   "degats": 2.8,
+   "precision": 3.0,
+   "maniabilite": 9.0,
+   "portee": 3.0,
+   "prix": 1160,
+   "ouAcheter": "Chuck's Tackle & Shot uniquement (payé par la banque)",
+   "chargeur": null,
+   "infos": "Variante unique verte et rouge du Nipper .38, ne peut pas être améliorée. Parfois en promo à 1 044 $. À ne pas confondre avec le Scorpio Nipper .38.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Nettoge",
+     "url": "https://nettoge.com/gta6-nipper-38/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    }
+   ]
+  },
+  {
+   "nom": "Girardi ES18",
+   "classe": "pistolets",
+   "degats": 4.2,
+   "precision": 4.6,
+   "maniabilite": 7.7,
+   "portee": 4.8,
+   "prix": 1550,
+   "ouAcheter": "Prestige Firearms / Ammu-Nation",
+   "chargeur": null,
+   "infos": "Pistolet à rafale de 3 coups.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Fairview Kalinga .50",
+   "classe": "pistolets",
+   "degats": 7.0,
+   "precision": 4.0,
+   "maniabilite": 7.8,
+   "portee": 5.0,
+   "prix": 3100,
+   "ouAcheter": "Prestige Firearms",
+   "chargeur": null,
+   "infos": "Le pistolet le plus cher et celui qui fait le plus de dégâts. La variante « Gil's Kalinga .50 » a 7.9 en maniabilité.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MetaForge",
+     "url": "https://metaforge.app/gta-6/best-weapons-gta-6"
+    },
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Kozlov Hind",
+   "classe": "fusils-assaut",
+   "degats": 5.4,
+   "precision": 3.5,
+   "maniabilite": 7.1,
+   "portee": 4.5,
+   "prix": 1700,
+   "ouAcheter": null,
+   "chargeur": null,
+   "infos": "Version raccourcie du KZ-59.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Duke 556",
+   "classe": "fusils-assaut",
+   "degats": 5.0,
+   "precision": 6.0,
+   "maniabilite": 5.8,
+   "portee": 6.2,
+   "prix": 1450,
+   "ouAcheter": "Chuck's Tackle & Shot / Ammu-Nation (aussi trouvable gratuitement au début)",
+   "chargeur": 30,
+   "infos": "Aucune stat faible et disponible tôt : le fusil d'assaut conseillé.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MetaForge",
+     "url": "https://metaforge.app/gta-6/best-weapons-gta-6"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Wortham W-14",
+   "classe": "fusils-tactiques",
+   "degats": 5.8,
+   "precision": 7.5,
+   "maniabilite": 5.2,
+   "portee": 7.2,
+   "prix": 1400,
+   "ouAcheter": "Chuck's Tackle & Shot",
+   "chargeur": null,
+   "infos": "Fusil longue portée.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MetaForge",
+     "url": "https://metaforge.app/gta-6/best-weapons-gta-6"
+    },
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Shrewsbury Drifter",
+   "classe": "fusils-a-pompe",
+   "degats": 8.0,
+   "precision": 4.1,
+   "maniabilite": 5.0,
+   "portee": 2.5,
+   "prix": 1150,
+   "ouAcheter": "Chuck's Tackle & Shot / Big Shots (payé par la banque)",
+   "chargeur": null,
+   "infos": "Fait partie des fusils à pompe qui portent le plus loin.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MetaForge",
+     "url": "https://metaforge.app/gta-6/best-weapons-gta-6"
+    },
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Fortune & Son Laird 350",
+   "classe": "snipers",
+   "degats": 6.5,
+   "precision": 8.8,
+   "maniabilite": 3.6,
+   "portee": 8.4,
+   "prix": 950,
+   "ouAcheter": "Ammu-Nation (magasins agrandis)",
+   "chargeur": null,
+   "infos": "Le sniper le moins cher, pratique pour la chasse.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "eGamers",
+     "url": "https://egamers.io/gta-6-weapons-guide-every-class-launcher-and-sniper-prices-and-which-ammu-nation-stores-sell-them/"
+    },
+    {
+     "nom": "MetaForge",
+     "url": "https://metaforge.app/gta-6/best-weapons-gta-6"
+    },
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Shrewsbury SM-69",
+   "classe": "snipers",
+   "degats": 6.8,
+   "precision": 8.4,
+   "maniabilite": 3.1,
+   "portee": 8.4,
+   "prix": 1850,
+   "ouAcheter": "Ammu-Nation (magasins agrandis)",
+   "chargeur": null,
+   "infos": null,
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "eGamers",
+     "url": "https://egamers.io/gta-6-weapons-guide-every-class-launcher-and-sniper-prices-and-which-ammu-nation-stores-sell-them/"
+    },
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Shrewsbury SMS-01",
+   "classe": "snipers",
+   "degats": 6.8,
+   "precision": 8.6,
+   "maniabilite": 3.3,
+   "portee": 8.4,
+   "prix": 2150,
+   "ouAcheter": "Débloqué après la 9e quête de chasse de Bret",
+   "chargeur": null,
+   "infos": null,
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "eGamers",
+     "url": "https://egamers.io/gta-6-weapons-guide-every-class-launcher-and-sniper-prices-and-which-ammu-nation-stores-sell-them/"
+    },
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Fairview FF-SR",
+   "classe": "snipers",
+   "degats": 8.0,
+   "precision": 8.3,
+   "maniabilite": 2.9,
+   "portee": 8.4,
+   "prix": 2950,
+   "ouAcheter": "Ammu-Nation (magasins agrandis)",
+   "chargeur": null,
+   "infos": null,
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "eGamers",
+     "url": "https://egamers.io/gta-6-weapons-guide-every-class-launcher-and-sniper-prices-and-which-ammu-nation-stores-sell-them/"
+    },
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Fairview FF-50",
+   "classe": "snipers",
+   "degats": 8.5,
+   "precision": 7.8,
+   "maniabilite": 2.5,
+   "portee": 8.5,
+   "prix": 3975,
+   "ouAcheter": "Ammu-Nation (magasins agrandis)",
+   "chargeur": null,
+   "infos": "L'arme non explosive qui fait le plus de dégâts.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "eGamers",
+     "url": "https://egamers.io/gta-6-weapons-guide-every-class-launcher-and-sniper-prices-and-which-ammu-nation-stores-sell-them/"
+    },
+    {
+     "nom": "MetaForge",
+     "url": "https://metaforge.app/gta-6/best-weapons-gta-6"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "ADB M350",
+   "classe": "lourdes",
+   "degats": 6.5,
+   "precision": 3.0,
+   "maniabilite": 3.2,
+   "portee": 6.2,
+   "prix": 10000,
+   "ouAcheter": "Iron & Oak / Ammu-Nation",
+   "chargeur": null,
+   "infos": "Mitrailleuse. Chère mais jugée décevante pour son prix.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Hillinger Boomer",
+   "classe": "lourdes",
+   "degats": 9.2,
+   "precision": 5.0,
+   "maniabilite": 6.0,
+   "portee": 4.0,
+   "prix": 12000,
+   "ouAcheter": "Ammu-Nation (magasins agrandis)",
+   "chargeur": null,
+   "infos": "Lance-grenades : l'arme qui fait le plus de dégâts en magasin. Recharge de munitions : 1 200 $.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "eGamers",
+     "url": "https://egamers.io/gta-6-weapons-guide-every-class-launcher-and-sniper-prices-and-which-ammu-nation-stores-sell-them/"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Deever Tech GLR40",
+   "classe": "lourdes",
+   "degats": 9.2,
+   "precision": 6.0,
+   "maniabilite": 5.0,
+   "portee": 4.0,
+   "prix": 15500,
+   "ouAcheter": "Ammu-Nation (magasins agrandis) — ou gratuit dans la réserve du Sunrise Motel",
+   "chargeur": 6,
+   "infos": "Lance-grenades rotatif à 6 coups : même dégâts que le Boomer, un peu plus précis.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "eGamers",
+     "url": "https://egamers.io/gta-6-weapons-guide-every-class-launcher-and-sniper-prices-and-which-ammu-nation-stores-sell-them/"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "MetaForge",
+     "url": "https://metaforge.app/gta-6/best-weapons-gta-6"
+    },
+    {
+     "nom": "eGamersWorld",
+     "url": "https://egamersworld.com/blog/how-to-get-a-grenade-launcher-and-rocket-launcher--9eGMpdU1J1"
+    }
+   ]
+  },
+  {
+   "nom": "Hauners H-AT",
+   "classe": "lourdes",
+   "degats": null,
+   "precision": null,
+   "maniabilite": null,
+   "portee": null,
+   "prix": 16000,
+   "ouAcheter": "Ammu-Nation (magasins agrandis)",
+   "chargeur": null,
+   "infos": "Lance-roquettes : l'arme la plus chère du jeu.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "eGamers",
+     "url": "https://egamers.io/gta-6-weapons-guide-every-class-launcher-and-sniper-prices-and-which-ammu-nation-stores-sell-them/"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Grenade à fragmentation",
+   "classe": "explosifs",
+   "degats": null,
+   "precision": null,
+   "maniabilite": null,
+   "portee": null,
+   "prix": 140,
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": null,
+   "infos": "Ne peut pas être améliorée. Tu peux en porter 25.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "GTABase",
+     "url": "https://www.gtabase.com/gta-6/weapons/grenade"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    }
+   ]
+  },
+  {
+   "nom": "Bombe collante",
+   "classe": "explosifs",
+   "degats": null,
+   "precision": null,
+   "maniabilite": null,
+   "portee": null,
+   "prix": 185,
+   "ouAcheter": null,
+   "chargeur": null,
+   "infos": null,
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Couteau de chasse",
+   "classe": "melee",
+   "degats": null,
+   "precision": null,
+   "maniabilite": null,
+   "portee": null,
+   "prix": 125,
+   "ouAcheter": "Déjà possédé au départ (sinon Chuck's Tackle & Shot)",
+   "chargeur": null,
+   "infos": null,
+   "ameliorations": [],
+   "image": null,
+   "statut": "non-verifie",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Duke 1922",
+   "classe": "pistolets",
+   "degats": 5.5,
+   "precision": 4.8,
+   "maniabilite": 8.0,
+   "portee": 4.6,
+   "prix": 1050,
+   "ouAcheter": "Chuck's Tackle & Shot (payé par la banque)",
+   "chargeur": null,
+   "infos": "Pistolet lourd.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Klose K17 MCD",
+   "classe": "pistolets",
+   "degats": 4.0,
+   "precision": 3.2,
+   "maniabilite": 7.7,
+   "portee": 4.2,
+   "prix": 1700,
+   "ouAcheter": "Prestige Firearms",
+   "chargeur": 24,
+   "infos": "Version entièrement automatique du K17, mais moins précise.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Scorpio Nipper .38",
+   "classe": "pistolets",
+   "degats": 2.8,
+   "precision": 3.0,
+   "maniabilite": 9.0,
+   "portee": 3.0,
+   "prix": 550,
+   "ouAcheter": "Chuck's Tackle & Shot",
+   "chargeur": null,
+   "infos": "Le pistolet le moins cher.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "The Silver 1922",
+   "classe": "pistolets",
+   "degats": 5.5,
+   "precision": 5.1,
+   "maniabilite": 8.1,
+   "portee": 4.6,
+   "prix": 2210,
+   "ouAcheter": "Big Shots uniquement (payé par la banque)",
+   "chargeur": null,
+   "infos": "Variante unique du Duke 1922.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Duke Mustang .357",
+   "classe": "revolvers",
+   "degats": 5.7,
+   "precision": 4.5,
+   "maniabilite": 8.0,
+   "portee": 5.5,
+   "prix": 1800,
+   "ouAcheter": "Iron & Oak",
+   "chargeur": null,
+   "infos": "Revolver très puissant.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Scorpio Akulus",
+   "classe": "revolvers",
+   "degats": 7.0,
+   "precision": 4.2,
+   "maniabilite": 7.6,
+   "portee": 6.0,
+   "prix": 3000,
+   "ouAcheter": "Iron & Oak",
+   "chargeur": null,
+   "infos": "Le revolver qui fait le plus de dégâts.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Wortham WCR1",
+   "classe": "revolvers",
+   "degats": 2.2,
+   "precision": 3.8,
+   "maniabilite": 9.0,
+   "portee": 4.5,
+   "prix": 600,
+   "ouAcheter": "Martez Empeños",
+   "chargeur": null,
+   "infos": "Revolver compact, l'arme à feu qui fait le moins de dégâts.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Hawk & Little .38",
+   "classe": "revolvers",
+   "degats": 2.5,
+   "precision": 5.0,
+   "maniabilite": 8.6,
+   "portee": 4.5,
+   "prix": 1075,
+   "ouAcheter": "Iron & Oak",
+   "chargeur": null,
+   "infos": "Les ennemis en lâchent aussi.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Wortham W-10",
+   "classe": "mitraillettes",
+   "degats": 4.2,
+   "precision": 3.2,
+   "maniabilite": 7.5,
+   "portee": 3.5,
+   "prix": 825,
+   "ouAcheter": "Big Shots",
+   "chargeur": null,
+   "infos": "Mitraillette légère, la moins chère.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Zhang Wu Type 9",
+   "classe": "mitraillettes",
+   "degats": 4.2,
+   "precision": 3.8,
+   "maniabilite": 7.8,
+   "portee": 3.5,
+   "prix": 1100,
+   "ouAcheter": "Iron & Oak",
+   "chargeur": null,
+   "infos": null,
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Schlamm DW-9",
+   "classe": "mitraillettes",
+   "degats": 4.2,
+   "precision": 4.5,
+   "maniabilite": 6.8,
+   "portee": 4.0,
+   "prix": 1750,
+   "ouAcheter": "Iron & Oak",
+   "chargeur": null,
+   "infos": null,
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Vom Feuer VF5",
+   "classe": "mitraillettes",
+   "degats": 4.2,
+   "precision": 5.0,
+   "maniabilite": 6.7,
+   "portee": 4.5,
+   "prix": 2325,
+   "ouAcheter": "Iron & Oak",
+   "chargeur": null,
+   "infos": null,
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Vom Feuer VF5C",
+   "classe": "mitraillettes",
+   "degats": 4.2,
+   "precision": 4.0,
+   "maniabilite": 7.9,
+   "portee": 4.0,
+   "prix": 2600,
+   "ouAcheter": "Iron & Oak",
+   "chargeur": null,
+   "infos": "Version compacte de la VF5.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "ADB PD-90",
+   "classe": "mitraillettes",
+   "degats": 4.2,
+   "precision": 4.8,
+   "maniabilite": 6.6,
+   "portee": 4.2,
+   "prix": 3350,
+   "ouAcheter": "Iron & Oak",
+   "chargeur": 30,
+   "infos": "La mitraillette la plus chère.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Shrewsbury Hobo",
+   "classe": "fusils-a-pompe",
+   "degats": 8.0,
+   "precision": 3.6,
+   "maniabilite": 6.4,
+   "portee": 2.0,
+   "prix": 1325,
+   "ouAcheter": "Chuck's Tackle & Shot / Big Shots (payé par la banque)",
+   "chargeur": null,
+   "infos": "Fusil à canon scié.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Mason & Keen Longshot",
+   "classe": "fusils-a-pompe",
+   "degats": 8.0,
+   "precision": 4.1,
+   "maniabilite": 5.0,
+   "portee": 2.5,
+   "prix": 1425,
+   "ouAcheter": "Iron & Oak / Big Shots",
+   "chargeur": null,
+   "infos": "Fusil à canons basculants.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Mason & Keen Shortstraw",
+   "classe": "fusils-a-pompe",
+   "degats": 8.0,
+   "precision": 3.6,
+   "maniabilite": 6.4,
+   "portee": 2.0,
+   "prix": 1625,
+   "ouAcheter": "Iron & Oak",
+   "chargeur": null,
+   "infos": "Une version explosive se débloque par code après l'histoire.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Girardi AZ1200",
+   "classe": "fusils-a-pompe",
+   "degats": 7.4,
+   "precision": 4.5,
+   "maniabilite": 5.8,
+   "portee": 2.5,
+   "prix": 2300,
+   "ouAcheter": "Iron & Oak / Big Shots",
+   "chargeur": null,
+   "infos": "Semi-automatique. Chez Big Shots, la version déjà améliorée coûte 3 460 $.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Girardi Verro",
+   "classe": "fusils-a-pompe",
+   "degats": 7.4,
+   "precision": 3.9,
+   "maniabilite": 6.5,
+   "portee": 2.0,
+   "prix": 2700,
+   "ouAcheter": "Iron & Oak",
+   "chargeur": null,
+   "infos": "Semi-automatique. Recharge de munitions : 15 $.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Kozlov KZ-59",
+   "classe": "fusils-assaut",
+   "degats": 5.4,
+   "precision": 5.2,
+   "maniabilite": 5.2,
+   "portee": 6.5,
+   "prix": 1250,
+   "ouAcheter": "Big Shots",
+   "chargeur": null,
+   "infos": "Le fusil d'assaut le moins cher.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Hillinger Heathen",
+   "classe": "fusils-assaut",
+   "degats": 5.0,
+   "precision": 6.2,
+   "maniabilite": 5.8,
+   "portee": 6.2,
+   "prix": 2450,
+   "ouAcheter": "Big Shots",
+   "chargeur": null,
+   "infos": null,
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "ADB FRA",
+   "classe": "fusils-assaut",
+   "degats": 5.8,
+   "precision": 5.0,
+   "maniabilite": 5.3,
+   "portee": 6.9,
+   "prix": 2900,
+   "ouAcheter": "Big Shots (verrouillé au début)",
+   "chargeur": 20,
+   "infos": "Fusil de combat, gros recul.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Vom Feuer VF-G1",
+   "classe": "fusils-assaut",
+   "degats": 5.0,
+   "precision": 6.2,
+   "maniabilite": 5.8,
+   "portee": 6.5,
+   "prix": 3700,
+   "ouAcheter": "Iron & Oak",
+   "chargeur": null,
+   "infos": "Le fusil d'assaut le plus cher.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Hawk & Little Mediator",
+   "classe": "fusils-tactiques",
+   "degats": 4.8,
+   "precision": 7.8,
+   "maniabilite": 5.6,
+   "portee": 7.0,
+   "prix": 900,
+   "ouAcheter": "Martez Empeños",
+   "chargeur": 17,
+   "infos": "Le fusil le plus précis de sa catégorie.",
+   "ameliorations": [
+    {
+     "nom": "Canon carabine 14 pouces",
+     "prix": 320,
+     "effet": null
+    },
+    {
+     "nom": "Poignée avant",
+     "prix": 260,
+     "effet": "260 à 280 $ selon le modèle, certaines demandent un autre garde-main"
+    },
+    {
+     "nom": "Chargeur 33 coups",
+     "prix": 130,
+     "effet": null
+    }
+   ],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Hillinger M306",
+   "classe": "fusils-tactiques",
+   "degats": 6.2,
+   "precision": 7.5,
+   "maniabilite": 4.8,
+   "portee": 7.5,
+   "prix": 2375,
+   "ouAcheter": "Big Shots (verrouillé au début)",
+   "chargeur": null,
+   "infos": null,
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Hillinger M306 TMR",
+   "classe": "fusils-tactiques",
+   "degats": 6.2,
+   "precision": 7.8,
+   "maniabilite": 5.5,
+   "portee": 7.5,
+   "prix": 2550,
+   "ouAcheter": "Iron & Oak (demande l'or dans tous les stands de tir)",
+   "chargeur": null,
+   "infos": null,
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  }
  ]
 }
