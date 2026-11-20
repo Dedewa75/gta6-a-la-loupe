@@ -48,7 +48,7 @@ main{padding:50px 5vw 80px}
 .filtres label{cursor:pointer}
 .grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
 .carte{background:var(--noir2);border:1px solid var(--ligne);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px;transition:.2s}
-.carte:hover{border-color:#3a3a46;transform:translateY(-2px)}
+.carte:hover{border-color:#3a3a46}
 .haut{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:.7rem;text-transform:uppercase;letter-spacing:.12em}
 .cat{color:var(--bleu);font-weight:800}
 .badge{padding:3px 9px;border-radius:999px;font-weight:700}
@@ -107,6 +107,26 @@ main{padding:50px 5vw 80px}
 .amelio span{color:var(--gris)}
 .conflit{font-size:.74rem;color:#ffb84d}
 .imgActu{width:100%;border-radius:10px;aspect-ratio:16/9;object-fit:cover}
+/* --- 3D --- */
+#fond3d{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:block;pointer-events:none}
+nav,header,main,footer{position:relative;z-index:1}
+.avec3d .hero{background:radial-gradient(ellipse at 80% 15%,rgba(255,45,168,.22),transparent 55%),linear-gradient(180deg,rgba(11,11,11,.55),rgba(11,11,11,0) 40%,rgba(11,11,11,.85))}
+.avec3d .hero::after{display:none}
+.avec3d main{background:linear-gradient(rgba(11,11,11,0),rgba(11,11,11,.55) 220px)}
+.avec3d .carte,.avec3d .arme,.avec3d .boiteCarte,.avec3d .onglet,.avec3d #recherche{background:rgba(18,18,24,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.avec3d footer{background:rgba(11,11,11,.9)}
+.heroContenu{transform:perspective(900px) rotateX(calc(var(--p,0)*28deg)) translateY(calc(var(--p,0)*-80px)) translateZ(calc(var(--p,0)*-120px));opacity:calc(1 - var(--p,0)*1.2);transform-origin:50% 100%;will-change:transform}
+h1{text-shadow:0 1px 0 #c21a7f,0 2px 0 #a3166b,0 3px 0 #85125a,0 4px 0 #670e46,0 14px 30px rgba(0,0,0,.6)}
+h1 em{text-shadow:0 1px 0 #c21a7f,0 2px 0 #a3166b,0 3px 0 #85125a,0 4px 0 #670e46,0 0 40px rgba(255,45,168,.55)}
+#vues{perspective:1400px}
+#vues.sortie>*{animation:sortie .24s ease-in forwards}
+#vues.entree>*{animation:entree .55s cubic-bezier(.2,.8,.2,1) backwards}
+@keyframes sortie{to{transform:rotateY(-14deg) translateZ(-260px) translateX(-6%);opacity:0;filter:blur(4px)}}
+@keyframes entree{from{transform:rotateY(14deg) translateZ(-260px) translateX(6%);opacity:0;filter:blur(4px)}}
+.carte,.arme{animation:apparition .6s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(var(--i,0)*45ms);transform-style:preserve-3d;transition:transform .25s ease,border-color .2s}
+@keyframes apparition{from{transform:perspective(900px) rotateX(38deg) translateY(50px) translateZ(-90px);opacity:0}}
+.carte:hover,.arme:hover{border-color:rgba(255,45,168,.55)}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}.heroContenu{transform:none}}
 /* --- pied --- */
 footer{border-top:1px solid var(--ligne);padding:30px 5vw;color:var(--gris);font-size:.78rem}
 footer p+p{margin-top:8px}
@@ -119,6 +139,7 @@ footer p+p{margin-top:8px}
 </style>
 </head>
 <body>
+<canvas id="fond3d" aria-hidden="true"></canvas>
 
 <nav>
   <div class="logo">GTA VI <span>à la loupe</span></div>
@@ -132,6 +153,7 @@ footer p+p{margin-top:8px}
 </nav>
 
 <header class="hero">
+  <div class="heroContenu">
   <div class="surtitre">Leonida · mis à jour chaque jour</div>
   <h1>GTA VI<em>À LA LOUPE</em></h1>
   <p>Secrets, astuces, véhicules, armes, argent et lieux de la carte. Chaque matin, une IA parcourt l'actu GTA 6 et ajoute ce qui est nouveau, avec ses sources.</p>
@@ -140,6 +162,7 @@ footer p+p{margin-top:8px}
     <div><b id="nbTotal">–</b>infos répertoriées</div>
     <div><b id="nbJour">–</b>ajoutées au dernier scan</div>
     <div><b id="dateMaj">–</b>dernière mise à jour</div>
+  </div>
   </div>
   <div class="pagin"><b>01</b> / 07</div>
 </header>
@@ -152,6 +175,7 @@ footer p+p{margin-top:8px}
     <label><input type="checkbox" id="fSpoil" checked> Flouter les spoilers</label>
   </div>
 
+  <div id="vues">
   <div class="grille" id="liste"></div>
 
   <section id="vueArmes">
@@ -185,6 +209,7 @@ footer p+p{margin-top:8px}
       <div class="grille" id="listeZone"></div>
     </div>
   </section>
+  </div>
 </main>
 
 <footer>
@@ -307,7 +332,17 @@ function afficherListe(cible, liste){
     : '<div class="vide">Rien pour l\'instant ici. Le scan quotidien ajoutera les nouveautés dès qu\'elles apparaissent.</div>';
 }
 
+function numeroter(){ [...document.querySelectorAll("#vues .carte, #vues .arme")].filter(c => c.offsetParent).forEach((c,i) => c.style.setProperty("--i", Math.min(i, 12))); }
+let enTransition = false;
+function changerOnglet(nom){
+  if (nom === onglet || enTransition) { onglet = nom; return rendu(); }
+  enTransition = true;
+  const v = $("vues"); v.classList.remove("entree"); v.classList.add("sortie");
+  setTimeout(() => { onglet = nom; v.classList.remove("sortie"); rendu(); void v.offsetWidth; v.classList.add("entree"); enTransition = false; }, 230);
+}
 function rendu(){
+  window.scene3d?.onglet(onglet);
+  setTimeout(numeroter);
   const enCarte = onglet === "carte", enArmes = onglet === "armes";
   $("liste").style.display = (enCarte || enArmes) ? "none" : "grid";
   $("vueCarte").classList.toggle("visible", enCarte);
@@ -327,7 +362,7 @@ function renduCarte(){
     if (id === "inconnue" && !n) return "";
     return `<button class="pin ${n?"":"vide"} ${zoneActive===id?"actif":""}" data-zone="${id}" style="left:${z.x}%;top:${z.y}%"><i>${n}</i><span>${z.nom.toUpperCase()}</span></button>`;
   }).join("");
-  document.querySelectorAll(".pin").forEach(g => g.onclick = () => { zoneActive = g.dataset.zone; renduCarte(); });
+  document.querySelectorAll(".pin").forEach(g => g.onclick = () => { zoneActive = g.dataset.zone; window.scene3d?.comte(zoneActive); renduCarte(); setTimeout(numeroter); });
   if (zoneActive){
     $("titreZone").textContent = ZONES[zoneActive].nom;
     afficherListe($("listeZone"), filtrer(parZone[zoneActive] || []));
@@ -338,17 +373,30 @@ function onglets(){
   const compte = c => c === "tout" ? DATA.entrees.length : c === "armes" ? ARMES.length : c === "carte" ? DATA.entrees.filter(e=>e.zone).length : DATA.entrees.filter(e => e.categorie === c).length;
   $("onglets").innerHTML = Object.entries(CATS).map(([id,c]) =>
     `<button class="onglet" data-cat="${id}">${c.nom}<small>${compte(id)}</small></button>`).join("");
-  document.querySelectorAll(".onglet").forEach(b => b.onclick = () => { onglet = b.dataset.cat; rendu(); });
+  document.querySelectorAll("#onglets .onglet").forEach(b => b.onclick = () => changerOnglet(b.dataset.cat));
 }
 
 document.addEventListener("click", e => {
   const r = e.target.closest(".spoil .resume");
   if (r) r.closest(".carte").classList.remove("spoil");
   const go = e.target.closest("[data-go]");
-  if (go) { onglet = go.dataset.go; rendu(); }
+  if (go) changerOnglet(go.dataset.go);
 });
 ["recherche","fSpoil","triArmes"].forEach(id => $(id).addEventListener("input", rendu));
 
+// inclinaison 3D des cartes au survol (souris uniquement)
+if (matchMedia("(hover: hover)").matches && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  document.addEventListener("pointermove", e => {
+    const c = e.target.closest(".carte, .arme");
+    document.querySelectorAll(".incline").forEach(x => { if (x !== c) { x.classList.remove("incline"); x.style.transform = ""; } });
+    if (!c) return;
+    const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+    c.classList.add("incline");
+    c.style.transform = `perspective(900px) rotateX(${-y*9}deg) rotateY(${x*11}deg) translateZ(14px)`;
+  }, { passive: true });
+}
+// le titre bascule en 3D quand on fait défiler
+addEventListener("scroll", () => document.documentElement.style.setProperty("--p", Math.min(1, scrollY / (innerHeight*.8)).toFixed(3)), { passive: true });
 const frais = f => fetch(f + "?v=" + Date.now()).then(r => r.json());
 Promise.all([frais("data/contenu.json"), frais("data/armes.json").catch(() => ({armes:[]}))])
   .then(([d, a]) => {
@@ -363,5 +411,6 @@ Promise.all([frais("data/contenu.json"), frais("data/armes.json").catch(() => ({
   })
   .catch(() => { $("liste").innerHTML = '<div class="vide">Impossible de charger les données. Réessaie dans un instant.</div>'; });
 </script>
+<script type="module" src="js/scene3d.js"></script>
 </body>
 </html>
