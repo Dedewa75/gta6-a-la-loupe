@@ -2,214 +2,165 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GTA VI à la loupe — secrets, astuces, véhicules, armes, carte</title>
-<meta name="description" content="Site de fans non officiel : toutes les nouveautés GTA 6 mises à jour chaque jour — secrets, easter eggs, astuces, véhicules, armes, argent et carte de Leonida.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0B0B0B">
+<title>GTA VI à la loupe — actus, armes, véhicules, carte</title>
+<meta name="description" content="Site de fans non officiel : les infos GTA 6 vérifiées par au moins deux sources — actus, secrets, armes, véhicules et carte de Leonida, mis à jour chaque jour.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --noir:#0B0B0B; --noir2:#141418; --bleu:#007BA7; --rose:#FF2DA8;
-  --texte:#EDEDF2; --gris:#9A9AA8; --ligne:#26262e;
-}
+:root{--noir:#0B0B0B;--noir2:#141418;--bleu:#007BA7;--rose:#FF2DA8;--texte:#EDEDF2;--gris:#9A9AA8;--ligne:#26262e;--verre:rgba(18,18,24,.8)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--noir);color:var(--texte);font-family:Inter,system-ui,sans-serif;line-height:1.5}
+body{background:var(--noir);color:var(--texte);font-family:Inter,system-ui,sans-serif;line-height:1.5;padding-bottom:env(safe-area-inset-bottom)}
 a{color:inherit}
-/* --- menu --- */
-nav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;background:rgba(11,11,11,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--ligne)}
-.logo{font-family:"Playfair Display",serif;font-weight:900;font-size:1.15rem;letter-spacing:.02em}
+button{font:inherit;color:inherit}
+#fond3d{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:block;pointer-events:none}
+header,main,footer,.barre{position:relative;z-index:1}
+
+/* ---------- haut ---------- */
+.haut{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 5vw;background:rgba(11,11,11,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--ligne)}
+.logo{font-family:"Playfair Display",serif;font-weight:900;font-size:1.15rem;cursor:pointer;white-space:nowrap}
 .logo span{color:var(--rose)}
-nav .liens a{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--gris);margin-left:22px}
-nav .liens a:hover{color:var(--rose)}
-/* --- hero --- */
-.hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;padding:60px 5vw;position:relative;overflow:hidden;
-  background:radial-gradient(ellipse at 80% 20%,rgba(255,45,168,.28),transparent 55%),radial-gradient(ellipse at 10% 90%,rgba(0,123,167,.35),transparent 60%),var(--noir)}
-.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:38%;background:repeating-linear-gradient(90deg,transparent 0 46px,rgba(0,123,167,.12) 46px 48px),linear-gradient(transparent,rgba(255,45,168,.08));mask:linear-gradient(transparent,#000);pointer-events:none}
-.surtitre{font-size:.75rem;letter-spacing:.35em;text-transform:uppercase;color:var(--bleu);font-weight:800;margin-bottom:18px}
-h1{font-family:"Playfair Display",serif;font-weight:900;font-size:clamp(3rem,11vw,8.5rem);line-height:.92}
-h1 em{display:block;font-style:normal;color:var(--rose);text-shadow:0 0 40px rgba(255,45,168,.45)}
-.hero p{max-width:520px;color:var(--gris);margin:26px 0 30px;font-size:1.05rem}
-.bouton{display:inline-flex;gap:10px;align-items:center;border:1.5px solid var(--rose);color:var(--texte);border-radius:999px;padding:12px 26px;text-decoration:none;font-weight:600;width:max-content;transition:.2s}
-.bouton:hover{background:var(--rose);color:var(--noir)}
-.majinfo{margin-top:34px;display:flex;gap:28px;flex-wrap:wrap;font-size:.8rem;color:var(--gris);position:relative;z-index:1}
-.majinfo b{display:block;font-size:1.6rem;color:var(--texte);font-family:"Playfair Display",serif}
-.pagin{position:absolute;right:5vw;bottom:30px;font-size:.75rem;letter-spacing:.2em;color:var(--gris);z-index:1}
-.pagin b{color:var(--rose)}
-/* --- contenu --- */
-main{padding:50px 5vw 80px}
-.outils{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:26px}
-.onglet{background:var(--noir2);border:1px solid var(--ligne);color:var(--gris);padding:9px 16px;border-radius:999px;font:600 .82rem Inter,sans-serif;cursor:pointer}
-.onglet.actif{border-color:var(--rose);color:var(--texte);box-shadow:0 0 0 1px var(--rose) inset}
-.onglet small{color:var(--bleu);margin-left:4px}
-#recherche{flex:1;min-width:200px;background:var(--noir2);border:1px solid var(--ligne);color:var(--texte);padding:11px 16px;border-radius:999px;font:inherit}
-#recherche:focus{outline:none;border-color:var(--bleu)}
-.filtres{display:flex;gap:14px;font-size:.82rem;color:var(--gris);margin-bottom:22px;flex-wrap:wrap}
-.filtres label{cursor:pointer}
+.menuPc{display:flex;gap:6px}
+.menuPc button{background:none;border:0;cursor:pointer;padding:8px 14px;border-radius:999px;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gris)}
+.menuPc button.actif{color:var(--texte);background:rgba(255,45,168,.14);box-shadow:inset 0 0 0 1px var(--rose)}
+
+/* ---------- accueil ---------- */
+.hero{min-height:calc(100vh - 56px);display:flex;flex-direction:column;justify-content:flex-end;padding:40px 5vw 70px;position:relative;
+  background:radial-gradient(ellipse at 80% 10%,rgba(255,45,168,.2),transparent 55%),linear-gradient(180deg,rgba(11,11,11,.35),rgba(11,11,11,0) 35%,rgba(11,11,11,.9))}
+.heroContenu{transform:perspective(900px) rotateX(calc(var(--p,0)*28deg)) translateY(calc(var(--p,0)*-80px)) translateZ(calc(var(--p,0)*-120px));opacity:calc(1 - var(--p,0)*1.2);transform-origin:50% 100%}
+.surtitre{font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;color:#4cc3ee;font-weight:800;margin-bottom:14px}
+h1{font-family:"Playfair Display",serif;font-weight:900;font-size:clamp(3rem,12vw,8rem);line-height:.92;text-shadow:0 1px 0 #c21a7f,0 2px 0 #a3166b,0 3px 0 #85125a,0 4px 0 #670e46,0 14px 30px rgba(0,0,0,.6)}
+h1 em{display:block;font-style:normal;color:var(--rose);text-shadow:0 1px 0 #c21a7f,0 2px 0 #a3166b,0 3px 0 #85125a,0 4px 0 #670e46,0 0 40px rgba(255,45,168,.55)}
+.hero p{max-width:520px;color:#c4c4d0;margin:20px 0 26px;font-size:1.02rem}
+.raccourcis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;max-width:640px}
+.raccourcis button{background:var(--verre);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--ligne);border-radius:16px;padding:14px 8px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;font-weight:700;font-size:.85rem;transition:.2s}
+.raccourcis button b{font-size:1.4rem}
+.raccourcis button small{color:var(--gris);font-weight:600;font-size:.7rem}
+.raccourcis button:hover{border-color:var(--rose);transform:translateY(-3px)}
+.maj{margin-top:18px;font-size:.78rem;color:var(--gris)}
+.maj b{color:#4cc3ee}
+
+/* ---------- rubriques ---------- */
+main{padding:34px 5vw 120px;background:linear-gradient(rgba(11,11,11,0),rgba(11,11,11,.62) 200px)}
+.titreRub{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:16px}
+.titreRub h2{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,5vw,2.6rem)}
+.titreRub span{color:var(--gris);font-size:.8rem}
+.outils{display:flex;gap:10px;margin-bottom:12px}
+.recherche{flex:1;background:var(--verre);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--ligne);color:var(--texte);padding:12px 16px;border-radius:14px;font:inherit;min-width:0}
+.recherche:focus{outline:none;border-color:var(--bleu)}
+select.tri{flex:none;max-width:38%;background:var(--verre);color:var(--texte);border:1px solid var(--ligne);border-radius:14px;padding:0 12px;font:inherit;font-size:.85rem}
+.pastilles{display:flex;gap:8px;overflow-x:auto;padding:4px 0 14px;scrollbar-width:none;-webkit-mask:linear-gradient(90deg,#000 90%,transparent)}
+.pastilles::-webkit-scrollbar{display:none}
+.pastille{flex:none;background:var(--verre);border:1px solid var(--ligne);color:var(--gris);padding:8px 14px;border-radius:999px;font-weight:600;font-size:.82rem;cursor:pointer;white-space:nowrap}
+.pastille small{color:#4cc3ee;margin-left:5px}
+.pastille.actif{border-color:var(--rose);color:var(--texte);box-shadow:inset 0 0 0 1px var(--rose)}
+.regle{font-size:.75rem;color:var(--gris);margin-bottom:16px}
 .grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
-.carte{background:var(--noir2);border:1px solid var(--ligne);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px;transition:.2s}
-.carte:hover{border-color:#3a3a46}
-.haut{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:.7rem;text-transform:uppercase;letter-spacing:.12em}
-.cat{color:var(--bleu);font-weight:800}
+
+/* cartes */
+.fiche{background:var(--verre);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--ligne);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;
+  animation:apparition .6s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(var(--i,0)*45ms);transition:transform .25s ease,border-color .2s;transform-style:preserve-3d}
+.fiche:hover{border-color:rgba(255,45,168,.55)}
+@keyframes apparition{from{transform:perspective(900px) rotateX(38deg) translateY(50px) translateZ(-90px);opacity:0}}
+.corps{padding:18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.etiquettes{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:.68rem;text-transform:uppercase;letter-spacing:.12em}
+.cat{color:#4cc3ee;font-weight:800}
 .badge{padding:3px 9px;border-radius:999px;font-weight:700}
-.badge.ok{background:rgba(0,123,167,.18);color:#4cc3ee}
-.badge.non{border:1px solid var(--rose);color:var(--rose)}
+.badge.ok{background:rgba(0,123,167,.2);color:#4cc3ee}
 .badge.neuf{background:var(--rose);color:var(--noir)}
 .date{color:var(--gris);margin-left:auto}
-.carte h3{font-size:1.05rem;line-height:1.3}
+.fiche h3{font-size:1.08rem;line-height:1.3}
 .resume{color:#c9c9d4;font-size:.92rem}
 .spoil .resume{filter:blur(6px);cursor:pointer;user-select:none}
-.spoil .resume::before{content:""}
 .avert{font-size:.75rem;color:var(--rose)}
-.sources{font-size:.75rem;color:var(--gris);display:flex;gap:10px;flex-wrap:wrap;margin-top:auto}
-.sources a{color:var(--gris)}
+.sources{font-size:.74rem;color:var(--gris);display:flex;gap:10px;flex-wrap:wrap;margin-top:auto}
 .sources a:hover{color:var(--rose)}
-.vide{color:var(--gris);padding:40px;text-align:center;border:1px dashed var(--ligne);border-radius:16px;grid-column:1/-1}
-/* --- carte de Leonida --- */
-#vueCarte{display:none;grid-template-columns:minmax(280px,520px) 1fr;gap:26px;align-items:start}
-#vueCarte.visible{display:grid}
-.boiteCarte{background:var(--noir2);border:1px solid var(--ligne);border-radius:16px;padding:16px;position:sticky;top:80px}
-.boiteCarte svg{width:100%;height:auto;display:block}
+.photo{aspect-ratio:16/9;background:#101016}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.prix{font-family:"Playfair Display",serif;font-size:1.5rem;color:var(--rose)}
+.prix small{font-family:Inter,sans-serif;font-size:.75rem;color:var(--gris);margin-left:6px}
+.stat{display:grid;grid-template-columns:96px 1fr 34px;gap:8px;align-items:center;font-size:.78rem;color:var(--gris)}
+.jauge{height:7px;background:#25252e;border-radius:9px;overflow:hidden}
+.jauge i{display:block;height:100%;background:linear-gradient(90deg,var(--bleu),var(--rose));border-radius:9px;transform-origin:left;animation:remplir .9s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(var(--i,0)*45ms + .2s)}
+@keyframes remplir{from{transform:scaleX(0)}}
+.stat b{color:var(--texte);text-align:right}
+.stat.inc b{color:#555}
+.infos{font-size:.85rem;color:#c9c9d4}
+.amelio{font-size:.8rem;border-top:1px solid var(--ligne);padding-top:10px;color:var(--gris)}
+.amelio div{display:flex;justify-content:space-between;gap:8px;color:#c9c9d4;padding:3px 0}
+.conflit{font-size:.74rem;color:#ffb84d}
+.vide{color:var(--gris);padding:40px;text-align:center;border:1px dashed var(--ligne);border-radius:16px;grid-column:1/-1;background:var(--verre)}
+
+/* transitions 3D entre rubriques (effet cube) */
+#scene{perspective:1600px}
+#rubrique{transform-style:preserve-3d}
+#scene.sortie #rubrique{animation:cubeSortie .32s cubic-bezier(.5,0,.75,0) forwards}
+#scene.entree #rubrique{animation:cubeEntree .6s cubic-bezier(.2,.8,.2,1) backwards}
+#scene.retour.sortie #rubrique{animation-name:cubeSortieR}
+#scene.retour.entree #rubrique{animation-name:cubeEntreeR}
+@keyframes cubeSortie{to{transform:translateZ(-300px) rotateY(-75deg);transform-origin:0 50%;opacity:0}}
+@keyframes cubeEntree{from{transform:translateZ(-300px) rotateY(75deg);transform-origin:100% 50%;opacity:0}}
+@keyframes cubeSortieR{to{transform:translateZ(-300px) rotateY(75deg);transform-origin:100% 50%;opacity:0}}
+@keyframes cubeEntreeR{from{transform:translateZ(-300px) rotateY(-75deg);transform-origin:0 50%;opacity:0}}
+
+/* carte rayon X */
+.vueCarte{display:grid;grid-template-columns:minmax(280px,520px) 1fr;gap:24px;align-items:start}
+.boiteCarte{background:var(--verre);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--ligne);border-radius:18px;padding:14px;position:sticky;top:80px}
 .rx{position:relative;border-radius:12px;overflow:hidden;background:#05090f}
 .rx img{width:100%;display:block}
 .rx .scan{position:absolute;left:0;right:0;height:22%;top:-22%;pointer-events:none;background:linear-gradient(transparent,rgba(80,210,255,.18) 70%,rgba(200,245,255,.55) 98%,transparent);animation:balayage 4.5s linear infinite}
 @keyframes balayage{to{top:100%}}
 .rx::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 3px)}
 .pin{position:absolute;transform:translate(-50%,-50%);z-index:2;background:none;border:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;font:800 .62rem Inter,sans-serif;letter-spacing:.12em;color:#e9fbff;text-shadow:0 0 8px #00b4ff}
-.pin i{width:26px;height:26px;border-radius:50%;background:var(--rose);color:var(--noir);font-style:normal;font-size:.75rem;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 4px rgba(255,45,168,.25),0 0 18px var(--rose)}
+.pin i{width:28px;height:28px;border-radius:50%;background:var(--rose);color:var(--noir);font-style:normal;font-size:.75rem;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 4px rgba(255,45,168,.25),0 0 18px var(--rose)}
 .pin.vide i{background:#0c2a3a;color:#7fd3f5;box-shadow:0 0 0 3px rgba(0,123,167,.35)}
 .pin.actif i,.pin:hover i{background:#fff;color:var(--noir)}
 .pin span{background:rgba(5,9,15,.7);padding:2px 6px;border-radius:6px;white-space:nowrap}
 .note{font-size:.72rem;color:var(--gris);margin-top:8px}
-#titreZone{font-family:"Playfair Display",serif;font-size:1.6rem;margin-bottom:14px}
-/* --- arsenal --- */
-#vueArmes{display:none}
-#vueArmes.visible{display:block}
-.sousOnglets{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
-.sousOnglets .onglet{font-size:.76rem;padding:7px 13px}
-.tri{display:flex;gap:10px;align-items:center;font-size:.82rem;color:var(--gris);margin-bottom:20px}
-.tri select{background:var(--noir2);color:var(--texte);border:1px solid var(--ligne);border-radius:999px;padding:7px 12px;font:inherit}
-.arme{background:var(--noir2);border:1px solid var(--ligne);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
-.arme .photo{aspect-ratio:16/9;background:linear-gradient(135deg,#15151b,#1d1d26);display:flex;align-items:center;justify-content:center;color:#3a3a46;font-size:2.4rem}
-.arme .photo img{width:100%;height:100%;object-fit:cover}
-.arme .corps{padding:18px;display:flex;flex-direction:column;gap:10px;flex:1}
-.arme h3{font-size:1.1rem}
-.prix{font-family:"Playfair Display",serif;font-size:1.5rem;color:var(--rose)}
-.prix small{font-family:Inter,sans-serif;font-size:.75rem;color:var(--gris);margin-left:6px}
-.stat{display:grid;grid-template-columns:92px 1fr 34px;gap:8px;align-items:center;font-size:.78rem;color:var(--gris)}
-.barre{height:7px;background:#25252e;border-radius:9px;overflow:hidden}
-.barre i{display:block;height:100%;background:linear-gradient(90deg,var(--bleu),var(--rose));border-radius:9px}
-.stat b{color:var(--texte);text-align:right}
-.stat.inc b{color:#555}
-.infos{font-size:.85rem;color:#c9c9d4}
-.amelio{font-size:.8rem;border-top:1px solid var(--ligne);padding-top:10px}
-.amelio div{display:flex;justify-content:space-between;gap:8px;color:#c9c9d4;padding:3px 0}
-.amelio span{color:var(--gris)}
-.conflit{font-size:.74rem;color:#ffb84d}
-.imgActu{width:100%;border-radius:10px;aspect-ratio:16/9;object-fit:cover}
-/* --- 3D --- */
-#fond3d{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:block;pointer-events:none}
-nav,header,main,footer{position:relative;z-index:1}
-.avec3d .hero{background:radial-gradient(ellipse at 80% 15%,rgba(255,45,168,.22),transparent 55%),linear-gradient(180deg,rgba(11,11,11,.55),rgba(11,11,11,0) 40%,rgba(11,11,11,.85))}
-.avec3d .hero::after{display:none}
-.avec3d main{background:linear-gradient(rgba(11,11,11,0),rgba(11,11,11,.62) 220px)}
-.avec3d .carte,.avec3d .arme,.avec3d .boiteCarte,.avec3d .onglet,.avec3d #recherche{background:rgba(18,18,24,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-.avec3d footer{background:rgba(11,11,11,.9)}
-.heroContenu{transform:perspective(900px) rotateX(calc(var(--p,0)*28deg)) translateY(calc(var(--p,0)*-80px)) translateZ(calc(var(--p,0)*-120px));opacity:calc(1 - var(--p,0)*1.2);transform-origin:50% 100%;will-change:transform}
-h1{text-shadow:0 1px 0 #c21a7f,0 2px 0 #a3166b,0 3px 0 #85125a,0 4px 0 #670e46,0 14px 30px rgba(0,0,0,.6)}
-h1 em{text-shadow:0 1px 0 #c21a7f,0 2px 0 #a3166b,0 3px 0 #85125a,0 4px 0 #670e46,0 0 40px rgba(255,45,168,.55)}
-#vues{perspective:1400px}
-#vues.sortie>*{animation:sortie .24s ease-in forwards}
-#vues.entree>*{animation:entree .55s cubic-bezier(.2,.8,.2,1) backwards}
-@keyframes sortie{to{transform:rotateY(-14deg) translateZ(-260px) translateX(-6%);opacity:0;filter:blur(4px)}}
-@keyframes entree{from{transform:rotateY(14deg) translateZ(-260px) translateX(6%);opacity:0;filter:blur(4px)}}
-.carte,.arme{animation:apparition .6s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(var(--i,0)*45ms);transform-style:preserve-3d;transition:transform .25s ease,border-color .2s}
-@keyframes apparition{from{transform:perspective(900px) rotateX(38deg) translateY(50px) translateZ(-90px);opacity:0}}
-.carte:hover,.arme:hover{border-color:rgba(255,45,168,.55)}
-@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}.heroContenu{transform:none}}
-/* --- pied --- */
-footer{border-top:1px solid var(--ligne);padding:30px 5vw;color:var(--gris);font-size:.78rem}
+#titreZone{font-family:"Playfair Display",serif;font-size:1.5rem;margin-bottom:12px}
+
+/* barre du bas (téléphone) */
+.barre{display:none}
+footer{border-top:1px solid var(--ligne);padding:26px 5vw 110px;color:var(--gris);font-size:.76rem;background:rgba(11,11,11,.92)}
 footer p+p{margin-top:8px}
+
 @media(max-width:760px){
-  nav .liens{display:none}
-  #vueCarte.visible{grid-template-columns:1fr}
+  .menuPc{display:none}
+  .barre{display:grid;grid-template-columns:repeat(4,1fr);position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:40;background:rgba(14,14,20,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--ligne);border-radius:20px;padding:6px;box-shadow:0 10px 40px rgba(0,0,0,.6)}
+  .barre button{background:none;border:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 0;border-radius:14px;font-size:.68rem;font-weight:700;color:var(--gris)}
+  .barre button b{font-size:1.25rem;line-height:1}
+  .barre button.actif{color:var(--texte);background:rgba(255,45,168,.16)}
+  .raccourcis{grid-template-columns:repeat(2,1fr)}
+  .vueCarte{grid-template-columns:1fr}
   .boiteCarte{position:static}
-  .pagin{display:none}
+  .hero{min-height:calc(100svh - 56px)}
 }
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}.heroContenu{transform:none;opacity:1}}
 </style>
 </head>
 <body>
 <canvas id="fond3d" aria-hidden="true"></canvas>
 
-<nav>
-  <div class="logo">GTA VI <span>à la loupe</span></div>
-  <div class="liens">
-    <a href="#contenu" data-go="actus">Actus</a>
-    <a href="#contenu" data-go="secrets">Secrets</a>
-    <a href="#contenu" data-go="armes">Armes</a>
-    <a href="#contenu" data-go="vehicules">Véhicules</a>
-    <a href="#contenu" data-go="carte">Carte</a>
+<header>
+  <div class="haut">
+    <div class="logo" data-go="haut">GTA VI <span>à la loupe</span></div>
+    <nav class="menuPc" aria-label="Rubriques"></nav>
   </div>
-</nav>
-
-<header class="hero">
-  <div class="heroContenu">
-  <div class="surtitre">Leonida · mis à jour chaque jour</div>
-  <h1>GTA VI<em>À LA LOUPE</em></h1>
-  <p>Secrets, astuces, véhicules, armes, argent et lieux de la carte. Chaque matin, une IA parcourt l'actu GTA 6 et ajoute ce qui est nouveau, avec ses sources.</p>
-  <a class="bouton" href="#contenu">Explorer →</a>
-  <div class="majinfo">
-    <div><b id="nbTotal">–</b>infos répertoriées</div>
-    <div><b id="nbJour">–</b>ajoutées au dernier scan</div>
-    <div><b id="dateMaj">–</b>dernière mise à jour</div>
-  </div>
-  </div>
-  <div class="pagin"><b>01</b> / 07</div>
+  <section class="hero" id="accueil">
+    <div class="heroContenu">
+      <div class="surtitre">Leonida · infos vérifiées chaque jour</div>
+      <h1>GTA VI<em>À LA LOUPE</em></h1>
+      <p>Les actus, secrets, armes, véhicules et lieux de GTA 6. Seules les infos confirmées par au moins deux sites sont affichées.</p>
+      <div class="raccourcis" id="raccourcis"></div>
+      <div class="maj" id="maj"></div>
+    </div>
+  </section>
 </header>
 
 <main id="contenu">
-  <div class="outils" id="onglets"></div>
-  <div class="outils"><input id="recherche" type="search" placeholder="Rechercher (ex. voiture, argent, Vice City…)"></div>
-  <div class="filtres">
-    <span>✓ Seules les infos confirmées par au moins 2 sources sont affichées</span>
-    <label><input type="checkbox" id="fSpoil" checked> Flouter les spoilers</label>
-  </div>
-
-  <div id="vues">
-  <div class="grille" id="liste"></div>
-
-  <section id="vueArmes">
-    <div class="sousOnglets" id="classes"></div>
-    <div class="tri">Trier par
-      <select id="triArmes">
-        <option value="nom">Nom</option>
-        <option value="prix">Prix (moins cher)</option>
-        <option value="prixD">Prix (plus cher)</option>
-        <option value="degats">Dégâts</option>
-        <option value="precision">Précision</option>
-        <option value="portee">Portée</option>
-      </select>
-    </div>
-    <div class="grille" id="listeArmes"></div>
-    <h2 style="font-family:'Playfair Display',serif;margin:40px 0 16px">Actus armes</h2>
-    <div class="grille" id="actusArmes"></div>
-  </section>
-
-  <section id="vueCarte">
-    <div class="boiteCarte">
-      <div class="rx" id="carteRX">
-        <img src="images/carte-leonida-rayonx.jpg" alt="Carte de Leonida en rayon X">
-        <div class="scan"></div>
-        <div id="zones"></div>
-      </div>
-      <div class="note">Carte de Leonida en mode rayon X. Touche un comté pour voir les infos trouvées sur place.</div>
-    </div>
-    <div>
-      <div id="titreZone">Choisis une zone sur la carte</div>
-      <div class="grille" id="listeZone"></div>
-    </div>
-  </section>
-  </div>
+  <div id="scene"><div id="rubrique"></div></div>
 </main>
 
 <footer>
@@ -217,177 +168,174 @@ footer p+p{margin-top:8px}
   <p>Les résumés sont rédigés automatiquement par une IA à partir de sources publiques citées sur chaque fiche. Seules les infos confirmées par au moins deux sites indépendants (ou par Rockstar) sont publiées. Une erreur reste possible si plusieurs sites se trompent ensemble : en cas de doute, vérifie dans le jeu.</p>
 </footer>
 
+<nav class="barre" aria-label="Rubriques"></nav>
+
 <script>
-const CATS = {
-  tout:{nom:"Tout"}, actus:{nom:"Actus"}, secrets:{nom:"Secrets"}, astuces:{nom:"Astuces"},
-  vehicules:{nom:"Véhicules"}, armes:{nom:"🔫 Armes"}, argent:{nom:"Argent"}, lieux:{nom:"Lieux"}, carte:{nom:"🗺️ Carte"}
-};
-const ZONES = {
-  "lummox":{nom:"Lummox County",x:51,y:12.5},
-  "leonard":{nom:"Leonard County",x:70,y:29},
-  "kelly":{nom:"Kelly County",x:36,y:33},
-  "vice-dale":{nom:"Vice-Dale County",x:73,y:53},
-  "mariana":{nom:"Mariana County",x:39,y:73},
-  "inconnue":{nom:"Lieu non précisé",x:14,y:93}
-};
-const CLASSES = {
-  toutes:"Toutes", pistolets:"Pistolets", revolvers:"Revolvers", mitraillettes:"Mitraillettes",
-  "fusils-a-pompe":"Fusils à pompe", "fusils-assaut":"Fusils d'assaut", "fusils-tactiques":"Fusils tactiques",
-  snipers:"Snipers", lourdes:"Armes lourdes", melee:"Mêlée", explosifs:"Explosifs"
-};
-let DATA = {entrees:[]}, ARMES = [], onglet = "tout", zoneActive = null, classe = "toutes";
-
-// Images : dépose tes captures dans images/armes/<nom-de-l-arme>.jpg (ou .png) et elles s'affichent toutes seules
-const slug = s => String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
-window.imgSuivante = img => {
-  const essais = JSON.parse(img.dataset.essais);
-  if (essais.length) { img.src = essais.shift(); img.dataset.essais = JSON.stringify(essais); }
-  else img.parentElement.remove(); // pas d'image : on masque le cadre
-};
-function photo(chemin, nom){
-  const essais = chemin ? [chemin] : ["jpg","png","webp"].map(x => `images/armes/${slug(nom)}.${x}`);
-  const premier = essais.shift();
-  return `<img src="${esc(premier)}" alt="${esc(nom)}" loading="lazy" data-essais='${esc(JSON.stringify(essais))}' onerror="imgSuivante(this)">`;
-}
-
-function statLigne(nom, v){
-  const ok = typeof v === "number";
-  return `<div class="stat ${ok?"":"inc"}"><span>${nom}</span><div class="barre"><i style="width:${ok?Math.min(v,10)*10:0}%"></i></div><b title="${ok?"":"Pas encore confirmé par 2 sources"}">${ok?v.toFixed(1):"?"}</b></div>`;
-}
-const dollars = n => typeof n === "number" ? "$" + n.toLocaleString("fr-BE") : null;
-
-function armeHTML(a){
-  return `<article class="arme">
-    <div class="photo">${photo(a.image, a.nom)}</div>
-    <div class="corps">
-      <div class="haut">
-        <span class="cat">${esc(CLASSES[a.classe] || a.classe)}</span>
-        ${a.statut === "confirme" ? '<span class="badge ok">✓ Confirmé</span>' : '<span class="badge non">Non vérifié</span>'}
-      </div>
-      <h3>${esc(a.nom)}</h3>
-      <div class="prix">${dollars(a.prix) || "Prix ?"}${a.chargeur ? `<small>${a.chargeur} balles / chargeur</small>` : ""}</div>
-      ${statLigne("Dégâts", a.degats)}${statLigne("Précision", a.precision)}${statLigne("Maniabilité", a.maniabilite)}${statLigne("Portée", a.portee)}
-      ${a.ouAcheter ? `<div class="infos">🛒 ${esc(a.ouAcheter)}</div>` : ""}
-      ${a.infos ? `<div class="infos">${esc(a.infos)}</div>` : ""}
-      <div class="amelio"><b>Améliorations</b>
-        ${a.ameliorations?.length ? a.ameliorations.map(m => `<div><p>${esc(m.nom)}${m.effet?` <span>· ${esc(m.effet)}</span>`:""}</p><span>${dollars(m.prix) || ""}</span></div>`).join("")
-          : '<div><span>Aucune amélioration confirmée par 2 sources pour l\'instant.</span></div>'}
-      </div>
-      ${(a.conflits||[]).length ? `<div class="conflit">⚠️ Sources en désaccord : ${a.conflits.map(esc).join(" · ")}</div>` : ""}
-      <div class="sources">Sources : ${(a.sources||[]).map(s => `<a href="${urlOk(s.url)}" target="_blank" rel="noopener nofollow">${esc(s.nom)} ↗</a>`).join("")}</div>
-    </div>
-  </article>`;
-}
-
-function renduArmes(){
-  $("classes").innerHTML = Object.entries(CLASSES).map(([id,nom]) => {
-    const n = id === "toutes" ? ARMES.length : ARMES.filter(a => a.classe === id).length;
-    return (n || id === "toutes") ? `<button class="onglet ${classe===id?"actif":""}" data-classe="${id}">${nom}<small>${n}</small></button>` : "";
-  }).join("");
-  document.querySelectorAll("[data-classe]").forEach(b => b.onclick = () => { classe = b.dataset.classe; renduArmes(); });
-  const q = $("recherche").value.trim().toLowerCase(), t = $("triArmes").value;
-  let liste = ARMES.filter(a => (classe === "toutes" || a.classe === classe) &&
-    (!q || (a.nom + " " + (a.infos||"") + " " + (CLASSES[a.classe]||"")).toLowerCase().includes(q)));
-  const val = (a,k) => typeof a[k] === "number" ? a[k] : null;
-  liste.sort((a,b) => {
-    if (t === "nom") return a.nom.localeCompare(b.nom);
-    const k = t === "prixD" ? "prix" : t, va = val(a,k), vb = val(b,k);
-    if (va === null) return 1; if (vb === null) return -1;
-    return t === "prix" ? va - vb : vb - va;
-  });
-  $("listeArmes").innerHTML = liste.length ? liste.map(armeHTML).join("") : '<div class="vide">Aucune arme ne correspond.</div>';
-  afficherListe($("actusArmes"), filtrer(DATA.entrees.filter(e => e.categorie === "armes")));
-}
-
+// ---------- outils ----------
+const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const urlOk = u => /^https?:\/\//i.test(u) ? esc(u) : "#";
-const $ = id => document.getElementById(id);
+const slug = s => String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+const dollars = n => typeof n === "number" ? "$" + n.toLocaleString("fr-BE") : null;
+const dateCourte = d => new Date(d).toLocaleDateString("fr-BE",{day:"numeric",month:"short"});
 
-function filtrer(liste){
-  const q = $("recherche").value.trim().toLowerCase();
-  return liste.filter(e =>
-    (!q || (e.titre + " " + e.resume + " " + (CATS[e.categorie]?.nom||"")).toLowerCase().includes(q)));
+// ---------- rubriques ----------
+const RUBRIQUES = [
+  { id:"actus",     icone:"📰", nom:"Actus" },
+  { id:"armes",     icone:"🔫", nom:"Armes" },
+  { id:"vehicules", icone:"🚗", nom:"Véhicules" },
+  { id:"carte",     icone:"🗺️", nom:"Carte" },
+];
+const TYPES_ACTU = { tout:"Tout", actus:"Actus", secrets:"Secrets", astuces:"Astuces", argent:"Argent", lieux:"Lieux", vehicules:"Véhicules", armes:"Armes" };
+const CLASSES_ARMES = { toutes:"Toutes", pistolets:"Pistolets", revolvers:"Revolvers", mitraillettes:"Mitraillettes", "fusils-a-pompe":"Fusils à pompe", "fusils-assaut":"Fusils d'assaut", "fusils-tactiques":"Fusils tactiques", snipers:"Snipers", lourdes:"Armes lourdes", melee:"Mêlée", explosifs:"Explosifs" };
+const CLASSES_VEH = { toutes:"Toutes", supercars:"Supercars", sportives:"Sportives", muscle:"Muscle", coupes:"Coupés", berlines:"Berlines", suv:"SUV", pickups:"Pick-up", "tout-terrain":"Tout-terrain", utilitaires:"Utilitaires", motos:"Motos" };
+const ZONES = {
+  lummox:{nom:"Lummox County",x:51,y:12.5}, leonard:{nom:"Leonard County",x:70,y:29}, kelly:{nom:"Kelly County",x:36,y:33},
+  "vice-dale":{nom:"Vice-Dale County",x:73,y:53}, mariana:{nom:"Mariana County",x:39,y:73}, inconnue:{nom:"Lieu non précisé",x:14,y:93}
+};
+
+let ACTUS = [], ARMES = [], VEHS = [];
+const etat = { rub:"actus", type:"tout", classeA:"toutes", classeV:"toutes", triA:"nom", triV:"vitesse", zone:null, q:"" };
+
+// ---------- briques d'affichage ----------
+function photo(chemin, nom, dossier){
+  const essais = chemin ? [chemin] : ["jpg","png","webp"].map(x => `images/${dossier}/${slug(nom)}.${x}`);
+  const premier = essais.shift();
+  return `<div class="photo"><img src="${esc(premier)}" alt="${esc(nom)}" loading="lazy" data-essais='${esc(JSON.stringify(essais))}' onerror="imgSuivante(this)"></div>`;
 }
+window.imgSuivante = img => {
+  const e = JSON.parse(img.dataset.essais);
+  if (e.length) { img.src = e.shift(); img.dataset.essais = JSON.stringify(e); } else img.parentElement.remove();
+};
+const stat = (nom, v) => { const ok = typeof v === "number";
+  return `<div class="stat ${ok?"":"inc"}"><span>${nom}</span><div class="jauge"><i style="width:${ok?Math.min(v,10)*10:0}%"></i></div><b>${ok?v.toFixed(1):"?"}</b></div>`; };
+const sources = l => `<div class="sources">Sources : ${(l||[]).map(s => `<a href="${urlOk(s.url)}" target="_blank" rel="noopener nofollow">${esc(s.nom)} ↗</a>`).join("")}</div>`;
+const conflits = l => (l||[]).length ? `<div class="conflit">⚠️ Sites en désaccord : ${l.map(esc).join(" · ")}</div>` : "";
+const pastilles = (liste, actif, attr, compte) => `<div class="pastilles">${Object.entries(liste).map(([id,nom]) => {
+  const n = compte(id); return (n || id === "toutes" || id === "tout") ? `<button class="pastille ${actif===id?"actif":""}" ${attr}="${id}">${nom}<small>${n}</small></button>` : ""; }).join("")}</div>`;
+const outils = (placeholder, tri) => `<div class="outils"><input class="recherche" id="q" type="search" placeholder="${placeholder}" value="${esc(etat.q)}">${tri||""}</div>`;
+const titre = (t, sous) => `<div class="titreRub"><h2>${t}</h2><span>${sous}</span></div>`;
+const vide = t => `<div class="vide">${t}</div>`;
+const cherche = (texte) => !etat.q || texte.toLowerCase().includes(etat.q.toLowerCase());
 
-function carteHTML(e, dernier){
-  const spoil = e.spoiler && $("fSpoil").checked;
-  return `<article class="carte ${spoil ? "spoil" : ""}">
-    <div class="haut">
-      <span class="cat">${esc(CATS[e.categorie]?.nom || e.categorie)}</span>
-      ${e.statut === "confirme" ? '<span class="badge ok">✓ Confirmé</span>' : '<span class="badge non">Non vérifié</span>'}
-      ${e.date === dernier ? '<span class="badge neuf">Nouveau</span>' : ""}
-      <span class="date">${esc(new Date(e.date).toLocaleDateString("fr-BE",{day:"numeric",month:"short"}))}</span>
-    </div>
-    ${e.image ? `<img class="imgActu" src="${esc(e.image)}" alt="" loading="lazy" onerror="this.remove()">` : ""}
+function ficheActu(e, dernier){
+  return `<article class="fiche ${e.spoiler?"spoil":""}"><div class="corps">
+    <div class="etiquettes"><span class="cat">${esc(TYPES_ACTU[e.categorie]||e.categorie)}</span><span class="badge ok">✓ Confirmé</span>${e.date===dernier?'<span class="badge neuf">Nouveau</span>':""}<span class="date">${esc(dateCourte(e.date))}</span></div>
+    ${e.image ? `<img class="photo" src="${esc(e.image)}" alt="" loading="lazy" onerror="this.remove()">` : ""}
     <h3>${esc(e.titre)}</h3>
-    ${spoil ? '<div class="avert">⚠️ Spoiler — touche le texte pour le lire</div>' : ""}
-    <p class="resume">${esc(e.resume)}</p>
-    <div class="sources">Sources : ${(e.sources||[]).map(s => `<a href="${urlOk(s.url)}" target="_blank" rel="noopener nofollow">${esc(s.nom)} ↗</a>`).join("")}</div>
-  </article>`;
+    ${e.spoiler ? '<div class="avert">⚠️ Spoiler — touche le texte pour le lire</div>' : ""}
+    <p class="resume">${esc(e.resume)}</p>${sources(e.sources)}</div></article>`;
+}
+function ficheArme(a){
+  return `<article class="fiche">${photo(a.image, a.nom, "armes")}<div class="corps">
+    <div class="etiquettes"><span class="cat">${esc(CLASSES_ARMES[a.classe]||a.classe)}</span><span class="badge ok">✓ Confirmé</span></div>
+    <h3>${esc(a.nom)}</h3>
+    <div class="prix">${dollars(a.prix) || "Prix ?"}${a.chargeur?`<small>${a.chargeur} balles / chargeur</small>`:""}</div>
+    ${(a.classe==="melee"||a.classe==="explosifs") && a.degats==null ? "" : stat("Dégâts",a.degats)+stat("Précision",a.precision)+stat("Maniabilité",a.maniabilite)+stat("Portée",a.portee)}
+    ${a.ouAcheter?`<div class="infos">🛒 ${esc(a.ouAcheter)}</div>`:""}${a.infos?`<div class="infos">${esc(a.infos)}</div>`:""}
+    <div class="amelio"><b>Améliorations</b>${a.ameliorations?.length ? a.ameliorations.map(m => `<div><span>${esc(m.nom)}</span><span>${dollars(m.prix)||""}</span></div>`).join("") : "<div>Aucune confirmée par 2 sites pour l'instant.</div>"}</div>
+    ${conflits(a.conflits)}${sources(a.sources)}</div></article>`;
+}
+function ficheVeh(v){
+  return `<article class="fiche">${photo(v.image, v.nom, "vehicules")}<div class="corps">
+    <div class="etiquettes"><span class="cat">${esc(CLASSES_VEH[v.classe]||v.classe)}</span><span class="badge ok">✓ Confirmé</span></div>
+    <h3>${esc(v.nom)}</h3>
+    ${v.prix?`<div class="prix">${dollars(v.prix)}</div>`:""}
+    ${stat("Vitesse",v.vitesse)}${stat("Accélération",v.acceleration)}${stat("Tenue de route",v.maniabilite)}
+    ${v.ouTrouver?`<div class="infos">📍 ${esc(v.ouTrouver)}</div>`:""}${v.infos?`<div class="infos">${esc(v.infos)}</div>`:""}
+    ${conflits(v.conflits)}${sources(v.sources)}</div></article>`;
+}
+function trier(liste, cle, nomCle){
+  return [...liste].sort((a,b) => {
+    if (cle === "nom") return a[nomCle].localeCompare(b[nomCle]);
+    const desc = !cle.endsWith("+"), k = cle.replace("+",""), va = a[k], vb = b[k];
+    if (typeof va !== "number") return 1; if (typeof vb !== "number") return -1;
+    return desc ? vb - va : va - vb;
+  });
 }
 
-function afficherListe(cible, liste){
-  const dernier = DATA.entrees[0]?.date;
-  cible.innerHTML = liste.length ? liste.map(e => carteHTML(e, dernier)).join("")
-    : '<div class="vide">Rien pour l\'instant ici. Le scan quotidien ajoutera les nouveautés dès qu\'elles apparaissent.</div>';
+// ---------- rendu des 4 rubriques ----------
+const RENDU = {
+  actus(){
+    const l = ACTUS.filter(e => (etat.type==="tout" || e.categorie===etat.type) && cherche(e.titre+" "+e.resume));
+    return titre("Actus & secrets", `${ACTUS.length} infos confirmées`) + outils("Rechercher une info…")
+      + pastilles(TYPES_ACTU, etat.type, "data-type", id => id==="tout" ? ACTUS.length : ACTUS.filter(e=>e.categorie===id).length)
+      + `<div class="grille">${l.length ? l.map(e => ficheActu(e, ACTUS[0]?.date)).join("") : vide("Rien de confirmé ici pour l'instant. Le robot vérifie les nouveautés chaque matin.")}</div>`;
+  },
+  armes(){
+    const l = trier(ARMES.filter(a => (etat.classeA==="toutes" || a.classe===etat.classeA) && cherche(a.nom+" "+(a.infos||"")+" "+CLASSES_ARMES[a.classe])), etat.triA, "nom");
+    const tri = `<select class="tri" id="triA" aria-label="Trier">${[["nom","A → Z"],["prix+","Prix ↑"],["prix","Prix ↓"],["degats","Dégâts"],["precision","Précision"],["portee","Portée"]].map(([v,t])=>`<option value="${v}" ${etat.triA===v?"selected":""}>${t}</option>`).join("")}</select>`;
+    return titre("Armes", `${ARMES.length} armes confirmées`) + outils("Rechercher une arme…", tri)
+      + pastilles(CLASSES_ARMES, etat.classeA, "data-classe-a", id => id==="toutes" ? ARMES.length : ARMES.filter(a=>a.classe===id).length)
+      + `<div class="regle">Stats sur 10, comme dans le menu du jeu. « ? » = pas encore confirmé par 2 sites.</div>`
+      + `<div class="grille">${l.length ? l.map(ficheArme).join("") : vide("Aucune arme ne correspond.")}</div>`;
+  },
+  vehicules(){
+    const l = trier(VEHS.filter(v => (etat.classeV==="toutes" || v.classe===etat.classeV) && cherche(v.nom+" "+CLASSES_VEH[v.classe])), etat.triV, "nom");
+    const tri = `<select class="tri" id="triV" aria-label="Trier">${[["vitesse","Vitesse"],["acceleration","Accélération"],["maniabilite","Tenue de route"],["nom","A → Z"]].map(([v,t])=>`<option value="${v}" ${etat.triV===v?"selected":""}>${t}</option>`).join("")}</select>`;
+    return titre("Véhicules", `${VEHS.length} véhicules confirmés`) + outils("Rechercher un véhicule…", tri)
+      + pastilles(CLASSES_VEH, etat.classeV, "data-classe-v", id => id==="toutes" ? VEHS.length : VEHS.filter(v=>v.classe===id).length)
+      + `<div class="regle">Stats sur 10, comme dans le jeu. Les autres véhicules apparaîtront quand un 2e site les aura confirmés.</div>`
+      + `<div class="grille">${l.length ? l.map(ficheVeh).join("") : vide("Aucun véhicule ne correspond.")}</div>`;
+  },
+  carte(){
+    const parZone = {}; ACTUS.forEach(e => { if (e.zone) (parZone[e.zone] ||= []).push(e); });
+    const pins = Object.entries(ZONES).map(([id,z]) => { const n = (parZone[id]||[]).length; if (id==="inconnue" && !n) return "";
+      return `<button class="pin ${n?"":"vide"} ${etat.zone===id?"actif":""}" data-zone="${id}" style="left:${z.x}%;top:${z.y}%"><i>${n}</i><span>${z.nom.toUpperCase()}</span></button>`; }).join("");
+    const l = etat.zone ? (parZone[etat.zone]||[]) : [];
+    return titre("Carte de Leonida", "mode rayon X") + `<div class="vueCarte">
+      <div class="boiteCarte"><div class="rx"><img src="images/carte-leonida-rayonx.jpg" alt="Carte de Leonida en rayon X"><div class="scan"></div>${pins}</div>
+      <div class="note">Touche un comté pour voir les infos confirmées trouvées sur place.</div></div>
+      <div><div id="titreZone">${etat.zone ? esc(ZONES[etat.zone].nom) : "Choisis un comté"}</div>
+      <div class="grille">${etat.zone ? (l.length ? l.map(e => ficheActu(e, ACTUS[0]?.date)).join("") : vide("Aucune info confirmée dans ce comté pour l'instant.")) : ""}</div></div></div>`;
+  },
+};
+
+function numeroter(){ document.querySelectorAll("#rubrique .fiche").forEach((c,i) => c.style.setProperty("--i", Math.min(i, 12))); }
+function afficher(){
+  $("rubrique").innerHTML = RENDU[etat.rub]();
+  numeroter();
+  document.querySelectorAll("[data-rub]").forEach(b => b.classList.toggle("actif", b.dataset.rub === etat.rub));
+  window.scene3d?.onglet(etat.rub);
 }
 
-function numeroter(){ [...document.querySelectorAll("#vues .carte, #vues .arme")].filter(c => c.offsetParent).forEach((c,i) => c.style.setProperty("--i", Math.min(i, 12))); }
-let enTransition = false;
-function changerOnglet(nom){
-  if (nom === onglet || enTransition) { onglet = nom; return rendu(); }
-  enTransition = true;
-  const v = $("vues"); v.classList.remove("entree"); v.classList.add("sortie");
-  setTimeout(() => { onglet = nom; v.classList.remove("sortie"); rendu(); void v.offsetWidth; v.classList.add("entree"); enTransition = false; }, 230);
-}
-function rendu(){
-  window.scene3d?.onglet(onglet);
-  setTimeout(numeroter);
-  const enCarte = onglet === "carte", enArmes = onglet === "armes";
-  $("liste").style.display = (enCarte || enArmes) ? "none" : "grid";
-  $("vueCarte").classList.toggle("visible", enCarte);
-  $("vueArmes").classList.toggle("visible", enArmes);
-  document.querySelectorAll("#onglets .onglet").forEach(b => b.classList.toggle("actif", b.dataset.cat === onglet));
-  if (enCarte) return renduCarte();
-  if (enArmes) return renduArmes();
-  const base = onglet === "tout" ? DATA.entrees : DATA.entrees.filter(e => e.categorie === onglet);
-  afficherListe($("liste"), filtrer(base));
+// changement de rubrique avec rotation 3D en cube
+let enCours = false;
+function aller(rub, defiler = true){
+  if (defiler) $("contenu").scrollIntoView({ behavior: "smooth" });
+  if (rub === etat.rub || enCours) return;
+  const ordre = RUBRIQUES.map(r => r.id), sc = $("scene");
+  sc.classList.toggle("retour", ordre.indexOf(rub) < ordre.indexOf(etat.rub));
+  enCours = true; sc.classList.remove("entree"); sc.classList.add("sortie");
+  setTimeout(() => { etat.rub = rub; etat.q = ""; afficher(); sc.classList.remove("sortie"); void sc.offsetWidth; sc.classList.add("entree"); enCours = false; }, 320);
 }
 
-function renduCarte(){
-  const parZone = {};
-  DATA.entrees.forEach(e => { if (e.zone) (parZone[e.zone] ||= []).push(e); });
-  $("zones").innerHTML = Object.entries(ZONES).map(([id,z]) => {
-    const n = (parZone[id]||[]).length;
-    if (id === "inconnue" && !n) return "";
-    return `<button class="pin ${n?"":"vide"} ${zoneActive===id?"actif":""}" data-zone="${id}" style="left:${z.x}%;top:${z.y}%"><i>${n}</i><span>${z.nom.toUpperCase()}</span></button>`;
-  }).join("");
-  document.querySelectorAll(".pin").forEach(g => g.onclick = () => { zoneActive = g.dataset.zone; window.scene3d?.comte(zoneActive); renduCarte(); setTimeout(numeroter); });
-  if (zoneActive){
-    $("titreZone").textContent = ZONES[zoneActive].nom;
-    afficherListe($("listeZone"), filtrer(parZone[zoneActive] || []));
-  }
-}
+// ---------- menus ----------
+const btn = r => `<button data-rub="${r.id}"><b>${r.icone}</b>${r.nom}</button>`;
+document.querySelector(".menuPc").innerHTML = RUBRIQUES.map(r => `<button data-rub="${r.id}">${r.nom}</button>`).join("");
+document.querySelector(".barre").innerHTML = RUBRIQUES.map(btn).join("");
 
-function onglets(){
-  const compte = c => c === "tout" ? DATA.entrees.length : c === "armes" ? ARMES.length : c === "carte" ? DATA.entrees.filter(e=>e.zone).length : DATA.entrees.filter(e => e.categorie === c).length;
-  $("onglets").innerHTML = Object.entries(CATS).map(([id,c]) =>
-    `<button class="onglet" data-cat="${id}">${c.nom}<small>${compte(id)}</small></button>`).join("");
-  document.querySelectorAll("#onglets .onglet").forEach(b => b.onclick = () => changerOnglet(b.dataset.cat));
-}
-
+// ---------- événements (un seul écouteur pour tout) ----------
 document.addEventListener("click", e => {
-  const r = e.target.closest(".spoil .resume");
-  if (r) r.closest(".carte").classList.remove("spoil");
-  const go = e.target.closest("[data-go]");
-  if (go) changerOnglet(go.dataset.go);
+  const t = e.target.closest("[data-rub],[data-type],[data-classe-a],[data-classe-v],[data-zone],[data-go],.spoil .resume");
+  if (!t) return;
+  if (t.matches(".resume")) return t.closest(".fiche").classList.remove("spoil");
+  if (t.dataset.go) return scrollTo({ top: 0, behavior: "smooth" });
+  if (t.dataset.rub) return aller(t.dataset.rub);
+  if (t.dataset.type) { etat.type = t.dataset.type; return afficher(); }
+  if (t.dataset.classeA) { etat.classeA = t.dataset.classeA; return afficher(); }
+  if (t.dataset.classeV) { etat.classeV = t.dataset.classeV; return afficher(); }
+  if (t.dataset.zone) { etat.zone = t.dataset.zone; window.scene3d?.comte(etat.zone); afficher(); }
 });
-["recherche","fSpoil","triArmes"].forEach(id => $(id).addEventListener("input", rendu));
-
-// inclinaison 3D des cartes au survol (souris uniquement)
+document.addEventListener("input", e => {
+  if (e.target.id === "q") { etat.q = e.target.value; const pos = e.target.selectionStart; afficher(); const q = $("q"); q.focus(); q.setSelectionRange(pos, pos); }
+  if (e.target.id === "triA") { etat.triA = e.target.value; afficher(); }
+  if (e.target.id === "triV") { etat.triV = e.target.value; afficher(); }
+});
+// inclinaison 3D des fiches (souris uniquement)
 if (matchMedia("(hover: hover)").matches && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
   document.addEventListener("pointermove", e => {
-    const c = e.target.closest(".carte, .arme");
+    const c = e.target.closest(".fiche");
     document.querySelectorAll(".incline").forEach(x => { if (x !== c) { x.classList.remove("incline"); x.style.transform = ""; } });
     if (!c) return;
     const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
@@ -395,21 +343,22 @@ if (matchMedia("(hover: hover)").matches && !matchMedia("(prefers-reduced-motion
     c.style.transform = `perspective(900px) rotateX(${-y*9}deg) rotateY(${x*11}deg) translateZ(14px)`;
   }, { passive: true });
 }
-// le titre bascule en 3D quand on fait défiler
+// le titre bascule en 3D quand on défile
 addEventListener("scroll", () => document.documentElement.style.setProperty("--p", Math.min(1, scrollY / (innerHeight*.8)).toFixed(3)), { passive: true });
+
+// ---------- chargement des données ----------
 const frais = f => fetch(f + "?v=" + Date.now()).then(r => r.json());
-Promise.all([frais("data/contenu.json"), frais("data/armes.json").catch(() => ({armes:[]}))])
-  .then(([d, a]) => {
+Promise.all([frais("data/contenu.json"), frais("data/armes.json").catch(() => ({})), frais("data/vehicules.json").catch(() => ({}))])
+  .then(([c, a, v]) => {
     // Règle du site : on n'affiche QUE ce qui est confirmé par au moins 2 sources
-    d.entrees = (d.entrees || []).filter(e => e.statut === "confirme");
-    DATA = d; ARMES = (a.armes || []).filter(x => x.statut === "confirme");
-    DATA.entrees.sort((a,b) => b.date.localeCompare(a.date));
-    $("nbTotal").textContent = d.entrees.length;
-    $("nbJour").textContent = d.dernierAjout ?? 0;
-    $("dateMaj").textContent = new Date(d.derniereMaj).toLocaleDateString("fr-BE",{day:"numeric",month:"short"});
-    onglets(); rendu();
+    ACTUS = (c.entrees||[]).filter(e => e.statut === "confirme").sort((x,y) => y.date.localeCompare(x.date));
+    ARMES = (a.armes||[]).filter(x => x.statut === "confirme");
+    VEHS = (v.vehicules||[]).filter(x => x.statut === "confirme");
+    $("raccourcis").innerHTML = RUBRIQUES.map(r => `<button data-rub="${r.id}"><b>${r.icone}</b>${r.nom}<small>${{actus:ACTUS.length+" infos",armes:ARMES.length+" armes",vehicules:VEHS.length+" véhicules",carte:"5 comtés"}[r.id]}</small></button>`).join("");
+    $("maj").innerHTML = `Dernière vérification : <b>${esc(dateCourte(c.derniereMaj))}</b>`;
+    afficher();
   })
-  .catch(() => { $("liste").innerHTML = '<div class="vide">Impossible de charger les données. Réessaie dans un instant.</div>'; });
+  .catch(() => { $("rubrique").innerHTML = vide("Impossible de charger les données. Réessaie dans un instant."); });
 </script>
 <script type="module" src="js/scene3d.js"></script>
 </body>

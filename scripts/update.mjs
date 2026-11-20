@@ -249,7 +249,7 @@ const domaine = (u) => { try { return new URL(u).hostname.replace(/^www\./, "");
 
 // Une valeur n'est publiée que si 2 sites différents donnent EXACTEMENT la même.
 // En attendant, elle est gardée dans "candidats" (non affichée).
-export function fusionnerArme(base, n, sources) {
+export function fusionnerArme(base, n, sources, champs = STATS) {
   base.candidats ||= {};
   const doms = sources.map((s) => domaine(s.url));
   const voter = (cle, valeur) => {
@@ -258,7 +258,7 @@ export function fusionnerArme(base, n, sources) {
     for (const dm of doms) if (!v.includes(dm)) v.push(dm);
     return v.length;
   };
-  for (const k of STATS) {
+  for (const k of champs) {
     const v = n[k];
     if (v === null || v === undefined || v === "") continue;
     const votes = voter(k, v);
@@ -322,9 +322,59 @@ export async function majArmes() {
   console.log(`🔫 arsenal : ${nouvelles} nouvelles armes, ${majs} fiches complétées (total : ${data.armes.length})`);
 }
 
+// ---------- garage : fiches des véhicules (même règle des 2 sources) ----------
+const FICHIER_VEH = new URL("../data/vehicules.json", import.meta.url);
+const CLASSES_VEH = ["supercars", "sportives", "muscle", "coupes", "berlines", "suv", "pickups", "tout-terrain", "utilitaires", "motos"];
+const STATS_VEH = ["vitesse", "acceleration", "maniabilite", "prix", "ouTrouver"];
+const PAGES_VEH = [
+  { nom: "DayOne", url: "https://playday.one/2026/11/18/every-car-in-gta-6/" },
+  { nom: "Nettoge / Timesaver", url: "https://timesaver.gg/tools/gta-6/cars/fastest" },
+  { nom: "GTABase", url: "https://www.gtabase.com/articles/gta-6/gta-6-fastest-cars-ranked-list-by-top-speed" },
+];
+
+export async function majVehicules() {
+  const data = JSON.parse(await readFile(FICHIER_VEH, "utf8"));
+  const pages = [];
+  for (const p of PAGES_VEH) {
+    try {
+      const r = await fetch(p.url, { headers: { "User-Agent": "Mozilla/5.0 (gta6-a-la-loupe bot)" }, signal: AbortSignal.timeout(25000) });
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      pages.push({ ...p, texte: texteDePage(await r.text()) });
+    } catch (e) { console.log("⚠️ page véhicules ignorée :", p.nom, "-", e.message); }
+  }
+  if (pages.length < 2) return console.log("🚗 pas assez de pages lisibles pour recouper les véhicules");
+  const rep = await demanderIA(`Tu remplis la base de données des véhicules d'un site de fans NON OFFICIEL sur GTA 6.
+Pages (numérotées) :
+${pages.map((p, i) => `===== PAGE [${i}] ${p.nom} =====\n${p.texte}`).join("\n")}
+Extrais CHAQUE véhicule de GTA 6 avec UNIQUEMENT les stats affichées dans le jeu sur 10 (n'invente rien ; info absente = null ; ignore les vitesses en km/h ou mph).
+- classe parmi : ${CLASSES_VEH.join(", ")}
+- vitesse, acceleration, maniabilite (tenue de route sur asphalte) : nombres sur 10
+- prix : dollars du jeu sans symbole, sinon null ; ouTrouver : en français court, sinon null
+- sources : numéros des pages
+Réponds UNIQUEMENT en JSON : {"vehicules":[{"nom":"","classe":"","vitesse":null,"acceleration":null,"maniabilite":null,"prix":null,"ouTrouver":null,"sources":[0]}]}`);
+  let nouv = 0;
+  for (const n of rep.vehicules || []) {
+    if (!n?.nom || !CLASSES_VEH.includes(n.classe)) continue;
+    const sources = (n.sources || []).map((i) => pages[i]).filter(Boolean).map((p) => ({ nom: p.nom, url: p.url }));
+    if (!sources.length) continue;
+    const cle = norm(n.nom.replace(/^'?\d{2}\s/, ""));
+    let base = data.vehicules.find((v) => norm(v.nom.replace(/^'?\d{2}\s/, "")) === cle && v.nom.slice(0, 3) === n.nom.slice(0, 3));
+    if (!base) {
+      base = { nom: String(n.nom).slice(0, 60), classe: n.classe, image: null, infos: null, statut: "non-verifie", conflits: [], sources: [] };
+      for (const k of STATS_VEH) base[k] = null;
+      data.vehicules.push(base); nouv++;
+    }
+    fusionnerArme(base, n, sources, STATS_VEH);
+  }
+  data.derniereMaj = new Date().toISOString();
+  await writeFile(FICHIER_VEH, JSON.stringify(data, null, 1) + "\n");
+  console.log(`🚗 garage : ${nouv} véhicules en plus (publiés : ${data.vehicules.filter((v) => v.statut === "confirme").length})`);
+}
+
 async function tout() {
   await principal();
   try { await majArmes(); } catch (e) { console.log("⚠️ mise à jour des armes ratée :", e.message); }
+  try { await majVehicules(); } catch (e) { console.log("⚠️ mise à jour des véhicules ratée :", e.message); }
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) tout().catch((e) => { console.error("❌", e); process.exit(1); });

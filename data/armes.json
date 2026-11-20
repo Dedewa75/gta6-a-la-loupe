@@ -1759,6 +1759,402 @@
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
+  },
+  {
+   "nom": "Fortune & Son Moreland 850",
+   "classe": "fusils-a-pompe",
+   "degats": 7.5,
+   "precision": 4.2,
+   "maniabilite": 5.6,
+   "portee": 2.5,
+   "prix": 700,
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": 5,
+   "infos": "Fusil à pompe classique.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    }
+   ]
+  },
+  {
+   "nom": "Kozlov KVGA-12",
+   "classe": "fusils-a-pompe",
+   "degats": 7.2,
+   "precision": 4.5,
+   "maniabilite": 5.1,
+   "portee": 2.5,
+   "prix": 3650,
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": 8,
+   "infos": "Fusil à pompe entièrement automatique.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    }
+   ]
+  },
+  {
+   "nom": "Girardi Super400",
+   "classe": "fusils-a-pompe",
+   "degats": 7.4,
+   "precision": 4.2,
+   "maniabilite": 5.3,
+   "portee": 2.5,
+   "prix": 2825,
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": 7,
+   "infos": null,
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    }
+   ]
+  },
+  {
+   "nom": "Goodwin Comshot 12",
+   "classe": "fusils-a-pompe",
+   "degats": 7.7,
+   "precision": 4.2,
+   "maniabilite": 4.0,
+   "portee": 2.5,
+   "prix": null,
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": null,
+   "infos": null,
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    }
+   ]
+  },
+  {
+   "nom": "Fortune & Son Gorse 425",
+   "classe": "fusils-a-pompe",
+   "degats": 7.5,
+   "precision": 3.8,
+   "maniabilite": 6.2,
+   "portee": 2.0,
+   "prix": null,
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": null,
+   "infos": null,
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    }
+   ]
+  },
+  {
+   "nom": "BZI Vatra",
+   "classe": "mitraillettes",
+   "degats": 4.2,
+   "precision": 3.8,
+   "maniabilite": 6.5,
+   "portee": 4.0,
+   "prix": 1200,
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": 20,
+   "infos": null,
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    }
+   ]
+  },
+  {
+   "nom": "Deever Tech DSG",
+   "classe": "mitraillettes",
+   "degats": 4.2,
+   "precision": 4.2,
+   "maniabilite": 6.9,
+   "portee": 4.0,
+   "prix": 1350,
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": null,
+   "infos": null,
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    }
+   ]
+  },
+  {
+   "nom": "Hawk & Little Morgan",
+   "classe": "revolvers",
+   "degats": 5.7,
+   "precision": 5.4,
+   "maniabilite": 7.8,
+   "portee": 6.0,
+   "prix": null,
+   "ouAcheter": "Bonus de l'Ultimate Edition",
+   "chargeur": null,
+   "infos": "Revolvers assortis de Jason et Lucia.",
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "Heist Lounge",
+     "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
+    }
+   ]
+  },
+  {
+   "nom": "Couteau de survie",
+   "classe": "melee",
+   "degats": null,
+   "precision": null,
+   "maniabilite": null,
+   "portee": null,
+   "prix": 315,
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": null,
+   "infos": null,
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    }
+   ]
+  },
+  {
+   "nom": "Couteau de combat",
+   "classe": "melee",
+   "degats": null,
+   "precision": null,
+   "maniabilite": null,
+   "portee": null,
+   "prix": 285,
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": null,
+   "infos": null,
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    }
+   ]
+  },
+  {
+   "nom": "Couteau EDC",
+   "classe": "melee",
+   "degats": null,
+   "precision": null,
+   "maniabilite": null,
+   "portee": null,
+   "prix": 275,
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": null,
+   "infos": null,
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    }
+   ]
+  },
+  {
+   "nom": "Cran d'arrêt",
+   "classe": "melee",
+   "degats": null,
+   "precision": null,
+   "maniabilite": null,
+   "portee": null,
+   "prix": 290,
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": null,
+   "infos": null,
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    }
+   ]
+  },
+  {
+   "nom": "Couteau bushcraft",
+   "classe": "melee",
+   "degats": null,
+   "precision": null,
+   "maniabilite": null,
+   "portee": null,
+   "prix": 230,
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": null,
+   "infos": null,
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    }
+   ]
+  },
+  {
+   "nom": "Matraque",
+   "classe": "melee",
+   "degats": null,
+   "precision": null,
+   "maniabilite": null,
+   "portee": null,
+   "prix": 160,
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": null,
+   "infos": null,
+   "ameliorations": [],
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    }
+   ]
   }
  ]
 }

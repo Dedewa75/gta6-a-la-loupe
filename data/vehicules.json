@@ -1,0 +1,1218 @@
+{
+ "derniereMaj": "2026-11-20T09:00:00.000Z",
+ "note": "Stats sur 10 affichées dans le jeu. Chaque chiffre est confirmé par au moins 2 sites. « ? » = pas encore confirmé.",
+ "vehicules": [
+  {
+   "nom": "'85 Karin Futo",
+   "classe": "coupes",
+   "vitesse": 4.3,
+   "acceleration": 4.5,
+   "maniabilite": 3.5,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Ascot Paragon",
+   "classe": "coupes",
+   "vitesse": 6.2,
+   "acceleration": 7.2,
+   "maniabilite": 5.8,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "'97 Maibatsu Penumbra FF",
+   "classe": "coupes",
+   "vitesse": 5.1,
+   "acceleration": 5.5,
+   "maniabilite": 4.4,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Buckingham Windsor Drop",
+   "classe": "coupes",
+   "vitesse": 6.0,
+   "acceleration": 6.9,
+   "maniabilite": 4.7,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "'65 Vapid Dominator",
+   "classe": "muscle",
+   "vitesse": 5.1,
+   "acceleration": 5.6,
+   "maniabilite": 3.7,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "GTABase",
+     "url": "https://www.gtabase.com/articles/gta-6/gta-6-fastest-cars-ranked-list-by-top-speed"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "'70 Vapid Ganado",
+   "classe": "muscle",
+   "vitesse": 4.7,
+   "acceleration": 5.3,
+   "maniabilite": 3.6,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Bravado Gauntlet Hellfire",
+   "classe": "muscle",
+   "vitesse": 7.8,
+   "acceleration": 7.8,
+   "maniabilite": null,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "'74 Declasse Vamos",
+   "classe": "muscle",
+   "vitesse": 4.4,
+   "acceleration": 3.9,
+   "maniabilite": null,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "'55 Vapid Stanier",
+   "classe": "muscle",
+   "vitesse": 3.9,
+   "acceleration": 3.7,
+   "maniabilite": 3.2,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "'77 BF Bandito",
+   "classe": "tout-terrain",
+   "vitesse": 3.6,
+   "acceleration": 6.0,
+   "maniabilite": 3.5,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "'67 Vapid Dominator Buggy",
+   "classe": "tout-terrain",
+   "vitesse": 5.0,
+   "acceleration": 6.1,
+   "maniabilite": 3.5,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Mer-Can Outlaw",
+   "classe": "tout-terrain",
+   "vitesse": 3.3,
+   "acceleration": 5.8,
+   "maniabilite": 3.2,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "'95 Bravado Bison 900",
+   "classe": "pickups",
+   "vitesse": 4.1,
+   "acceleration": 4.6,
+   "maniabilite": 2.8,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Karin Contender",
+   "classe": "pickups",
+   "vitesse": 4.5,
+   "acceleration": 5.5,
+   "maniabilite": 3.4,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Vapid Reclaimer",
+   "classe": "pickups",
+   "vitesse": 4.0,
+   "acceleration": 5.3,
+   "maniabilite": 3.2,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Vapid Riata",
+   "classe": "pickups",
+   "vitesse": 4.4,
+   "acceleration": 5.7,
+   "maniabilite": 3.8,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Declasse Yosemite 1500",
+   "classe": "pickups",
+   "vitesse": 4.3,
+   "acceleration": 4.5,
+   "maniabilite": 3.7,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "'07 Bravado Buffalo",
+   "classe": "berlines",
+   "vitesse": 5.2,
+   "acceleration": null,
+   "maniabilite": null,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "GTABase",
+     "url": "https://www.gtabase.com/articles/gta-6/gta-6-fastest-cars-ranked-list-by-top-speed"
+    }
+   ]
+  },
+  {
+   "nom": "'80 Declasse Impaler",
+   "classe": "berlines",
+   "vitesse": 4.1,
+   "acceleration": 4.0,
+   "maniabilite": 3.4,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Ocelot Jugular",
+   "classe": "berlines",
+   "vitesse": 6.5,
+   "acceleration": 7.3,
+   "maniabilite": 5.8,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Vapid Stanier G2",
+   "classe": "berlines",
+   "vitesse": 4.5,
+   "acceleration": 4.7,
+   "maniabilite": 4.2,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Albany V-STR",
+   "classe": "berlines",
+   "vitesse": 7.0,
+   "acceleration": 7.2,
+   "maniabilite": 4.5,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Bravado Banshee",
+   "classe": "sportives",
+   "vitesse": 6.0,
+   "acceleration": 6.3,
+   "maniabilite": 5.8,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Grotti Carbonizzare",
+   "classe": "sportives",
+   "vitesse": 6.3,
+   "acceleration": 7.1,
+   "maniabilite": 6.0,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Pfister Comet S2",
+   "classe": "sportives",
+   "vitesse": 7.7,
+   "acceleration": 8.0,
+   "maniabilite": 7.6,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "'88 Pfister Comet",
+   "classe": "sportives",
+   "vitesse": 6.1,
+   "acceleration": 6.4,
+   "maniabilite": 6.5,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "GTABase",
+     "url": "https://www.gtabase.com/articles/gta-6/gta-6-fastest-cars-ranked-list-by-top-speed"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Invetero Coquette",
+   "classe": "sportives",
+   "vitesse": 6.1,
+   "acceleration": 6.8,
+   "maniabilite": 5.5,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Invetero Coquette D10",
+   "classe": "sportives",
+   "vitesse": 7.0,
+   "acceleration": 7.5,
+   "maniabilite": 6.5,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "'64 Declasse Mamba GT",
+   "classe": "sportives",
+   "vitesse": 6.9,
+   "acceleration": 7.2,
+   "maniabilite": 6.3,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Pfister Neon",
+   "classe": "sportives",
+   "vitesse": 7.1,
+   "acceleration": 7.4,
+   "maniabilite": 5.9,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Benefactor Shafter V12",
+   "classe": "sportives",
+   "vitesse": 6.0,
+   "acceleration": 6.6,
+   "maniabilite": 4.5,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "'85 Ubermacht Sentinel",
+   "classe": "sportives",
+   "vitesse": 4.7,
+   "acceleration": 4.9,
+   "maniabilite": 4.2,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Emperor Sultan",
+   "classe": "sportives",
+   "vitesse": 4.9,
+   "acceleration": 6.1,
+   "maniabilite": 4.4,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "'95 Grotti Cheetah",
+   "classe": "supercars",
+   "vitesse": 6.6,
+   "acceleration": null,
+   "maniabilite": 6.5,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "GTABase",
+     "url": "https://www.gtabase.com/articles/gta-6/gta-6-fastest-cars-ranked-list-by-top-speed"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Progen Emerus",
+   "classe": "supercars",
+   "vitesse": 8.3,
+   "acceleration": 8.3,
+   "maniabilite": 8.4,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Piccia Furia",
+   "classe": "supercars",
+   "vitesse": 7.8,
+   "acceleration": 8.2,
+   "maniabilite": 7.3,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "'96 Pegassi Infernus",
+   "classe": "supercars",
+   "vitesse": 7.1,
+   "acceleration": 7.3,
+   "maniabilite": 6.5,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "GTABase",
+     "url": "https://www.gtabase.com/articles/gta-6/gta-6-fastest-cars-ranked-list-by-top-speed"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Grotti Itali RSX",
+   "classe": "supercars",
+   "vitesse": 7.5,
+   "acceleration": 8.1,
+   "maniabilite": 7.0,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Pegassi Tempesta",
+   "classe": "supercars",
+   "vitesse": 7.6,
+   "acceleration": 7.8,
+   "maniabilite": 6.9,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Pegassi Vitello",
+   "classe": "supercars",
+   "vitesse": 8.2,
+   "acceleration": 8.4,
+   "maniabilite": 8.2,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Grandforma Zorrusso",
+   "classe": "supercars",
+   "vitesse": 7.5,
+   "acceleration": 7.8,
+   "maniabilite": 7.1,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Vapid Aleutian",
+   "classe": "suv",
+   "vitesse": 4.3,
+   "acceleration": 5.1,
+   "maniabilite": 4.3,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Gallivanter Baller ST-D",
+   "classe": "suv",
+   "vitesse": 5.3,
+   "acceleration": 6.4,
+   "maniabilite": 4.2,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "'82 Canis Crawler",
+   "classe": "suv",
+   "vitesse": 2.7,
+   "acceleration": 3.0,
+   "maniabilite": 3.3,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Benefactor Dubsta",
+   "classe": "suv",
+   "vitesse": 4.7,
+   "acceleration": 5.5,
+   "maniabilite": 3.9,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "'95 Annis Hellion",
+   "classe": "suv",
+   "vitesse": 3.1,
+   "acceleration": 3.4,
+   "maniabilite": 3.0,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Buckingham Jubilee",
+   "classe": "suv",
+   "vitesse": 5.4,
+   "acceleration": 6.1,
+   "maniabilite": 4.4,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Vapid Montagne XL",
+   "classe": "suv",
+   "vitesse": 3.8,
+   "acceleration": 3.7,
+   "maniabilite": 3.5,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Ubermacht Rebla GTS",
+   "classe": "suv",
+   "vitesse": 4.7,
+   "acceleration": 5.8,
+   "maniabilite": 4.5,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "Pegassi Toros",
+   "classe": "suv",
+   "vitesse": 6.0,
+   "acceleration": 7.0,
+   "maniabilite": 4.6,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "'98 Declasse Burrito",
+   "classe": "utilitaires",
+   "vitesse": 3.4,
+   "acceleration": 3.8,
+   "maniabilite": 3.4,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  },
+  {
+   "nom": "'78 Osprey Journey",
+   "classe": "utilitaires",
+   "vitesse": 2.4,
+   "acceleration": 1.8,
+   "maniabilite": 2.5,
+   "prix": null,
+   "ouTrouver": null,
+   "infos": null,
+   "image": null,
+   "statut": "confirme",
+   "conflits": [],
+   "sources": [
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
+    },
+    {
+     "nom": "Nettoge / Timesaver",
+     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    }
+   ]
+  }
+ ]
+}
