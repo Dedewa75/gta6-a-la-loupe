@@ -371,10 +371,99 @@ Réponds UNIQUEMENT en JSON : {"vehicules":[{"nom":"","classe":"","vitesse":null
   console.log(`🚗 garage : ${nouv} véhicules en plus (publiés : ${data.vehicules.filter((v) => v.statut === "confirme").length})`);
 }
 
+// ---------- vidéos : recherche YouTube (API officielle) ----------
+const FICHIER_VID = new URL("../data/videos.json", import.meta.url);
+const CATS_VIDEO = ["argent", "armes", "secrets", "vehicules", "astuces"];
+const RECHERCHES = [
+  ["argent", "GTA 6 hidden money location"], ["argent", "GTA 6 argent caché"],
+  ["armes", "GTA 6 secret weapon location"], ["armes", "GTA 6 arme secrète"],
+  ["secrets", "GTA 6 easter egg"], ["secrets", "GTA 6 secret caché"],
+  ["vehicules", "GTA 6 rare car location"], ["vehicules", "GTA 6 voiture rare"],
+  ["astuces", "GTA 6 tips and tricks"], ["astuces", "GTA 6 astuces"],
+];
+const SORTIE = "2026-11-19T00:00:00Z"; // on ne garde que les vidéos publiées après la sortie du jeu
+const BON = /gta\s*(6|vi)\b|grand theft auto (6|vi)\b/i;
+const MAUVAIS = /gta\s*(5|v)\b|gta online|roblox|minecraft|fortnite|leak|fuite|concept|fake|mod\b/i;
+const dureeSec = (d = "") => { const m = d.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/) || []; return (+m[1] || 0) * 3600 + (+m[2] || 0) * 60 + (+m[3] || 0); };
+
+export async function majVideos() {
+  const cle = process.env.YOUTUBE_API_KEY || CLE;
+  if (!cle) return console.log("🎬 pas de clé YouTube : vidéos non mises à jour");
+  const data = JSON.parse(await readFile(FICHIER_VID, "utf8"));
+  const connues = new Set(data.videos.map((v) => v.id));
+  const apres = new Date(Math.max(Date.parse(SORTIE), Date.now() - 4 * 24 * 3600 * 1000)).toISOString();
+  const yt = async (chemin) => {
+    const r = await fetch(`https://www.googleapis.com/youtube/v3/${chemin}&key=${cle}`, { signal: AbortSignal.timeout(20000) });
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.error?.message || "HTTP " + r.status);
+    return j;
+  };
+  const candidats = new Map();
+  for (const [cat, q] of RECHERCHES) {
+    try {
+      const j = await yt(`search?part=snippet&type=video&maxResults=15&order=relevance&publishedAfter=${apres}&q=${encodeURIComponent(q)}`);
+      for (const it of j.items || []) {
+        const id = it.id?.videoId;
+        if (!id || connues.has(id) || candidats.has(id)) continue;
+        candidats.set(id, { id, cat, titre: decode(it.snippet.title), chaine: decode(it.snippet.channelTitle), desc: decode(it.snippet.description).slice(0, 200), date: it.snippet.publishedAt.slice(0, 10) });
+      }
+    } catch (e) {
+      console.log("⚠️ recherche YouTube ratée :", q, "-", e.message);
+      if (/API.*not been used|disabled|API key not valid/i.test(e.message)) return console.log("👉 active « YouTube Data API v3 » pour cette clé, ou ajoute un secret YOUTUBE_API_KEY");
+    }
+  }
+  // statistiques (vues, durée) en un seul appel par lot de 50
+  const liste = [...candidats.values()].filter((c) => BON.test(c.titre) && !MAUVAIS.test(c.titre));
+  for (let i = 0; i < liste.length; i += 50) {
+    const lot = liste.slice(i, i + 50);
+    try {
+      const j = await yt(`videos?part=statistics,contentDetails&id=${lot.map((c) => c.id).join(",")}`);
+      for (const it of j.items || []) {
+        const c = candidats.get(it.id);
+        c.vues = +it.statistics?.viewCount || 0;
+        c.duree = dureeSec(it.contentDetails?.duration);
+      }
+    } catch (e) { console.log("⚠️ stats YouTube ratées :", e.message); }
+  }
+  let retenus = liste.filter((c) => (c.vues ?? 0) >= 2000 && (c.duree ?? 0) >= 30);
+  console.log(`🎬 ${candidats.size} vidéos trouvées, ${retenus.length} passent les filtres`);
+  if (!retenus.length) return;
+
+  // l'IA vérifie que la vidéo parle bien de la catégorie et traduit le titre
+  let verdicts = null;
+  if (CLE || MOCK) {
+    try {
+      verdicts = await demanderIA(`Tu tries des vidéos YouTube pour un site de fans francophone de GTA 6 (sorti le 19 novembre 2026).
+Pour chaque vidéo, dis si elle montre VRAIMENT du contenu du jeu GTA 6 dans une de ces catégories : ${CATS_VIDEO.join(", ")}
+(argent = argent caché / planques / gagner de l'argent ; armes = armes cachées ou gratuites ; secrets = easter eggs, détails cachés ; vehicules = véhicules rares ou cachés ; astuces = conseils de jeu).
+Refuse (categorie null) : réactions, débats, rumeurs, putaclic sans contenu, GTA 5/Online, vidéos d'avant la sortie.
+Donne un titre court en français avec TES mots (max 70 caractères).
+${retenus.map((c, i) => `[${i}] "${c.titre}" — ${c.chaine} — ${c.desc}`).join("\n")}
+Réponds UNIQUEMENT en JSON : {"videos":[{"i":0,"categorie":"armes","titre":"..."}]}`);
+    } catch (e) { console.log("⚠️ tri IA des vidéos raté :", e.message); }
+  }
+  const ajout = [];
+  if (verdicts?.videos) {
+    for (const v of verdicts.videos) {
+      const c = retenus[v.i];
+      if (!c || !CATS_VIDEO.includes(v.categorie)) continue;
+      ajout.push({ id: c.id, categorie: v.categorie, titre: String(v.titre || c.titre).slice(0, 90), date: c.date, url: `https://www.youtube.com/watch?v=${c.id}`, chaine: c.chaine, vues: c.vues });
+    }
+  } else {
+    for (const c of retenus) ajout.push({ id: c.id, categorie: c.cat, titre: c.titre.slice(0, 90), date: c.date, url: `https://www.youtube.com/watch?v=${c.id}`, chaine: c.chaine, vues: c.vues });
+  }
+  const garde = ajout.sort((a, b) => b.vues - a.vues).slice(0, 30);
+  data.videos = [...garde, ...data.videos].slice(0, 400);
+  data.derniereMaj = new Date().toISOString();
+  await writeFile(FICHIER_VID, JSON.stringify(data, null, 1) + "\n");
+  console.log(`🎬 ${garde.length} vidéos ajoutées (total : ${data.videos.length})`);
+}
+
 async function tout() {
   await principal();
   try { await majArmes(); } catch (e) { console.log("⚠️ mise à jour des armes ratée :", e.message); }
   try { await majVehicules(); } catch (e) { console.log("⚠️ mise à jour des véhicules ratée :", e.message); }
+  try { await majVideos(); } catch (e) { console.log("⚠️ mise à jour des vidéos ratée :", e.message); }
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) tout().catch((e) => { console.error("❌", e); process.exit(1); });

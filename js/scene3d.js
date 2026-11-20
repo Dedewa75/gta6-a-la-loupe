@@ -137,6 +137,7 @@ const POSES = {
   accueil:   { pos: V(0, 6.5, 12.5), cible: V(0, 1.6, 0),  tourne: true },
   tout:      { pos: V(-6, 5, 9),    cible: V(0, 0.3, 0) },
   actus:     { pos: V(7, 4.5, 8),   cible: V(1, 0.3, 0) },
+  videos:    { pos: V(-8, 3.2, 6),  cible: V(0.5, 0.4, 0) },
   secrets:   { pos: V(-3, 1.6, 5),  cible: V(-0.5, 0.6, -1) },
   astuces:   { pos: V(5, 3, -7),    cible: V(0, 0.4, 0) },
   vehicules: { pos: V(8, 1.4, 3),   cible: V(2, 0.4, 0.5) },

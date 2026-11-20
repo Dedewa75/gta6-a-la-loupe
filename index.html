@@ -34,7 +34,7 @@ header,main,footer,.barre{position:relative;z-index:1}
 h1{font-family:"Playfair Display",serif;font-weight:900;font-size:clamp(3rem,12vw,8rem);line-height:.92;text-shadow:0 1px 0 #c21a7f,0 2px 0 #a3166b,0 3px 0 #85125a,0 4px 0 #670e46,0 14px 30px rgba(0,0,0,.6)}
 h1 em{display:block;font-style:normal;color:var(--rose);text-shadow:0 1px 0 #c21a7f,0 2px 0 #a3166b,0 3px 0 #85125a,0 4px 0 #670e46,0 0 40px rgba(255,45,168,.55)}
 .hero p{max-width:520px;color:#c4c4d0;margin:20px 0 26px;font-size:1.02rem}
-.raccourcis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;max-width:640px}
+.raccourcis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;max-width:760px}
 .raccourcis button{background:var(--verre);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--ligne);border-radius:16px;padding:14px 8px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;font-weight:700;font-size:.85rem;transition:.2s}
 .raccourcis button b{font-size:1.4rem}
 .raccourcis button small{color:var(--gris);font-weight:600;font-size:.7rem}
@@ -121,6 +121,21 @@ select.tri{flex:none;max-width:38%;background:var(--verre);color:var(--texte);bo
 .note{font-size:.72rem;color:var(--gris);margin-top:8px}
 #titreZone{font-family:"Playfair Display",serif;font-size:1.5rem;margin-bottom:12px}
 
+/* vidéos */
+.miniature{position:relative;aspect-ratio:16/9;background:#101016;cursor:pointer;overflow:hidden}
+.miniature img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.fiche:hover .miniature img{transform:scale(1.06)}
+.miniature::after{content:"▶";position:absolute;inset:0;margin:auto;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;padding-left:4px;font-size:1.3rem;color:#fff;background:rgba(255,45,168,.85);box-shadow:0 0 30px rgba(255,45,168,.6)}
+.regarder{background:none;border:1px solid var(--rose);color:var(--texte);border-radius:999px;padding:8px 16px;font-weight:700;font-size:.82rem;cursor:pointer;align-self:flex-start}
+#lecteur{position:fixed;inset:0;z-index:60;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(5,5,10,.86);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);perspective:1400px}
+#lecteur.ouvert{display:flex}
+#lecteur .cadre{width:min(960px,100%);animation:ouvrir .55s cubic-bezier(.2,.8,.2,1)}
+@keyframes ouvrir{from{transform:rotateX(35deg) translateZ(-300px) scale(.8);opacity:0}}
+#lecteur iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:14px;box-shadow:0 0 0 1px var(--ligne),0 30px 80px rgba(0,0,0,.7);background:#000}
+#lecteur .info{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px;font-size:.9rem}
+#lecteur .fermer{background:var(--rose);color:var(--noir);border:0;border-radius:999px;padding:9px 16px;font-weight:800;cursor:pointer;flex:none}
+#lecteur a{color:var(--gris);font-size:.8rem}
+
 /* barre du bas (téléphone) */
 .barre{display:none}
 footer{border-top:1px solid var(--ligne);padding:26px 5vw 110px;color:var(--gris);font-size:.76rem;background:rgba(11,11,11,.92)}
@@ -128,11 +143,12 @@ footer p+p{margin-top:8px}
 
 @media(max-width:760px){
   .menuPc{display:none}
-  .barre{display:grid;grid-template-columns:repeat(4,1fr);position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:40;background:rgba(14,14,20,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--ligne);border-radius:20px;padding:6px;box-shadow:0 10px 40px rgba(0,0,0,.6)}
+  .barre{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:40;background:rgba(14,14,20,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--ligne);border-radius:20px;padding:6px;box-shadow:0 10px 40px rgba(0,0,0,.6)}
   .barre button{background:none;border:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 0;border-radius:14px;font-size:.68rem;font-weight:700;color:var(--gris)}
   .barre button b{font-size:1.25rem;line-height:1}
   .barre button.actif{color:var(--texte);background:rgba(255,45,168,.16)}
-  .raccourcis{grid-template-columns:repeat(2,1fr)}
+  .raccourcis{grid-template-columns:repeat(3,1fr)}
+  .raccourcis button{padding:12px 4px}
   .vueCarte{grid-template-columns:1fr}
   .boiteCarte{position:static}
   .hero{min-height:calc(100svh - 56px)}
@@ -170,6 +186,14 @@ footer p+p{margin-top:8px}
 
 <nav class="barre" aria-label="Rubriques"></nav>
 
+<div id="lecteur" role="dialog" aria-modal="true" aria-label="Lecteur vidéo">
+  <div class="cadre">
+    <iframe id="ifr" title="Vidéo" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
+    <div class="info"><span id="titreVideo"></span><button class="fermer" data-fermer>✕ Fermer</button></div>
+    <a id="lienYt" href="#" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div>
+
 <script>
 // ---------- outils ----------
 const $ = id => document.getElementById(id);
@@ -182,6 +206,7 @@ const dateCourte = d => new Date(d).toLocaleDateString("fr-BE",{day:"numeric",mo
 // ---------- rubriques ----------
 const RUBRIQUES = [
   { id:"actus",     icone:"📰", nom:"Actus" },
+  { id:"videos",    icone:"🎬", nom:"Vidéos" },
   { id:"armes",     icone:"🔫", nom:"Armes" },
   { id:"vehicules", icone:"🚗", nom:"Véhicules" },
   { id:"carte",     icone:"🗺️", nom:"Carte" },
@@ -189,13 +214,14 @@ const RUBRIQUES = [
 const TYPES_ACTU = { tout:"Tout", actus:"Actus", secrets:"Secrets", astuces:"Astuces", argent:"Argent", lieux:"Lieux", vehicules:"Véhicules", armes:"Armes" };
 const CLASSES_ARMES = { toutes:"Toutes", pistolets:"Pistolets", revolvers:"Revolvers", mitraillettes:"Mitraillettes", "fusils-a-pompe":"Fusils à pompe", "fusils-assaut":"Fusils d'assaut", "fusils-tactiques":"Fusils tactiques", snipers:"Snipers", lourdes:"Armes lourdes", melee:"Mêlée", explosifs:"Explosifs" };
 const CLASSES_VEH = { toutes:"Toutes", supercars:"Supercars", sportives:"Sportives", muscle:"Muscle", coupes:"Coupés", berlines:"Berlines", suv:"SUV", pickups:"Pick-up", "tout-terrain":"Tout-terrain", utilitaires:"Utilitaires", motos:"Motos" };
+const CATS_VIDEO = { tout:"Toutes", argent:"💰 Argent caché", armes:"🔫 Armes cachées", secrets:"🥚 Secrets", vehicules:"🚗 Véhicules rares", astuces:"💡 Astuces" };
 const ZONES = {
   lummox:{nom:"Lummox County",x:51,y:12.5}, leonard:{nom:"Leonard County",x:70,y:29}, kelly:{nom:"Kelly County",x:36,y:33},
   "vice-dale":{nom:"Vice-Dale County",x:73,y:53}, mariana:{nom:"Mariana County",x:39,y:73}, inconnue:{nom:"Lieu non précisé",x:14,y:93}
 };
 
-let ACTUS = [], ARMES = [], VEHS = [];
-const etat = { rub:"actus", type:"tout", classeA:"toutes", classeV:"toutes", triA:"nom", triV:"vitesse", zone:null, q:"" };
+let ACTUS = [], ARMES = [], VEHS = [], VIDEOS = [];
+const etat = { rub:"actus", type:"tout", catV:"tout", classeA:"toutes", classeV:"toutes", triA:"nom", triV:"vitesse", zone:null, q:"" };
 
 // ---------- briques d'affichage ----------
 function photo(chemin, nom, dossier){
@@ -245,6 +271,15 @@ function ficheVeh(v){
     ${v.ouTrouver?`<div class="infos">📍 ${esc(v.ouTrouver)}</div>`:""}${v.infos?`<div class="infos">${esc(v.infos)}</div>`:""}
     ${conflits(v.conflits)}${sources(v.sources)}</div></article>`;
 }
+const idOk = id => /^[A-Za-z0-9_-]{6,20}$/.test(id);
+function ficheVideo(v){
+  if (!idOk(v.id)) return "";
+  return `<article class="fiche"><div class="miniature" data-video="${v.id}"><img src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" alt="" loading="lazy"></div><div class="corps">
+    <div class="etiquettes"><span class="cat">${esc(CATS_VIDEO[v.categorie]||v.categorie)}</span><span class="date">${esc(dateCourte(v.date))}</span></div>
+    <h3>${esc(v.titre)}</h3>
+    ${v.chaine?`<div class="infos">par ${esc(v.chaine)}${v.vues?` · ${Number(v.vues).toLocaleString("fr-BE")} vues`:""}</div>`:""}
+    <button class="regarder" data-video="${v.id}">▶ Regarder</button></div></article>`;
+}
 function trier(liste, cle, nomCle){
   return [...liste].sort((a,b) => {
     if (cle === "nom") return a[nomCle].localeCompare(b[nomCle]);
@@ -261,6 +296,13 @@ const RENDU = {
     return titre("Actus & secrets", `${ACTUS.length} infos confirmées`) + outils("Rechercher une info…")
       + pastilles(TYPES_ACTU, etat.type, "data-type", id => id==="tout" ? ACTUS.length : ACTUS.filter(e=>e.categorie===id).length)
       + `<div class="grille">${l.length ? l.map(e => ficheActu(e, ACTUS[0]?.date)).join("") : vide("Rien de confirmé ici pour l'instant. Le robot vérifie les nouveautés chaque matin.")}</div>`;
+  },
+  videos(){
+    const l = VIDEOS.filter(v => (etat.catV==="tout" || v.categorie===etat.catV) && cherche(v.titre+" "+(v.chaine||"")));
+    return titre("Vidéos", `${VIDEOS.length} vidéos`) + outils("Rechercher une vidéo…")
+      + pastilles(CATS_VIDEO, etat.catV, "data-cat-v", id => id==="tout" ? VIDEOS.length : VIDEOS.filter(v=>v.categorie===id).length)
+      + `<div class="regle">Vidéos de créateurs YouTube publiées depuis la sortie du jeu, triées par le robot chaque matin.</div>`
+      + `<div class="grille">${l.length ? l.map(ficheVideo).join("") : vide("Aucune vidéo dans cette catégorie pour l'instant.")}</div>`;
   },
   armes(){
     const l = trier(ARMES.filter(a => (etat.classeA==="toutes" || a.classe===etat.classeA) && cherche(a.nom+" "+(a.infos||"")+" "+CLASSES_ARMES[a.classe])), etat.triA, "nom");
@@ -317,9 +359,12 @@ document.querySelector(".barre").innerHTML = RUBRIQUES.map(btn).join("");
 
 // ---------- événements (un seul écouteur pour tout) ----------
 document.addEventListener("click", e => {
-  const t = e.target.closest("[data-rub],[data-type],[data-classe-a],[data-classe-v],[data-zone],[data-go],.spoil .resume");
+  if (e.target.closest("[data-fermer]") || e.target.id === "lecteur") return fermerVideo();
+  const t = e.target.closest("[data-video],[data-cat-v],[data-rub],[data-type],[data-classe-a],[data-classe-v],[data-zone],[data-go],.spoil .resume");
   if (!t) return;
   if (t.matches(".resume")) return t.closest(".fiche").classList.remove("spoil");
+  if (t.dataset.video) return ouvrirVideo(t.dataset.video);
+  if (t.dataset.catV) { etat.catV = t.dataset.catV; return afficher(); }
   if (t.dataset.go) return scrollTo({ top: 0, behavior: "smooth" });
   if (t.dataset.rub) return aller(t.dataset.rub);
   if (t.dataset.type) { etat.type = t.dataset.type; return afficher(); }
@@ -332,6 +377,18 @@ document.addEventListener("input", e => {
   if (e.target.id === "triA") { etat.triA = e.target.value; afficher(); }
   if (e.target.id === "triV") { etat.triV = e.target.value; afficher(); }
 });
+// lecteur vidéo intégré (YouTube sans cookies)
+function ouvrirVideo(id){
+  if (!idOk(id)) return;
+  const v = VIDEOS.find(x => x.id === id);
+  $("ifr").src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&playsinline=1`;
+  $("titreVideo").textContent = v ? v.titre : "";
+  $("lienYt").href = `https://www.youtube.com/watch?v=${id}`;
+  $("lecteur").classList.add("ouvert");
+}
+function fermerVideo(){ $("lecteur").classList.remove("ouvert"); $("ifr").src = "about:blank"; }
+addEventListener("keydown", e => { if (e.key === "Escape") fermerVideo(); });
+
 // inclinaison 3D des fiches (souris uniquement)
 if (matchMedia("(hover: hover)").matches && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
   document.addEventListener("pointermove", e => {
@@ -348,13 +405,14 @@ addEventListener("scroll", () => document.documentElement.style.setProperty("--p
 
 // ---------- chargement des données ----------
 const frais = f => fetch(f + "?v=" + Date.now()).then(r => r.json());
-Promise.all([frais("data/contenu.json"), frais("data/armes.json").catch(() => ({})), frais("data/vehicules.json").catch(() => ({}))])
-  .then(([c, a, v]) => {
+Promise.all([frais("data/contenu.json"), frais("data/armes.json").catch(() => ({})), frais("data/vehicules.json").catch(() => ({})), frais("data/videos.json").catch(() => ({}))])
+  .then(([c, a, v, vid]) => {
     // Règle du site : on n'affiche QUE ce qui est confirmé par au moins 2 sources
     ACTUS = (c.entrees||[]).filter(e => e.statut === "confirme").sort((x,y) => y.date.localeCompare(x.date));
     ARMES = (a.armes||[]).filter(x => x.statut === "confirme");
     VEHS = (v.vehicules||[]).filter(x => x.statut === "confirme");
-    $("raccourcis").innerHTML = RUBRIQUES.map(r => `<button data-rub="${r.id}"><b>${r.icone}</b>${r.nom}<small>${{actus:ACTUS.length+" infos",armes:ARMES.length+" armes",vehicules:VEHS.length+" véhicules",carte:"5 comtés"}[r.id]}</small></button>`).join("");
+    VIDEOS = (vid.videos||[]).filter(x => idOk(x.id)).sort((x,y) => y.date.localeCompare(x.date));
+    $("raccourcis").innerHTML = RUBRIQUES.map(r => `<button data-rub="${r.id}"><b>${r.icone}</b>${r.nom}<small>${{actus:ACTUS.length+" infos",videos:VIDEOS.length+" vidéos",armes:ARMES.length+" armes",vehicules:VEHS.length+" véhicules",carte:"5 comtés"}[r.id]}</small></button>`).join("");
     $("maj").innerHTML = `Dernière vérification : <b>${esc(dateCourte(c.derniereMaj))}</b>`;
     afficher();
   })
