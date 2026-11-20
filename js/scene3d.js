@@ -53,6 +53,7 @@ const uniforms = {
   uScan: { value: -PROF / 2 },
   uPix: { value: renderer.getPixelRatio() },
   uTaille: { value: mobile ? 2.2 : 1.7 },
+  uOpacite: { value: 1 },
 };
 const ile = new THREE.Points(geo, new THREE.ShaderMaterial({
   uniforms,
@@ -73,6 +74,7 @@ const ile = new THREE.Points(geo, new THREE.ShaderMaterial({
       vH = aH; vU = aU; vR = aR;
     }`,
   fragmentShader: /* glsl */`
+    uniform float uOpacite;
     varying float vH; varying float vU; varying float vScan; varying float vR;
     void main(){
       float d = length(gl_PointCoord - 0.5);
@@ -83,7 +85,7 @@ const ile = new THREE.Points(geo, new THREE.ShaderMaterial({
       c = mix(c, blanc, vU*0.7);
       c += blanc * vScan * 0.9;
       c = mix(c, rose, step(0.985, vR) * 0.8);
-      gl_FragColor = vec4(c, doux * (0.35 + vH*0.45 + vScan*0.5));
+      gl_FragColor = vec4(c, doux * (0.35 + vH*0.45 + vScan*0.5) * uOpacite);
     }`,
 }));
 scene.add(ile);
@@ -132,7 +134,7 @@ scene.add(poussiere);
 // ---------- poses de caméra (une par onglet) ----------
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
 const POSES = {
-  accueil:   { pos: V(0, 7.5, 14),  cible: V(0, 0, 0),     tourne: true },
+  accueil:   { pos: V(0, 6.5, 12.5), cible: V(0, 1.6, 0),  tourne: true },
   tout:      { pos: V(-6, 5, 9),    cible: V(0, 0.3, 0) },
   actus:     { pos: V(7, 4.5, 8),   cible: V(1, 0.3, 0) },
   secrets:   { pos: V(-3, 1.6, 5),  cible: V(-0.5, 0.6, -1) },
@@ -186,6 +188,7 @@ function boucle() {
 
   // défilement : de la vue « accueil » à la vue de l'onglet
   const p = Math.min(1, scrollY / (innerHeight * 0.85));
+  uniforms.uOpacite.value = 1 - p * 0.45; // plus discret derrière le texte
   const cible = focus || poseOnglet;
   const pos = POSES.accueil.pos.clone().lerp(cible.pos, p);
   const regard = POSES.accueil.cible.clone().lerp(cible.cible, p);
