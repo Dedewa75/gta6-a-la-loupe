@@ -245,24 +245,41 @@ Garde le nom exact de l'arme tel qu'écrit dans le jeu. Ignore les armes de GTA 
 Réponds UNIQUEMENT en JSON : {"armes":[{"nom":"","classe":"","degats":null,"precision":null,"maniabilite":null,"portee":null,"prix":null,"chargeur":null,"ouAcheter":null,"infos":null,"ameliorations":[],"sources":[0]}]}`;
 }
 
+const domaine = (u) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return u; } };
+
+// Une valeur n'est publiée que si 2 sites différents donnent EXACTEMENT la même.
+// En attendant, elle est gardée dans "candidats" (non affichée).
 export function fusionnerArme(base, n, sources) {
+  base.candidats ||= {};
+  const doms = sources.map((s) => domaine(s.url));
+  const voter = (cle, valeur) => {
+    const c = (base.candidats[cle] ||= {});
+    const v = (c[JSON.stringify(valeur)] ||= []);
+    for (const dm of doms) if (!v.includes(dm)) v.push(dm);
+    return v.length;
+  };
   for (const k of STATS) {
     const v = n[k];
     if (v === null || v === undefined || v === "") continue;
+    const votes = voter(k, v);
+    if (votes < 2) continue;
     if (base[k] === null || base[k] === undefined) base[k] = v;
-    else if (typeof v === "number" && typeof base[k] === "number" && Math.abs(v - base[k]) > 0.01) {
-      const msg = `${k} : ${v} selon ${sources.map((s) => s.nom).join(", ")}`;
+    else if (JSON.stringify(base[k]) !== JSON.stringify(v)) {
+      // deux valeurs différentes confirmées chacune par 2 sites : on ne sait pas laquelle est vraie → "?"
+      const msg = `${k} : ${base[k]} ou ${v} selon les sites`;
       if (!base.conflits.includes(msg)) base.conflits.push(msg);
+      base[k] = null;
     }
   }
   for (const a of n.ameliorations || []) {
     if (!a?.nom) continue;
+    const prix = typeof a.prix === "number" ? a.prix : null;
+    if (voter("amelioration:" + norm(a.nom), prix) < 2) continue;
     if (!base.ameliorations.some((x) => norm(x.nom) === norm(a.nom)))
-      base.ameliorations.push({ nom: String(a.nom).slice(0, 60), prix: typeof a.prix === "number" ? a.prix : null, effet: a.effet ? String(a.effet).slice(0, 160) : null });
+      base.ameliorations.push({ nom: String(a.nom).slice(0, 60), prix, effet: null });
   }
   for (const s of sources) if (!base.sources.some((x) => x.url === s.url)) base.sources.push(s);
-  const domaines = new Set(base.sources.map((s) => { try { return new URL(s.url).hostname; } catch { return s.url; } }));
-  base.statut = domaines.size >= 2 && !base.conflits.length ? "confirme" : "non-verifie";
+  base.statut = new Set(base.sources.map((s) => domaine(s.url))).size >= 2 ? "confirme" : "non-verifie";
   return base;
 }
 

@@ -1,6 +1,6 @@
 {
  "derniereMaj": "2026-11-20T08:30:00.000Z",
- "note": "Stats sur 10 relevées dans le menu des armureries du jeu. « Confirmé » = au moins 2 sites indépendants donnent la même info, sans désaccord. null = pas encore connu.",
+ "note": "Chaque chiffre affiché est confirmé par au moins 2 sites indépendants. « ? » = pas encore confirmé.",
  "armes": [
   {
    "nom": "Girardi ES9",
@@ -10,8 +10,8 @@
    "maniabilite": 8.4,
    "portee": 4.4,
    "prix": 700,
-   "ouAcheter": "Chuck's Tackle & Shot",
-   "chargeur": null,
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": 15,
    "infos": "Pistolet de Jason. L'Ultimate Edition ajoute une version gravée.",
    "ameliorations": [],
    "image": null,
@@ -25,6 +25,18 @@
     {
      "nom": "Heist Lounge",
      "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "MetaForge",
+     "url": "https://metaforge.app/gta-6/best-weapons-gta-6"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
@@ -36,7 +48,7 @@
    "maniabilite": 8.5,
    "portee": 3.8,
    "prix": 975,
-   "ouAcheter": "Chuck's Tackle & Shot",
+   "ouAcheter": "Ammu-Nation",
    "chargeur": 17,
    "infos": "Pistolet de Lucia. L'Ultimate Edition ajoute une version gravée.",
    "ameliorations": [],
@@ -55,20 +67,32 @@
     {
      "nom": "Heist Lounge",
      "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "MetaForge",
+     "url": "https://metaforge.app/gta-6/best-weapons-gta-6"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
   {
    "nom": "Mahi Nipper .38",
    "classe": "pistolets",
-   "degats": 2.8,
-   "precision": 3.0,
-   "maniabilite": 9.0,
-   "portee": 3.0,
+   "degats": null,
+   "precision": null,
+   "maniabilite": null,
+   "portee": null,
    "prix": 1160,
    "ouAcheter": "Chuck's Tackle & Shot uniquement (payé par la banque)",
    "chargeur": null,
-   "infos": "Variante unique verte et rouge du Nipper .38, ne peut pas être améliorée. Parfois en promo à 1 044 $. À ne pas confondre avec le Scorpio Nipper .38.",
+   "infos": "Variante unique verte et rouge du Nipper .38, payée depuis le compte en banque. À ne pas confondre avec le Scorpio Nipper .38.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
@@ -92,11 +116,11 @@
    "nom": "Girardi ES18",
    "classe": "pistolets",
    "degats": 4.2,
-   "precision": 4.6,
-   "maniabilite": 7.7,
+   "precision": null,
+   "maniabilite": null,
    "portee": 4.8,
    "prix": 1550,
-   "ouAcheter": "Prestige Firearms / Ammu-Nation",
+   "ouAcheter": "Ammu-Nation",
    "chargeur": null,
    "infos": "Pistolet à rafale de 3 coups.",
    "ameliorations": [],
@@ -115,6 +139,10 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
     }
    ]
   },
@@ -126,9 +154,9 @@
    "maniabilite": 7.8,
    "portee": 5.0,
    "prix": 3100,
-   "ouAcheter": "Prestige Firearms",
-   "chargeur": null,
-   "infos": "Le pistolet le plus cher et celui qui fait le plus de dégâts. La variante « Gil's Kalinga .50 » a 7.9 en maniabilité.",
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": 7,
+   "infos": "Le pistolet le plus cher, et celui qui fait le plus de dégâts.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
@@ -149,6 +177,14 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
@@ -157,11 +193,11 @@
    "classe": "fusils-assaut",
    "degats": 5.4,
    "precision": 3.5,
-   "maniabilite": 7.1,
+   "maniabilite": null,
    "portee": 4.5,
    "prix": 1700,
    "ouAcheter": null,
-   "chargeur": null,
+   "chargeur": 30,
    "infos": "Version raccourcie du KZ-59.",
    "ameliorations": [],
    "image": null,
@@ -179,6 +215,14 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
@@ -190,9 +234,9 @@
    "maniabilite": 5.8,
    "portee": 6.2,
    "prix": 1450,
-   "ouAcheter": "Chuck's Tackle & Shot / Ammu-Nation (aussi trouvable gratuitement au début)",
+   "ouAcheter": "Chuck's Tackle & Shot / Big Shots",
    "chargeur": 30,
-   "infos": "Aucune stat faible et disponible tôt : le fusil d'assaut conseillé.",
+   "infos": "Disponible tôt, aucune stat faible.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
@@ -213,6 +257,14 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
@@ -224,9 +276,9 @@
    "maniabilite": 5.2,
    "portee": 7.2,
    "prix": 1400,
-   "ouAcheter": "Chuck's Tackle & Shot",
-   "chargeur": null,
-   "infos": "Fusil longue portée.",
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": 20,
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
@@ -247,6 +299,14 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
@@ -258,9 +318,9 @@
    "maniabilite": 5.0,
    "portee": 2.5,
    "prix": 1150,
-   "ouAcheter": "Chuck's Tackle & Shot / Big Shots (payé par la banque)",
-   "chargeur": null,
-   "infos": "Fait partie des fusils à pompe qui portent le plus loin.",
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": 2,
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
@@ -281,6 +341,14 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
@@ -290,11 +358,11 @@
    "degats": 6.5,
    "precision": 8.8,
    "maniabilite": 3.6,
-   "portee": 8.4,
+   "portee": null,
    "prix": 950,
    "ouAcheter": "Ammu-Nation (magasins agrandis)",
    "chargeur": null,
-   "infos": "Le sniper le moins cher, pratique pour la chasse.",
+   "infos": "Le sniper le moins cher, et l'arme la plus précise.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
@@ -315,6 +383,14 @@
     {
      "nom": "Heist Lounge",
      "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
@@ -323,11 +399,11 @@
    "classe": "snipers",
    "degats": 6.8,
    "precision": 8.4,
-   "maniabilite": 3.1,
+   "maniabilite": null,
    "portee": 8.4,
    "prix": 1850,
    "ouAcheter": "Ammu-Nation (magasins agrandis)",
-   "chargeur": null,
+   "chargeur": 5,
    "infos": null,
    "ameliorations": [],
    "image": null,
@@ -349,20 +425,28 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
   {
    "nom": "Shrewsbury SMS-01",
    "classe": "snipers",
-   "degats": 6.8,
+   "degats": null,
    "precision": 8.6,
-   "maniabilite": 3.3,
+   "maniabilite": null,
    "portee": 8.4,
    "prix": 2150,
    "ouAcheter": "Débloqué après la 9e quête de chasse de Bret",
    "chargeur": null,
-   "infos": null,
+   "infos": "Se débloque aussi en terminant la 9e quête de chasse de Bret.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
@@ -383,6 +467,10 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
@@ -390,12 +478,12 @@
    "nom": "Fairview FF-SR",
    "classe": "snipers",
    "degats": 8.0,
-   "precision": 8.3,
-   "maniabilite": 2.9,
-   "portee": 8.4,
+   "precision": null,
+   "maniabilite": null,
+   "portee": null,
    "prix": 2950,
    "ouAcheter": "Ammu-Nation (magasins agrandis)",
-   "chargeur": null,
+   "chargeur": 10,
    "infos": null,
    "ameliorations": [],
    "image": null,
@@ -413,6 +501,14 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
@@ -425,7 +521,7 @@
    "portee": 8.5,
    "prix": 3975,
    "ouAcheter": "Ammu-Nation (magasins agrandis)",
-   "chargeur": null,
+   "chargeur": 5,
    "infos": "L'arme non explosive qui fait le plus de dégâts.",
    "ameliorations": [],
    "image": null,
@@ -447,6 +543,18 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    },
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
     }
    ]
   },
@@ -458,9 +566,9 @@
    "maniabilite": 3.2,
    "portee": 6.2,
    "prix": 10000,
-   "ouAcheter": "Iron & Oak / Ammu-Nation",
-   "chargeur": null,
-   "infos": "Mitrailleuse. Chère mais jugée décevante pour son prix.",
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": 100,
+   "infos": "Mitrailleuse.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
@@ -477,6 +585,18 @@
     {
      "nom": "Heist Lounge",
      "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "MetaForge",
+     "url": "https://metaforge.app/gta-6/best-weapons-gta-6"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
@@ -490,7 +610,7 @@
    "prix": 12000,
    "ouAcheter": "Ammu-Nation (magasins agrandis)",
    "chargeur": null,
-   "infos": "Lance-grenades : l'arme qui fait le plus de dégâts en magasin. Recharge de munitions : 1 200 $.",
+   "infos": "Lance-grenades.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
@@ -511,6 +631,18 @@
     {
      "nom": "Heist Lounge",
      "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "MetaForge",
+     "url": "https://metaforge.app/gta-6/best-weapons-gta-6"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
@@ -524,7 +656,7 @@
    "prix": 15500,
    "ouAcheter": "Ammu-Nation (magasins agrandis) — ou gratuit dans la réserve du Sunrise Motel",
    "chargeur": 6,
-   "infos": "Lance-grenades rotatif à 6 coups : même dégâts que le Boomer, un peu plus précis.",
+   "infos": "Lance-grenades rotatif à 6 coups.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
@@ -545,20 +677,28 @@
     {
      "nom": "eGamersWorld",
      "url": "https://egamersworld.com/blog/how-to-get-a-grenade-launcher-and-rocket-launcher--9eGMpdU1J1"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
     }
    ]
   },
   {
    "nom": "Hauners H-AT",
    "classe": "lourdes",
-   "degats": null,
+   "degats": 9.6,
    "precision": null,
    "maniabilite": null,
    "portee": null,
    "prix": 16000,
    "ouAcheter": "Ammu-Nation (magasins agrandis)",
-   "chargeur": null,
-   "infos": "Lance-roquettes : l'arme la plus chère du jeu.",
+   "chargeur": 1,
+   "infos": "Lance-roquettes : l'arme la plus chère.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
@@ -571,6 +711,14 @@
     {
      "nom": "Heist Lounge",
      "url": "https://heistlounge.com/tools/weapons"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
     }
    ]
   },
@@ -584,7 +732,7 @@
    "prix": 140,
    "ouAcheter": "Ammu-Nation",
    "chargeur": null,
-   "infos": "Ne peut pas être améliorée. Tu peux en porter 25.",
+   "infos": "Ne peut pas être améliorée.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
@@ -638,7 +786,7 @@
    "maniabilite": null,
    "portee": null,
    "prix": 125,
-   "ouAcheter": "Déjà possédé au départ (sinon Chuck's Tackle & Shot)",
+   "ouAcheter": "Déjà possédé au départ",
    "chargeur": null,
    "infos": null,
    "ameliorations": [],
@@ -664,8 +812,8 @@
    "maniabilite": 8.0,
    "portee": 4.6,
    "prix": 1050,
-   "ouAcheter": "Chuck's Tackle & Shot (payé par la banque)",
-   "chargeur": null,
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": 8,
    "infos": "Pistolet lourd.",
    "ameliorations": [],
    "image": null,
@@ -683,6 +831,14 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
@@ -691,12 +847,12 @@
    "classe": "pistolets",
    "degats": 4.0,
    "precision": 3.2,
-   "maniabilite": 7.7,
+   "maniabilite": null,
    "portee": 4.2,
    "prix": 1700,
-   "ouAcheter": "Prestige Firearms",
+   "ouAcheter": "Ammu-Nation",
    "chargeur": 24,
-   "infos": "Version entièrement automatique du K17, mais moins précise.",
+   "infos": "Version entièrement automatique du K17, moins précise.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
@@ -713,6 +869,10 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
     }
    ]
   },
@@ -724,7 +884,7 @@
    "maniabilite": 9.0,
    "portee": 3.0,
    "prix": 550,
-   "ouAcheter": "Chuck's Tackle & Shot",
+   "ouAcheter": "Ammu-Nation",
    "chargeur": null,
    "infos": "Le pistolet le moins cher.",
    "ameliorations": [],
@@ -743,20 +903,28 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
   {
    "nom": "The Silver 1922",
    "classe": "pistolets",
-   "degats": 5.5,
-   "precision": 5.1,
-   "maniabilite": 8.1,
-   "portee": 4.6,
+   "degats": null,
+   "precision": null,
+   "maniabilite": null,
+   "portee": null,
    "prix": 2210,
-   "ouAcheter": "Big Shots uniquement (payé par la banque)",
+   "ouAcheter": "Ammu-Nation",
    "chargeur": null,
-   "infos": "Variante unique du Duke 1922.",
+   "infos": "Variante unique du Duke 1922, vendue chez Big Shots.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
@@ -780,9 +948,9 @@
    "maniabilite": 8.0,
    "portee": 5.5,
    "prix": 1800,
-   "ouAcheter": "Iron & Oak",
-   "chargeur": null,
-   "infos": "Revolver très puissant.",
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": 6,
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
@@ -799,6 +967,14 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
     }
    ]
   },
@@ -810,8 +986,8 @@
    "maniabilite": 7.6,
    "portee": 6.0,
    "prix": 3000,
-   "ouAcheter": "Iron & Oak",
-   "chargeur": null,
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": 6,
    "infos": "Le revolver qui fait le plus de dégâts.",
    "ameliorations": [],
    "image": null,
@@ -829,6 +1005,14 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
@@ -840,9 +1024,9 @@
    "maniabilite": 9.0,
    "portee": 4.5,
    "prix": 600,
-   "ouAcheter": "Martez Empeños",
+   "ouAcheter": "Ammu-Nation",
    "chargeur": null,
-   "infos": "Revolver compact, l'arme à feu qui fait le moins de dégâts.",
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
@@ -859,6 +1043,10 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
     }
    ]
   },
@@ -870,9 +1058,9 @@
    "maniabilite": 8.6,
    "portee": 4.5,
    "prix": 1075,
-   "ouAcheter": "Iron & Oak",
+   "ouAcheter": "Ammu-Nation",
    "chargeur": null,
-   "infos": "Les ennemis en lâchent aussi.",
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
@@ -889,6 +1077,10 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
     }
    ]
   },
@@ -900,9 +1092,9 @@
    "maniabilite": 7.5,
    "portee": 3.5,
    "prix": 825,
-   "ouAcheter": "Big Shots",
+   "ouAcheter": "Ammu-Nation",
    "chargeur": null,
-   "infos": "Mitraillette légère, la moins chère.",
+   "infos": "La mitraillette la moins chère.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
@@ -919,6 +1111,14 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
@@ -930,7 +1130,7 @@
    "maniabilite": 7.8,
    "portee": 3.5,
    "prix": 1100,
-   "ouAcheter": "Iron & Oak",
+   "ouAcheter": "Ammu-Nation",
    "chargeur": null,
    "infos": null,
    "ameliorations": [],
@@ -949,6 +1149,14 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
@@ -960,8 +1168,8 @@
    "maniabilite": 6.8,
    "portee": 4.0,
    "prix": 1750,
-   "ouAcheter": "Iron & Oak",
-   "chargeur": null,
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": 30,
    "infos": null,
    "ameliorations": [],
    "image": null,
@@ -979,6 +1187,14 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
@@ -990,8 +1206,8 @@
    "maniabilite": 6.7,
    "portee": 4.5,
    "prix": 2325,
-   "ouAcheter": "Iron & Oak",
-   "chargeur": null,
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": 30,
    "infos": null,
    "ameliorations": [],
    "image": null,
@@ -1009,6 +1225,14 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
@@ -1016,11 +1240,11 @@
    "nom": "Vom Feuer VF5C",
    "classe": "mitraillettes",
    "degats": 4.2,
-   "precision": 4.0,
-   "maniabilite": 7.9,
+   "precision": null,
+   "maniabilite": null,
    "portee": 4.0,
    "prix": 2600,
-   "ouAcheter": "Iron & Oak",
+   "ouAcheter": "Ammu-Nation",
    "chargeur": null,
    "infos": "Version compacte de la VF5.",
    "ameliorations": [],
@@ -1039,6 +1263,10 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
     }
    ]
   },
@@ -1050,7 +1278,7 @@
    "maniabilite": 6.6,
    "portee": 4.2,
    "prix": 3350,
-   "ouAcheter": "Iron & Oak",
+   "ouAcheter": "Ammu-Nation",
    "chargeur": 30,
    "infos": "La mitraillette la plus chère.",
    "ameliorations": [],
@@ -1069,6 +1297,14 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
@@ -1080,8 +1316,8 @@
    "maniabilite": 6.4,
    "portee": 2.0,
    "prix": 1325,
-   "ouAcheter": "Chuck's Tackle & Shot / Big Shots (payé par la banque)",
-   "chargeur": null,
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": 2,
    "infos": "Fusil à canon scié.",
    "ameliorations": [],
    "image": null,
@@ -1099,6 +1335,14 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
@@ -1110,9 +1354,9 @@
    "maniabilite": 5.0,
    "portee": 2.5,
    "prix": 1425,
-   "ouAcheter": "Iron & Oak / Big Shots",
-   "chargeur": null,
-   "infos": "Fusil à canons basculants.",
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": 2,
+   "infos": "Fusil de chasse à canons basculants.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
@@ -1129,6 +1373,14 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
@@ -1140,9 +1392,9 @@
    "maniabilite": 6.4,
    "portee": 2.0,
    "prix": 1625,
-   "ouAcheter": "Iron & Oak",
+   "ouAcheter": "Ammu-Nation",
    "chargeur": null,
-   "infos": "Une version explosive se débloque par code après l'histoire.",
+   "infos": null,
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
@@ -1159,6 +1411,10 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
     }
    ]
   },
@@ -1170,9 +1426,9 @@
    "maniabilite": 5.8,
    "portee": 2.5,
    "prix": 2300,
-   "ouAcheter": "Iron & Oak / Big Shots",
+   "ouAcheter": "Ammu-Nation",
    "chargeur": null,
-   "infos": "Semi-automatique. Chez Big Shots, la version déjà améliorée coûte 3 460 $.",
+   "infos": "Semi-automatique. La version déjà améliorée coûte 3 460 $.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
@@ -1189,6 +1445,10 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
     }
    ]
   },
@@ -1200,9 +1460,9 @@
    "maniabilite": 6.5,
    "portee": 2.0,
    "prix": 2700,
-   "ouAcheter": "Iron & Oak",
+   "ouAcheter": "Ammu-Nation",
    "chargeur": null,
-   "infos": "Semi-automatique. Recharge de munitions : 15 $.",
+   "infos": "Semi-automatique.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
@@ -1219,6 +1479,10 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
     }
    ]
   },
@@ -1230,8 +1494,8 @@
    "maniabilite": 5.2,
    "portee": 6.5,
    "prix": 1250,
-   "ouAcheter": "Big Shots",
-   "chargeur": null,
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": 30,
    "infos": "Le fusil d'assaut le moins cher.",
    "ameliorations": [],
    "image": null,
@@ -1249,6 +1513,18 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "MetaForge",
+     "url": "https://metaforge.app/gta-6/best-weapons-gta-6"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
@@ -1260,7 +1536,7 @@
    "maniabilite": 5.8,
    "portee": 6.2,
    "prix": 2450,
-   "ouAcheter": "Big Shots",
+   "ouAcheter": "Ammu-Nation",
    "chargeur": null,
    "infos": null,
    "ameliorations": [],
@@ -1279,6 +1555,14 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
@@ -1290,9 +1574,9 @@
    "maniabilite": 5.3,
    "portee": 6.9,
    "prix": 2900,
-   "ouAcheter": "Big Shots (verrouillé au début)",
+   "ouAcheter": "Ammu-Nation",
    "chargeur": 20,
-   "infos": "Fusil de combat, gros recul.",
+   "infos": "Fusil de combat.",
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
@@ -1309,6 +1593,14 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
@@ -1320,8 +1612,8 @@
    "maniabilite": 5.8,
    "portee": 6.5,
    "prix": 3700,
-   "ouAcheter": "Iron & Oak",
-   "chargeur": null,
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": 30,
    "infos": "Le fusil d'assaut le plus cher.",
    "ameliorations": [],
    "image": null,
@@ -1339,6 +1631,18 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "MetaForge",
+     "url": "https://metaforge.app/gta-6/best-weapons-gta-6"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
@@ -1350,26 +1654,10 @@
    "maniabilite": 5.6,
    "portee": 7.0,
    "prix": 900,
-   "ouAcheter": "Martez Empeños",
+   "ouAcheter": "Ammu-Nation",
    "chargeur": 17,
-   "infos": "Le fusil le plus précis de sa catégorie.",
-   "ameliorations": [
-    {
-     "nom": "Canon carabine 14 pouces",
-     "prix": 320,
-     "effet": null
-    },
-    {
-     "nom": "Poignée avant",
-     "prix": 260,
-     "effet": "260 à 280 $ selon le modèle, certaines demandent un autre garde-main"
-    },
-    {
-     "nom": "Chargeur 33 coups",
-     "prix": 130,
-     "effet": null
-    }
-   ],
+   "infos": null,
+   "ameliorations": [],
    "image": null,
    "statut": "confirme",
    "conflits": [],
@@ -1385,6 +1673,14 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
@@ -1396,8 +1692,8 @@
    "maniabilite": 4.8,
    "portee": 7.5,
    "prix": 2375,
-   "ouAcheter": "Big Shots (verrouillé au début)",
-   "chargeur": null,
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": 20,
    "infos": null,
    "ameliorations": [],
    "image": null,
@@ -1415,6 +1711,14 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   },
@@ -1426,8 +1730,8 @@
    "maniabilite": 5.5,
    "portee": 7.5,
    "prix": 2550,
-   "ouAcheter": "Iron & Oak (demande l'or dans tous les stands de tir)",
-   "chargeur": null,
+   "ouAcheter": "Ammu-Nation",
+   "chargeur": 20,
    "infos": null,
    "ameliorations": [],
    "image": null,
@@ -1445,6 +1749,14 @@
     {
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
+    },
+    {
+     "nom": "DayOne",
+     "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
+    },
+    {
+     "nom": "AOEAH",
+     "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
    ]
   }
