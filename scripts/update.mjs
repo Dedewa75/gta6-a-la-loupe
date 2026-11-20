@@ -1,0 +1,188 @@
+// GTA VI à la loupe — mise à jour quotidienne automatique
+// Lancé chaque jour par GitHub Actions (.github/workflows/maj-quotidienne.yml)
+// 1) lit les flux d'actus GTA 6  2) l'IA Gemini trie et résume  3) met à jour data/contenu.json
+// Aucune dépendance : Node 20+ suffit.
+
+import { readFile, writeFile } from "node:fs/promises";
+
+const FICHIER = new URL("../data/contenu.json", import.meta.url);
+const CLE = process.env.GEMINI_API_KEY;
+const MOCK = process.env.MOCK === "1"; // mode test hors-ligne
+
+const CATEGORIES = ["actus", "secrets", "astuces", "vehicules", "armes", "argent", "lieux"];
+const ZONES = ["vice-city", "leonida-keys", "grassrivers", "port-gellhorn", "ambrosia", "mount-kalaga", "inconnue"];
+
+const q = (s, hl = "fr", gl = "BE") =>
+  `https://news.google.com/rss/search?q=${encodeURIComponent(s)}+when:2d&hl=${hl}&gl=${gl}&ceid=${gl}:${hl}`;
+
+const FLUX = [
+  q("GTA 6"),
+  q("GTA 6 astuce"),
+  q("GTA 6 easter egg"),
+  q("GTA 6 argent"),
+  q("GTA 6", "en-US", "US"),
+  q("GTA 6 easter egg OR secret", "en-US", "US"),
+  q("GTA 6 vehicles OR cars", "en-US", "US"),
+  q("GTA 6 weapons OR guns", "en-US", "US"),
+  q("GTA 6 money OR tips", "en-US", "US"),
+  q("GTA 6 map location", "en-US", "US"),
+  "https://www.reddit.com/r/GTA6/top/.rss?t=day",
+  "https://www.reddit.com/r/GTAVI/top/.rss?t=day",
+];
+
+// ---------- lecture RSS / Atom sans librairie ----------
+const decode = (s = "") =>
+  s.replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"')
+    .replace(/&#39;|&apos;/g, "'").replace(/&nbsp;/g, " ")
+    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n))
+    .replace(/&amp;/g, "&")
+    .replace(/\s+/g, " ").trim();
+
+const tag = (bloc, nom) => {
+  const m = bloc.match(new RegExp(`<${nom}[^>]*>([\\s\\S]*?)</${nom}>`, "i"));
+  return m ? decode(m[1]) : "";
+};
+
+export function lireFlux(xml) {
+  const items = [];
+  for (const m of xml.matchAll(/<item[\s>][\s\S]*?<\/item>/gi)) {
+    const b = m[0];
+    items.push({ titre: tag(b, "title"), lien: tag(b, "link"), date: tag(b, "pubDate"), site: tag(b, "source"), extrait: tag(b, "description").slice(0, 300) });
+  }
+  for (const m of xml.matchAll(/<entry[\s>][\s\S]*?<\/entry>/gi)) {
+    const b = m[0];
+    const lien = (b.match(/<link[^>]*href="([^"]+)"/i) || [])[1] || "";
+    items.push({ titre: tag(b, "title"), lien: decode(lien), date: tag(b, "updated") || tag(b, "published"), site: "Reddit", extrait: tag(b, "content").slice(0, 300) });
+  }
+  return items.filter((i) => i.titre && i.lien);
+}
+
+async function telecharger(url) {
+  try {
+    const r = await fetch(url, { headers: { "User-Agent": "Mozilla/5.0 (gta6-a-la-loupe bot)" }, signal: AbortSignal.timeout(20000) });
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    return lireFlux(await r.text());
+  } catch (e) {
+    console.log("⚠️ flux ignoré :", url.slice(0, 80), "-", e.message);
+    return [];
+  }
+}
+
+// ---------- IA Gemini ----------
+const MODELES = (process.env.GEMINI_MODEL || "gemini-flash-latest,gemini-2.5-flash,gemini-2.0-flash").split(",");
+
+function consigne(liste) {
+  return `Tu es le rédacteur d'un site de fans francophone NON OFFICIEL sur GTA 6 (Grand Theft Auto VI, sorti le 19 novembre 2026 sur PS5 et Xbox Series X|S, État de Leonida).
+Voici des titres d'articles et de posts récents, numérotés :
+${liste.map((a, i) => `[${i}] ${a.titre} (${a.site || "?"}) ${a.extrait ? "— " + a.extrait : ""}`).join("\n")}
+
+Ta mission : extraire les informations UTILES pour les joueurs et les classer.
+Règles :
+- Écris en français, avec TES PROPRES MOTS (jamais de copie de phrases des articles).
+- Regroupe les doublons (plusieurs articles sur la même info = une seule entrée avec plusieurs sources).
+- Ignore : pubs, promos, ventes, avis/notes du jeu, débats sans info, mèmes, contenu sans rapport avec GTA 6.
+- N'invente RIEN : n'écris que ce que les titres/extraits disent. Si c'est flou, ne l'ajoute pas.
+- categorie parmi : ${CATEGORIES.join(", ")}
+  (actus = nouvelles du jeu/Rockstar ; secrets = easter eggs, détails cachés ; astuces = conseils, méthodes ; vehicules ; armes ; argent = façons de gagner de l'argent, systèmes économiques ; lieux = un endroit précis de la carte)
+- statut : "confirme" seulement si la source est Rockstar/Take-Two OU si au moins 2 sources différentes disent la même chose ; sinon "non-verifie".
+- spoiler : true si ça révèle l'histoire (missions, fin, morts, rebondissements).
+- zone : pour "lieux", "secrets" et "astuces" liés à un endroit, choisis parmi ${ZONES.join(", ")} ; sinon null.
+- titre : court (max 80 caractères). resume : 1 à 3 phrases (max 300 caractères).
+- sources : les numéros [x] utilisés.
+Réponds UNIQUEMENT en JSON : {"entrees":[{"categorie":"","titre":"","resume":"","statut":"","spoiler":false,"zone":null,"sources":[0]}]}
+Si rien d'utile : {"entrees":[]}`;
+}
+
+async function demanderIA(texte) {
+  if (MOCK) return JSON.parse(await readFile(new URL("../test/reponse-ia.json", import.meta.url), "utf8"));
+  let derniere;
+  for (const modele of MODELES) {
+    try {
+      const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${modele.trim()}:generateContent`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-goog-api-key": CLE },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: texte }] }],
+          generationConfig: { responseMimeType: "application/json", temperature: 0.2 },
+        }),
+        signal: AbortSignal.timeout(120000),
+      });
+      const j = await r.json();
+      if (!r.ok) throw new Error(j.error?.message || "HTTP " + r.status);
+      const brut = j.candidates?.[0]?.content?.parts?.map((p) => p.text).join("") || "{}";
+      console.log("🤖 modèle utilisé :", modele);
+      return JSON.parse(brut.replace(/^```json|```$/g, "").trim());
+    } catch (e) {
+      derniere = e;
+      console.log("⚠️ modèle", modele, "indisponible :", e.message);
+    }
+  }
+  throw derniere;
+}
+
+// ---------- programme principal ----------
+const norm = (s) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+
+export async function principal() {
+  if (!CLE && !MOCK) {
+    console.error("❌ GEMINI_API_KEY manquante (Settings > Secrets and variables > Actions)");
+    process.exit(1);
+  }
+  const data = JSON.parse(await readFile(FICHIER, "utf8"));
+  data.liensVus ||= [];
+  const vus = new Set(data.liensVus);
+
+  let articles;
+  if (MOCK) articles = lireFlux(await readFile(new URL("../test/flux-exemple.xml", import.meta.url), "utf8"));
+  else articles = (await Promise.all(FLUX.map(telecharger))).flat();
+
+  const limite = Date.now() - 3 * 24 * 3600 * 1000;
+  const titresVus = new Set();
+  articles = articles.filter((a) => {
+    const t = norm(a.titre);
+    if (vus.has(a.lien) || titresVus.has(t)) return false;
+    titresVus.add(t);
+    const d = Date.parse(a.date);
+    return isNaN(d) || d > limite;
+  }).slice(0, 80);
+
+  console.log(`📰 ${articles.length} nouveaux articles trouvés`);
+  let ajoutes = 0;
+
+  if (articles.length) {
+    const rep = await demanderIA(consigne(articles));
+    const dejaTitres = new Set(data.entrees.map((e) => norm(e.titre)));
+    const aujourdhui = new Date().toISOString().slice(0, 10);
+    const nouvelles = [];
+    for (const e of rep.entrees || []) {
+      if (!CATEGORIES.includes(e.categorie) || !e.titre || !e.resume) continue;
+      if (dejaTitres.has(norm(e.titre))) continue;
+      const sources = (e.sources || []).map((i) => articles[i]).filter(Boolean).map((a) => ({ nom: a.site || "Source", url: a.lien }));
+      if (!sources.length) continue;
+      dejaTitres.add(norm(e.titre));
+      nouvelles.push({
+        id: aujourdhui + "-" + Math.random().toString(36).slice(2, 8),
+        date: aujourdhui,
+        categorie: e.categorie,
+        titre: String(e.titre).slice(0, 100),
+        resume: String(e.resume).slice(0, 400),
+        statut: e.statut === "confirme" ? "confirme" : "non-verifie",
+        spoiler: !!e.spoiler,
+        zone: ZONES.includes(e.zone) ? e.zone : null,
+        sources: sources.slice(0, 4),
+      });
+    }
+    ajoutes = nouvelles.length;
+    data.entrees = [...nouvelles, ...data.entrees].slice(0, 2000);
+  }
+
+  data.liensVus = [...articles.map((a) => a.lien), ...data.liensVus].slice(0, 3000);
+  data.derniereMaj = new Date().toISOString();
+  data.dernierAjout = ajoutes;
+  await writeFile(FICHIER, JSON.stringify(data, null, 1) + "\n");
+  console.log(`✅ ${ajoutes} nouvelles entrées ajoutées (total : ${data.entrees.length})`);
+}
+
+if (import.meta.url === `file://${process.argv[1]}`) principal().catch((e) => { console.error("❌", e); process.exit(1); });

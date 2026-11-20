@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GTA VI à la loupe — secrets, astuces, véhicules, armes, carte</title>
+<meta name="description" content="Site de fans non officiel : toutes les nouveautés GTA 6 mises à jour chaque jour — secrets, easter eggs, astuces, véhicules, armes, argent et carte de Leonida.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noir:#0B0B0B; --noir2:#141418; --bleu:#007BA7; --rose:#FF2DA8;
+  --texte:#EDEDF2; --gris:#9A9AA8; --ligne:#26262e;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--noir);color:var(--texte);font-family:Inter,system-ui,sans-serif;line-height:1.5}
+a{color:inherit}
+/* --- menu --- */
+nav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;background:rgba(11,11,11,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--ligne)}
+.logo{font-family:"Playfair Display",serif;font-weight:900;font-size:1.15rem;letter-spacing:.02em}
+.logo span{color:var(--rose)}
+nav .liens a{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--gris);margin-left:22px}
+nav .liens a:hover{color:var(--rose)}
+/* --- hero --- */
+.hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;padding:60px 5vw;position:relative;overflow:hidden;
+  background:radial-gradient(ellipse at 80% 20%,rgba(255,45,168,.28),transparent 55%),radial-gradient(ellipse at 10% 90%,rgba(0,123,167,.35),transparent 60%),var(--noir)}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:38%;background:repeating-linear-gradient(90deg,transparent 0 46px,rgba(0,123,167,.12) 46px 48px),linear-gradient(transparent,rgba(255,45,168,.08));mask:linear-gradient(transparent,#000);pointer-events:none}
+.surtitre{font-size:.75rem;letter-spacing:.35em;text-transform:uppercase;color:var(--bleu);font-weight:800;margin-bottom:18px}
+h1{font-family:"Playfair Display",serif;font-weight:900;font-size:clamp(3rem,11vw,8.5rem);line-height:.92}
+h1 em{display:block;font-style:normal;color:var(--rose);text-shadow:0 0 40px rgba(255,45,168,.45)}
+.hero p{max-width:520px;color:var(--gris);margin:26px 0 30px;font-size:1.05rem}
+.bouton{display:inline-flex;gap:10px;align-items:center;border:1.5px solid var(--rose);color:var(--texte);border-radius:999px;padding:12px 26px;text-decoration:none;font-weight:600;width:max-content;transition:.2s}
+.bouton:hover{background:var(--rose);color:var(--noir)}
+.majinfo{margin-top:34px;display:flex;gap:28px;flex-wrap:wrap;font-size:.8rem;color:var(--gris);position:relative;z-index:1}
+.majinfo b{display:block;font-size:1.6rem;color:var(--texte);font-family:"Playfair Display",serif}
+.pagin{position:absolute;right:5vw;bottom:30px;font-size:.75rem;letter-spacing:.2em;color:var(--gris);z-index:1}
+.pagin b{color:var(--rose)}
+/* --- contenu --- */
+main{padding:50px 5vw 80px}
+.outils{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:26px}
+.onglet{background:var(--noir2);border:1px solid var(--ligne);color:var(--gris);padding:9px 16px;border-radius:999px;font:600 .82rem Inter,sans-serif;cursor:pointer}
+.onglet.actif{border-color:var(--rose);color:var(--texte);box-shadow:0 0 0 1px var(--rose) inset}
+.onglet small{color:var(--bleu);margin-left:4px}
+#recherche{flex:1;min-width:200px;background:var(--noir2);border:1px solid var(--ligne);color:var(--texte);padding:11px 16px;border-radius:999px;font:inherit}
+#recherche:focus{outline:none;border-color:var(--bleu)}
+.filtres{display:flex;gap:14px;font-size:.82rem;color:var(--gris);margin-bottom:22px;flex-wrap:wrap}
+.filtres label{cursor:pointer}
+.grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
+.carte{background:var(--noir2);border:1px solid var(--ligne);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px;transition:.2s}
+.carte:hover{border-color:#3a3a46;transform:translateY(-2px)}
+.haut{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:.7rem;text-transform:uppercase;letter-spacing:.12em}
+.cat{color:var(--bleu);font-weight:800}
+.badge{padding:3px 9px;border-radius:999px;font-weight:700}
+.badge.ok{background:rgba(0,123,167,.18);color:#4cc3ee}
+.badge.non{border:1px solid var(--rose);color:var(--rose)}
+.badge.neuf{background:var(--rose);color:var(--noir)}
+.date{color:var(--gris);margin-left:auto}
+.carte h3{font-size:1.05rem;line-height:1.3}
+.resume{color:#c9c9d4;font-size:.92rem}
+.spoil .resume{filter:blur(6px);cursor:pointer;user-select:none}
+.spoil .resume::before{content:""}
+.avert{font-size:.75rem;color:var(--rose)}
+.sources{font-size:.75rem;color:var(--gris);display:flex;gap:10px;flex-wrap:wrap;margin-top:auto}
+.sources a{color:var(--gris)}
+.sources a:hover{color:var(--rose)}
+.vide{color:var(--gris);padding:40px;text-align:center;border:1px dashed var(--ligne);border-radius:16px;grid-column:1/-1}
+/* --- carte de Leonida --- */
+#vueCarte{display:none;grid-template-columns:minmax(260px,420px) 1fr;gap:26px;align-items:start}
+#vueCarte.visible{display:grid}
+.boiteCarte{background:var(--noir2);border:1px solid var(--ligne);border-radius:16px;padding:16px;position:sticky;top:80px}
+.boiteCarte svg{width:100%;height:auto;display:block}
+.zone{cursor:pointer}
+.zone circle.pt{fill:var(--rose);transition:.2s}
+.zone:hover circle.pt,.zone.actif circle.pt{fill:#fff}
+.zone circle.halo{fill:rgba(255,45,168,.25);animation:pulse 2.2s infinite}
+@keyframes pulse{0%,100%{r:14}50%{r:22}}
+.zone text{fill:var(--texte);font:700 11px Inter,sans-serif;letter-spacing:.06em}
+.zone .nb{fill:var(--noir);font-size:9px}
+.note{font-size:.72rem;color:var(--gris);margin-top:8px}
+#titreZone{font-family:"Playfair Display",serif;font-size:1.6rem;margin-bottom:14px}
+/* --- pied --- */
+footer{border-top:1px solid var(--ligne);padding:30px 5vw;color:var(--gris);font-size:.78rem}
+footer p+p{margin-top:8px}
+@media(max-width:760px){
+  nav .liens{display:none}
+  #vueCarte.visible{grid-template-columns:1fr}
+  .boiteCarte{position:static}
+  .pagin{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">GTA VI <span>à la loupe</span></div>
+  <div class="liens">
+    <a href="#contenu" data-go="actus">Actus</a>
+    <a href="#contenu" data-go="secrets">Secrets</a>
+    <a href="#contenu" data-go="vehicules">Véhicules</a>
+    <a href="#contenu" data-go="carte">Carte</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="surtitre">Leonida · mis à jour chaque jour</div>
+  <h1>GTA VI<em>À LA LOUPE</em></h1>
+  <p>Secrets, astuces, véhicules, armes, argent et lieux de la carte. Chaque matin, une IA parcourt l'actu GTA 6 et ajoute ce qui est nouveau, avec ses sources.</p>
+  <a class="bouton" href="#contenu">Explorer →</a>
+  <div class="majinfo">
+    <div><b id="nbTotal">–</b>infos répertoriées</div>
+    <div><b id="nbJour">–</b>ajoutées au dernier scan</div>
+    <div><b id="dateMaj">–</b>dernière mise à jour</div>
+  </div>
+  <div class="pagin"><b>01</b> / 07</div>
+</header>
+
+<main id="contenu">
+  <div class="outils" id="onglets"></div>
+  <div class="outils"><input id="recherche" type="search" placeholder="Rechercher (ex. voiture, argent, Vice City…)"></div>
+  <div class="filtres">
+    <label><input type="checkbox" id="fConfirme"> Seulement les infos confirmées</label>
+    <label><input type="checkbox" id="fSpoil" checked> Flouter les spoilers</label>
+  </div>
+
+  <div class="grille" id="liste"></div>
+
+  <section id="vueCarte">
+    <div class="boiteCarte">
+      <svg viewBox="0 0 400 500" id="svgCarte" aria-label="Carte schématique de Leonida">
+        <defs>
+          <linearGradient id="mer" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a1a24"/><stop offset="1" stop-color="#06222e"/></linearGradient>
+          <linearGradient id="terre" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1c1c24"/><stop offset="1" stop-color="#23232e"/></linearGradient>
+        </defs>
+        <rect width="400" height="500" fill="url(#mer)" rx="12"/>
+        <path d="M20,52 L200,40 L250,55 L300,60 L322,92 L332,160 L346,250 L350,330 L336,390 L302,420 L262,426 L236,402 L214,342 L194,282 L174,212 L158,152 L138,122 L100,112 L60,116 L20,102 Z" fill="url(#terre)" stroke="#007BA7" stroke-width="1.5"/>
+        <g fill="#23232e" stroke="#007BA7" stroke-width="1">
+          <ellipse cx="250" cy="444" rx="10" ry="4"/><ellipse cx="226" cy="455" rx="11" ry="4"/>
+          <ellipse cx="200" cy="465" rx="10" ry="4"/><ellipse cx="176" cy="474" rx="9" ry="3.5"/>
+        </g>
+        <path d="M200,300 Q225,330 215,370" stroke="#007BA7" stroke-opacity=".35" fill="none" stroke-width="10" stroke-linecap="round"/>
+        <g id="zones"></g>
+      </svg>
+      <div class="note">Schéma simplifié dessiné pour le site — positions approximatives, pas la carte officielle du jeu.</div>
+    </div>
+    <div>
+      <div id="titreZone">Choisis une zone sur la carte</div>
+      <div class="grille" id="listeZone"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p><b>GTA VI à la loupe</b> est un site de fans indépendant et non officiel. Il n'est ni affilié, ni approuvé par Rockstar Games ou Take-Two Interactive. Grand Theft Auto est une marque de Take-Two Interactive.</p>
+  <p>Les résumés sont rédigés automatiquement par une IA à partir de sources publiques citées sur chaque fiche. L'IA peut se tromper : vérifie les infos « non vérifiées » via leurs sources.</p>
+</footer>
+
+<script>
+const CATS = {
+  tout:{nom:"Tout"}, actus:{nom:"Actus"}, secrets:{nom:"Secrets"}, astuces:{nom:"Astuces"},
+  vehicules:{nom:"Véhicules"}, armes:{nom:"Armes"}, argent:{nom:"Argent"}, lieux:{nom:"Lieux"}, carte:{nom:"🗺️ Carte"}
+};
+const ZONES = {
+  "port-gellhorn":{nom:"Port Gellhorn",x:78,y:78},
+  "mount-kalaga":{nom:"Mount Kalaga",x:205,y:72},
+  "ambrosia":{nom:"Ambrosia",x:262,y:175},
+  "grassrivers":{nom:"Grassrivers",x:232,y:320},
+  "vice-city":{nom:"Vice City",x:318,y:362},
+  "leonida-keys":{nom:"Leonida Keys",x:212,y:452},
+  "inconnue":{nom:"Lieu non précisé",x:70,y:250}
+};
+let DATA = {entrees:[]}, onglet = "tout", zoneActive = null;
+
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const urlOk = u => /^https?:\/\//i.test(u) ? esc(u) : "#";
+const $ = id => document.getElementById(id);
+
+function filtrer(liste){
+  const q = $("recherche").value.trim().toLowerCase();
+  return liste.filter(e =>
+    (!$("fConfirme").checked || e.statut === "confirme") &&
+    (!q || (e.titre + " " + e.resume + " " + (CATS[e.categorie]?.nom||"")).toLowerCase().includes(q)));
+}
+
+function carteHTML(e, dernier){
+  const spoil = e.spoiler && $("fSpoil").checked;
+  return `<article class="carte ${spoil ? "spoil" : ""}">
+    <div class="haut">
+      <span class="cat">${esc(CATS[e.categorie]?.nom || e.categorie)}</span>
+      ${e.statut === "confirme" ? '<span class="badge ok">✓ Confirmé</span>' : '<span class="badge non">Non vérifié</span>'}
+      ${e.date === dernier ? '<span class="badge neuf">Nouveau</span>' : ""}
+      <span class="date">${esc(new Date(e.date).toLocaleDateString("fr-BE",{day:"numeric",month:"short"}))}</span>
+    </div>
+    <h3>${esc(e.titre)}</h3>
+    ${spoil ? '<div class="avert">⚠️ Spoiler — touche le texte pour le lire</div>' : ""}
+    <p class="resume">${esc(e.resume)}</p>
+    <div class="sources">Sources : ${(e.sources||[]).map(s => `<a href="${urlOk(s.url)}" target="_blank" rel="noopener nofollow">${esc(s.nom)} ↗</a>`).join("")}</div>
+  </article>`;
+}
+
+function afficherListe(cible, liste){
+  const dernier = DATA.entrees[0]?.date;
+  cible.innerHTML = liste.length ? liste.map(e => carteHTML(e, dernier)).join("")
+    : '<div class="vide">Rien pour l\'instant ici. Le scan quotidien ajoutera les nouveautés dès qu\'elles apparaissent.</div>';
+}
+
+function rendu(){
+  const enCarte = onglet === "carte";
+  $("liste").style.display = enCarte ? "none" : "grid";
+  $("vueCarte").classList.toggle("visible", enCarte);
+  document.querySelectorAll(".onglet").forEach(b => b.classList.toggle("actif", b.dataset.cat === onglet));
+  if (enCarte) return renduCarte();
+  const base = onglet === "tout" ? DATA.entrees : DATA.entrees.filter(e => e.categorie === onglet);
+  afficherListe($("liste"), filtrer(base));
+}
+
+function renduCarte(){
+  const parZone = {};
+  DATA.entrees.forEach(e => { if (e.zone) (parZone[e.zone] ||= []).push(e); });
+  $("zones").innerHTML = Object.entries(ZONES).map(([id,z]) => {
+    const n = (parZone[id]||[]).length;
+    if (id === "inconnue" && !n) return "";
+    return `<g class="zone ${zoneActive===id?"actif":""}" data-zone="${id}">
+      ${n ? `<circle class="halo" cx="${z.x}" cy="${z.y}" r="14"/>` : ""}
+      <circle class="pt" cx="${z.x}" cy="${z.y}" r="9"/>
+      <text class="nb" x="${z.x}" y="${z.y+3}" text-anchor="middle">${n}</text>
+      <text x="${z.x}" y="${z.y-15}" text-anchor="middle">${z.nom.toUpperCase()}</text>
+    </g>`;
+  }).join("");
+  document.querySelectorAll(".zone").forEach(g => g.onclick = () => { zoneActive = g.dataset.zone; renduCarte(); });
+  if (zoneActive){
+    $("titreZone").textContent = ZONES[zoneActive].nom;
+    afficherListe($("listeZone"), filtrer(parZone[zoneActive] || []));
+  }
+}
+
+function onglets(){
+  const compte = c => c === "tout" ? DATA.entrees.length : c === "carte" ? DATA.entrees.filter(e=>e.zone).length : DATA.entrees.filter(e => e.categorie === c).length;
+  $("onglets").innerHTML = Object.entries(CATS).map(([id,c]) =>
+    `<button class="onglet" data-cat="${id}">${c.nom}<small>${compte(id)}</small></button>`).join("");
+  document.querySelectorAll(".onglet").forEach(b => b.onclick = () => { onglet = b.dataset.cat; rendu(); });
+}
+
+document.addEventListener("click", e => {
+  const r = e.target.closest(".spoil .resume");
+  if (r) r.closest(".carte").classList.remove("spoil");
+  const go = e.target.closest("[data-go]");
+  if (go) { onglet = go.dataset.go; rendu(); }
+});
+["recherche","fConfirme","fSpoil"].forEach(id => $(id).addEventListener("input", rendu));
+
+fetch("data/contenu.json?v=" + Date.now())
+  .then(r => r.json())
+  .then(d => {
+    DATA = d;
+    DATA.entrees.sort((a,b) => b.date.localeCompare(a.date));
+    $("nbTotal").textContent = d.entrees.length;
+    $("nbJour").textContent = d.dernierAjout ?? 0;
+    $("dateMaj").textContent = new Date(d.derniereMaj).toLocaleDateString("fr-BE",{day:"numeric",month:"short"});
+    onglets(); rendu();
+  })
+  .catch(() => { $("liste").innerHTML = '<div class="vide">Impossible de charger les données. Réessaie dans un instant.</div>'; });
+</script>
+</body>
+</html>

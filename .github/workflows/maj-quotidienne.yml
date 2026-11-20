@@ -1,0 +1,40 @@
+name: Mise a jour quotidienne GTA 6
+
+on:
+  schedule:
+    - cron: "0 6 * * *"   # tous les jours vers 7h (heure belge en hiver)
+  workflow_dispatch:       # bouton "Run workflow" pour lancer a la main
+
+permissions:
+  contents: write
+
+concurrency:
+  group: maj-quotidienne
+  cancel-in-progress: false
+
+jobs:
+  maj:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Scanner les actus et mettre a jour
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node scripts/update.mjs
+
+      - name: Enregistrer les changements
+        run: |
+          git config user.name "gta6-bot"
+          git config user.email "gta6-bot@users.noreply.github.com"
+          git add data/contenu.json
+          if git diff --cached --quiet; then
+            echo "Rien de nouveau"
+          else
+            git commit -m "Mise a jour auto du $(date -u +%Y-%m-%d)"
+            git push
+          fi

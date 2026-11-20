@@ -1,0 +1,63 @@
+{
+ "derniereMaj": "2026-11-20T06:00:00.000Z",
+ "dernierAjout": 4,
+ "entrees": [
+  {
+   "id": "2026-11-20-sortie",
+   "date": "2026-11-20",
+   "categorie": "actus",
+   "titre": "GTA 6 est sorti le 19 novembre 2026",
+   "resume": "Le jeu est disponible depuis le jeudi 19 novembre 2026 sur PS5 et Xbox Series X|S, après deux reports (automne 2025, puis mai 2026).",
+   "statut": "confirme",
+   "spoiler": false,
+   "zone": null,
+   "sources": [
+    { "nom": "PCGamesN", "url": "https://www.pcgamesn.com/gta-6-release-date" },
+    { "nom": "Dot Esports", "url": "https://dotesports.com/gta/news/gta-6-release-date-reconfirmed" }
+   ]
+  },
+  {
+   "id": "2026-11-20-pc",
+   "date": "2026-11-20",
+   "categorie": "actus",
+   "titre": "Pas encore de version PC annoncée",
+   "resume": "Rockstar n'a annoncé aucune date pour le PC. Vu l'historique de la série, une sortie PC plus tard est probable, mais ça reste de la spéculation.",
+   "statut": "confirme",
+   "spoiler": false,
+   "zone": null,
+   "sources": [
+    { "nom": "GTA BOOM", "url": "https://www.gtaboom.com/gta-6-release-date-platforms-and-what-is-locked-in-aa48" },
+    { "nom": "PCWorld", "url": "https://www.pcworld.com/article/3052217/gta-6s-release-date-confirmed-for-real-this-time-seriously.html" }
+   ]
+  },
+  {
+   "id": "2026-11-20-preload",
+   "date": "2026-11-20",
+   "categorie": "astuces",
+   "titre": "Le préchargement était ouvert depuis le 12 novembre",
+   "resume": "Si tu as acheté la version numérique, le jeu pouvait être préchargé depuis le 12 novembre : vérifie que le téléchargement est bien terminé avant de lancer.",
+   "statut": "confirme",
+   "spoiler": false,
+   "zone": null,
+   "sources": [
+    { "nom": "RankedBoost", "url": "https://rankedboost.com/gta/release-date/" },
+    { "nom": "GTA BOOM", "url": "https://www.gtaboom.com/gta-6-release-date-platforms-and-what-is-locked-in-aa48" }
+   ]
+  },
+  {
+   "id": "2026-11-20-leonida",
+   "date": "2026-11-20",
+   "categorie": "lieux",
+   "titre": "Retour à Vice City, dans l'État de Leonida",
+   "resume": "Le jeu se déroule dans une Vice City moderne et dans tout l'État de Leonida, avec deux personnages principaux : Jason et Lucia.",
+   "statut": "confirme",
+   "spoiler": false,
+   "zone": "vice-city",
+   "sources": [
+    { "nom": "Beebom", "url": "https://beebom.com/gta-6-release-date/" },
+    { "nom": "PCGamesN", "url": "https://www.pcgamesn.com/gta-6-release-date" }
+   ]
+  }
+ ],
+ "liensVus": []
+}
