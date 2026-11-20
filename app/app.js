@@ -1,5 +1,5 @@
 // GTA VI à la loupe — l'appli : même contenu que le site, interface d'application + communauté
-import { FIREBASE } from "./firebase-config.js";
+import { FIREBASE } from "./firebase-config.js?v=3";
 
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -30,7 +30,7 @@ const ZONES = { lummox: ["Lummox County", 51, 12.5], leonard: ["Leonard County",
 // ---------- communauté (chargée seulement si Firebase est configuré) ----------
 let C = null;
 if (FIREBASE) {
-  try { C = await import("./communaute.js"); await C.demarrer(FIREBASE, () => { majAvatar(); rafraichir(); }); }
+  try { C = await import("./communaute.js?v=3"); await C.demarrer(FIREBASE, () => { majAvatar(); rafraichir(); }); }
   catch (e) { console.error("Communauté indisponible", e); C = null; }
 }
 function majAvatar() {
@@ -352,7 +352,7 @@ async function actions(a) {
 }
 
 // ---------- installation (service worker + bouton Installer) ----------
-if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js", { updateViaCache: "none" }).catch(() => {});
 let invite = null;
 const installee = () => matchMedia("(display-mode: standalone)").matches || navigator.standalone;
 addEventListener("beforeinstallprompt", (e) => { e.preventDefault(); invite = e; if (route().nom === "accueil") rafraichir(); });
