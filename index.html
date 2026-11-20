@@ -224,7 +224,7 @@ const slug = s => String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,""
 window.imgSuivante = img => {
   const essais = JSON.parse(img.dataset.essais);
   if (essais.length) { img.src = essais.shift(); img.dataset.essais = JSON.stringify(essais); }
-  else img.parentElement.innerHTML = "🔫";
+  else img.parentElement.remove(); // pas d'image : on masque le cadre
 };
 function photo(chemin, nom){
   const essais = chemin ? [chemin] : ["jpg","png","webp"].map(x => `images/armes/${slug(nom)}.${x}`);
