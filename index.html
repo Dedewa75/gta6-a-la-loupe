@@ -183,13 +183,22 @@ select.tri{flex:none;max-width:38%;background:var(--verre);color:var(--texte);bo
 #intro.ouvert{background:rgba(5,6,10,0)}
 #intro.ouvert .centre{opacity:0;transform:scale(1.15);filter:blur(6px)}
 #intro .centre{display:flex;flex-direction:column;align-items:center;gap:16px;transition:.5s ease}
-#intro svg{width:min(560px,86vw);height:auto;overflow:visible}
-#intro .trace{fill:transparent;stroke-width:1.6;stroke-dasharray:900;stroke-dashoffset:900;animation:tracer 1.4s cubic-bezier(.6,.1,.3,1) forwards,remplirTexte .5s ease 1.2s forwards}
-#intro .t1{stroke:#fff;font:900 92px "Playfair Display",serif}
-#intro .t2{stroke:var(--rose);font:900 54px "Playfair Display",serif;animation-delay:.25s,1.45s}
+/* intro façon jeu : trait de lumière → flash blanc → logo qui sort du flash */
+#intro .trait{position:absolute;left:50%;top:50%;height:2px;width:0;transform:translate(-50%,-50%);background:linear-gradient(90deg,transparent,#fff,transparent);box-shadow:0 0 18px #fff,0 0 40px #4cc3ee;animation:trait .45s cubic-bezier(.7,0,.3,1) .05s forwards}
+@keyframes trait{60%{width:70vw;opacity:1}100%{width:100vw;opacity:0;height:6px}}
+#intro .flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;animation:flashBlanc 1.3s ease-out .42s forwards;z-index:3}
+@keyframes flashBlanc{0%{opacity:0}5%{opacity:1}18%{opacity:.85}100%{opacity:0}}
+.logoFlash{display:flex;flex-direction:column;align-items:center;line-height:.9;opacity:0;animation:sortieFlash 1.6s cubic-bezier(.15,.9,.25,1) .45s forwards}
+@keyframes sortieFlash{0%{opacity:1;transform:scale(1.45);filter:blur(12px) brightness(3);letter-spacing:.2em}12%{transform:scale(1.32) translate(3px,-2px)}18%{transform:scale(1.28) translate(-3px,2px)}100%{opacity:1;transform:scale(1);filter:none;letter-spacing:0}}
+.logoFlash span{font-family:"Playfair Display",serif;font-weight:900;-webkit-background-clip:text;background-clip:text;color:transparent;background-repeat:no-repeat;
+  background-image:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.95) 50%,transparent 58%),var(--degrade);background-size:300% 100%,100% 100%;background-position:150% 0,0 0;animation:reflet 1.1s ease-in-out 1.55s forwards}
+.lf1{font-size:clamp(4rem,17vw,9.5rem);--degrade:linear-gradient(180deg,#fff 0%,#ffe3f3 35%,#ff7ccc 70%,#ff2da8 100%);filter:drop-shadow(0 0 22px rgba(255,45,168,.45))}
+.lf2{font-size:clamp(1.9rem,8vw,4.4rem);margin-top:.15em;--degrade:linear-gradient(180deg,#ffd27a 0%,#ff8a3d 45%,#ff2da8 100%);filter:drop-shadow(0 0 16px rgba(255,138,61,.45))}
+@keyframes reflet{to{background-position:-60% 0,0 0}}
+#intro .ligne,#intro .etat{opacity:0;animation:apparaitre .4s ease 1.35s forwards}
+@keyframes apparaitre{to{opacity:1}}
+#intro .centre{z-index:2}
 @keyframes tracer{to{stroke-dashoffset:0}}
-@keyframes remplirTexte{to{fill:currentColor}}
-#intro .t1{color:#fff}#intro .t2{color:var(--rose);filter:drop-shadow(0 0 14px rgba(255,45,168,.6))}
 #intro .ligne{width:min(320px,70vw);height:3px;background:#1b1b24;border-radius:3px;overflow:hidden}
 #intro .ligne i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--bleu),var(--rose));box-shadow:0 0 12px var(--rose);transition:width .25s}
 #intro .etat{font:700 .72rem Inter,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:#4cc3ee}
@@ -235,8 +244,9 @@ footer p+p{margin-top:8px}
 <body>
 <canvas id="fond3d" aria-hidden="true"></canvas>
 <div id="intro" aria-hidden="true">
+  <div class="trait"></div><div class="flash"></div>
   <div class="centre">
-    <svg viewBox="0 0 560 190"><text class="trace t1" x="280" y="95" text-anchor="middle">GTA VI</text><text class="trace t2" x="280" y="165" text-anchor="middle">À LA LOUPE</text></svg>
+    <div class="logoFlash"><span class="lf1">GTA VI</span><span class="lf2">À LA LOUPE</span></div>
     <div class="ligne"><i id="introBarre"></i></div>
     <div class="etat" id="introEtat">Scan de Leonida… 0 %</div>
   </div>
@@ -513,7 +523,7 @@ addEventListener("scroll", () => document.documentElement.style.setProperty("--p
 const attendre = ms => new Promise(r => setTimeout(r, ms));
 let introFinie = false, progression = 0;
 function avancer(p, texte){ progression = Math.max(progression, p); const b = $("introBarre"); if (b) b.style.width = progression + "%"; const e = $("introEtat"); if (e) e.textContent = `${texte} ${Math.round(progression)} %`; }
-const chargementVisuel = (async () => { for (let p = 0; p <= 85 && !introFinie; p += 3) { avancer(p, p < 40 ? "Scan de Leonida…" : "Chargement des fiches…"); await attendre(28); } })();
+const chargementVisuel = (async () => { await attendre(1350); for (let p = 0; p <= 85 && !introFinie; p += 3) { avancer(p, p < 40 ? "Scan de Leonida…" : "Chargement des fiches…"); await attendre(30); } })();
 function flecheVers(r, i){
   const W = innerWidth, H = innerHeight, cx = r.left + r.width / 2, cy = r.top + r.height / 2;
   const cote = (i + Math.floor(Math.random() * 4)) % 4, depart = [[-60, Math.random()*H],[W+60, Math.random()*H],[Math.random()*W, -60],[Math.random()*W, H+60]][cote];
@@ -581,7 +591,7 @@ Promise.all([frais("data/contenu.json"), frais("data/armes.json").catch(() => ({
     $("raccourcis").innerHTML = RUBRIQUES.map(r => `<button class="piece" data-rub="${r.id}"><b>${r.icone}</b>${r.nom}<small>${{actus:ACTUS.length+" infos",videos:VIDEOS.length+" vidéos",armes:ARMES.length+" armes",vehicules:VEHS.length+" véhicules",carte:"5 comtés"}[r.id]}</small></button>`).join("");
     $("maj").innerHTML = `Dernière vérification : <b>${esc(dateCourte(c.derniereMaj))}</b>`;
     afficher();
-    Promise.all([chargementVisuel, attendre(900)]).then(construireSite);
+    Promise.all([chargementVisuel, attendre(2700)]).then(construireSite);
   })
   .catch(() => { finirIntro(); $("rubrique").innerHTML = vide("Impossible de charger les données. Réessaie dans un instant."); });
 </script>
