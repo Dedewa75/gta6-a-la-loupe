@@ -88,6 +88,10 @@
     {
      "nom": "Nettoge / Timesaver",
      "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    },
+    {
+     "nom": "GTABase",
+     "url": "https://www.gtabase.com/articles/gta-6/gta-6-fastest-cars-ranked-list-by-top-speed"
     }
    ]
   },
@@ -181,6 +185,10 @@
     {
      "nom": "Nettoge / Timesaver",
      "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    },
+    {
+     "nom": "GTABase",
+     "url": "https://www.gtabase.com/articles/gta-6/gta-6-fastest-cars-ranked-list-by-top-speed"
     }
    ]
   },
@@ -1083,6 +1091,10 @@
     {
      "nom": "Nettoge / Timesaver",
      "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
+    },
+    {
+     "nom": "GTABase",
+     "url": "https://www.gtabase.com/articles/gta-6/gta-6-fastest-cars-ranked-list-by-top-speed"
     }
    ]
   },
@@ -2033,42 +2045,6 @@
    }
   },
   {
-   "nom": "Karin Futo",
-   "classe": "coupes",
-   "image": null,
-   "infos": null,
-   "statut": "non-verifie",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "DayOne",
-     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
-    }
-   ],
-   "vitesse": null,
-   "acceleration": null,
-   "maniabilite": null,
-   "prix": null,
-   "ouTrouver": null,
-   "candidats": {
-    "vitesse": {
-     "4.3": [
-      "playday.one"
-     ]
-    },
-    "acceleration": {
-     "4.5": [
-      "playday.one"
-     ]
-    },
-    "maniabilite": {
-     "3.5": [
-      "playday.one"
-     ]
-    }
-   }
-  },
-  {
    "nom": "Vapid Hustler",
    "classe": "muscle",
    "image": null,
@@ -2179,56 +2155,6 @@
     "maniabilite": {
      "4.2": [
       "playday.one"
-     ]
-    }
-   }
-  },
-  {
-   "nom": "Maibatsu Penumbra FF",
-   "classe": "coupes",
-   "image": null,
-   "infos": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "DayOne",
-     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
-    },
-    {
-     "nom": "Nettoge / Timesaver",
-     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
-    },
-    {
-     "nom": "GTABase",
-     "url": "https://www.gtabase.com/articles/gta-6/gta-6-fastest-cars-ranked-list-by-top-speed"
-    }
-   ],
-   "vitesse": 5.1,
-   "acceleration": 5.5,
-   "maniabilite": 4.4,
-   "prix": null,
-   "ouTrouver": null,
-   "candidats": {
-    "vitesse": {
-     "5.1": [
-      "playday.one",
-      "timesaver.gg",
-      "gtabase.com"
-     ]
-    },
-    "acceleration": {
-     "5.5": [
-      "playday.one",
-      "timesaver.gg",
-      "gtabase.com"
-     ]
-    },
-    "maniabilite": {
-     "4.4": [
-      "playday.one",
-      "timesaver.gg",
-      "gtabase.com"
      ]
     }
    }
@@ -2457,42 +2383,6 @@
    }
   },
   {
-   "nom": "Vapid Dominator",
-   "classe": "muscle",
-   "image": null,
-   "infos": null,
-   "statut": "non-verifie",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "DayOne",
-     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
-    }
-   ],
-   "vitesse": null,
-   "acceleration": null,
-   "maniabilite": null,
-   "prix": null,
-   "ouTrouver": null,
-   "candidats": {
-    "vitesse": {
-     "5.6": [
-      "playday.one"
-     ]
-    },
-    "acceleration": {
-     "6": [
-      "playday.one"
-     ]
-    },
-    "maniabilite": {
-     "4.4": [
-      "playday.one"
-     ]
-    }
-   }
-  },
-  {
    "nom": "Vapid Dominator GT",
    "classe": "muscle",
    "image": null,
@@ -2524,106 +2414,6 @@
     "maniabilite": {
      "5.7": [
       "playday.one"
-     ]
-    }
-   }
-  },
-  {
-   "nom": "Vapid Dominator (Antique)",
-   "classe": "muscle",
-   "image": null,
-   "infos": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "DayOne",
-     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
-    },
-    {
-     "nom": "Nettoge / Timesaver",
-     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
-    }
-   ],
-   "vitesse": 5.1,
-   "acceleration": 5.6,
-   "maniabilite": 3.7,
-   "prix": null,
-   "ouTrouver": null,
-   "candidats": {
-    "vitesse": {
-     "5.1": [
-      "playday.one",
-      "timesaver.gg"
-     ]
-    },
-    "acceleration": {
-     "5.6": [
-      "playday.one",
-      "timesaver.gg"
-     ]
-    },
-    "maniabilite": {
-     "3.7": [
-      "playday.one",
-      "timesaver.gg"
-     ]
-    }
-   }
-  },
-  {
-   "nom": "Vapid Ganado",
-   "classe": "muscle",
-   "image": null,
-   "infos": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "DayOne",
-     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
-    },
-    {
-     "nom": "Nettoge / Timesaver",
-     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
-    },
-    {
-     "nom": "GTABase",
-     "url": "https://www.gtabase.com/articles/gta-6/gta-6-fastest-cars-ranked-list-by-top-speed"
-    }
-   ],
-   "vitesse": 4.7,
-   "acceleration": 5.3,
-   "maniabilite": 3.6,
-   "prix": null,
-   "ouTrouver": "Jason's Personal Vehicle",
-   "candidats": {
-    "vitesse": {
-     "4.7": [
-      "playday.one",
-      "timesaver.gg",
-      "gtabase.com"
-     ]
-    },
-    "acceleration": {
-     "5.3": [
-      "playday.one",
-      "timesaver.gg",
-      "gtabase.com"
-     ]
-    },
-    "maniabilite": {
-     "3.6": [
-      "playday.one",
-      "timesaver.gg",
-      "gtabase.com"
-     ]
-    },
-    "ouTrouver": {
-     "\"Jason's Personal Vehicle\"": [
-      "playday.one",
-      "timesaver.gg",
-      "gtabase.com"
      ]
     }
    }
@@ -2818,178 +2608,6 @@
     "maniabilite": {
      "3.2": [
       "playday.one"
-     ]
-    }
-   }
-  },
-  {
-   "nom": "Declasse Vamos",
-   "classe": "muscle",
-   "image": null,
-   "infos": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "DayOne",
-     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
-    },
-    {
-     "nom": "Nettoge / Timesaver",
-     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
-    }
-   ],
-   "vitesse": 4.4,
-   "acceleration": 3.9,
-   "maniabilite": 3.3,
-   "prix": null,
-   "ouTrouver": null,
-   "candidats": {
-    "vitesse": {
-     "4.4": [
-      "playday.one",
-      "timesaver.gg"
-     ]
-    },
-    "acceleration": {
-     "3.9": [
-      "playday.one",
-      "timesaver.gg"
-     ]
-    },
-    "maniabilite": {
-     "3.3": [
-      "playday.one",
-      "timesaver.gg"
-     ]
-    }
-   }
-  },
-  {
-   "nom": "Vapid Stanier (50s)",
-   "classe": "muscle",
-   "image": null,
-   "infos": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "DayOne",
-     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
-    },
-    {
-     "nom": "Nettoge / Timesaver",
-     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
-    }
-   ],
-   "vitesse": 3.9,
-   "acceleration": 3.7,
-   "maniabilite": 3.2,
-   "prix": null,
-   "ouTrouver": null,
-   "candidats": {
-    "vitesse": {
-     "3.9": [
-      "playday.one",
-      "timesaver.gg"
-     ]
-    },
-    "acceleration": {
-     "3.7": [
-      "playday.one",
-      "timesaver.gg"
-     ]
-    },
-    "maniabilite": {
-     "3.2": [
-      "playday.one",
-      "timesaver.gg"
-     ]
-    }
-   }
-  },
-  {
-   "nom": "BF Bandito",
-   "classe": "tout-terrain",
-   "image": null,
-   "infos": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "DayOne",
-     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
-    },
-    {
-     "nom": "Nettoge / Timesaver",
-     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
-    }
-   ],
-   "vitesse": 3.6,
-   "acceleration": 6,
-   "maniabilite": 3.5,
-   "prix": null,
-   "ouTrouver": null,
-   "candidats": {
-    "vitesse": {
-     "3.6": [
-      "playday.one",
-      "timesaver.gg"
-     ]
-    },
-    "acceleration": {
-     "6": [
-      "playday.one",
-      "timesaver.gg"
-     ]
-    },
-    "maniabilite": {
-     "3.5": [
-      "playday.one",
-      "timesaver.gg"
-     ]
-    }
-   }
-  },
-  {
-   "nom": "Vapid Dominator Buggy",
-   "classe": "tout-terrain",
-   "image": null,
-   "infos": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "DayOne",
-     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
-    },
-    {
-     "nom": "Nettoge / Timesaver",
-     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
-    }
-   ],
-   "vitesse": 5,
-   "acceleration": 6.1,
-   "maniabilite": 3.5,
-   "prix": null,
-   "ouTrouver": null,
-   "candidats": {
-    "vitesse": {
-     "5": [
-      "playday.one",
-      "timesaver.gg"
-     ]
-    },
-    "acceleration": {
-     "6.1": [
-      "playday.one",
-      "timesaver.gg"
-     ]
-    },
-    "maniabilite": {
-     "3.5": [
-      "playday.one",
-      "timesaver.gg"
      ]
     }
    }
@@ -3218,49 +2836,6 @@
    }
   },
   {
-   "nom": "Bravado Bison 900",
-   "classe": "pickups",
-   "image": null,
-   "infos": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "DayOne",
-     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
-    },
-    {
-     "nom": "Nettoge / Timesaver",
-     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
-    }
-   ],
-   "vitesse": 4.1,
-   "acceleration": 4.6,
-   "maniabilite": 2.8,
-   "prix": null,
-   "ouTrouver": null,
-   "candidats": {
-    "vitesse": {
-     "4.1": [
-      "playday.one",
-      "timesaver.gg"
-     ]
-    },
-    "acceleration": {
-     "4.6": [
-      "playday.one",
-      "timesaver.gg"
-     ]
-    },
-    "maniabilite": {
-     "2.8": [
-      "playday.one",
-      "timesaver.gg"
-     ]
-    }
-   }
-  },
-  {
    "nom": "Declasse Bobcat XL",
    "classe": "pickups",
    "image": null,
@@ -3399,42 +2974,6 @@
     },
     "maniabilite": {
      "3.1": [
-      "playday.one"
-     ]
-    }
-   }
-  },
-  {
-   "nom": "Vapid Reclaimer (70s)",
-   "classe": "pickups",
-   "image": null,
-   "infos": null,
-   "statut": "non-verifie",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "DayOne",
-     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
-    }
-   ],
-   "vitesse": null,
-   "acceleration": null,
-   "maniabilite": null,
-   "prix": null,
-   "ouTrouver": null,
-   "candidats": {
-    "vitesse": {
-     "2.6": [
-      "playday.one"
-     ]
-    },
-    "acceleration": {
-     "2.5": [
-      "playday.one"
-     ]
-    },
-    "maniabilite": {
-     "2.9": [
       "playday.one"
      ]
     }
@@ -3664,49 +3203,6 @@
    }
   },
   {
-   "nom": "Bravado Buffalo",
-   "classe": "berlines",
-   "image": null,
-   "infos": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "DayOne",
-     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
-    },
-    {
-     "nom": "GTABase",
-     "url": "https://www.gtabase.com/articles/gta-6/gta-6-fastest-cars-ranked-list-by-top-speed"
-    }
-   ],
-   "vitesse": 5.2,
-   "acceleration": 5.4,
-   "maniabilite": 4.3,
-   "prix": null,
-   "ouTrouver": null,
-   "candidats": {
-    "vitesse": {
-     "5.2": [
-      "playday.one",
-      "gtabase.com"
-     ]
-    },
-    "acceleration": {
-     "5.4": [
-      "playday.one",
-      "gtabase.com"
-     ]
-    },
-    "maniabilite": {
-     "4.3": [
-      "playday.one",
-      "gtabase.com"
-     ]
-    }
-   }
-  },
-  {
    "nom": "Dinka Chaovs XS",
    "classe": "berlines",
    "image": null,
@@ -3889,49 +3385,6 @@
     "maniabilite": {
      "3.1": [
       "playday.one"
-     ]
-    }
-   }
-  },
-  {
-   "nom": "Declasse Impaler",
-   "classe": "berlines",
-   "image": null,
-   "infos": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "DayOne",
-     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
-    },
-    {
-     "nom": "Nettoge / Timesaver",
-     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
-    }
-   ],
-   "vitesse": 4.1,
-   "acceleration": 4,
-   "maniabilite": 3.4,
-   "prix": null,
-   "ouTrouver": null,
-   "candidats": {
-    "vitesse": {
-     "4.1": [
-      "playday.one",
-      "timesaver.gg"
-     ]
-    },
-    "acceleration": {
-     "4": [
-      "playday.one",
-      "timesaver.gg"
-     ]
-    },
-    "maniabilite": {
-     "3.4": [
-      "playday.one",
-      "timesaver.gg"
      ]
     }
    }
@@ -4196,7 +3649,7 @@
    }
   },
   {
-   "nom": "Vapid Stanier (98)",
+   "nom": "'98 Vapid Stanier",
    "classe": "berlines",
    "image": null,
    "infos": null,
@@ -4234,49 +3687,6 @@
      "4": [
       "playday.one",
       "gtabase.com"
-     ]
-    }
-   }
-  },
-  {
-   "nom": "Vpaid Stanier G2",
-   "classe": "berlines",
-   "image": null,
-   "infos": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "DayOne",
-     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
-    },
-    {
-     "nom": "Nettoge / Timesaver",
-     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
-    }
-   ],
-   "vitesse": 4.5,
-   "acceleration": 4.7,
-   "maniabilite": 4.2,
-   "prix": null,
-   "ouTrouver": null,
-   "candidats": {
-    "vitesse": {
-     "4.5": [
-      "playday.one",
-      "timesaver.gg"
-     ]
-    },
-    "acceleration": {
-     "4.7": [
-      "playday.one",
-      "timesaver.gg"
-     ]
-    },
-    "maniabilite": {
-     "4.2": [
-      "playday.one",
-      "timesaver.gg"
      ]
     }
    }
@@ -4385,379 +3795,6 @@
     "maniabilite": {
      "3.9": [
       "playday.one"
-     ]
-    }
-   }
-  },
-  {
-   "nom": "Pfister Comet",
-   "classe": "sportives",
-   "image": null,
-   "infos": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "DayOne",
-     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
-    },
-    {
-     "nom": "Nettoge / Timesaver",
-     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
-    },
-    {
-     "nom": "GTABase",
-     "url": "https://www.gtabase.com/articles/gta-6/gta-6-fastest-cars-ranked-list-by-top-speed"
-    }
-   ],
-   "vitesse": 6.1,
-   "acceleration": 6.4,
-   "maniabilite": 6.5,
-   "prix": null,
-   "ouTrouver": null,
-   "candidats": {
-    "vitesse": {
-     "6.1": [
-      "playday.one",
-      "timesaver.gg",
-      "gtabase.com"
-     ]
-    },
-    "acceleration": {
-     "6.4": [
-      "playday.one",
-      "timesaver.gg",
-      "gtabase.com"
-     ]
-    },
-    "maniabilite": {
-     "6.5": [
-      "playday.one",
-      "timesaver.gg",
-      "gtabase.com"
-     ]
-    }
-   }
-  },
-  {
-   "nom": "Declass Mamba GT",
-   "classe": "sportives",
-   "image": null,
-   "infos": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "DayOne",
-     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
-    },
-    {
-     "nom": "Nettoge / Timesaver",
-     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
-    }
-   ],
-   "vitesse": 6.9,
-   "acceleration": 7.2,
-   "maniabilite": 6.3,
-   "prix": null,
-   "ouTrouver": null,
-   "candidats": {
-    "vitesse": {
-     "6.9": [
-      "playday.one",
-      "timesaver.gg"
-     ]
-    },
-    "acceleration": {
-     "7.2": [
-      "playday.one",
-      "timesaver.gg"
-     ]
-    },
-    "maniabilite": {
-     "6.3": [
-      "playday.one",
-      "timesaver.gg"
-     ]
-    }
-   }
-  },
-  {
-   "nom": "Ubermacht Sentinel",
-   "classe": "sportives",
-   "image": null,
-   "infos": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "DayOne",
-     "url": "https://playday.one/2026/11/18/every-car-in-gta-6/"
-    },
-    {
-     "nom": "Nettoge / Timesaver",
-     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
-    },
-    {
-     "nom": "GTABase",
-     "url": "https://www.gtabase.com/articles/gta-6/gta-6-fastest-cars-ranked-list-by-top-speed"
-    }
-   ],
-   "vitesse": 4.7,
-   "acceleration": 4.9,
-   "maniabilite": 4.2,
-   "prix": null,
-   "ouTrouver": null,
-   "candidats": {
-    "vitesse": {
-     "4.7": [
-      "playday.one",
-      "timesaver.gg",
-      "gtabase.com"
-     ]
-    },
-    "acceleration": {
-     "4.9": [
-      "playday.one",
-      "timesaver.gg",
-      "gtabase.com"
-     ]
-    },
-    "maniabilite": {
-     "4.2": [
-      "playday.one",
-      "timesaver.gg",
-      "gtabase.com"
-     ]
-    }
-   }
-  },
-  {
-   "nom": "Pegassi Infernus",
-   "classe": "supercars",
-   "image": null,
-   "infos": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "Nettoge / Timesaver",
-     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
-    },
-    {
-     "nom": "GTABase",
-     "url": "https://www.gtabase.com/articles/gta-6/gta-6-fastest-cars-ranked-list-by-top-speed"
-    }
-   ],
-   "vitesse": 7.1,
-   "acceleration": 7.3,
-   "maniabilite": 6.5,
-   "prix": null,
-   "ouTrouver": null,
-   "candidats": {
-    "vitesse": {
-     "7.1": [
-      "timesaver.gg",
-      "gtabase.com"
-     ]
-    },
-    "acceleration": {
-     "7.3": [
-      "timesaver.gg",
-      "gtabase.com"
-     ]
-    },
-    "maniabilite": {
-     "6.5": [
-      "timesaver.gg",
-      "gtabase.com"
-     ]
-    }
-   }
-  },
-  {
-   "nom": "Grotti Cheetah",
-   "classe": "supercars",
-   "image": null,
-   "infos": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "Nettoge / Timesaver",
-     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
-    },
-    {
-     "nom": "GTABase",
-     "url": "https://www.gtabase.com/articles/gta-6/gta-6-fastest-cars-ranked-list-by-top-speed"
-    }
-   ],
-   "vitesse": 6.6,
-   "acceleration": 6.5,
-   "maniabilite": null,
-   "prix": null,
-   "ouTrouver": "Ultimate Edition",
-   "candidats": {
-    "vitesse": {
-     "6.6": [
-      "timesaver.gg",
-      "gtabase.com"
-     ]
-    },
-    "acceleration": {
-     "6.5": [
-      "timesaver.gg",
-      "gtabase.com"
-     ]
-    },
-    "ouTrouver": {
-     "\"Ultimate Edition\"": [
-      "timesaver.gg",
-      "gtabase.com"
-     ]
-    }
-   }
-  },
-  {
-   "nom": "Annis Hellion",
-   "classe": "suv",
-   "image": null,
-   "infos": null,
-   "statut": "non-verifie",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "Nettoge / Timesaver",
-     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
-    }
-   ],
-   "vitesse": null,
-   "acceleration": null,
-   "maniabilite": null,
-   "prix": null,
-   "ouTrouver": null,
-   "candidats": {
-    "vitesse": {
-     "3.1": [
-      "timesaver.gg"
-     ]
-    },
-    "acceleration": {
-     "3.4": [
-      "timesaver.gg"
-     ]
-    },
-    "maniabilite": {
-     "3": [
-      "timesaver.gg"
-     ]
-    }
-   }
-  },
-  {
-   "nom": "Canis Crawler",
-   "classe": "suv",
-   "image": null,
-   "infos": null,
-   "statut": "non-verifie",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "Nettoge / Timesaver",
-     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
-    }
-   ],
-   "vitesse": null,
-   "acceleration": null,
-   "maniabilite": null,
-   "prix": null,
-   "ouTrouver": null,
-   "candidats": {
-    "vitesse": {
-     "2.7": [
-      "timesaver.gg"
-     ]
-    },
-    "acceleration": {
-     "3": [
-      "timesaver.gg"
-     ]
-    },
-    "maniabilite": {
-     "3.3": [
-      "timesaver.gg"
-     ]
-    }
-   }
-  },
-  {
-   "nom": "Declasse Burrito",
-   "classe": "utilitaires",
-   "image": null,
-   "infos": null,
-   "statut": "non-verifie",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "Nettoge / Timesaver",
-     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
-    }
-   ],
-   "vitesse": null,
-   "acceleration": null,
-   "maniabilite": null,
-   "prix": null,
-   "ouTrouver": null,
-   "candidats": {
-    "vitesse": {
-     "3.4": [
-      "timesaver.gg"
-     ]
-    },
-    "acceleration": {
-     "3.8": [
-      "timesaver.gg"
-     ]
-    },
-    "maniabilite": {
-     "3.4": [
-      "timesaver.gg"
-     ]
-    }
-   }
-  },
-  {
-   "nom": "Osprey Journey",
-   "classe": "utilitaires",
-   "image": null,
-   "infos": null,
-   "statut": "non-verifie",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "Nettoge / Timesaver",
-     "url": "https://timesaver.gg/tools/gta-6/cars/fastest"
-    }
-   ],
-   "vitesse": null,
-   "acceleration": null,
-   "maniabilite": null,
-   "prix": null,
-   "ouTrouver": null,
-   "candidats": {
-    "vitesse": {
-     "2.4": [
-      "timesaver.gg"
-     ]
-    },
-    "acceleration": {
-     "1.8": [
-      "timesaver.gg"
-     ]
-    },
-    "maniabilite": {
-     "2.5": [
-      "timesaver.gg"
      ]
     }
    }

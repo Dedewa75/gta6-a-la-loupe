@@ -73,7 +73,9 @@ async function telecharger(url) {
 // ---------- IA Gemini ----------
 const MODELES = (process.env.GEMINI_MODEL || "gemini-3.8-flash,gemini-flash-latest,gemini-flash-lite-latest").split(",");
 const pause = (ms) => new Promise((r) => setTimeout(r, ms));
-const SURCHARGE = /high demand|overloaded|unavailable|try again|503|429|rate|quota/i;
+const SURCHARGE = /high demand|overloaded|unavailable|try again|503/i;
+const QUOTA = /exceeded your current quota|quota/i;
+let quotaEpuise = false;
 
 function consigne(liste, enAttente = []) {
   return `Tu es le rédacteur d'un site de fans francophone NON OFFICIEL sur GTA 6 (Grand Theft Auto VI, sorti le 19 novembre 2026 sur PS5 et Xbox Series X|S, État de Leonida).
@@ -103,6 +105,7 @@ Si rien d'utile : {"entrees":[],"confirmations":[]}`;
 }
 
 async function demanderIA(texte) {
+  if (quotaEpuise) throw new Error("quota gratuit Gemini épuisé pour aujourd'hui");
   if (MOCK) return JSON.parse(await readFile(new URL("../test/reponse-ia.json", import.meta.url), "utf8"));
   let derniere;
   for (const modele of MODELES) {
@@ -125,6 +128,7 @@ async function demanderIA(texte) {
         return JSON.parse(brut.replace(/^```json|```$/g, "").trim());
       } catch (e) {
         derniere = e;
+        if (QUOTA.test(e.message)) { quotaEpuise = true; console.log("⛔ quota gratuit Gemini épuisé : les étapes IA restantes attendront demain"); throw e; }
         const reessayer = SURCHARGE.test(e.message) && essai < 2;
         console.log(`⚠️ modèle ${modele} (essai ${essai}) :`, e.message.slice(0, 140));
         if (!reessayer) break;           // modèle inexistant → on passe au suivant
@@ -137,6 +141,26 @@ async function demanderIA(texte) {
 
 // ---------- programme principal ----------
 const norm = (s) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+
+// Nom « nettoyé » pour reconnaître un même objet écrit différemment ('88 Pfister Comet = Pfister Comet, Vpaid = Vapid…)
+// L'année fait partie du nom : '55 Vapid Stanier et '98 Vapid Stanier sont deux voitures différentes.
+export function baseAnnee(nom) {
+  let s = String(nom).replace(/’/g, "'"), an = null, m;
+  if ((m = s.match(/^'?(\d{2})\s+/))) { an = m[1]; s = s.slice(m[0].length); }
+  if (!an && (m = s.match(/\((\d{2})\)/))) an = m[1];
+  s = norm(s.replace(/\([^)]*\)/g, "")).replace(/\bvpaid\b/g, "vapid").replace(/\bdeclass\b/g, "declasse").replace(/\bgallvanter\b/g, "gallivanter");
+  return { base: s, an };
+}
+// Retrouve la fiche existante ; "ambigu" si un nom sans année correspond à plusieurs versions
+export function trouverFiche(liste, nom) {
+  const c = baseAnnee(nom);
+  const meme = liste.filter((x) => [x.nom, ...(x.alias || [])].some((n) => baseAnnee(n).base === c.base));
+  const exact = meme.find((x) => [x.nom, ...(x.alias || [])].some((n) => baseAnnee(n).an === c.an && baseAnnee(n).base === c.base));
+  if (exact) return exact;
+  if (c.an === null && meme.length === 1) return meme[0];
+  if (c.an === null && meme.length > 1) return "ambigu";
+  return null;
+}
 
 // Règle de fiabilité : publié seulement si 2 sites différents (ou une source officielle Rockstar/Take-Two)
 const OFFICIEL = /rockstar|take-?two/i;
@@ -224,7 +248,7 @@ export async function principal() {
 // ---------- arsenal : fiches détaillées des armes ----------
 const FICHIER_ARMES = new URL("../data/armes.json", import.meta.url);
 const CLASSES = ["pistolets", "revolvers", "mitraillettes", "fusils-a-pompe", "fusils-assaut", "fusils-tactiques", "snipers", "lourdes", "melee", "explosifs"];
-const STATS = ["degats", "precision", "maniabilite", "portee", "prix", "chargeur", "ouAcheter", "infos"];
+const STATS = ["degats", "precision", "maniabilite", "portee", "prix", "chargeur", "ouAcheter"];
 const PAGES_ARMES = [
   { nom: "GTA6DB", url: "https://gta6db.io/weapons" },
   { nom: "MetaForge", url: "https://metaforge.app/gta-6/best-weapons-gta-6" },
@@ -250,6 +274,7 @@ Extrais CHAQUE arme de GTA 6 citée avec ses infos FACTUELLES uniquement (n'inve
 - ameliorations : liste des accessoires/améliorations connus [{"nom":"Silencieux","prix":250,"effet":"phrase courte ou null"}], sinon []
 - sources : numéros des pages utilisées
 Garde le nom exact de l'arme tel qu'écrit dans le jeu. Ignore les armes de GTA 5/Online.
+ATTENTION aux tableaux : une case vide reste vide (null), ne décale JAMAIS les colonnes. En cas de doute sur une valeur : null.
 Réponds UNIQUEMENT en JSON : {"armes":[{"nom":"","classe":"","degats":null,"precision":null,"maniabilite":null,"portee":null,"prix":null,"chargeur":null,"ouAcheter":null,"infos":null,"ameliorations":[],"sources":[0]}]}`;
 }
 
@@ -267,11 +292,12 @@ export function fusionnerArme(base, n, sources, champs = STATS) {
     return v.length;
   };
   for (const k of champs) {
-    const v = n[k];
+    const v = typeof n[k] === "string" ? n[k].trim() : n[k];
     if (v === null || v === undefined || v === "") continue;
-    const votes = voter(k, v);
+    const votes = voter(k, typeof v === "string" ? norm(v) : v);
     if (votes < 2) continue;
     if (base[k] === null || base[k] === undefined) base[k] = v;
+    else if (typeof v === "string") continue; // textes : l'IA reformule, ce n'est pas un vrai désaccord
     else if (JSON.stringify(base[k]) !== JSON.stringify(v)) {
       // deux valeurs différentes confirmées chacune par 2 sites : on ne sait pas laquelle est vraie → "?"
       const msg = `${k} : ${base[k]} ou ${v} selon les sites`;
@@ -316,7 +342,8 @@ export async function majArmes() {
     if (!n?.nom || !CLASSES.includes(n.classe)) continue;
     const sources = (n.sources || []).map((i) => pages[i]).filter(Boolean).map((p) => ({ nom: p.nom, url: p.url }));
     if (!sources.length) continue;
-    let base = data.armes.find((a) => norm(a.nom) === norm(n.nom));
+    let base = trouverFiche(data.armes, n.nom);
+    if (base === "ambigu") continue;
     if (!base) {
       base = { nom: String(n.nom).slice(0, 60), classe: n.classe, ameliorations: [], image: null, statut: "non-verifie", conflits: [], sources: [] };
       for (const k of STATS) base[k] = null;
@@ -354,6 +381,7 @@ export async function majVehicules() {
   const rep = await demanderIA(`Tu remplis la base de données des véhicules d'un site de fans NON OFFICIEL sur GTA 6.
 Pages (numérotées) :
 ${pages.map((p, i) => `===== PAGE [${i}] ${p.nom} =====\n${p.texte}`).join("\n")}
+ATTENTION aux tableaux : une case vide reste vide (null), ne décale JAMAIS les colonnes. En cas de doute : null.
 Extrais CHAQUE véhicule de GTA 6 avec UNIQUEMENT les stats affichées dans le jeu sur 10 (n'invente rien ; info absente = null ; ignore les vitesses en km/h ou mph).
 - classe parmi : ${CLASSES_VEH.join(", ")}
 - vitesse, acceleration, maniabilite (tenue de route sur asphalte) : nombres sur 10
@@ -365,8 +393,8 @@ Réponds UNIQUEMENT en JSON : {"vehicules":[{"nom":"","classe":"","vitesse":null
     if (!n?.nom || !CLASSES_VEH.includes(n.classe)) continue;
     const sources = (n.sources || []).map((i) => pages[i]).filter(Boolean).map((p) => ({ nom: p.nom, url: p.url }));
     if (!sources.length) continue;
-    const cle = norm(n.nom.replace(/^'?\d{2}\s/, ""));
-    let base = data.vehicules.find((v) => norm(v.nom.replace(/^'?\d{2}\s/, "")) === cle && v.nom.slice(0, 3) === n.nom.slice(0, 3));
+    let base = trouverFiche(data.vehicules, n.nom);
+    if (base === "ambigu") continue;
     if (!base) {
       base = { nom: String(n.nom).slice(0, 60), classe: n.classe, image: null, infos: null, statut: "non-verifie", conflits: [], sources: [] };
       for (const k of STATS_VEH) base[k] = null;
@@ -499,13 +527,14 @@ export const dateTikTok = (id) => { try { return new Date(Number(BigInt(id) >> 3
 
 // Recherche Google faite par Gemini (outil google_search), puis chaque lien est vérifié auprès de TikTok
 const RECHERCHES_TIKTOK = [
-  "GTA 6 hidden money location TikTok", "GTA 6 secret weapon location TikTok", "GTA 6 easter egg TikTok",
-  "GTA 6 rare car location TikTok", "GTA 6 tips TikTok", "GTA 6 astuce argent TikTok",
+  "GTA 6 hidden money, secret weapons, rare cars, easter eggs, tips",
+  "GTA 6 astuces argent caché armes secrètes easter eggs",
 ];
 async function chercherTikTok() {
-  if (!CLE || MOCK) return [];
+  if (!CLE || MOCK || quotaEpuise) return [];
   const liens = new Set();
   for (const q of RECHERCHES_TIKTOK) {
+    if (quotaEpuise) break;
     for (const modele of MODELES) {
       try {
         const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${modele.trim()}:generateContent`, {
@@ -529,7 +558,7 @@ async function chercherTikTok() {
           }
         }
         break;
-      } catch (e) { console.log("⚠️ recherche TikTok", modele, ":", e.message); }
+      } catch (e) { console.log("⚠️ recherche TikTok", modele, ":", e.message.slice(0, 120)); if (QUOTA.test(e.message)) { quotaEpuise = true; break; } }
     }
   }
   console.log(`🎵 ${liens.size} liens TikTok trouvés par la recherche`);

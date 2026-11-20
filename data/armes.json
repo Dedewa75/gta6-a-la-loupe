@@ -16,10 +16,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Chuck's Tackle & Shot selon les sites",
-    "infos : Pistolet de Jason. L'Ultimate Edition ajoute une version gravée. ou Le pistolet de base attribué à Jason, également disponible dans une version gravée de l'Ultimate Edition. selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -89,7 +86,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Klose K17",
@@ -105,10 +103,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Chuck's Tackle & Shot selon les sites",
-    "infos : Pistolet de Lucia. L'Ultimate Edition ajoute une version gravée. ou Le pistolet de service de Lucia, qui possède une variante personnalisée dans l'édition ultime. selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -182,7 +177,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Mahi Nipper .38",
@@ -198,10 +194,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Chuck's Tackle & Shot uniquement (payé par la banque) ou Chuck's Tackle & Shot selon les sites",
-    "infos : Variante unique verte et rouge du Nipper .38, payée depuis le compte en banque. À ne pas confondre avec le Scorpio Nipper .38. ou Une variante unique aux couleurs rouge et verte du pistolet Nipper. selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -263,7 +256,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Girardi ES18",
@@ -279,10 +273,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Prestige Firearms selon les sites",
-    "infos : Pistolet à rafale de 3 coups. ou Un pistolet semi-automatique capable de tirs en rafales. selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "Heist Lounge",
@@ -344,7 +335,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Fairview Kalinga .50",
@@ -360,10 +352,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Prestige Firearms selon les sites",
-    "infos : Le pistolet le plus cher, et celui qui fait le plus de dégâts. ou Une arme de poing chambrée en .50 pour des performances balistiques accrues. selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MetaForge",
@@ -433,7 +422,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Kozlov Hind",
@@ -449,9 +439,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "infos : Version raccourcie du KZ-59. ou Un fusil d'assaut compact proposé à un tarif intermédiaire. selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -517,7 +505,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Duke 556",
@@ -533,10 +522,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Chuck's Tackle & Shot / Big Shots ou Chuck's Tackle & Shot selon les sites",
-    "infos : Disponible tôt, aucune stat faible. ou Un fusil de type carbine fréquemment utilisé par le personnage principal. selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MetaForge",
@@ -606,7 +592,10 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": [
+    "Duke 556 Assault Rifle"
+   ]
   },
   {
    "nom": "Wortham W-14",
@@ -622,9 +611,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Chuck's Tackle & Shot selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MetaForge",
@@ -694,7 +681,10 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": [
+    "W-14 Rifle"
+   ]
   },
   {
    "nom": "Shrewsbury Drifter",
@@ -710,9 +700,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Chuck's Tackle & Shot selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MetaForge",
@@ -782,7 +770,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Fortune & Son Laird 350",
@@ -798,10 +787,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation (magasins agrandis) ou Chuck's Tackle & Shot selon les sites",
-    "infos : Le sniper le moins cher, et l'arme la plus précise. ou Un fusil de précision sportif affichant le taux de précision le plus élevé des armes mesurées. selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "eGamers",
@@ -875,7 +861,10 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": [
+    "Laird 350"
+   ]
   },
   {
    "nom": "Shrewsbury SM-69",
@@ -891,9 +880,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation (magasins agrandis) ou Iron & Oak selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "eGamers",
@@ -963,7 +950,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Shrewsbury SMS-01",
@@ -979,10 +967,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Débloqué après la 9e quête de chasse de Bret ou Iron & Oak selon les sites",
-    "infos : Se débloque aussi en terminant la 9e quête de chasse de Bret. ou Un fusil de précision avancé offrant une excellente précision globale. selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "eGamers",
@@ -1048,7 +1033,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Fairview FF-SR",
@@ -1064,9 +1050,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation (magasins agrandis) ou Iron & Oak selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "eGamers",
@@ -1132,7 +1116,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Fairview FF-50",
@@ -1148,10 +1133,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation (magasins agrandis) ou Iron & Oak selon les sites",
-    "infos : L'arme non explosive qui fait le plus de dégâts. ou Un fusil de sniper lourd de grande puissance avec une excellente portée. selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "eGamers",
@@ -1225,7 +1207,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "ADB M350",
@@ -1241,10 +1224,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites",
-    "infos : Mitrailleuse. ou Une mitrailleuse de combat lourde dotée d'une portée correcte mais d'une maniabilité assez faible. selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "GTA6DB",
@@ -1314,7 +1294,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Hillinger Boomer",
@@ -1330,10 +1311,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation (magasins agrandis) ou Iron & Oak selon les sites",
-    "infos : Lance-grenades. ou Un lance-grenades compact infligeant les dégâts les plus élevés recensés pour une arme avec statistiques. selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "eGamers",
@@ -1407,7 +1385,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Deever Tech GLR40",
@@ -1449,7 +1428,8 @@
      "nom": "DayOne",
      "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
     }
-   ]
+   ],
+   "alias": []
   },
   {
    "nom": "Hauners H-AT",
@@ -1483,7 +1463,8 @@
      "nom": "DayOne",
      "url": "https://playday.one/2026/11/18/all-weapons-in-gta-6/"
     }
-   ]
+   ],
+   "alias": []
   },
   {
    "nom": "Grenade à fragmentation",
@@ -1512,7 +1493,14 @@
     {
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    },
+    {
+     "nom": "MeowDB",
+     "url": "https://meowdb.com/gta6/weapons"
     }
+   ],
+   "alias": [
+    "Frag Grenade"
    ]
   },
   {
@@ -1539,6 +1527,9 @@
      "nom": "MeowDB",
      "url": "https://meowdb.com/gta6/weapons"
     }
+   ],
+   "alias": [
+    "Sticky Bomb"
    ]
   },
   {
@@ -1554,7 +1545,7 @@
    "infos": null,
    "ameliorations": [],
    "image": null,
-   "statut": "non-verifie",
+   "statut": "confirme",
    "conflits": [],
    "sources": [
     {
@@ -1565,6 +1556,9 @@
      "nom": "MeowDB",
      "url": "https://meowdb.com/gta6/weapons"
     }
+   ],
+   "alias": [
+    "Hunting Knife"
    ]
   },
   {
@@ -1581,10 +1575,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Chuck's Tackle & Shot selon les sites",
-    "infos : Pistolet lourd. ou Un pistolet lourd classique dont l'achat peut être réglé directement via un compte bancaire. selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -1650,7 +1641,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Klose K17 MCD",
@@ -1666,10 +1658,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Prestige Firearms selon les sites",
-    "infos : Version entièrement automatique du K17, moins précise. ou Une variante automatique du K17 tirant en rafales libres depuis un chargeur étendu. selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -1737,7 +1726,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Scorpio Nipper .38",
@@ -1753,10 +1743,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Chuck's Tackle & Shot selon les sites",
-    "infos : Le pistolet le moins cher. ou Un pistolet compact économique aux dégâts limités mais doté d'une prise en main maximale. selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -1822,7 +1809,11 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": [
+    "Nipper .38",
+    "Nipper .38 Pistol"
+   ]
   },
   {
    "nom": "The Silver 1922",
@@ -1848,7 +1839,8 @@
      "nom": "Heist Lounge",
      "url": "https://heistlounge.com/tools/weapons"
     }
-   ]
+   ],
+   "alias": []
   },
   {
    "nom": "Duke Mustang .357",
@@ -1864,9 +1856,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -1932,7 +1922,10 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": [
+    "Mustang .357"
+   ]
   },
   {
    "nom": "Scorpio Akulus",
@@ -1948,10 +1941,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites",
-    "infos : Le revolver qui fait le plus de dégâts. ou Un modèle de revolver lourd offrant une bonne portée et des dégâts conséquents. selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -2017,7 +2007,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Wortham WCR1",
@@ -2033,9 +2024,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Martez Empeños selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -2097,7 +2086,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Hawk & Little .38",
@@ -2113,9 +2103,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -2177,7 +2165,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Wortham W-10",
@@ -2193,10 +2182,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Big Shots selon les sites",
-    "infos : La mitraillette la moins chère. ou Une mini-mitraillette compacte très maniable vendue à bas prix. selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -2262,7 +2248,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Zhang Wu Type 9",
@@ -2278,9 +2265,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -2346,7 +2331,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Schlamm DW-9",
@@ -2362,9 +2348,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -2430,7 +2414,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Vom Feuer VF5",
@@ -2446,9 +2431,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -2514,7 +2497,10 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": [
+    "VF5 SMG"
+   ]
   },
   {
    "nom": "Vom Feuer VF5C",
@@ -2530,10 +2516,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites",
-    "infos : Version compacte de la VF5. ou Une version compacte et militaire de la mitraillette Vom Feuer. selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -2595,7 +2578,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "ADB PD-90",
@@ -2611,10 +2595,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites",
-    "infos : La mitraillette la plus chère. ou Une mitraillette d'assaut moderne et performante. selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -2680,7 +2661,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Shrewsbury Hobo",
@@ -2696,10 +2678,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Chuck's Tackle & Shot selon les sites",
-    "infos : Fusil à canon scié. ou Une version sciée du double canon favorisant la maniabilité au détriment de la portée. selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -2765,7 +2744,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Mason & Keen Longshot",
@@ -2781,10 +2761,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites",
-    "infos : Fusil de chasse à canons basculants. ou Un fusil de chasse à bascule destiné aux tirs sportifs. selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -2850,7 +2827,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Mason & Keen Shortstraw",
@@ -2866,9 +2844,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -2930,7 +2906,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Girardi AZ1200",
@@ -2946,10 +2923,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites",
-    "infos : Semi-automatique. La version déjà améliorée coûte 3 460 $. ou Un fusil à pompe semi-automatique de conception Girardi. selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -3011,7 +2985,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Girardi Verro",
@@ -3027,10 +3002,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites",
-    "infos : Semi-automatique. ou Un fusil à pompe court semi-automatique axé sur le combat rapproché. selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -3092,7 +3064,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Kozlov KZ-59",
@@ -3108,10 +3081,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Big Shots selon les sites",
-    "infos : Le fusil d'assaut le moins cher. ou Un fusil d'assaut standard équilibré disponible dans les enseignes Big Shots. selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -3181,7 +3151,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Hillinger Heathen",
@@ -3197,9 +3168,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Big Shots selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -3265,7 +3234,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "ADB FRA",
@@ -3281,10 +3251,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Big Shots selon les sites",
-    "infos : Fusil de combat. ou Un fusil de combat robuste dont l'achat nécessite de débloquer l'inventaire du magasin. selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -3350,7 +3317,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Vom Feuer VF-G1",
@@ -3366,10 +3334,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites",
-    "infos : Le fusil d'assaut le plus cher. ou Une carabine spéciale haut de gamme proposée par Vom Feuer. selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -3439,7 +3404,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Hawk & Little Mediator",
@@ -3466,9 +3432,7 @@
    ],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Martez Empeños selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -3552,7 +3516,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Hillinger M306",
@@ -3568,9 +3533,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Big Shots selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -3636,7 +3599,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Hillinger M306 TMR",
@@ -3652,9 +3616,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -3720,7 +3682,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Fortune & Son Moreland 850",
@@ -3749,7 +3712,14 @@
     {
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
     }
+   ],
+   "alias": [
+    "Moreland 850"
    ]
   },
   {
@@ -3766,10 +3736,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites",
-    "infos : Fusil à pompe entièrement automatique. ou Un fusil à pompe entièrement automatique équipé d'un chargeur tambour de 8 cartouches. selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -3837,7 +3804,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Girardi Super400",
@@ -3853,9 +3821,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -3917,7 +3883,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Goodwin Comshot 12",
@@ -3933,9 +3900,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -3993,7 +3958,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Fortune & Son Gorse 425",
@@ -4009,9 +3975,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Big Shots selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -4069,7 +4033,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "BZI Vatra",
@@ -4085,9 +4050,7 @@
    "ameliorations": [],
    "image": null,
    "statut": "confirme",
-   "conflits": [
-    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites"
-   ],
+   "conflits": [],
    "sources": [
     {
      "nom": "MeowDB",
@@ -4149,7 +4112,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Deever Tech DSG",
@@ -4166,8 +4130,7 @@
    "image": null,
    "statut": "confirme",
    "conflits": [
-    "prix : 1350 ou 1950 selon les sites",
-    "ouAcheter : Ammu-Nation ou Iron & Oak selon les sites"
+    "prix : 1350 ou 1950 selon les sites"
    ],
    "sources": [
     {
@@ -4234,7 +4197,8 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
    "nom": "Hawk & Little Morgan",
@@ -4268,6 +4232,10 @@
      "nom": "GTA6DB",
      "url": "https://gta6db.io/weapons"
     }
+   ],
+   "alias": [
+    "Hawk & Little Morgan revolver",
+    "Hawk & Little Morgan Revolvers"
    ]
   },
   {
@@ -4293,7 +4261,14 @@
     {
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
     }
+   ],
+   "alias": [
+    "Survival Knife"
    ]
   },
   {
@@ -4319,7 +4294,14 @@
     {
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
     }
+   ],
+   "alias": [
+    "Combat Knife"
    ]
   },
   {
@@ -4345,7 +4327,14 @@
     {
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
     }
+   ],
+   "alias": [
+    "EDC Knife"
    ]
   },
   {
@@ -4372,6 +4361,9 @@
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
     }
+   ],
+   "alias": [
+    "Switchblade"
    ]
   },
   {
@@ -4397,7 +4389,14 @@
     {
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
     }
+   ],
+   "alias": [
+    "Bushcraft Knife"
    ]
   },
   {
@@ -4423,142 +4422,15 @@
     {
      "nom": "AOEAH",
      "url": "https://www.aoeah.com/news/4945--gta-6-gunweapon-tier-list--best-pistols-rifles-smgs-throwables--knives-ranked"
+    },
+    {
+     "nom": "GTA6DB",
+     "url": "https://gta6db.io/weapons"
     }
+   ],
+   "alias": [
+    "Baton"
    ]
-  },
-  {
-   "nom": "Hawk & Little Morgan revolver",
-   "classe": "revolvers",
-   "ameliorations": [],
-   "image": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "GTA6DB",
-     "url": "https://gta6db.io/weapons"
-    },
-    {
-     "nom": "MeowDB",
-     "url": "https://meowdb.com/gta6/weapons"
-    }
-   ],
-   "degats": 5.7,
-   "precision": 5.4,
-   "maniabilite": 7.8,
-   "portee": 6,
-   "prix": null,
-   "chargeur": null,
-   "ouAcheter": "Ultimate Edition",
-   "infos": "Un revolver spécial pour Jason et Lucia provenant du domaine Vercetti avec une lunette haute performance.",
-   "candidats": {
-    "degats": {
-     "5.7": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    },
-    "precision": {
-     "5.4": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    },
-    "maniabilite": {
-     "7.8": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    },
-    "portee": {
-     "6": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    },
-    "ouAcheter": {
-     "\"Ultimate Edition\"": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    },
-    "infos": {
-     "\"Un revolver spécial pour Jason et Lucia provenant du domaine Vercetti avec une lunette haute performance.\"": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    }
-   }
-  },
-  {
-   "nom": "Moreland 850",
-   "classe": "fusils-a-pompe",
-   "ameliorations": [],
-   "image": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "GTA6DB",
-     "url": "https://gta6db.io/weapons"
-    },
-    {
-     "nom": "MeowDB",
-     "url": "https://meowdb.com/gta6/weapons"
-    }
-   ],
-   "degats": 7.5,
-   "precision": 4.2,
-   "maniabilite": 5.6,
-   "portee": 2.5,
-   "prix": 700,
-   "chargeur": null,
-   "ouAcheter": "Chuck's Tackle & Shot",
-   "infos": "Un fusil à pompe de fabrication Fortune & Son que l'on peut notamment trouver dans les coffres de police.",
-   "candidats": {
-    "degats": {
-     "7.5": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    },
-    "precision": {
-     "4.2": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    },
-    "maniabilite": {
-     "5.6": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    },
-    "portee": {
-     "2.5": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    },
-    "prix": {
-     "700": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    },
-    "ouAcheter": {
-     "\"Chuck's Tackle & Shot\"": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    },
-    "infos": {
-     "\"Un fusil à pompe de fabrication Fortune & Son que l'on peut notamment trouver dans les coffres de police.\"": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    }
-   }
   },
   {
    "nom": "Schlamm DRX",
@@ -4628,95 +4500,11 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": []
   },
   {
-   "nom": "Switchblade",
-   "classe": "melee",
-   "ameliorations": [],
-   "image": null,
-   "statut": "non-verifie",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "MeowDB",
-     "url": "https://meowdb.com/gta6/weapons"
-    }
-   ],
-   "degats": null,
-   "precision": null,
-   "maniabilite": null,
-   "portee": null,
-   "prix": null,
-   "chargeur": null,
-   "ouAcheter": null,
-   "infos": null,
-   "candidats": {
-    "prix": {
-     "290": [
-      "meowdb.com"
-     ]
-    },
-    "ouAcheter": {
-     "\"Iron & Oak\"": [
-      "meowdb.com"
-     ]
-    },
-    "infos": {
-     "\"Un cran d'arrêt disponible à l'achat dans les armureries.\"": [
-      "meowdb.com"
-     ]
-    }
-   }
-  },
-  {
-   "nom": "Hunting Knife",
-   "classe": "melee",
-   "ameliorations": [],
-   "image": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "GTA6DB",
-     "url": "https://gta6db.io/weapons"
-    },
-    {
-     "nom": "MeowDB",
-     "url": "https://meowdb.com/gta6/weapons"
-    }
-   ],
-   "degats": null,
-   "precision": null,
-   "maniabilite": null,
-   "portee": null,
-   "prix": 125,
-   "chargeur": null,
-   "ouAcheter": "Chuck's Tackle & Shot",
-   "infos": "Un couteau de chasse robuste pour les éliminations au corps à corps.",
-   "candidats": {
-    "prix": {
-     "125": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    },
-    "ouAcheter": {
-     "\"Chuck's Tackle & Shot\"": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    },
-    "infos": {
-     "\"Un couteau de chasse robuste pour les éliminations au corps à corps.\"": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    }
-   }
-  },
-  {
-   "nom": "Diving Knife",
+   "nom": "Couteau de plongée",
    "classe": "melee",
    "ameliorations": [],
    "image": null,
@@ -4759,240 +4547,13 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": [
+    "Diving Knife"
+   ]
   },
   {
-   "nom": "Bushcraft Knife",
-   "classe": "melee",
-   "ameliorations": [],
-   "image": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "GTA6DB",
-     "url": "https://gta6db.io/weapons"
-    },
-    {
-     "nom": "MeowDB",
-     "url": "https://meowdb.com/gta6/weapons"
-    }
-   ],
-   "degats": null,
-   "precision": null,
-   "maniabilite": null,
-   "portee": null,
-   "prix": 230,
-   "chargeur": null,
-   "ouAcheter": "Chuck's Tackle & Shot",
-   "infos": "Un couteau de survie orienté vers les activités en pleine nature.",
-   "candidats": {
-    "prix": {
-     "230": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    },
-    "ouAcheter": {
-     "\"Chuck's Tackle & Shot\"": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    },
-    "infos": {
-     "\"Un couteau de survie orienté vers les activités en pleine nature.\"": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    }
-   }
-  },
-  {
-   "nom": "Survival Knife",
-   "classe": "melee",
-   "ameliorations": [],
-   "image": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "GTA6DB",
-     "url": "https://gta6db.io/weapons"
-    },
-    {
-     "nom": "MeowDB",
-     "url": "https://meowdb.com/gta6/weapons"
-    }
-   ],
-   "degats": null,
-   "precision": null,
-   "maniabilite": null,
-   "portee": null,
-   "prix": 315,
-   "chargeur": null,
-   "ouAcheter": "Iron & Oak",
-   "infos": "Un couteau de survie professionnel vendu dans le réseau d'armureries.",
-   "candidats": {
-    "prix": {
-     "315": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    },
-    "ouAcheter": {
-     "\"Iron & Oak\"": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    },
-    "infos": {
-     "\"Un couteau de survie professionnel vendu dans le réseau d'armureries.\"": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    }
-   }
-  },
-  {
-   "nom": "Combat Knife",
-   "classe": "melee",
-   "ameliorations": [],
-   "image": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "GTA6DB",
-     "url": "https://gta6db.io/weapons"
-    },
-    {
-     "nom": "MeowDB",
-     "url": "https://meowdb.com/gta6/weapons"
-    }
-   ],
-   "degats": null,
-   "precision": null,
-   "maniabilite": null,
-   "portee": null,
-   "prix": 285,
-   "chargeur": null,
-   "ouAcheter": "Iron & Oak",
-   "infos": "Un couteau de combat conçu pour les forces spéciales.",
-   "candidats": {
-    "prix": {
-     "285": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    },
-    "ouAcheter": {
-     "\"Iron & Oak\"": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    },
-    "infos": {
-     "\"Un couteau de combat conçu pour les forces spéciales.\"": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    }
-   }
-  },
-  {
-   "nom": "EDC Knife",
-   "classe": "melee",
-   "ameliorations": [],
-   "image": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "GTA6DB",
-     "url": "https://gta6db.io/weapons"
-    },
-    {
-     "nom": "MeowDB",
-     "url": "https://meowdb.com/gta6/weapons"
-    }
-   ],
-   "degats": null,
-   "precision": null,
-   "maniabilite": null,
-   "portee": null,
-   "prix": 275,
-   "chargeur": null,
-   "ouAcheter": "Iron & Oak",
-   "infos": "Un couteau utilitaire pour le port quotidien.",
-   "candidats": {
-    "prix": {
-     "275": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    },
-    "ouAcheter": {
-     "\"Iron & Oak\"": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    },
-    "infos": {
-     "\"Un couteau utilitaire pour le port quotidien.\"": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    }
-   }
-  },
-  {
-   "nom": "Baton",
-   "classe": "melee",
-   "ameliorations": [],
-   "image": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "GTA6DB",
-     "url": "https://gta6db.io/weapons"
-    },
-    {
-     "nom": "MeowDB",
-     "url": "https://meowdb.com/gta6/weapons"
-    }
-   ],
-   "degats": null,
-   "precision": null,
-   "maniabilite": null,
-   "portee": null,
-   "prix": 160,
-   "chargeur": null,
-   "ouAcheter": "Iron & Oak",
-   "infos": "Une matraque rigide pour maîtriser des adversaires sans les tuer.",
-   "candidats": {
-    "prix": {
-     "160": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    },
-    "ouAcheter": {
-     "\"Iron & Oak\"": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    },
-    "infos": {
-     "\"Une matraque rigide pour maîtriser des adversaires sans les tuer.\"": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    }
-   }
-  },
-  {
-   "nom": "Brass Knuckles",
+   "nom": "Poing américain",
    "classe": "melee",
    "ameliorations": [],
    "image": null,
@@ -5035,7 +4596,10 @@
       "meowdb.com"
      ]
     }
-   }
+   },
+   "alias": [
+    "Brass Knuckles"
+   ]
   },
   {
    "nom": "Molotov",
@@ -5064,99 +4628,8 @@
       "meowdb.com"
      ]
     }
-   }
-  },
-  {
-   "nom": "Frag Grenade",
-   "classe": "explosifs",
-   "ameliorations": [],
-   "image": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "GTA6DB",
-     "url": "https://gta6db.io/weapons"
-    },
-    {
-     "nom": "MeowDB",
-     "url": "https://meowdb.com/gta6/weapons"
-    }
-   ],
-   "degats": null,
-   "precision": null,
-   "maniabilite": null,
-   "portee": null,
-   "prix": 140,
-   "chargeur": null,
-   "ouAcheter": "Magasin d'armes",
-   "infos": "Une grenade à fragmentation explosive standard.",
-   "candidats": {
-    "prix": {
-     "140": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    },
-    "ouAcheter": {
-     "\"Magasin d'armes\"": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    },
-    "infos": {
-     "\"Une grenade à fragmentation explosive standard.\"": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    }
-   }
-  },
-  {
-   "nom": "Sticky Bomb",
-   "classe": "explosifs",
-   "ameliorations": [],
-   "image": null,
-   "statut": "confirme",
-   "conflits": [],
-   "sources": [
-    {
-     "nom": "GTA6DB",
-     "url": "https://gta6db.io/weapons"
-    },
-    {
-     "nom": "MeowDB",
-     "url": "https://meowdb.com/gta6/weapons"
-    }
-   ],
-   "degats": null,
-   "precision": null,
-   "maniabilite": null,
-   "portee": null,
-   "prix": 185,
-   "chargeur": null,
-   "ouAcheter": "Iron & Oak",
-   "infos": "Une bombe collante déclenchée à distance.",
-   "candidats": {
-    "prix": {
-     "185": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    },
-    "ouAcheter": {
-     "\"Iron & Oak\"": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    },
-    "infos": {
-     "\"Une bombe collante déclenchée à distance.\"": [
-      "gta6db.io",
-      "meowdb.com"
-     ]
-    }
-   }
+   },
+   "alias": []
   }
  ]
 }
