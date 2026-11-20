@@ -66,17 +66,20 @@ main{padding:50px 5vw 80px}
 .sources a:hover{color:var(--rose)}
 .vide{color:var(--gris);padding:40px;text-align:center;border:1px dashed var(--ligne);border-radius:16px;grid-column:1/-1}
 /* --- carte de Leonida --- */
-#vueCarte{display:none;grid-template-columns:minmax(260px,420px) 1fr;gap:26px;align-items:start}
+#vueCarte{display:none;grid-template-columns:minmax(280px,520px) 1fr;gap:26px;align-items:start}
 #vueCarte.visible{display:grid}
 .boiteCarte{background:var(--noir2);border:1px solid var(--ligne);border-radius:16px;padding:16px;position:sticky;top:80px}
 .boiteCarte svg{width:100%;height:auto;display:block}
-.zone{cursor:pointer}
-.zone circle.pt{fill:var(--rose);transition:.2s}
-.zone:hover circle.pt,.zone.actif circle.pt{fill:#fff}
-.zone circle.halo{fill:rgba(255,45,168,.25);animation:pulse 2.2s infinite}
-@keyframes pulse{0%,100%{r:14}50%{r:22}}
-.zone text{fill:var(--texte);font:700 11px Inter,sans-serif;letter-spacing:.06em}
-.zone .nb{fill:var(--noir);font-size:9px}
+.rx{position:relative;border-radius:12px;overflow:hidden;background:#05090f}
+.rx img{width:100%;display:block}
+.rx .scan{position:absolute;left:0;right:0;height:22%;top:-22%;pointer-events:none;background:linear-gradient(transparent,rgba(80,210,255,.18) 70%,rgba(200,245,255,.55) 98%,transparent);animation:balayage 4.5s linear infinite}
+@keyframes balayage{to{top:100%}}
+.rx::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 3px)}
+.pin{position:absolute;transform:translate(-50%,-50%);z-index:2;background:none;border:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;font:800 .62rem Inter,sans-serif;letter-spacing:.12em;color:#e9fbff;text-shadow:0 0 8px #00b4ff}
+.pin i{width:26px;height:26px;border-radius:50%;background:var(--rose);color:var(--noir);font-style:normal;font-size:.75rem;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 4px rgba(255,45,168,.25),0 0 18px var(--rose)}
+.pin.vide i{background:#0c2a3a;color:#7fd3f5;box-shadow:0 0 0 3px rgba(0,123,167,.35)}
+.pin.actif i,.pin:hover i{background:#fff;color:var(--noir)}
+.pin span{background:rgba(5,9,15,.7);padding:2px 6px;border-radius:6px;white-space:nowrap}
 .note{font-size:.72rem;color:var(--gris);margin-top:8px}
 #titreZone{font-family:"Playfair Display",serif;font-size:1.6rem;margin-bottom:14px}
 /* --- arsenal --- */
@@ -170,21 +173,12 @@ footer p+p{margin-top:8px}
 
   <section id="vueCarte">
     <div class="boiteCarte">
-      <svg viewBox="0 0 400 500" id="svgCarte" aria-label="Carte schématique de Leonida">
-        <defs>
-          <linearGradient id="mer" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a1a24"/><stop offset="1" stop-color="#06222e"/></linearGradient>
-          <linearGradient id="terre" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1c1c24"/><stop offset="1" stop-color="#23232e"/></linearGradient>
-        </defs>
-        <rect width="400" height="500" fill="url(#mer)" rx="12"/>
-        <path d="M20,52 L200,40 L250,55 L300,60 L322,92 L332,160 L346,250 L350,330 L336,390 L302,420 L262,426 L236,402 L214,342 L194,282 L174,212 L158,152 L138,122 L100,112 L60,116 L20,102 Z" fill="url(#terre)" stroke="#007BA7" stroke-width="1.5"/>
-        <g fill="#23232e" stroke="#007BA7" stroke-width="1">
-          <ellipse cx="250" cy="444" rx="10" ry="4"/><ellipse cx="226" cy="455" rx="11" ry="4"/>
-          <ellipse cx="200" cy="465" rx="10" ry="4"/><ellipse cx="176" cy="474" rx="9" ry="3.5"/>
-        </g>
-        <path d="M200,300 Q225,330 215,370" stroke="#007BA7" stroke-opacity=".35" fill="none" stroke-width="10" stroke-linecap="round"/>
-        <g id="zones"></g>
-      </svg>
-      <div class="note">Schéma simplifié dessiné pour le site — positions approximatives, pas la carte officielle du jeu.</div>
+      <div class="rx" id="carteRX">
+        <img src="images/carte-leonida-rayonx.jpg" alt="Carte de Leonida en rayon X">
+        <div class="scan"></div>
+        <div id="zones"></div>
+      </div>
+      <div class="note">Carte de Leonida en mode rayon X. Touche un comté pour voir les infos trouvées sur place.</div>
     </div>
     <div>
       <div id="titreZone">Choisis une zone sur la carte</div>
@@ -204,13 +198,12 @@ const CATS = {
   vehicules:{nom:"Véhicules"}, armes:{nom:"🔫 Armes"}, argent:{nom:"Argent"}, lieux:{nom:"Lieux"}, carte:{nom:"🗺️ Carte"}
 };
 const ZONES = {
-  "port-gellhorn":{nom:"Port Gellhorn",x:78,y:78},
-  "mount-kalaga":{nom:"Mount Kalaga",x:205,y:72},
-  "ambrosia":{nom:"Ambrosia",x:262,y:175},
-  "grassrivers":{nom:"Grassrivers",x:232,y:320},
-  "vice-city":{nom:"Vice City",x:318,y:362},
-  "leonida-keys":{nom:"Leonida Keys",x:212,y:452},
-  "inconnue":{nom:"Lieu non précisé",x:70,y:250}
+  "lummox":{nom:"Lummox County",x:51,y:12.5},
+  "leonard":{nom:"Leonard County",x:70,y:29},
+  "kelly":{nom:"Kelly County",x:36,y:33},
+  "vice-dale":{nom:"Vice-Dale County",x:73,y:53},
+  "mariana":{nom:"Mariana County",x:39,y:73},
+  "inconnue":{nom:"Lieu non précisé",x:14,y:93}
 };
 const CLASSES = {
   toutes:"Toutes", pistolets:"Pistolets", revolvers:"Revolvers", mitraillettes:"Mitraillettes",
@@ -332,14 +325,9 @@ function renduCarte(){
   $("zones").innerHTML = Object.entries(ZONES).map(([id,z]) => {
     const n = (parZone[id]||[]).length;
     if (id === "inconnue" && !n) return "";
-    return `<g class="zone ${zoneActive===id?"actif":""}" data-zone="${id}">
-      ${n ? `<circle class="halo" cx="${z.x}" cy="${z.y}" r="14"/>` : ""}
-      <circle class="pt" cx="${z.x}" cy="${z.y}" r="9"/>
-      <text class="nb" x="${z.x}" y="${z.y+3}" text-anchor="middle">${n}</text>
-      <text x="${z.x}" y="${z.y-15}" text-anchor="middle">${z.nom.toUpperCase()}</text>
-    </g>`;
+    return `<button class="pin ${n?"":"vide"} ${zoneActive===id?"actif":""}" data-zone="${id}" style="left:${z.x}%;top:${z.y}%"><i>${n}</i><span>${z.nom.toUpperCase()}</span></button>`;
   }).join("");
-  document.querySelectorAll(".zone").forEach(g => g.onclick = () => { zoneActive = g.dataset.zone; renduCarte(); });
+  document.querySelectorAll(".pin").forEach(g => g.onclick = () => { zoneActive = g.dataset.zone; renduCarte(); });
   if (zoneActive){
     $("titreZone").textContent = ZONES[zoneActive].nom;
     afficherListe($("listeZone"), filtrer(parZone[zoneActive] || []));

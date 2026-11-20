@@ -10,7 +10,7 @@ const CLE = process.env.GEMINI_API_KEY;
 const MOCK = process.env.MOCK === "1"; // mode test hors-ligne
 
 const CATEGORIES = ["actus", "secrets", "astuces", "vehicules", "armes", "argent", "lieux"];
-const ZONES = ["vice-city", "leonida-keys", "grassrivers", "port-gellhorn", "ambrosia", "mount-kalaga", "inconnue"];
+const ZONES = ["lummox", "leonard", "kelly", "vice-dale", "mariana", "inconnue"]; // comtés de Leonida
 
 const q = (s, hl = "fr", gl = "BE") =>
   `https://news.google.com/rss/search?q=${encodeURIComponent(s)}+when:2d&hl=${hl}&gl=${gl}&ceid=${gl}:${hl}`;
@@ -89,7 +89,7 @@ Règles :
 - Pour chaque entrée, cite TOUTES les sources [x] qui disent la même chose : une info n'est publiée que si au moins 2 sites différents la confirment (ou Rockstar/Take-Two officiellement).
 - N'ajoute une entrée que si tu es certain que les titres/extraits l'affirment clairement (pas de « rumeur », « leak », « pourrait », « selon un insider »).
 - spoiler : true si ça révèle l'histoire (missions, fin, morts, rebondissements).
-- zone : pour "lieux", "secrets" et "astuces" liés à un endroit, choisis parmi ${ZONES.join(", ")} ; sinon null.
+- zone : le comté de Leonida où se trouve la chose, parmi ${ZONES.join(", ")} (Vice City est dans vice-dale) ; "inconnue" si le comté n'est pas dit clairement ; null si ce n'est pas un lieu.
 - titre : court (max 80 caractères). resume : 1 à 3 phrases (max 300 caractères).
 - sources : les numéros [x] utilisés.
 ${enAttente.length ? `

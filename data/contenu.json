@@ -12,8 +12,14 @@
    "spoiler": false,
    "zone": null,
    "sources": [
-    { "nom": "PCGamesN", "url": "https://www.pcgamesn.com/gta-6-release-date" },
-    { "nom": "Dot Esports", "url": "https://dotesports.com/gta/news/gta-6-release-date-reconfirmed" }
+    {
+     "nom": "PCGamesN",
+     "url": "https://www.pcgamesn.com/gta-6-release-date"
+    },
+    {
+     "nom": "Dot Esports",
+     "url": "https://dotesports.com/gta/news/gta-6-release-date-reconfirmed"
+    }
    ]
   },
   {
@@ -26,8 +32,14 @@
    "spoiler": false,
    "zone": null,
    "sources": [
-    { "nom": "GTA BOOM", "url": "https://www.gtaboom.com/gta-6-release-date-platforms-and-what-is-locked-in-aa48" },
-    { "nom": "PCWorld", "url": "https://www.pcworld.com/article/3052217/gta-6s-release-date-confirmed-for-real-this-time-seriously.html" }
+    {
+     "nom": "GTA BOOM",
+     "url": "https://www.gtaboom.com/gta-6-release-date-platforms-and-what-is-locked-in-aa48"
+    },
+    {
+     "nom": "PCWorld",
+     "url": "https://www.pcworld.com/article/3052217/gta-6s-release-date-confirmed-for-real-this-time-seriously.html"
+    }
    ]
   },
   {
@@ -40,8 +52,14 @@
    "spoiler": false,
    "zone": null,
    "sources": [
-    { "nom": "RankedBoost", "url": "https://rankedboost.com/gta/release-date/" },
-    { "nom": "GTA BOOM", "url": "https://www.gtaboom.com/gta-6-release-date-platforms-and-what-is-locked-in-aa48" }
+    {
+     "nom": "RankedBoost",
+     "url": "https://rankedboost.com/gta/release-date/"
+    },
+    {
+     "nom": "GTA BOOM",
+     "url": "https://www.gtaboom.com/gta-6-release-date-platforms-and-what-is-locked-in-aa48"
+    }
    ]
   },
   {
@@ -52,10 +70,16 @@
    "resume": "Le jeu se déroule dans une Vice City moderne et dans tout l'État de Leonida, avec deux personnages principaux : Jason et Lucia.",
    "statut": "confirme",
    "spoiler": false,
-   "zone": "vice-city",
+   "zone": null,
    "sources": [
-    { "nom": "Beebom", "url": "https://beebom.com/gta-6-release-date/" },
-    { "nom": "PCGamesN", "url": "https://www.pcgamesn.com/gta-6-release-date" }
+    {
+     "nom": "Beebom",
+     "url": "https://beebom.com/gta-6-release-date/"
+    },
+    {
+     "nom": "PCGamesN",
+     "url": "https://www.pcgamesn.com/gta-6-release-date"
+    }
    ]
   }
  ],
