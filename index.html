@@ -253,7 +253,7 @@ function armeHTML(a){
       ${a.infos ? `<div class="infos">${esc(a.infos)}</div>` : ""}
       <div class="amelio"><b>Améliorations</b>
         ${a.ameliorations?.length ? a.ameliorations.map(m => `<div><p>${esc(m.nom)}${m.effet?` <span>· ${esc(m.effet)}</span>`:""}</p><span>${dollars(m.prix) || ""}</span></div>`).join("")
-          : '<div><span>Aucune amélioration confirmée par 2 sources pour l'instant.</span></div>'}
+          : '<div><span>Aucune amélioration confirmée par 2 sources pour l\'instant.</span></div>'}
       </div>
       ${(a.conflits||[]).length ? `<div class="conflit">⚠️ Sources en désaccord : ${a.conflits.map(esc).join(" · ")}</div>` : ""}
       <div class="sources">Sources : ${(a.sources||[]).map(s => `<a href="${urlOk(s.url)}" target="_blank" rel="noopener nofollow">${esc(s.nom)} ↗</a>`).join("")}</div>
